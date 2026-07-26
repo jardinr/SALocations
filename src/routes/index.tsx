@@ -14,6 +14,10 @@ import sigHeli from "@/assets/sig-heli.jpg";
 import sigSafari from "@/assets/sig-safari.jpg";
 import sigCreator from "@/assets/sig-creator.jpg";
 import sigConservation from "@/assets/sig-conservation.jpg";
+import antHero from "@/assets/ant-hero.jpg";
+import antPenguins from "@/assets/ant-penguins.jpg";
+import antJet from "@/assets/ant-jet.jpg";
+import antCamp from "@/assets/ant-camp.jpg";
 
 
 export const Route = createFileRoute("/")({
@@ -128,6 +132,7 @@ function Index() {
       <About />
       <Services />
       <Signature />
+      <Antarctic />
       <Marquee />
       <WhyUs />
       <Gallery />
@@ -164,6 +169,7 @@ function Nav() {
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
           <a href="#experiences" className="hover:text-foreground transition">Experiences</a>
+          <a href="#antarctic" className="hover:text-foreground transition">Antarctic</a>
           <a href="#journal" className="hover:text-foreground transition">Journal</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
