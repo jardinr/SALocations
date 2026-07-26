@@ -8,6 +8,13 @@ import expFilm from "@/assets/exp-film.jpg";
 import galLeopard from "@/assets/gal-leopard.jpg";
 import galVilla from "@/assets/gal-villa.jpg";
 import galDining from "@/assets/gal-dining.jpg";
+import sigCapetown from "@/assets/sig-capetown.jpg";
+import sigWinelands from "@/assets/sig-winelands.jpg";
+import sigHeli from "@/assets/sig-heli.jpg";
+import sigSafari from "@/assets/sig-safari.jpg";
+import sigCreator from "@/assets/sig-creator.jpg";
+import sigConservation from "@/assets/sig-conservation.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
