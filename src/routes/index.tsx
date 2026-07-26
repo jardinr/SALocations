@@ -138,12 +138,13 @@ function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12">
-        <a href="#top" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl tracking-[0.2em] text-foreground">SAL</span>
-          <span className="hidden text-[10px] tracking-[0.35em] text-muted-foreground uppercase sm:inline">
-            Salocations
+        <a href="#top" className="flex items-baseline gap-3">
+          <span className="font-display text-2xl tracking-[0.18em] text-foreground">SALocations</span>
+          <span className="hidden text-[10px] tracking-[0.35em] text-gold uppercase sm:inline">
+            South Africa
           </span>
         </a>
+
         <nav className="hidden items-center gap-10 text-xs tracking-[0.2em] uppercase text-muted-foreground md:flex">
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
