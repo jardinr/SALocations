@@ -36,33 +36,40 @@ const services = [
     n: "01",
     title: "Destination Experience Design",
     body: "Tailor-made South African itineraries blending luxury, adventure, culture and conservation.",
+    img: heroImg,
   },
   {
     n: "02",
     title: "Luxury Concierge",
     body: "Private villas, executive transport, helicopters, private aviation, yachts, private chefs and VIP security.",
+    img: galVilla,
   },
   {
     n: "03",
     title: "Production Support",
     body: "Location scouting, film permits, production logistics, equipment, crew and drone operations.",
+    img: expFilm,
   },
   {
     n: "04",
     title: "Luxury Content Creation",
     body: "Commercial photography, cinematic film, drone content, destination documentaries and brand storytelling.",
+    img: galDining,
   },
   {
     n: "05",
     title: "Adventure Experiences",
     body: "Private safaris, marine journeys, wine estates, mountain expeditions and conservation immersions.",
+    img: expSafari,
   },
   {
     n: "06",
     title: "Destination Marketing",
     body: "Tourism campaigns, brand partnerships, digital strategy and AI Search, SEO and GEO optimisation.",
+    img: expHeli,
   },
 ];
+
 
 const signature = [
   { title: "Luxury Cape Town Collection", tag: "City & Coast", img: heroImg },
