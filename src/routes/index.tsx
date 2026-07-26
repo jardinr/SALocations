@@ -8,6 +8,13 @@ import expFilm from "@/assets/exp-film.jpg";
 import galLeopard from "@/assets/gal-leopard.jpg";
 import galVilla from "@/assets/gal-villa.jpg";
 import galDining from "@/assets/gal-dining.jpg";
+import sigCapetown from "@/assets/sig-capetown.jpg";
+import sigWinelands from "@/assets/sig-winelands.jpg";
+import sigHeli from "@/assets/sig-heli.jpg";
+import sigSafari from "@/assets/sig-safari.jpg";
+import sigCreator from "@/assets/sig-creator.jpg";
+import sigConservation from "@/assets/sig-conservation.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -72,13 +79,14 @@ const services = [
 
 
 const signature = [
-  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: heroImg },
-  { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: expWine },
-  { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: expHeli },
-  { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: expSafari },
-  { title: "Creator Experience South Africa", tag: "Content & Brand", img: expFilm },
-  { title: "Conservation Expedition", tag: "Wilderness Access", img: galLeopard },
+  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: sigCapetown },
+  { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: sigWinelands },
+  { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: sigHeli },
+  { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: sigSafari },
+  { title: "Creator Experience South Africa", tag: "Content & Brand", img: sigCreator },
+  { title: "Conservation Expedition", tag: "Wilderness Access", img: sigConservation },
 ];
+
 
 const clients = [
   "Luxury Travellers",
@@ -391,15 +399,31 @@ function Signature() {
                   onMouseEnter={() => setActive(i)}
                   onFocus={() => setActive(i)}
                   onClick={() => setActive(i)}
-                  className={`group flex w-full items-center justify-between border-t border-border py-6 text-left transition ${
+                  className={`group flex w-full items-center justify-between gap-4 border-t border-border py-5 text-left transition ${
                     i === active ? "text-foreground" : "text-muted-foreground"
                   } ${i === signature.length - 1 ? "border-b" : ""}`}
                 >
-                  <span className="flex items-baseline gap-6">
-                    <span className="eyebrow text-muted-foreground">
-                      {String(i + 1).padStart(2, "0")}
+                  <span className="flex flex-1 items-center gap-5">
+                    <span
+                      className={`relative h-16 w-24 shrink-0 overflow-hidden bg-surface-2 transition ${
+                        i === active ? "ring-1 ring-gold" : "opacity-70 group-hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={s.img}
+                        alt=""
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
                     </span>
-                    <span className="font-display text-2xl md:text-3xl">{s.title}</span>
+                    <span className="flex flex-col gap-1">
+                      <span className="eyebrow text-muted-foreground">
+                        {String(i + 1).padStart(2, "0")} · {s.tag}
+                      </span>
+                      <span className="font-display text-xl leading-tight md:text-2xl">
+                        {s.title}
+                      </span>
+                    </span>
                   </span>
                   <span
                     aria-hidden
@@ -410,6 +434,7 @@ function Signature() {
                     →
                   </span>
                 </button>
+
               </li>
             ))}
           </ul>
