@@ -450,6 +450,123 @@ function Signature() {
   );
 }
 
+function Antarctic() {
+  const journeys = [
+    {
+      n: "01",
+      title: "Emperor Penguin Expedition",
+      tag: "Weddell Sea · November",
+      body: "Fly deep into the interior to walk among an emperor penguin colony — a rare privilege granted to only a handful of travellers each year.",
+      img: antPenguins,
+    },
+    {
+      n: "02",
+      title: "South Pole Private Charter",
+      tag: "90°S · Ceremonial Pole",
+      body: "A private jet flight from Cape Town to the white continent, culminating at the geographic South Pole with SAL's expedition team.",
+      img: antJet,
+    },
+    {
+      n: "03",
+      title: "Ultima Wilderness Camp",
+      tag: "Wolf's Fang · Queen Maud Land",
+      body: "Heated sleeping pods beneath 3,000m granite spires — climbing, ski touring, ice caves and aurora watching from a private base camp.",
+      img: antCamp,
+    },
+  ];
+  return (
+    <section
+      id="antarctic"
+      className="relative overflow-hidden border-t border-border bg-background py-28 md:py-40"
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <img
+          src={antHero}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1600px] px-6 md:px-12">
+        <div className="mb-16 grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-10 bg-gold" />
+              <span className="eyebrow">New Frontier · Antarctica</span>
+            </div>
+            <h2 className="font-display text-4xl leading-[1.05] md:text-6xl">
+              From Cape Town
+              <br />
+              <em className="not-italic text-gold">to the white continent.</em>
+            </h2>
+          </div>
+          <div className="md:col-span-5 md:col-start-8 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              Cape Town is the natural gateway to Antarctica. In partnership with the continent's
+              most established private operators, SAL curates fly-in expeditions to the last true
+              wilderness on earth.
+            </p>
+            <p>
+              Private jet transfers, heated wilderness camps, emperor penguin encounters, ski
+              touring, ice climbing and a landing at the geographic South Pole — arranged with the
+              same discretion as every SAL journey.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-px bg-border md:grid-cols-3">
+          {journeys.map((j) => (
+            <article
+              key={j.n}
+              className="group relative flex flex-col bg-background transition-colors hover:bg-surface"
+            >
+              <div className="relative aspect-[4/5] w-full overflow-hidden">
+                <img
+                  src={j.img}
+                  alt={j.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+                <span className="absolute left-6 top-6 eyebrow bg-background/50 px-2 py-1 backdrop-blur-sm">
+                  {j.n} · {j.tag}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-8">
+                <h3 className="font-display text-2xl leading-snug md:text-3xl">{j.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{j.body}</p>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold hover:text-gold-soft transition"
+                >
+                  Enquire
+                  <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16 grid gap-6 border-t border-border pt-12 text-sm text-muted-foreground md:grid-cols-4">
+          {[
+            ["5hr", "Cape Town → Wolf's Fang"],
+            ["−20°C", "Summer daytime average"],
+            ["24hr", "Daylight, Nov – Jan"],
+            ["12", "Guests per departure"],
+          ].map(([n, l]) => (
+            <div key={l}>
+              <div className="font-display text-3xl text-foreground md:text-4xl">{n}</div>
+              <div className="mt-2 text-[11px] tracking-[0.3em] uppercase">{l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Marquee() {
   return (
     <section className="relative border-y border-border bg-surface py-8 overflow-hidden">
