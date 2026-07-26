@@ -37,20 +37,21 @@
 }
 
 :root {
-  --background: oklch(0.14 0.005 60);
-  --foreground: oklch(0.96 0.008 80);
-  --surface: oklch(0.18 0.006 60);
-  --surface-2: oklch(0.22 0.006 60);
-  --muted: oklch(0.28 0.006 60);
-  --muted-foreground: oklch(0.72 0.012 70);
-  --primary: oklch(0.96 0.008 80);
-  --primary-foreground: oklch(0.14 0.005 60);
-  --gold: oklch(0.78 0.11 80);
-  --gold-soft: oklch(0.86 0.06 82);
-  --border: oklch(0.28 0.006 60 / 0.6);
-  --ring: oklch(0.78 0.11 80);
+  --background: oklch(0.24 0.008 65);
+  --foreground: oklch(0.98 0.008 85);
+  --surface: oklch(0.29 0.009 65);
+  --surface-2: oklch(0.34 0.010 65);
+  --muted: oklch(0.40 0.010 65);
+  --muted-foreground: oklch(0.82 0.014 75);
+  --primary: oklch(0.98 0.008 85);
+  --primary-foreground: oklch(0.24 0.008 65);
+  --gold: oklch(0.84 0.13 82);
+  --gold-soft: oklch(0.90 0.07 84);
+  --border: oklch(0.55 0.010 65 / 0.4);
+  --ring: oklch(0.84 0.13 82);
   --radius: 0.25rem;
 }
+
 
 @layer base {
   * {
