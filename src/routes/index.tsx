@@ -36,33 +36,40 @@ const services = [
     n: "01",
     title: "Destination Experience Design",
     body: "Tailor-made South African itineraries blending luxury, adventure, culture and conservation.",
+    img: heroImg,
   },
   {
     n: "02",
     title: "Luxury Concierge",
     body: "Private villas, executive transport, helicopters, private aviation, yachts, private chefs and VIP security.",
+    img: galVilla,
   },
   {
     n: "03",
     title: "Production Support",
     body: "Location scouting, film permits, production logistics, equipment, crew and drone operations.",
+    img: expFilm,
   },
   {
     n: "04",
     title: "Luxury Content Creation",
     body: "Commercial photography, cinematic film, drone content, destination documentaries and brand storytelling.",
+    img: galDining,
   },
   {
     n: "05",
     title: "Adventure Experiences",
     body: "Private safaris, marine journeys, wine estates, mountain expeditions and conservation immersions.",
+    img: expSafari,
   },
   {
     n: "06",
     title: "Destination Marketing",
     body: "Tourism campaigns, brand partnerships, digital strategy and AI Search, SEO and GEO optimisation.",
+    img: expHeli,
   },
 ];
+
 
 const signature = [
   { title: "Luxury Cape Town Collection", tag: "City & Coast", img: heroImg },
@@ -138,12 +145,13 @@ function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12">
-        <a href="#top" className="flex items-baseline gap-2">
-          <span className="font-display text-2xl tracking-[0.2em] text-foreground">SAL</span>
-          <span className="hidden text-[10px] tracking-[0.35em] text-muted-foreground uppercase sm:inline">
-            Salocations
+        <a href="#top" className="flex items-baseline gap-3">
+          <span className="font-display text-2xl tracking-[0.18em] text-foreground">SALocations</span>
+          <span className="hidden text-[10px] tracking-[0.35em] text-gold uppercase sm:inline">
+            South Africa
           </span>
         </a>
+
         <nav className="hidden items-center gap-10 text-xs tracking-[0.2em] uppercase text-muted-foreground md:flex">
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
@@ -295,22 +303,37 @@ function Services() {
           {services.map((s) => (
             <article
               key={s.n}
-              className="group relative bg-surface p-10 transition-colors hover:bg-surface-2"
+              className="group relative flex flex-col bg-surface transition-colors hover:bg-surface-2"
             >
-              <div className="flex items-center justify-between">
-                <span className="eyebrow">{s.n}</span>
-                <span
-                  aria-hidden
-                  className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
-                >
-                  →
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-2">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
+                <span className="absolute left-6 top-6 eyebrow bg-background/40 px-2 py-1 backdrop-blur-sm">
+                  {s.n}
                 </span>
               </div>
-              <h3 className="mt-10 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              <div className="flex flex-1 flex-col p-10">
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow text-muted-foreground">Discipline</span>
+                  <span
+                    aria-hidden
+                    className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
+                  >
+                    →
+                  </span>
+                </div>
+                <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
