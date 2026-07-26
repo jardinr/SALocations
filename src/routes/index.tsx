@@ -79,13 +79,14 @@ const services = [
 
 
 const signature = [
-  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: heroImg },
-  { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: expWine },
-  { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: expHeli },
-  { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: expSafari },
-  { title: "Creator Experience South Africa", tag: "Content & Brand", img: expFilm },
-  { title: "Conservation Expedition", tag: "Wilderness Access", img: galLeopard },
+  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: sigCapetown },
+  { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: sigWinelands },
+  { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: sigHeli },
+  { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: sigSafari },
+  { title: "Creator Experience South Africa", tag: "Content & Brand", img: sigCreator },
+  { title: "Conservation Expedition", tag: "Wilderness Access", img: sigConservation },
 ];
+
 
 const clients = [
   "Luxury Travellers",
