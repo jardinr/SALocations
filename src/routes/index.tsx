@@ -303,22 +303,37 @@ function Services() {
           {services.map((s) => (
             <article
               key={s.n}
-              className="group relative bg-surface p-10 transition-colors hover:bg-surface-2"
+              className="group relative flex flex-col bg-surface transition-colors hover:bg-surface-2"
             >
-              <div className="flex items-center justify-between">
-                <span className="eyebrow">{s.n}</span>
-                <span
-                  aria-hidden
-                  className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
-                >
-                  →
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface-2">
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover opacity-80 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
+                <span className="absolute left-6 top-6 eyebrow bg-background/40 px-2 py-1 backdrop-blur-sm">
+                  {s.n}
                 </span>
               </div>
-              <h3 className="mt-10 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              <div className="flex flex-1 flex-col p-10">
+                <div className="flex items-center justify-between">
+                  <span className="eyebrow text-muted-foreground">Discipline</span>
+                  <span
+                    aria-hidden
+                    className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
+                  >
+                    →
+                  </span>
+                </div>
+                <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
