@@ -872,7 +872,7 @@ function Contact() {
             const body = encodeURIComponent(
               `Name: ${name}\nEmail: ${email}\n\n${message}`,
             );
-            window.location.href = `mailto:info@salocations.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:jardin@salocations.com?subject=${subject}&body=${body}`;
             setSent(true);
           }}
           className="md:col-span-6 md:col-start-7 space-y-8"
