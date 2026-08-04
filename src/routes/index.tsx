@@ -140,6 +140,7 @@ function Index() {
       <CTA />
       <Contact />
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }
