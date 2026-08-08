@@ -81,6 +81,13 @@ const services = [
     body: "Tourism campaigns, brand partnerships, digital strategy and AI Search, SEO and GEO optimisation.",
     img: expHeli,
   },
+  {
+    n: "07",
+    title: "Digital Nomad Concierge",
+    body: "Cape Town relocation support for remote workers: accommodation, workspaces, SIMs, transport and local safety.",
+    img: dnHero,
+    link: "/digital-nomad-concierge-cape-town",
+  },
 ];
 
 
