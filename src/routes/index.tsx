@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/hero-capetown.jpg";
 import expSafari from "@/assets/exp-safari.jpg";
@@ -18,6 +18,7 @@ import antHero from "@/assets/ant-hero.jpg";
 import antPenguins from "@/assets/ant-penguins.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
+import dnHero from "@/assets/dn-hero.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 
@@ -79,6 +80,13 @@ const services = [
     title: "Destination Marketing",
     body: "Tourism campaigns, brand partnerships, digital strategy and AI Search, SEO and GEO optimisation.",
     img: expHeli,
+  },
+  {
+    n: "07",
+    title: "Digital Nomad Concierge",
+    body: "Cape Town relocation support for remote workers: accommodation, workspaces, SIMs, transport and local safety.",
+    img: dnHero,
+    link: "/digital-nomad-concierge-cape-town",
   },
 ];
 
@@ -171,6 +179,7 @@ function Nav() {
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
           <a href="#experiences" className="hover:text-foreground transition">Experiences</a>
+          <Link to="/digital-nomad-concierge-cape-town" className="hover:text-foreground transition">Nomad</Link>
           <a href="#antarctic" className="hover:text-foreground transition">Antarctic</a>
           <a href="#journal" className="hover:text-foreground transition">Journal</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
@@ -334,17 +343,34 @@ function Services() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-10">
-                <div className="flex items-center justify-between">
-                  <span className="eyebrow text-muted-foreground">Discipline</span>
+              <div className="flex items-center justify-between">
+                <span className="eyebrow text-muted-foreground">Discipline</span>
+                {s.link ? (
+                  <Link
+                    to={s.link}
+                    className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100 text-[10px] tracking-[0.3em] uppercase"
+                  >
+                    View →
+                  </Link>
+                ) : (
                   <span
                     aria-hidden
                     className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
                   >
                     →
                   </span>
-                </div>
-                <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                )}
+              </div>
+              <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">
+                {s.link ? (
+                  <Link to={s.link} className="hover:text-gold transition">
+                    {s.title}
+                  </Link>
+                ) : (
+                  s.title
+                )}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
             </article>
           ))}
