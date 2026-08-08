@@ -74,7 +74,7 @@ const services = [
   {
     icon: "☕",
     title: "Coworking spaces & cafés",
-    body: " introductions to the best coworking venues, laptop-friendly cafés and private meeting rooms.",
+    body: "Introductions to the best coworking venues, laptop-friendly cafés and private meeting rooms.",
   },
   {
     icon: "📸",
