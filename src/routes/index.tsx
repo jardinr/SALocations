@@ -18,6 +18,7 @@ import antHero from "@/assets/ant-hero.jpg";
 import antPenguins from "@/assets/ant-penguins.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
+import dnHero from "@/assets/dn-hero.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 
