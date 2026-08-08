@@ -343,17 +343,34 @@ function Services() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-10">
-                <div className="flex items-center justify-between">
-                  <span className="eyebrow text-muted-foreground">Discipline</span>
+              <div className="flex items-center justify-between">
+                <span className="eyebrow text-muted-foreground">Discipline</span>
+                {s.link ? (
+                  <Link
+                    to={s.link}
+                    className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100 text-[10px] tracking-[0.3em] uppercase"
+                  >
+                    View →
+                  </Link>
+                ) : (
                   <span
                     aria-hidden
                     className="text-gold opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
                   >
                     →
                   </span>
-                </div>
-                <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">{s.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                )}
+              </div>
+              <h3 className="mt-6 font-display text-2xl leading-snug md:text-3xl">
+                {s.link ? (
+                  <Link to={s.link} className="hover:text-gold transition">
+                    {s.title}
+                  </Link>
+                ) : (
+                  s.title
+                )}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
             </article>
           ))}
