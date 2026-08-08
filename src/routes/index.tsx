@@ -171,6 +171,7 @@ function Nav() {
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
           <a href="#experiences" className="hover:text-foreground transition">Experiences</a>
+          <Link to="/digital-nomad-concierge-cape-town" className="hover:text-foreground transition">Nomad</Link>
           <a href="#antarctic" className="hover:text-foreground transition">Antarctic</a>
           <a href="#journal" className="hover:text-foreground transition">Journal</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>

@@ -9,8 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as DigitalNomadConciergeCapeTownRouteImport } from './routes/digital-nomad-concierge-cape-town'
 import { Route as IndexRouteImport } from './routes/index'
 
+const DigitalNomadConciergeCapeTownRoute =
+  DigitalNomadConciergeCapeTownRouteImport.update({
+    id: '/digital-nomad-concierge-cape-town',
+    path: '/digital-nomad-concierge-cape-town',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +26,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/digital-nomad-concierge-cape-town'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/digital-nomad-concierge-cape-town'
+  id: '__root__' | '/' | '/digital-nomad-concierge-cape-town'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DigitalNomadConciergeCapeTownRoute: typeof DigitalNomadConciergeCapeTownRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/digital-nomad-concierge-cape-town': {
+      id: '/digital-nomad-concierge-cape-town'
+      path: '/digital-nomad-concierge-cape-town'
+      fullPath: '/digital-nomad-concierge-cape-town'
+      preLoaderRoute: typeof DigitalNomadConciergeCapeTownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +71,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DigitalNomadConciergeCapeTownRoute: DigitalNomadConciergeCapeTownRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
