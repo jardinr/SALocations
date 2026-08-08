@@ -14,6 +14,7 @@ import sigHeli from "@/assets/sig-heli.jpg";
 import sigSafari from "@/assets/sig-safari.jpg";
 import sigCreator from "@/assets/sig-creator.jpg";
 import sigConservation from "@/assets/sig-conservation.jpg";
+import sigStargazing from "@/assets/sig-stargazing.jpg";
 import antHero from "@/assets/ant-hero.jpg";
 import antPenguins from "@/assets/ant-penguins.jpg";
 import antJet from "@/assets/ant-jet.jpg";
@@ -72,7 +73,7 @@ const services = [
   {
     n: "05",
     title: "Adventure Experiences",
-    body: "Private safaris, marine journeys, wine estates, mountain expeditions and conservation immersions.",
+    body: "Private safaris, marine journeys, wine estates, remote star gazing, mountain expeditions and conservation immersions.",
     img: expSafari,
   },
   {
@@ -96,6 +97,7 @@ const signature = [
   { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: sigWinelands },
   { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: sigHeli },
   { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: sigSafari },
+  { title: "Star Gazing at Remote Locations", tag: "Karoo · Cederberg · Namakwa", img: sigStargazing },
   { title: "Creator Experience South Africa", tag: "Content & Brand", img: sigCreator },
   { title: "Conservation Expedition", tag: "Wilderness Access", img: sigConservation },
 ];
