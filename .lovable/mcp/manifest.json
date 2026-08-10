@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "sal-south-africa-elevated",
+      "version": "0.1.0",
+      "title": "SAL: South Africa Elevated"
+    },
+    "tools": [
+      {
+        "name": "list_services",
+        "title": "List SALocations services",
+        "description": "List the core services SALocations offers — destination experience design, luxury concierge, production support, content creation, adventure experiences, destination marketing and digital nomad concierge.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_signature_experiences",
+        "title": "List signature experiences",
+        "description": "List SALocations' signature South African experiences, such as the Luxury Cape Town Collection, Winelands escapes, safari journeys and remote star gazing, with their regions.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_antarctic_expeditions",
+        "title": "List Antarctic expeditions",
+        "description": "List SALocations' flagship Antarctic expeditions departing from Cape Town, including the emperor penguin expedition, South Pole private charter and wilderness camp.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_digital_nomad_concierge",
+        "title": "Get Digital Nomad Concierge details",
+        "description": "Get details of the Digital Nomad Concierge Cape Town offering: what it covers, who it is for, and the page URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_contact_details",
+        "title": "Get SALocations contact details",
+        "description": "Get SALocations' public contact details, brand positioning and the types of clients it serves, for enquiries about booking an experience.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
