@@ -11,8 +11,6 @@ import expHeli from "@/assets/exp-heli.jpg";
 import expWine from "@/assets/exp-wine.jpg";
 import expFilm from "@/assets/exp-film.jpg";
 import galLeopard from "@/assets/gal-leopard.jpg";
-import galVilla from "@/assets/gal-villa.jpg";
-import galDining from "@/assets/gal-dining.jpg";
 import sigWinelands from "@/assets/sig-winelands.jpg";
 import sigHeli from "@/assets/sig-heli.jpg";
 import sigSafari from "@/assets/sig-safari.jpg";
@@ -60,7 +58,7 @@ const services = [
     n: "02",
     title: "Luxury Concierge",
     body: "Private villas, executive transport, helicopters, private aviation, yachts, private chefs and VIP security.",
-    img: galVilla,
+    img: cliftonAsset.url,
   },
   {
     n: "03",
@@ -72,7 +70,7 @@ const services = [
     n: "04",
     title: "Luxury Content Creation",
     body: "Commercial photography, cinematic film, drone content, destination documentaries and brand storytelling.",
-    img: galDining,
+    img: stoneybrookAsset.url,
   },
   {
     n: "05",
