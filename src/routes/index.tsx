@@ -26,17 +26,17 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SAL — Experience South Africa Beyond the Brochure" },
+      { title: "SALocations | Bespoke Luxury Journeys" },
       {
         name: "description",
         content:
-          "SALocations — a Cape Town based Destination Experience & Marketing Company crafting bespoke luxury journeys, production logistics and concierge across South Africa.",
+          "SALocations designs bespoke luxury journeys, film production logistics, concierge services and destination marketing across South Africa.",
       },
-      { property: "og:title", content: "SAL — Experience South Africa Beyond the Brochure" },
+      { property: "og:title", content: "SALocations | Bespoke Luxury Journeys" },
       {
         property: "og:description",
         content:
-          "Bespoke luxury experiences, destination marketing, production logistics and concierge services across South Africa.",
+          "SALocations designs bespoke luxury journeys, film production logistics, concierge services and destination marketing across South Africa.",
       },
       { property: "og:url", content: "/" },
     ],
