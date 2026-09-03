@@ -1,6 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroImg from "@/assets/hero-capetown.jpg";
+import heroAsset from "@/assets/hero-tablemountain.jpg.asset.json";
+import cliftonAsset from "@/assets/gal-clifton.jpg.asset.json";
+import stoneybrookAsset from "@/assets/gal-stoneybrook.jpg.asset.json";
+import campsbayAsset from "@/assets/sig-campsbay.jpg.asset.json";
+import reverieAsset from "@/assets/gal-reverie.jpg.asset.json";
+const heroImg = heroAsset.url;
 import expSafari from "@/assets/exp-safari.jpg";
 import expHeli from "@/assets/exp-heli.jpg";
 import expWine from "@/assets/exp-wine.jpg";
@@ -8,7 +13,6 @@ import expFilm from "@/assets/exp-film.jpg";
 import galLeopard from "@/assets/gal-leopard.jpg";
 import galVilla from "@/assets/gal-villa.jpg";
 import galDining from "@/assets/gal-dining.jpg";
-import sigCapetown from "@/assets/sig-capetown.jpg";
 import sigWinelands from "@/assets/sig-winelands.jpg";
 import sigHeli from "@/assets/sig-heli.jpg";
 import sigSafari from "@/assets/sig-safari.jpg";
@@ -93,7 +97,7 @@ const services = [
 
 
 const signature = [
-  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: sigCapetown },
+  { title: "Luxury Cape Town Collection", tag: "City & Coast", img: campsbayAsset.url },
   { title: "Private Winelands Escape", tag: "Franschhoek · Stellenbosch", img: sigWinelands },
   { title: "Helicopter & Yacht Experience", tag: "Atlantic Seaboard", img: sigHeli },
   { title: "Ultimate Safari Journey", tag: "Sabi Sand · Kruger", img: sigSafari },
@@ -683,10 +687,18 @@ function Gallery() {
         <div className="grid grid-cols-12 gap-3 md:gap-5">
           <figure className="col-span-12 md:col-span-8">
             <div className="aspect-[16/10] overflow-hidden bg-surface">
-              <img src={galVilla} alt="Cliffside villa above Cape Town at twilight" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={reverieAsset.url} alt="Reverie villa above the Atlantic at dusk" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-              <span>Camps Bay</span><span>Private Villa</span>
+              <span>Camps Bay</span><span>Reverie</span>
+            </figcaption>
+          </figure>
+          <figure className="col-span-12">
+            <div className="aspect-[21/9] md:aspect-[32/9] overflow-hidden bg-surface">
+              <img src={cliftonAsset.url} alt="Clifton 4th beach panorama with Lion's Head" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+            </div>
+            <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
+              <span>Clifton 4th</span><span>Atlantic Seaboard</span>
             </figcaption>
           </figure>
           <figure className="col-span-6 md:col-span-4">
@@ -715,10 +727,10 @@ function Gallery() {
           </figure>
           <figure className="col-span-12 md:col-span-4">
             <div className="aspect-square overflow-hidden bg-surface">
-              <img src={galDining} alt="Fine dining plated course" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={stoneybrookAsset.url} alt="Stoneybrook estate at golden hour" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-              <span>Cape Town</span><span>Fine Dining</span>
+              <span>Hout Bay</span><span>Stoneybrook</span>
             </figcaption>
           </figure>
           <figure className="col-span-12 md:col-span-8">
