@@ -11,8 +11,6 @@ import expHeli from "@/assets/exp-heli.jpg";
 import expWine from "@/assets/exp-wine.jpg";
 import expFilm from "@/assets/exp-film.jpg";
 import galLeopard from "@/assets/gal-leopard.jpg";
-import galVilla from "@/assets/gal-villa.jpg";
-import galDining from "@/assets/gal-dining.jpg";
 import sigWinelands from "@/assets/sig-winelands.jpg";
 import sigHeli from "@/assets/sig-heli.jpg";
 import sigSafari from "@/assets/sig-safari.jpg";
