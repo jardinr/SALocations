@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SAL — Experience South Africa Beyond the Brochure" },
+      { title: "SALocations | Bespoke Luxury Journeys" },
       {
         name: "description",
         content:
-          "SALocations designs bespoke luxury experiences, destination marketing, film production logistics and concierge services across South Africa.",
+          "SALocations designs bespoke luxury journeys, film production logistics, concierge services and destination marketing across South Africa.",
       },
       { name: "author", content: "SALocations" },
-      { property: "og:title", content: "SAL — Destination Experience & Marketing" },
+      { property: "og:title", content: "SALocations | Bespoke Luxury Journeys" },
       {
         property: "og:description",
         content:
-          "Bespoke luxury experiences, destination marketing, production logistics and concierge services across South Africa.",
+          "SALocations designs bespoke luxury journeys, film production logistics, concierge services and destination marketing across South Africa.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "SALocations" },
