@@ -6,12 +6,6 @@ import stoneybrookImgUrl from "@/assets/gal-stoneybrook.jpg";
 import campsbayImgUrl from "@/assets/sig-campsbay.jpg";
 import reverieImgUrl from "@/assets/gal-reverie.jpg";
 
-const heroAsset = { url: heroImgUrl };
-const cliftonAsset = { url: cliftonImgUrl };
-const stoneybrookAsset = { url: stoneybrookImgUrl };
-const campsbayAsset = { url: campsbayImgUrl };
-const reverieAsset = { url: reverieImgUrl };
-const heroImg = heroAsset.url;
 import expSafari from "@/assets/exp-safari.jpg";
 import expHeli from "@/assets/exp-heli.jpg";
 import expWine from "@/assets/exp-wine.jpg";
@@ -23,12 +17,20 @@ import sigSafari from "@/assets/sig-safari.jpg";
 import sigCreator from "@/assets/sig-creator.jpg";
 import sigConservation from "@/assets/sig-conservation.jpg";
 import sigStargazing from "@/assets/sig-stargazing.jpg";
-import antHero from "@/assets/ant-hero.jpg";
+import dnHero from "@/assets/dn-hero.jpg";
 import antPenguins from "@/assets/ant-penguins.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
-import dnHero from "@/assets/dn-hero.jpg";
+
+import antHero from "@/assets/ant-hero.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+
+const heroAsset = { url: heroImgUrl };
+const cliftonAsset = { url: cliftonImgUrl };
+const stoneybrookAsset = { url: stoneybrookImgUrl };
+const campsbayAsset = { url: campsbayImgUrl };
+const reverieAsset = { url: reverieImgUrl };
+const heroImg = heroAsset.url;
 
 
 export const Route = createFileRoute("/")({
