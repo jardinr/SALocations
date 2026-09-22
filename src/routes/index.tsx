@@ -1,10 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroAsset from "@/assets/hero-tablemountain.jpg.asset.json";
-import cliftonAsset from "@/assets/gal-clifton.jpg.asset.json";
-import stoneybrookAsset from "@/assets/gal-stoneybrook.jpg.asset.json";
-import campsbayAsset from "@/assets/sig-campsbay.jpg.asset.json";
-import reverieAsset from "@/assets/gal-reverie.jpg.asset.json";
+import heroImgUrl from "@/assets/hero-tablemountain.jpg";
+import cliftonImgUrl from "@/assets/gal-clifton.jpg";
+import stoneybrookImgUrl from "@/assets/gal-stoneybrook.jpg";
+import campsbayImgUrl from "@/assets/sig-campsbay.jpg";
+import reverieImgUrl from "@/assets/gal-reverie.jpg";
+
+const heroAsset = { url: heroImgUrl };
+const cliftonAsset = { url: cliftonImgUrl };
+const stoneybrookAsset = { url: stoneybrookImgUrl };
+const campsbayAsset = { url: campsbayImgUrl };
+const reverieAsset = { url: reverieImgUrl };
 const heroImg = heroAsset.url;
 import expSafari from "@/assets/exp-safari.jpg";
 import expHeli from "@/assets/exp-heli.jpg";
