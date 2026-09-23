@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Intelligence System | SMAIDM</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05050A;
+            --surface-color: rgba(255, 255, 255, 0.03);
+            --surface-color-hover: rgba(255, 255, 255, 0.06);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #7000ff;
+            --gradient-primary: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            --glass-bg: rgba(15, 15, 20, 0.5);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+            --glass-blur: blur(16px);
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animated Background Elements */
+        .bg-glow {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(112,0,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            right: -200px;
+            z-index: -1;
+            pointer-events: none;
+            animation: pulse-glow 10s infinite alternate linear;
+        }
+        .bg-glow-2 {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,240,255,0.1) 0%, rgba(0,0,0,0) 70%);
+            bottom: -300px;
+            left: -300px;
+            z-index: -1;
+            pointer-events: none;
+            animation: pulse-glow-2 15s infinite alternate linear;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.8; }
+            100% { transform: scale(1.2) translate(-50px, 50px); opacity: 1; }
+        }
+        @keyframes pulse-glow-2 {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.6; }
+            100% { transform: scale(1.1) translate(50px, -50px); opacity: 1; }
+        }
+
+        /* Top Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-bottom: var(--glass-border);
+            z-index: 100;
+        }
+        .nav-logo {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        h2 .section-num {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--accent-cyan);
+            opacity: 0.8;
+            font-family: var(--font-body);
+        }
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Section Layout */
+        section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 5rem;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        .hero h1 {
+            font-size: 5rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            width: fit-content;
+        }
+        .hero h3 {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+        }
+
+        /* Glass Cards */
+        .card {
+            background: var(--surface-color);
+            border: var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            backdrop-filter: var(--glass-blur);
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            background: var(--surface-color-hover);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        
+        @media (max-width: 900px) {
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero h3 { font-size: 1.5rem; }
+        }
+
+        /* Tables */
+        .table-wrap {
+            overflow-x: auto;
+            background: var(--surface-color);
+            border: var(--glass-border);
+            border-radius: 16px;
+            backdrop-filter: var(--glass-blur);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.02);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        tr:last-child td { border-bottom: none; }
+        .highlight-row {
+            background: rgba(112,0,255,0.1);
+        }
+        .highlight-row td {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Pricing Cards */
+        .pricing-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card .badge {
+            position: absolute;
+            top: 2rem;
+            right: -2.5rem;
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 0.4rem 3rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            transform: rotate(45deg);
+            letter-spacing: 1px;
+        }
+        .price {
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--font-display);
+        }
+        .price .label { font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; }
+        .price .amount { font-size: 1.75rem; font-weight: 700; color: var(--accent-cyan); display: block; }
+        ul.features {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        ul.features li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        ul.features li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-purple);
+            font-weight: bold;
+        }
+        ul.features li.con::before {
+            content: "△";
+            color: var(--text-secondary);
+        }
+
+        /* Flow Diagram */
+        .workflow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(90deg, rgba(0,240,255,0.05) 0%, rgba(112,0,255,0.05) 100%);
+            border: var(--glass-border);
+            border-radius: 16px;
+        }
+        .flow-step {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+        .flow-arrow {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+        }
+
+        /* CTA */
+        .btn {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(112,0,255,0.4);
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav>
+        <div class="nav-logo">SMAIDM</div>
+        <div class="nav-tag">Confidential Proposal</div>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero visible">
+            <h1>Location Intelligence</h1>
+            <h3>An AI Proposal for Production & Servicing Companies</h3>
+            <p>A streamlined transition from manual search to system-assisted selection. Adaptable to your current workflow. Prepared by SMAIDM · 2026.</p>
+        </section>
+
+        <!-- Section 1 -->
+        <section class="reveal">
+            <h2><span class="section-num">01</span> About SMAIDM</h2>
+            <div class="grid-2">
+                <div>
+                    <p><strong>SMAIDM — Social Media · AI · Digital Marketing</strong> — builds practical AI systems that remove inefficiency from how creative businesses operate. We work inside your existing workflow rather than replacing it, inserting intelligence at the point where the most time is lost.</p>
+                    <p>Our core product is the <strong>Universal Automation Engine (UAE)</strong>: a modular, interchangeable platform that connects data sources, applies AI interpretation, and delivers outputs into the tools your teams already use—whether that's MediaSilo, Frame.io, local NAS servers, or standard cloud storage like Dropbox and Google Workspace.</p>
+                </div>
+                <div class="card">
+                    <h4>Proven in Market</h4>
+                    <p style="margin-top: 1rem;">Because the core engine is already built and proven in the industry, <strong>your company does not need to fund software development from scratch.</strong> Instead, we simply adapt our existing architecture around your exact workflow, archive, and toolset.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="reveal">
+            <h2><span class="section-num">02</span> The Industry Workflow</h2>
+            <p>The traditional location scouting and pitching process is well-structured, but it suffers from severe speed bottlenecks. The problem is not the process itself, it is how long each manual step takes.</p>
+            
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Time Today</th>
+                            <th>Where the Problem Sits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Review brief & list locations</td>
+                            <td>~20 min</td>
+                            <td>Fully manual read; depends heavily on researcher's familiarity</td>
+                        </tr>
+                        <tr>
+                            <td>Match to previous sites</td>
+                            <td>10–15 min</td>
+                            <td>Memory-dependent cross-referencing of un-tagged archives</td>
+                        </tr>
+                        <tr>
+                            <td>Setup project in Pitch Decks</td>
+                            <td>30–45 min</td>
+                            <td>Repetitive manual setup for every brief</td>
+                        </tr>
+                        <tr>
+                            <td>Select/transfer from Archive</td>
+                            <td>45–90 min</td>
+                            <td>Direct live dependency on Wi-Fi stability and messy folders</td>
+                        </tr>
+                        <tr>
+                            <td>Buffer: connectivity issues</td>
+                            <td>15–30 min</td>
+                            <td>Unpredictable delays</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Total time per brief</td>
+                            <td>2 – 3½ hrs</td>
+                            <td>Compounds heavily with volume. Extremely hard to scale.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="reveal">
+            <h2><span class="section-num">03</span> What The System Changes</h2>
+            <p>The SMAIDM AI layer acts as an intelligence bridge between your existing media archive and your final presentation tool. It reads incoming client briefs, interprets atmospheric and geographic requirements, searches your entire archive intelligently (regardless of how poorly tagged the folders are), and produces a ranked shortlist.</p>
+            
+            <div class="workflow">
+                <div class="flow-step">Brief Uploaded</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">AI Reads Brief</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Archive Searched</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Ranked Shortlist</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Output to Pitch Deck</div>
+            </div>
+
+            <div class="card" style="text-align: center; background: rgba(0, 240, 255, 0.05); border-color: var(--accent-cyan);">
+                <h3 style="color: white; margin-bottom: 0.5rem; font-size: 2rem;">15 – 25 Minutes</h3>
+                <p style="color: var(--accent-cyan); font-weight: 600; font-size: 1.2rem; margin: 0;">Estimated total time per brief. Approximately an 80% reduction in time per job.</p>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="reveal">
+            <h2><span class="section-num">04</span> Implementation Paths</h2>
+            <p>We adapt directly to the software your production company already uses. Choose the level of integration that suits your risk profile.</p>
+            
+            <div class="grid-3">
+                <div class="card pricing-card" style="border-color: rgba(112,0,255,0.4); box-shadow: 0 0 30px rgba(112,0,255,0.1);">
+                    <div class="badge">Recommended</div>
+                    <h3>01. Augment</h3>
+                    <p>Keep your existing storage (NAS, Dropbox) and pitching software (Keynote, Canva). We connect our intelligence layer in between.</p>
+                    
+                    <div class="price">
+                        <span class="label">Setup Integration</span>
+                        <span class="amount">SaaS Overlay</span>
+                    </div>
+
+                    <ul class="features">
+                        <li>Lowest upfront cost</li>
+                        <li>Shifts risk entirely away from your company</li>
+                        <li>Files stay exactly where they are</li>
+                        <li>Operational in just 4 to 6 weeks</li>
+                        <li class="con">Speed capped by existing storage</li>
+                    </ul>
+                </div>
+
+                <div class="card pricing-card">
+                    <h3>02. Hybrid</h3>
+                    <p>Migrate your messy archive to our custom AI-indexed storage layer to eliminate third-party cloud fees entirely. Keep your front-end tools.</p>
+                    
+                    <div class="price">
+                        <span class="label">Migration & Setup</span>
+                        <span class="amount">Custom Storage</span>
+                    </div>
+
+                    <ul class="features">
+                        <li>Eliminates ongoing SaaS storage costs</li>
+                        <li>Removes Wi-Fi syncing dependency</li>
+                        <li>Live in 6 to 8 weeks</li>
+                        <li class="con">Requires data migration</li>
+                    </ul>
+                </div>
+
+                <div class="card pricing-card">
+                    <h3>03. Custom</h3>
+                    <p>A fully owned end-to-end system: custom archive, AI engine, and a branded presentation output portal tailored to your company.</p>
+                    
+                    <div class="price">
+                        <span class="label">Dev & Build Fee</span>
+                        <span class="amount">End-to-End</span>
+                    </div>
+
+                    <ul class="features">
+                        <li>Complete platform ownership</li>
+                        <li>Highest ROI for high-volume servicing</li>
+                        <li>Live in 10 to 12 weeks</li>
+                        <li class="con">Highest upfront CapEx</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="reveal">
+            <h2><span class="section-num">05</span> The Low-Risk Rollout</h2>
+            <p>We recommend a phased rollout for Option 1. We do not require an annual commitment until the system is proven on your company's actual data.</p>
+            
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 1rem;">Phase 1: Paid Pilot</h3>
+                    <p><strong>Timeline:</strong> 4 Weeks</p>
+                    <p><strong>What we do:</strong> Database audit, sample metadata indexing (1,000+ images), and configuration of the brief parsing engine tailored to your commercial/film briefs.</p>
+                    <p><strong>What you get:</strong> A live, working prototype on a sample dataset. You submit real-world briefs, and evaluate the speed and accuracy of the shortlists before committing to full integration.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--accent-purple); margin-bottom: 1rem;">Phase 2: Full Integration</h3>
+                    <p><strong>Timeline:</strong> 2-3 Weeks after Pilot approval</p>
+                    <p><strong>What we do:</strong> Full archive integration (connecting to your NAS or Cloud), API connections to your project management tools, team onboarding, and performance tuning.</p>
+                    <p><strong>What you get:</strong> A production-ready system handling your active, daily workflow across the entire company.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6 & 7 -->
+        <section class="reveal">
+            <h2><span class="section-num">06</span> Commercial Structures & Next Steps</h2>
+            <p>We offer three commercial paths: Standard Implementation, Paid Pilot First (Recommended), and Performance-Tied (Zero Setup - we only get paid when the system saves your team hours).</p>
+            
+            <div class="card" style="margin-top: 2rem; background: rgba(255,255,255,0.02);">
+                <ul class="features" style="margin-bottom: 2rem;">
+                    <li><strong>1. Approve the Pilot:</strong> Sign off on a 4-week Proof of Concept.</li>
+                    <li><strong>2. Provide Sample Data:</strong> Grant access to a sample dataset (500–2000 images) from your servers.</li>
+                    <li><strong>3. Test the Output:</strong> At the end of Week 4, we run your historical briefs through your actual images to prove the system works.</li>
+                </ul>
+                <a href="mailto:contact@smaidm.com" class="btn">Approve Phase 1 Pilot</a>
+            </div>
+            
+            <p style="text-align: center; margin-top: 4rem; font-size: 0.9rem; letter-spacing: 1px; color: var(--text-secondary);">
+                SMAIDM · SOCIAL MEDIA · AI · DIGITAL MARKETING // 2026 CONFIDENTIAL
+            </p>
+        </section>
+
+    </div>
+
+    <!-- Simple Scroll Reveal Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
