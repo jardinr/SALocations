@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroImgUrl from "@/assets/hero-tablemountain.jpg";
+import heroImgUrl from "@/assets/exp-sa-bg.jpg";
 import cliftonImgUrl from "@/assets/gal-clifton.jpg";
 import stoneybrookImgUrl from "@/assets/gal-stoneybrook.jpg";
 import campsbayImgUrl from "@/assets/sig-campsbay.jpg";
@@ -19,6 +19,9 @@ import sigConservation from "@/assets/sig-conservation.jpg";
 import sigStargazing from "@/assets/sig-stargazing.jpg";
 import dnHero from "@/assets/dn-hero.jpg";
 import antPenguins from "@/assets/ant-penguins.jpg";
+import destMarketing from "@/assets/dest-marketing.jpg";
+import prodSupport from "@/assets/prod-support.jpg";
+import expSaBg from "@/assets/exp-sa-bg.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
 
@@ -48,6 +51,7 @@ export const Route = createFileRoute("/")({
         content:
           "SALocations designs bespoke luxury journeys, film production logistics, concierge services and destination marketing across South Africa.",
       },
+      { property: "og:image", content: "https://www.salocations.com/favicon.jpg" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -66,19 +70,20 @@ const services = [
     n: "02",
     title: "Luxury Concierge",
     body: "Private villas, executive transport, helicopters, private aviation, yachts, private chefs and VIP security.",
-    img: cliftonAsset.url,
+    img: expHeli,
   },
   {
     n: "03",
     title: "Production Support",
     body: "Location scouting, film permits, production logistics, equipment, crew and drone operations.",
-    img: expFilm,
+    img: prodSupport,
   },
   {
     n: "04",
     title: "Luxury Content Creation",
     body: "Commercial photography, cinematic film, drone content, destination documentaries and brand storytelling.",
     img: stoneybrookAsset.url,
+    link: "https://youtu.be/PJZ2LxqFs1Q",
   },
   {
     n: "05",
@@ -90,7 +95,7 @@ const services = [
     n: "06",
     title: "Destination Marketing",
     body: "Tourism campaigns, brand partnerships, digital strategy and AI Search, SEO and GEO optimisation.",
-    img: expHeli,
+    img: destMarketing,
   },
   {
     n: "07",
