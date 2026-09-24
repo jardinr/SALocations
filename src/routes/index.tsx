@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import heroImgUrl from "@/assets/exp-sa-bg.jpg";
+import heroImgUrl from "@/assets/hero-bokaap-pano.jpg";
 import cliftonImgUrl from "@/assets/gal-clifton.jpg";
 import stoneybrookImgUrl from "@/assets/gal-stoneybrook.jpg";
 import campsbayImgUrl from "@/assets/sig-campsbay.jpg";
@@ -64,7 +64,7 @@ const services = [
     n: "01",
     title: "Destination Experience Design",
     body: "Tailor-made South African itineraries blending luxury, adventure, culture and conservation.",
-    img: heroImg,
+    img: expSaBg,
   },
   {
     n: "02",
