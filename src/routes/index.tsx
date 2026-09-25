@@ -990,5 +990,3 @@ function Footer() {
   );
 }
 
-/ /   t r i g g e r   b u i l d  
- 
