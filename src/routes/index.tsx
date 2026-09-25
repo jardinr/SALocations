@@ -24,6 +24,7 @@ import prodSupport from "@/assets/prod-support.jpg";
 import expSaBg from "@/assets/exp-sa-bg.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
+import heroBokaapPano from "@/assets/hero-bokaap-pano.jpg";
 
 import antHero from "@/assets/ant-hero.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -82,7 +83,7 @@ const services = [
     n: "04",
     title: "Luxury Content Creation",
     body: "Commercial photography, cinematic film, drone content, destination documentaries and brand storytelling.",
-    img: stoneybrookAsset.url,
+    img: heroBokaapPano,
     link: "https://youtu.be/PJZ2LxqFs1Q",
   },
   {
