@@ -1,0 +1,4 @@
+embedded_data.json
+*.py
+*.log
+.git

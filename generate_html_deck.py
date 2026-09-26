@@ -899,7 +899,7 @@ html_template = """<!DOCTYPE html>
             <div class="scope-grid">
                 <div class="scope-item">
                     <div class="scope-label">Curated Scope</div>
-                    <div class="scope-val">9 Categories (Refs + Matched Locations + Studios)</div>
+                    <div class="scope-val">8 Curated Categories & Soundstages</div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-label">Visual Alignment</div>
@@ -907,7 +907,7 @@ html_template = """<!DOCTYPE html>
                 </div>
                 <div class="scope-item">
                     <div class="scope-label">Featured Locations</div>
-                    <div class="scope-val">Stardust, Chapman's Peak, Blackwood Cabin, V&A</div>
+                    <div class="scope-val">Harringtons, Blackwood Cabin, Chapman's Peak, Stardust</div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-label">Studio Infrastructure</div>
@@ -923,12 +923,12 @@ html_template = """<!DOCTYPE html>
         <!-- Location Selector Section -->
         <div class="section-header" id="categories">
             <div>
-                <h2 class="section-title">Curated Location & Studio Categories</h2>
-                <div class="section-subtitle">Select a category to view the Director's Visual Reference side-by-side with Cape Town matched scouting photography</div>
+                <h2 class="section-title">Director Visual References & Scouted Images Database</h2>
+                <div class="section-subtitle">Select a category to view the Director's Visual Reference side-by-side with Cape Town's Scouted Images Database</div>
             </div>
         </div>
 
-        <!-- 9 Category Tabs -->
+        <!-- Category Tabs -->
         <nav class="category-tabs" id="categoryTabs">
             <!-- Populated via script -->
         </nav>
@@ -958,7 +958,7 @@ html_template = """<!DOCTYPE html>
                 <div class="service-box">
                     <div>
                         <div class="service-badge">Location Scouting & Recces</div>
-                        <div class="service-price">ZAR 6,000 <span class="sub">/ day (~£266)</span></div>
+                        <div class="service-price">ZAR 6,000 <span class="sub">/ day (~₹29,500 INR)</span></div>
                         <p class="service-desc">
                             Full-day dedicated location scout / manager with 4x4 technical vehicle, fuel, drone capability (where permitted), GPS tagging, and high-resolution photo dossiers.
                         </p>
@@ -969,7 +969,7 @@ html_template = """<!DOCTYPE html>
                 <div class="service-box featured">
                     <div>
                         <div class="service-badge">Location Management & Permitting</div>
-                        <div class="service-price">ZAR 7,500 <span class="sub">/ shoot day</span></div>
+                        <div class="service-price">ZAR 7,500 <span class="sub">/ shoot day (~₹37,000 INR)</span></div>
                         <p class="service-desc">
                             Complete City of Cape Town Film Permit Office liaison, SANParks environmental permits (Table Mountain, Chapman's Peak), road closures, police traffic escorts, and neighborhood notifications.
                         </p>
@@ -1168,8 +1168,8 @@ html_template = """<!DOCTYPE html>
                                 <div class="comparison-card match-card">
                                     <div class="comp-header">
                                         <div>
-                                            <span class="comp-badge">Cape Town Scouted Match</span>
-                                            <div class="comp-sub" style="margin-top: 0.2rem;">Pre-Screened Real-World Location</div>
+                                            <span class="comp-badge">Scouted Images Database</span>
+                                            <div class="comp-sub" style="margin-top: 0.2rem;">Cape Town Production Database Match</div>
                                         </div>
                                         <span style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--gold-bright); font-weight: 700;">${cat.match_score}</span>
                                     </div>
@@ -1177,7 +1177,7 @@ html_template = """<!DOCTYPE html>
                                         <img src="${getImgUrl(cat.scouted_hero)}" alt="${cat.scouted_hero_title}">
                                     </div>
                                     <div class="comp-img-caption">
-                                        <strong>Scouted Environment:</strong> ${cat.scouted_hero_title}
+                                        <strong>Database Match:</strong> ${cat.scouted_hero_title}
                                     </div>
                                 </div>
 
@@ -1228,7 +1228,7 @@ html_template = """<!DOCTYPE html>
                                 <div class="filter-pills" id="filters-${cat.id}">
                                     <button class="filter-pill active" onclick="filterGallery('${cat.id}', 'all', this)">All Photos (${cat.gallery.length})</button>
                                     <button class="filter-pill" onclick="filterGallery('${cat.id}', 'ref', this)">🎯 Director References</button>
-                                    <button class="filter-pill" onclick="filterGallery('${cat.id}', 'scouted', this)">📍 Scouted Locations</button>
+                                    <button class="filter-pill" onclick="filterGallery('${cat.id}', 'scouted', this)">📁 Scouted Images Database</button>
                                 </div>
                             </div>
 
@@ -1248,7 +1248,7 @@ html_template = """<!DOCTYPE html>
             return filtered.map((item, idx) => {
                 const originalIdx = cat.gallery.findIndex(g => g.file === item.file);
                 const tagClass = item.source === 'ref' ? 'tag-ref' : 'tag-scouted';
-                const tagLabel = item.source === 'ref' ? 'Reference' : 'Scouted';
+                const tagLabel = item.source === 'ref' ? 'Reference' : 'Database';
                 return `
                     <div class="gallery-item" onclick="openLightboxFor('${cat.id}', ${originalIdx})">
                         <img src="${getImgUrl(item.file)}" alt="${item.title}" loading="lazy">
