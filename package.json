@@ -1,0 +1,8 @@
+{
+  "name": "zen-mirage-media-proposal",
+  "version": "1.0.0",
+  "description": "Mirage Media Feature Film Production Proposal & Location Pitch Deck - Zencrew & SA Locations",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
