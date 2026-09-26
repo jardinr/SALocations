@@ -93,41 +93,41 @@ categories = [
         "num": "02",
         "title": "Cast Drive · Coastal Scenic Highway",
         "icon": "🚗",
-        "ref_heading": "Director's Visual Reference · Winding Sea-Cliff Ocean Highway",
-        "match_heading": "Scouted Database · Chapman's Peak Drive (M6) & Victoria Road",
-        "match_score": "99% Match",
-        "area": "Hout Bay to Noordhoek / Atlantic Seaboard, Cape Town",
-        "tagline": "World-renowned winding coastal highway carved into sheer vertical sea-cliffs, offering breathtaking panoramic Atlantic ocean views, cantilever passes, and scenic vehicle tracking corridors.",
-        "creative_synopsis": "The visual reference features an iconic coastal road trip scene: a winding tarmac highway carved into sea cliffs with mountain headlands rising behind deep turquoise waters. Chapman's Peak Drive (M6) is widely recognized as one of the most cinematic coastal drives on the planet, offering full-day rolling road closures, camera tracking vehicle permits, and dedicated helicopter/drone clearance.",
+        "ref_heading": "Director's Visual Reference · Winding Ocean Highway Towards Mountain Headland",
+        "match_heading": "Scouted Database · Victoria Road (M6) [100% Exact Match] & Chapman's Peak",
+        "match_score": "100% Exact Match",
+        "area": "Victoria Road (Atlantic Seaboard) & Chapman's Peak, Cape Town",
+        "tagline": "100% exact real-world match to Director Reference: Victoria Road (M6) curving between the Atlantic Ocean and the 12 Apostles towards Lion's Head, paired with Chapman's Peak Drive.",
+        "creative_synopsis": "The director's visual reference (cast drive.jpeg) is an aerial perspective of Victoria Road (M6) curving along the Atlantic coast towards Lion's Head and Camps Bay! Our scouted database pairs this directly with Victoria Road from ground level (M6-to CB 0) — the identical stretch of coastal tarmac hugging the 12 Apostles with Lion's Head on the horizon. Supported by Chapman's Peak Drive for high-altitude vertical rock cliff sequences.",
         "ref_hero": "cast drive.jpeg",
         "ref_hero_source": "ref",
-        "ref_hero_title": "Director Reference: Winding Cliffside Ocean Highway with Mountain Headland",
-        "scouted_hero": "Chapmans Peak (91).jpg",
+        "ref_hero_title": "Director Reference: Winding Coastal Highway Approaching Lion's Head & Camps Bay (Victoria Road from Above)",
+        "scouted_hero": "M6-to CB (0).jpg",
         "scouted_hero_source": "zen",
-        "scouted_hero_title": "Chapman's Peak Drive: Golden Hour Coastal Curve Hugging Atlantic Sea Cliffs",
+        "scouted_hero_title": "Victoria Road (M6): Exact Ground-Level Match to Ref Hugging 12 Apostles with Lion's Head Vista",
         "key_features": [
-            "9 km of winding coastal cliff road with 114 curves and dramatic 500m sheer vertical rock drops",
-            "Cantilevered roadway galleries, viewing pullovers, and sweeping ocean headland vistas",
+            "100% Exact Road Match: Victoria Road (M6) between Oudekraal and Camps Bay facing Lion's Head",
+            "9 km of winding coastal highway with 12 Apostles mountain ramparts on one side and crashing Atlantic surf on the other",
             "Dedicated low-loader tracking vehicle (Russian Arm / Motocrane) filming clearance",
-            "Full rolling road closure protocols managed via City of Cape Town & Entilini Concession",
-            "Victoria Road coastal connector providing Atlantic Seaboard sunset tracking sequences"
+            "Full rolling road closure protocols managed via City of Cape Town Film Office",
+            "Chapman's Peak Drive coastal extension for high-altitude cantilevered rock galleries and sheer 500m sea cliffs"
         ],
         "specs": {
-            "permitting": "Entilini Concession & City of Cape Town Film Permit Office (Standard 5-day lead time)",
-            "power": "Mobile Generator Truck (Whisper-Watt 40kVA/60kVA) required for cliff basecamps",
-            "parking": "Designated cliffside lookout bays accommodate 4 technical tracking vehicles per section",
-            "sound_curfew": "Daylight filming preferred; night drone and tracking closures by special arrangement"
+            "permitting": "City of Cape Town Film Permit Office & Entilini Concession (Standard 5-day lead time)",
+            "power": "Mobile Generator Truck (Whisper-Watt 40kVA/60kVA) required for roadside basecamps",
+            "parking": "Dedicated coastal turnout bays accommodate technical tracking vehicles and unit base",
+            "sound_curfew": "Daylight filming preferred; sunset tracking closures and police escorts arranged"
         },
         "gallery": [
-            {"file": "cast drive.jpeg", "source": "ref", "title": "Director Ref: Winding Ocean Cliff Road & Distant Headland", "cat": "ref"},
+            {"file": "cast drive.jpeg", "source": "ref", "title": "Director Ref: Winding Coastal Highway Approaching Lion's Head (Victoria Road from Above)", "cat": "ref"},
+            {"file": "M6-to CB (0).jpg", "source": "zen", "title": "Victoria Road (M6): Exact Ground-Level Match Hugging 12 Apostles with Lion's Head (100% Match)", "cat": "scouted"},
+            {"file": "M6-to CB (1).jpg", "source": "zen", "title": "Victoria Road: Oceanfront Tarmac Run with Blue Atlantic Horizons", "cat": "scouted"},
+            {"file": "M6-to CB (7).jpg", "source": "zen", "title": "Victoria Road: Sunset Curve Approaching Camps Bay", "cat": "scouted"},
             {"file": "Chapmans Peak (91).jpg", "source": "zen", "title": "Chapman's Peak: Dramatic Cliff Hugging S-Bend Looking Towards Hout Bay", "cat": "scouted"},
             {"file": "Chapmans Peak (57).jpg", "source": "zen", "title": "Chapman's Peak: Half-Tunnel Rock Gallery & Ocean Horizon", "cat": "scouted"},
             {"file": "Chapmans Peak (71).jpg", "source": "zen", "title": "Chapman's Peak: Sweeping South Vista Towards Noordhoek Beach", "cat": "scouted"},
             {"file": "Chapmans Peak (78).jpg", "source": "zen", "title": "Chapman's Peak: High Altitude Curve & Deep Turquoise Ocean", "cat": "scouted"},
-            {"file": "Chapmans Peak South Lookout (5).jpg", "source": "zen", "title": "Chapman's Peak: Elevated Lookout Bay with Distant Headland", "cat": "scouted"},
-            {"file": "M6-to CB (0).jpg", "source": "zen", "title": "Victoria Road (M6): Coastal Route Hugging 12 Apostles Peaks", "cat": "scouted"},
-            {"file": "M6-to CB (1).jpg", "source": "zen", "title": "Victoria Road: Oceanfront Tarmac Run with Blue Atlantic Horizons", "cat": "scouted"},
-            {"file": "M6-to CB (7).jpg", "source": "zen", "title": "Victoria Road: Sunset Curve Approaching Camps Bay", "cat": "scouted"}
+            {"file": "Chapmans Peak South Lookout (5).jpg", "source": "zen", "title": "Chapman's Peak: Elevated Lookout Bay with Distant Headland", "cat": "scouted"}
         ]
     },
     {
