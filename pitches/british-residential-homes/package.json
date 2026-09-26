@@ -1,0 +1,8 @@
+{
+  "name": "sal-british-homes",
+  "version": "1.0.0",
+  "description": "British Residential Homes & Garden - Location Presentation Dossier",
+  "scripts": {
+    "deploy": "vercel --prod"
+  }
+}
