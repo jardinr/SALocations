@@ -66,7 +66,7 @@ categories = [
             "Elevated performance stage with grand piano, professional PA, and theatrical lighting rig",
             "Spacious wide timber dining floor accommodating tiered cabaret seating for 60–120 patrons",
             "Imhoff's Gift Exterior: Timber & stone courtyard cafe, sunny pergolas, and covered wooden deck over wetlands",
-            "Daytime outdoor cafe deck and courtyard options available within Cape Town creative precincts"
+            "Outdoor Cafe Courtyards: Brick-paved terraces with wooden bench seating, umbrellas, and character multi-pane factory windows (IMG 5253)"
         ],
         "specs": {
             "permitting": "Private Commercial Contract · Direct Venue Agreements (48-hr turnaround)",
@@ -83,6 +83,7 @@ categories = [
             {"file": "Stardust (3).jpg", "source": "zen", "title": "StarDust: Red Stage Lighting, Cabaret Tables & Theatrical Backdrop", "cat": "scouted"},
             {"file": "Stardust (6).jpg", "source": "zen", "title": "StarDust: Live Acoustic Performance Corner & Stage Lighting", "cat": "scouted"},
             {"file": "Stardust (9).jpg", "source": "zen", "title": "StarDust: Intimate Seating Perspective with Ambient Lighting Rig", "cat": "scouted"},
+            {"file": "IMG_5253.JPG", "source": "zen", "title": "Outdoor Cafe Courtyard & Terrace: Multi-Pane Windows & Shaded Picnic Seating", "cat": "scouted"},
             {"file": "Imhoff's Gift (20).jpg", "source": "zen", "title": "Imhoff's Gift: Timber & Stone Courtyard Cafe Exterior in Fynbos Setting", "cat": "scouted"},
             {"file": "Imhoff's Gift (21).jpg", "source": "zen", "title": "Imhoff's Gift: Rustic Covered Wooden Deck Looking Over Wetlands & Mountains", "cat": "scouted"},
             {"file": "Imhoff's Gift (18).jpg", "source": "zen", "title": "Imhoff's Gift: Secluded Coastal Wooden Dining Retreat with Mountain Views", "cat": "scouted"}
@@ -127,7 +128,7 @@ categories = [
             {"file": "Chapmans Peak (57).jpg", "source": "zen", "title": "Chapman's Peak: Half-Tunnel Rock Gallery & Ocean Horizon", "cat": "scouted"},
             {"file": "Chapmans Peak (71).jpg", "source": "zen", "title": "Chapman's Peak: Sweeping South Vista Towards Noordhoek Beach", "cat": "scouted"},
             {"file": "Chapmans Peak (78).jpg", "source": "zen", "title": "Chapman's Peak: High Altitude Curve & Deep Turquoise Ocean", "cat": "scouted"},
-            {"file": "Chapmans Peak South Lookout (5).jpg", "source": "zen", "title": "Chapman's Peak: Elevated Lookout Bay with Distant Headland", "cat": "scouted"}
+            {"file": "Chapmans Peak South Lookout (5).jpg", "source": "zen", "title": "Chapman's Peak Lookout Over Monkey Valley & Long Beach Noordhoek", "cat": "scouted"}
         ]
     },
     {
@@ -269,14 +270,14 @@ categories = [
         "ref_hero": "nightclub.jpeg",
         "ref_hero_source": "ref",
         "ref_hero_title": "Director Reference: Intimate Amber-Lit Club Bar with Live Performance & Chandeliers (Harringtons)",
-        "scouted_hero": "Harringtons (2).jpg",
+        "scouted_hero": "Harringtons (3).jpg",
         "scouted_hero_source": "harringtons",
-        "scouted_hero_title": "Harringtons Cocktail Lounge: Main Dance Floor Crystal Chandelier, Vintage Disco Ball & Velvet Banquettes",
+        "scouted_hero_title": "Harringtons Cocktail Lounge: Classic Dark Mahogany Bar Counter, Backlit Glassware & Crystal Chandeliers (100% Match)",
         "key_features": [
             "100% Exact Location Match: Harringtons Cocktail Lounge (61B Harrington St, East City)",
+            "Classic dark mahogany wood-paneled cocktail bar counter with backlit spirit displays (Direct Ref Match)",
             "Vintage crystal chandeliers, sparkling disco balls, exposed wooden roof trusses, and chevron timber flooring",
             "Plush curved velvet banquettes, tufted amber booth seating with arched windows and draped velvet curtains",
-            "Classic dark mahogany wood-paneled cocktail bar counter with backlit spirit displays",
             "Café Caprice (Camps Bay Strip): Beachfront terrace with outdoor Corona umbrellas & curved fluted wood Veuve Clicquot bar",
             "Club Destiny, Club Halo & Hexagon: Heavy DMX intelligent stage lighting grids, laser arrays, and private VIP lounges"
         ],
@@ -290,9 +291,9 @@ categories = [
             {"file": "nightclub.jpeg", "source": "ref", "title": "Director Ref: Harringtons Live Performance Stage, Amber Glow & Chandelier (100% Match)", "cat": "ref"},
             {"file": "nightclub2.jpeg", "source": "ref", "title": "Director Ref: Packed Nightclub Dancefloor with Red/Blue Laser Beams", "cat": "ref"},
             {"file": "nightclub3.jpeg", "source": "ref", "title": "Director Ref: Neon Beachfront Bar Exterior at Dusk (Café Caprice, Camps Bay)", "cat": "ref"},
-            {"file": "Harringtons (2).jpg", "source": "harringtons", "title": "Harringtons: Main Dance Floor with Crystal Chandeliers, Disco Balls & Velvet Seating (100% Match)", "cat": "scouted"},
+            {"file": "Harringtons (3).jpg", "source": "harringtons", "title": "Harringtons: Classic Dark Mahogany Bar Counter & Backlit Glassware (Direct 100% Match to Ref Bar)", "cat": "scouted"},
+            {"file": "Harringtons (2).jpg", "source": "harringtons", "title": "Harringtons: Main Dance Floor with Crystal Chandeliers, Disco Balls & Velvet Seating", "cat": "scouted"},
             {"file": "Harringtons (1).jpg", "source": "harringtons", "title": "Harringtons: Amber Velvet Booth Seating with Arched Windows & Blue Curtains", "cat": "scouted"},
-            {"file": "Harringtons (3).jpg", "source": "harringtons", "title": "Harringtons: Classic Dark Mahogany Bar Counter & Backlit Glassware Display", "cat": "scouted"},
             {"file": "Harringtons (4).jpg", "source": "harringtons", "title": "Harringtons: Wide Lounge Floor Perspective Facing Bar & Booths", "cat": "scouted"},
             {"file": "Harringtons (5).jpg", "source": "harringtons", "title": "Harringtons: Tufted Chesterfield Leather Couches & Rustic Wood Trusses", "cat": "scouted"},
             {"file": "Cafe Caprice (1).jpg", "source": "zen", "title": "Café Caprice: Camps Bay Beachfront Promenade Exterior & Outdoor Terrace", "cat": "scouted"},
@@ -315,24 +316,26 @@ categories = [
         "title": "Rehearsal Spaces, Industrial Lofts & Film Soundstages",
         "icon": "🎸",
         "ref_heading": "Director's Visual Reference · High-Ceiling Warehouse Lofts & Creative Soundstages",
-        "match_heading": "Scouted Database · Woodstock Creative Lofts, Roodebloem & Milestone Studios",
-        "match_score": "100% Infrastructure Match",
+        "match_heading": "Scouted Database · Daylight Infinity Cyclorama Studio [Best Match], Roodebloem & Milestone Studios",
+        "match_score": "100% Direct Match",
         "area": "Woodstock, Salt River & Epping Production Hubs, Cape Town",
-        "tagline": "Merged rehearsal and studio infrastructure: high-ceiling brick warehouse lofts with industrial steel grid windows, combined with professional soundstages, daylight cycloramas, and acoustic scoring studios.",
-        "creative_synopsis": "This merged category brings together the creative raw rehearsal environment and full-scale studio infrastructure. It features authentic industrial brick lofts with multi-pane factory windows in Woodstock and Salt River, seamlessly paired with premier soundstage facilities: Roodebloem Studios (historic daylight cycloramas in converted church), Studio 107 (broadcast soundstage), Milestone Studios (premier acoustic live room with grand piano and ADR), Plug Studio, Suite Spot, UCT Recording, and CTFS soundstage specs.",
+        "tagline": "Best real-world match to Director Reference: Daylight infinity cyclorama rehearsal studio with side window light and concrete beams, combined with Roodebloem Studios, Milestone acoustic rooms, and soundstages.",
+        "creative_synopsis": "The director's reference (rehearsal space.jpeg) calls for an expansive daylight rehearsal studio with white cyclorama, industrial concrete ceiling beams, and natural window light streaming across the floor. Our scouted Daylight Rehearsal Studio is the premier direct match: featuring a seamless white infinity curve, polished concrete floor, overhead industrial beams with cable trays, and expansive sunlit window bays. Paired with Roodebloem Studios (historic church daylight cycloramas), Studio 107 soundstages, Milestone acoustic rooms, and precision scoring suites.",
         "ref_hero": "rehearsal space.jpeg",
         "ref_hero_source": "ref",
-        "ref_hero_title": "Director Reference: Sunlit Industrial Loft Rehearsal Space with Multi-Pane Factory Windows",
-        "scouted_hero": "Roodebloem Studios (2).jpg",
+        "ref_hero_title": "Director Reference: Sunlit Industrial Loft Rehearsal Space with Multi-Pane Windows & White Cyclorama",
+        "scouted_hero": "Daylight Rehearsal Studio (1).jpg",
         "scouted_hero_source": "zen",
-        "scouted_hero_title": "Roodebloem Studios: High-Ceiling Daylight Church Studio with Arched Windows & Timber Trusses",
+        "scouted_hero_title": "Daylight Infinity Cyclorama Studio: Sunlit Windows, Concrete Beams & Polished Rehearsal Floor (Best Match)",
         "key_features": [
-            "Woodstock & Salt River Lofts: Authentic exposed brickwork, timber rafters, and multi-pane steel factory windows",
+            "Daylight Infinity Cyclorama Studio: Seamless white curve, natural window light beams, and smooth polished rehearsal floor",
+            "Industrial overhead concrete beams and high-capacity electrical cable management for lighting grids",
+            "Direct typological match to Director Reference (rehearsal space.jpeg) with full daylight control",
             "Roodebloem Studios (Studio 1): Converted heritage church with massive daylight arched windows and infinite cyclorama",
-            "Studio 107: Fully soundproofed air-conditioned broadcast soundstage with overhead lighting grid",
+            "Studio 107: Broadcast soundstage with overhead lighting grid, mobile green screen, control booth & acoustic baffles",
             "Milestone Studios: Acoustic isolation tracking rooms, grand piano, drum booth, and 5.1/Dolby Atmos ADR suites",
-            "Suite Spot, Plug Studio, UCT & Forest Studios: Multi-track scoring, vocal tracking, and musical instrument staging",
-            "Large-scale soundstages: Direct booking access to Cape Town Film Studios (CTFS) and Atlantic Film Studios"
+            "Suite Spot Studios & Studio 1: Motion cyclorama stage, green screen, multi-track scoring, and precision sound isolation booths",
+            "Plug Studio, UCT & Forest Studios: Multi-track scoring, vocal tracking, and musical instrument staging"
         ],
         "specs": {
             "permitting": "Private Commercial Contract · Film Studio & Creative Property Management (Immediate clearance)",
@@ -343,18 +346,18 @@ categories = [
         "gallery": [
             {"file": "rehearsal space.jpeg", "source": "ref", "title": "Director Ref: Creative Rehearsal Warehouse Loft with Factory Windows", "cat": "ref"},
             {"file": "rehearsal space2.webp", "source": "ref", "title": "Director Ref: Acoustic Rehearsal Room with Wooden Ceiling & Instruments", "cat": "ref"},
-            {"file": "IMG_5256.JPG", "source": "zen", "title": "Woodstock Loft: Industrial Concrete & Brick Creative Space with High Ceilings", "cat": "scouted"},
-            {"file": "IMG_5253.JPG", "source": "zen", "title": "Woodstock Loft: Multi-Pane Factory Windows & Expansive Rehearsal Floor", "cat": "scouted"},
-            {"file": "IMG_5259.JPG", "source": "zen", "title": "Woodstock Loft: High-Angle Perspective of Creative Studio Warehouse", "cat": "scouted"},
+            {"file": "Daylight Rehearsal Studio (1).jpg", "source": "zen", "title": "Daylight Rehearsal Studio: White Cyclorama Cove, Concrete Beams & Side Window Light (Best Match)", "cat": "scouted"},
+            {"file": "Daylight Rehearsal Studio (2).jpg", "source": "zen", "title": "Daylight Rehearsal Studio: Expansive Polished Floor & Ceiling Skylight Architecture", "cat": "scouted"},
             {"file": "Roodebloem Studios (2).jpg", "source": "zen", "title": "Roodebloem Studios: Daylight Cyclorama & Historic Converted Church Hall", "cat": "scouted"},
+            {"file": "Studio 107 (Acoustic Studio & Green Screen).jpg", "source": "zen", "title": "Studio 107: Soundstage Live Room with Acoustic Baffles, Green Screen & Control Booth", "cat": "scouted"},
             {"file": "Studio 107 (6).jpg", "source": "zen", "title": "Studio 107: Soundproof Film Soundstage with Overhead Grid & Control Booth", "cat": "scouted"},
             {"file": "Milstone Studios (3).jpg", "source": "zen", "title": "Milestone Studios: Acoustic Live Tracking Room with Drum Kit & Sound Baffles", "cat": "scouted"},
             {"file": "Plug Studio (12).jpg", "source": "zen", "title": "Plug Studio: Professional Audio Tracking Room & Mixing Console", "cat": "scouted"},
             {"file": "Suite Spot Studios (3).jpg", "source": "zen", "title": "Suite Spot Studios: Multi-Track Control Room & Sound Isolation Booth", "cat": "scouted"},
+            {"file": "studio1_02.jpg", "source": "zen", "title": "Suite Spot (Studio 1): Motion Cyclorama & Green Screen Stage", "cat": "scouted"},
             {"file": "UCT-Rec Studio (8).jpg", "source": "zen", "title": "UCT Recording Studio: Precision Acoustically Treated Live Scoring Room", "cat": "scouted"},
             {"file": "Forest Studio (7).jpg", "source": "zen", "title": "Forest Studio: Nature-Surrounded Acoustic Live Tracking Space", "cat": "scouted"},
-            {"file": "Forest Studio (16).jpg", "source": "zen", "title": "Forest Studio: Recording Booth & Monitoring Environment", "cat": "scouted"},
-            {"file": "studio1_02.jpg", "source": "zen", "title": "Studio 1: Commercial Photo & Motion Cyclorama Stage", "cat": "scouted"}
+            {"file": "Forest Studio (16).jpg", "source": "zen", "title": "Forest Studio: Recording Booth & Monitoring Environment", "cat": "scouted"}
         ]
     },
     {

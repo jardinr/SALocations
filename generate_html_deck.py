@@ -958,7 +958,7 @@ html_template = """<!DOCTYPE html>
                 <div class="service-box">
                     <div>
                         <div class="service-badge">Location Scouting & Recces</div>
-                        <div class="service-price">ZAR 6,000 <span class="sub">/ day (~₹29,500 INR)</span></div>
+                        <div class="service-price">ZAR 5,000 <span class="sub">/ day (~₹24,500 INR)</span></div>
                         <p class="service-desc">
                             Full-day dedicated location scout / manager with 4x4 technical vehicle, fuel, drone capability (where permitted), GPS tagging, and high-resolution photo dossiers.
                         </p>
@@ -969,7 +969,7 @@ html_template = """<!DOCTYPE html>
                 <div class="service-box featured">
                     <div>
                         <div class="service-badge">Location Management & Permitting</div>
-                        <div class="service-price">ZAR 7,500 <span class="sub">/ shoot day (~₹37,000 INR)</span></div>
+                        <div class="service-price">ZAR 5,500 <span class="sub">/ shoot day (~₹27,000 INR)</span></div>
                         <p class="service-desc">
                             Complete City of Cape Town Film Permit Office liaison, SANParks environmental permits (Table Mountain, Chapman's Peak), road closures, police traffic escorts, and neighborhood notifications.
                         </p>
