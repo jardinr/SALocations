@@ -19,12 +19,12 @@ html_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cape Town Master Location Scouting Database · International Film & Commercial Showcase</title>
-    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 10 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
+    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 15 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cape Town Master Location Scouting Database · Global Film & Commercial Showcase">
-    <meta property="og:description" content="Curated 10-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada & European destinations. 117 verified hero assets, technical filming specs & multi-currency rates.">
+    <meta property="og:description" content="Curated 15-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada & European destinations. 150 verified hero assets, technical filming specs & multi-currency rates.">
     <meta property="og:image" content="https://sal-global-locations-deck.vercel.app/og-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -58,407 +58,442 @@ html_template = """<!DOCTYPE html>
             --radius-sm: 6px;
             --radius-md: 12px;
             --radius-lg: 18px;
-            --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.5);
-            --shadow-dramatic: 0 20px 60px rgba(0, 0, 0, 0.85);
-            --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+            --shadow-elevated: 0 12px 40px rgba(0, 0, 0, 0.7);
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg);
             color: var(--text-main);
             font-family: var(--font-sans);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Glow Backdrop */
+        /* Subtle Ambient Glow */
         .ambient-glow {
             position: fixed;
-            top: -20vh;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 1200px;
+            width: 100vw;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(25, 56, 43, 0.05) 50%, transparent 80%);
+            background: radial-gradient(circle at 50% 0%, rgba(25, 56, 43, 0.35) 0%, rgba(7, 11, 10, 0) 70%);
             pointer-events: none;
             z-index: 0;
         }
 
-        /* Top Header Navigation */
+        /* Top Navigation Header */
         header.top-nav {
             position: sticky;
             top: 0;
-            z-index: 200;
-            background: rgba(7, 11, 10, 0.95);
-            backdrop-filter: blur(20px);
+            z-index: 100;
+            background: rgba(7, 11, 10, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0.85rem 2rem;
+            padding: 0.75rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 1.5rem;
         }
 
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
+            text-decoration: none;
         }
+
         .brand-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--border-highlight);
-            padding: 0.4rem 0.9rem;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-bright);
+            padding: 0.35rem 0.85rem;
             border-radius: 999px;
             font-family: var(--font-tech);
             font-size: 0.75rem;
             font-weight: 700;
-            color: var(--gold-bright);
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
-        .brand-pill .pulse-dot {
+
+        .pulse-dot {
             width: 7px;
             height: 7px;
-            background: var(--cyan);
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--cyan);
+            background: var(--gold-bright);
+            box-shadow: 0 0 10px var(--gold);
+            animation: pulseGlow 2s infinite ease-in-out;
         }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
         .nav-title {
             font-family: var(--font-serif);
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            letter-spacing: 0.06em;
-            color: var(--text-main);
+            letter-spacing: 0.05em;
+            color: #ffffff;
         }
 
         .nav-controls {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.9rem;
+            flex-wrap: wrap;
         }
 
-        /* Global Search Input */
+        .social-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .social-link-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold-bright);
+            background: rgba(212, 175, 55, 0.08);
+            transform: translateY(-1px);
+        }
+
         .search-box {
             position: relative;
             display: flex;
             align-items: center;
         }
+
         .search-box input {
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.45rem 1rem 0.45rem 2.2rem;
             border-radius: 999px;
-            font-family: var(--font-sans);
+            padding: 0.45rem 1rem 0.45rem 2.2rem;
+            color: #ffffff;
             font-size: 0.85rem;
-            width: 220px;
+            width: 200px;
             transition: var(--transition);
-        }
-        .search-box input:focus {
             outline: none;
-            border-color: var(--gold);
-            width: 300px;
-            box-shadow: 0 0 16px var(--gold-glow);
+            font-family: var(--font-sans);
         }
+
+        .search-box input:focus {
+            width: 260px;
+            border-color: var(--border-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
         .search-box svg {
             position: absolute;
-            left: 0.8rem;
+            left: 0.75rem;
             width: 14px;
             height: 14px;
             fill: var(--text-muted);
+            pointer-events: none;
         }
 
-        /* Currency Selector */
         .currency-selector {
             display: flex;
-            align-items: center;
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             border-radius: 999px;
-            padding: 0.2rem 0.3rem;
-            gap: 0.15rem;
+            padding: 2px;
         }
+
         .curr-btn {
             background: transparent;
             border: none;
             color: var(--text-muted);
-            padding: 0.25rem 0.55rem;
-            border-radius: 999px;
-            font-family: var(--font-tech);
-            font-size: 0.72rem;
+            padding: 0.3rem 0.65rem;
+            font-size: 0.75rem;
             font-weight: 600;
+            border-radius: 999px;
             cursor: pointer;
             transition: var(--transition);
+            font-family: var(--font-tech);
         }
+
         .curr-btn.active {
             background: var(--gold);
             color: #070b0a;
             font-weight: 700;
         }
-        .curr-btn:hover:not(.active) {
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.05);
-        }
 
-        /* Shortlist Trigger */
         .shortlist-trigger {
-            display: inline-flex;
+            position: relative;
+            display: flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.45rem 0.95rem;
-            border-radius: 999px;
-            font-family: var(--font-tech);
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .shortlist-trigger:hover {
-            border-color: var(--gold);
-            background: var(--surface-card);
-        }
-        .shortlist-badge {
-            background: var(--gold);
-            color: #070b0a;
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 0.1rem 0.45rem;
-            border-radius: 999px;
-        }
-
-        /* Header Buttons */
-        .btn-nav {
-            text-decoration: none;
-            font-family: var(--font-tech);
-            font-size: 0.8rem;
-            font-weight: 600;
+            background: var(--emerald-bright);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #ffffff;
             padding: 0.45rem 1rem;
             border-radius: 999px;
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            background: var(--surface);
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
             cursor: pointer;
-        }
-        .btn-nav:hover {
-            border-color: var(--gold);
-            color: var(--gold-bright);
-        }
-        .btn-nav.primary {
-            background: var(--gold);
-            color: #070b0a;
-            border-color: var(--gold);
-            font-weight: 700;
-        }
-        .btn-nav.primary:hover {
-            background: var(--gold-bright);
-            box-shadow: 0 0 16px var(--gold-glow);
+            transition: var(--transition);
+            font-family: var(--font-tech);
         }
 
-        /* Hero Section */
-        .hero {
+        .shortlist-trigger:hover {
+            background: #2f7a5d;
+            box-shadow: 0 0 15px rgba(56, 239, 125, 0.25);
+        }
+
+        .shortlist-count {
+            background: var(--gold-bright);
+            color: #070b0a;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 800;
+        }
+
+        /* Hero Banner */
+        .hero-section {
             position: relative;
-            padding: 4.5rem 2rem 3rem 2rem;
-            max-width: 1400px;
+            max-width: 1380px;
             margin: 0 auto;
+            padding: 3.5rem 2rem 2rem 2rem;
             text-align: center;
             z-index: 10;
         }
-        .hero-badge-row {
+
+        .hero-meta-badges {
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
+            gap: 0.75rem;
             margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
+
         .badge-premium {
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid var(--border-highlight);
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-gold);
             color: var(--gold-bright);
-            font-family: var(--font-tech);
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 0.4rem 1.1rem;
+            padding: 0.4rem 1rem;
             border-radius: 999px;
-            letter-spacing: 0.08em;
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
+            font-weight: 700;
         }
+
         .badge-sub {
-            background: rgba(25, 56, 43, 0.5);
-            border: 1px solid rgba(56, 239, 125, 0.3);
-            color: var(--cyan);
-            font-family: var(--font-tech);
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 0.4rem 1.1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 0.4rem 1rem;
             border-radius: 999px;
+            font-size: 0.75rem;
+            font-family: var(--font-tech);
             letter-spacing: 0.05em;
         }
 
         h1.hero-title {
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
             font-weight: 800;
+            letter-spacing: -0.01em;
             line-height: 1.15;
-            letter-spacing: 0.02em;
             color: #ffffff;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
         }
+
         h1.hero-title span.gold {
-            background: linear-gradient(135deg, #ffffff 0%, var(--gold-bright) 50%, var(--gold) 100%);
+            background: linear-gradient(135deg, #f6d365 0%, #d4af37 60%, #aa820a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         p.hero-subtitle {
-            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 900px;
+            max-width: 860px;
             margin: 0 auto 2.5rem auto;
-            font-weight: 300;
             line-height: 1.7;
+            font-weight: 400;
         }
 
-        /* Stats Strip */
+        /* KPI Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
             max-width: 1200px;
             margin: 0 auto 3rem auto;
         }
+
+        @media (max-width: 900px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .stat-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 1.4rem 1rem;
+            padding: 1.25rem 1rem;
             text-align: center;
             transition: var(--transition);
         }
+
         .stat-card:hover {
             border-color: var(--border-highlight);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
         }
+
         .stat-number {
-            font-family: var(--font-tech);
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 1.85rem;
+            font-weight: 800;
             color: var(--gold-bright);
-            margin-bottom: 0.2rem;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
         }
+
         .stat-label {
-            font-family: var(--font-sans);
             font-size: 0.78rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-family: var(--font-tech);
         }
 
-        /* Doubling Advantage Matrix */
+        /* Global Doubling Banner */
         .doubling-banner {
-            background: linear-gradient(135deg, rgba(22, 36, 30, 0.9) 0%, rgba(14, 22, 18, 0.9) 100%);
+            max-width: 1200px;
+            margin: 0 auto 2.5rem auto;
+            background: linear-gradient(135deg, rgba(25, 56, 43, 0.45) 0%, rgba(18, 28, 23, 0.8) 100%);
             border: 1px solid var(--border-highlight);
             border-radius: var(--radius-lg);
-            padding: 1.75rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 1.8rem 2.2rem;
             text-align: left;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
+
         .doubling-title {
             font-family: var(--font-serif);
-            font-size: 1.15rem;
+            font-size: 1.25rem;
+            color: #ffffff;
             font-weight: 700;
-            color: var(--gold-bright);
             margin-bottom: 0.4rem;
         }
+
         .doubling-desc {
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            max-width: 780px;
+            line-height: 1.55;
         }
+
         .doubling-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 0.8rem;
         }
+
         .doubling-tag {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border);
-            color: var(--text-main);
+            color: var(--gold);
             font-family: var(--font-tech);
             font-size: 0.72rem;
             padding: 0.25rem 0.65rem;
             border-radius: 999px;
+            font-weight: 600;
         }
 
-        /* Category Filter Navigation Bar */
+        /* Sticky Category Filter Bar */
         .category-nav-wrap {
             position: sticky;
-            top: 61px;
-            z-index: 150;
-            background: rgba(7, 11, 10, 0.92);
+            top: 58px;
+            z-index: 90;
+            background: rgba(7, 11, 10, 0.95);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0.85rem 2rem;
+            padding: 0.6rem 1.5rem;
         }
-        .category-pills-container {
-            max-width: 1400px;
+
+        .category-nav {
+            max-width: 1380px;
             margin: 0 auto;
             display: flex;
-            gap: 0.6rem;
+            gap: 0.5rem;
             overflow-x: auto;
-            padding-bottom: 0.3rem;
-            scrollbar-width: thin;
-            scrollbar-color: var(--border) transparent;
+            scrollbar-width: none;
+            padding: 0.2rem 0;
         }
-        .category-pills-container::-webkit-scrollbar {
-            height: 4px;
+
+        .category-nav::-webkit-scrollbar {
+            display: none;
         }
-        .category-pills-container::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 999px;
-        }
+
         .cat-pill {
-            white-space: nowrap;
-            background: var(--surface);
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid var(--border);
             color: var(--text-muted);
-            padding: 0.45rem 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 999px;
-            font-family: var(--font-tech);
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            transition: var(--transition);
+            cursor: pointer;
+            white-space: nowrap;
         }
+
         .cat-pill:hover {
-            border-color: var(--gold);
-            color: var(--text-main);
-            background: var(--surface-card);
+            border-color: var(--border-highlight);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
         }
+
         .cat-pill.active {
             background: var(--gold);
             color: #070b0a;
@@ -467,79 +502,79 @@ html_template = """<!DOCTYPE html>
         }
 
         /* Main Content Container */
-        main.content-area {
-            max-width: 1400px;
-            margin: 2.5rem auto;
-            padding: 0 2rem;
+        main.deck-container {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
             position: relative;
             z-index: 10;
         }
 
-        /* Category Card Section */
+        /* Category Section Block */
         .category-block {
-            margin-bottom: 4.5rem;
+            margin-bottom: 5rem;
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: var(--shadow-subtle);
+            box-shadow: var(--shadow-elevated);
             transition: var(--transition);
         }
-        .category-block:hover {
-            border-color: var(--border-highlight);
-            box-shadow: var(--shadow-dramatic);
+
+        .category-header {
+            padding: 2.2rem 2.5rem 1.6rem 2.5rem;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(25, 56, 43, 0.2) 0%, rgba(18, 28, 23, 0) 100%);
         }
 
-        /* Category Card Header */
-        .category-header {
-            padding: 2.2rem 2.5rem 1.8rem 2.5rem;
-            background: linear-gradient(180deg, rgba(25, 38, 32, 0.6) 0%, rgba(18, 28, 23, 0) 100%);
-            border-bottom: 1px solid var(--border);
-        }
         .cat-meta-row {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            justify-content: space-between;
             margin-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
+
         .cat-num-badge {
             font-family: var(--font-tech);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            color: var(--gold-bright);
-            letter-spacing: 0.1em;
-            background: rgba(212, 175, 55, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-highlight);
+            color: var(--gold);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
         }
+
         .cat-doubling-banner {
-            font-family: var(--font-tech);
-            font-size: 0.76rem;
-            color: var(--cyan);
-            background: rgba(37, 97, 73, 0.3);
-            border: 1px solid rgba(56, 239, 125, 0.3);
-            padding: 0.3rem 0.9rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-bright);
+            padding: 0.3rem 0.85rem;
             border-radius: 999px;
+            font-size: 0.75rem;
+            font-family: var(--font-tech);
             font-weight: 600;
         }
 
         h2.category-title {
             font-family: var(--font-serif);
-            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
+
         .category-area {
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
+            font-family: var(--font-tech);
+            font-size: 0.88rem;
             color: var(--gold);
             font-weight: 500;
             margin-bottom: 1rem;
         }
+
         .category-synopsis {
             font-size: 0.95rem;
             color: var(--text-muted);
@@ -547,34 +582,37 @@ html_template = """<!DOCTYPE html>
             max-width: 1100px;
         }
 
-        /* Hero Scouted Match Showcase */
+        /* Hero Scouted Match Showcase - Strict Landscape with Wording Below */
         .hero-showcase {
-            display: grid;
-            grid-template-columns: 1.25fr 1fr;
+            display: flex;
+            flex-direction: column;
             border-bottom: 1px solid var(--border);
+            background: var(--surface);
         }
-        @media (max-width: 1024px) {
-            .hero-showcase {
-                grid-template-columns: 1fr;
-            }
-        }
+
         .hero-image-wrap {
             position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            max-height: 540px;
             background: #000;
             cursor: pointer;
             overflow: hidden;
-            min-height: 420px;
         }
+
         .hero-image-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .hero-image-wrap:hover img {
-            transform: scale(1.03);
+            transform: scale(1.025);
         }
+
         .hero-overlay-badge {
             position: absolute;
             top: 1.2rem;
@@ -592,6 +630,7 @@ html_template = """<!DOCTYPE html>
             text-transform: uppercase;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
         }
+
         .hero-overlay-heart {
             position: absolute;
             top: 1.2rem;
@@ -608,13 +647,16 @@ html_template = """<!DOCTYPE html>
             cursor: pointer;
             transition: var(--transition);
         }
+
         .hero-overlay-heart:hover {
             border-color: #ff4757;
             transform: scale(1.1);
         }
+
         .hero-overlay-heart.active svg {
             fill: #ff4757;
         }
+
         .hero-overlay-heart svg {
             width: 18px;
             height: 18px;
@@ -622,39 +664,69 @@ html_template = """<!DOCTYPE html>
             transition: fill 0.2s;
         }
 
+        /* Wording Below Landscape Hero */
         .hero-details-panel {
             padding: 2.2rem 2.5rem;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            gap: 1.6rem;
             background: var(--surface);
         }
+
         .hero-details-top h3 {
             font-family: var(--font-serif);
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             line-height: 1.35;
         }
+
         .hero-details-top p.tagline {
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--text-muted);
             line-height: 1.6;
-            margin-bottom: 1.4rem;
         }
+
+        .hero-content-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 2.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-content-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .section-sub-label {
+            font-family: var(--font-tech);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--gold-bright);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
         .key-features-list {
             list-style: none;
-            margin-bottom: 1.5rem;
         }
+
         .key-features-list li {
             position: relative;
             padding-left: 1.4rem;
-            font-size: 0.86rem;
+            font-size: 0.88rem;
             color: var(--text-main);
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.65rem;
             line-height: 1.5;
         }
+
         .key-features-list li::before {
             content: "✓";
             position: absolute;
@@ -665,25 +737,27 @@ html_template = """<!DOCTYPE html>
 
         /* Technical Filming Specs Grid */
         .specs-panel {
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.28);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 1.2rem;
+            padding: 1.25rem 1.4rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 1.1rem;
         }
+
         @media (max-width: 600px) {
             .specs-panel {
                 grid-template-columns: 1fr;
             }
         }
+
         .spec-item {
             display: flex;
             flex-direction: column;
-            gap: 0.2rem;
+            gap: 0.25rem;
         }
+
         .spec-label {
             font-family: var(--font-tech);
             font-size: 0.7rem;
@@ -692,55 +766,62 @@ html_template = """<!DOCTYPE html>
             color: var(--gold);
             font-weight: 700;
         }
+
         .spec-value {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         .hero-actions-row {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.9rem;
             flex-wrap: wrap;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
         }
 
         /* Scouted Images Database Gallery */
         .gallery-section {
-            padding: 2rem 2.5rem 2.5rem 2.5rem;
+            padding: 2.2rem 2.5rem 2.5rem 2.5rem;
             background: var(--surface-card);
         }
+
         .gallery-header-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 0.8rem;
         }
+
         .gallery-title {
             font-family: var(--font-serif);
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             font-weight: 700;
             color: #ffffff;
             display: flex;
             align-items: center;
             gap: 0.6rem;
         }
+
         .gallery-badge {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--border);
             color: var(--text-muted);
             font-family: var(--font-tech);
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
+            font-size: 0.72rem;
+            padding: 0.2rem 0.65rem;
             border-radius: 999px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1.25rem;
         }
+
         .gallery-card {
             position: relative;
             background: var(--surface);
@@ -750,41 +831,47 @@ html_template = """<!DOCTYPE html>
             cursor: pointer;
             transition: var(--transition);
         }
+
         .gallery-card:hover {
             border-color: var(--border-highlight);
             transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
         }
+
         .gallery-thumb-wrap {
             position: relative;
-            height: 180px;
-            overflow: hidden;
+            aspect-ratio: 16 / 10;
             background: #000;
+            overflow: hidden;
         }
+
         .gallery-thumb-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
+
         .gallery-card:hover .gallery-thumb-wrap img {
-            transform: scale(1.06);
+            transform: scale(1.05);
         }
+
         .gallery-thumb-tag {
             position: absolute;
             bottom: 0.6rem;
             left: 0.6rem;
-            background: rgba(7, 11, 10, 0.8);
-            backdrop-filter: blur(8px);
+            background: rgba(7, 11, 10, 0.85);
+            backdrop-filter: blur(6px);
             border: 1px solid var(--border);
-            color: var(--gold-bright);
+            color: var(--text-main);
             font-family: var(--font-tech);
             font-size: 0.68rem;
             font-weight: 600;
             padding: 0.2rem 0.55rem;
-            border-radius: 999px;
+            border-radius: 4px;
         }
+
         .gallery-card-heart {
             position: absolute;
             top: 0.6rem;
@@ -800,27 +887,32 @@ html_template = """<!DOCTYPE html>
             justify-content: center;
             cursor: pointer;
             transition: var(--transition);
-            z-index: 5;
         }
+
         .gallery-card-heart:hover {
             border-color: #ff4757;
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
+
         .gallery-card-heart.active svg {
             fill: #ff4757;
         }
+
         .gallery-card-heart svg {
             width: 14px;
             height: 14px;
             fill: #ffffff;
+            transition: fill 0.2s;
         }
+
         .gallery-card-info {
-            padding: 0.85rem 1rem;
+            padding: 0.9rem 1rem;
         }
+
         .gallery-card-title {
-            font-size: 0.82rem;
-            font-weight: 500;
-            color: var(--text-main);
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: #ffffff;
             line-height: 1.4;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -828,437 +920,524 @@ html_template = """<!DOCTYPE html>
             overflow: hidden;
         }
 
-        /* Rate Card & Commercial Section */
+        /* Buttons & Actions */
+        .btn-nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 0.6rem 1.25rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-nav:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--border-highlight);
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .btn-nav.primary {
+            background: var(--gold);
+            color: #070b0a;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+
+        .btn-nav.primary:hover {
+            background: var(--gold-bright);
+            box-shadow: 0 0 20px var(--gold-glow);
+        }
+
+        /* Rate Cards & Executive Strip */
         .rates-section {
-            background: var(--surface-card);
-            border: 1px solid var(--border-highlight);
+            background: var(--surface);
+            border: 1px solid var(--border-gold);
             border-radius: var(--radius-lg);
-            padding: 3rem;
-            margin: 4.5rem 0;
-            box-shadow: var(--shadow-dramatic);
-            position: relative;
-            overflow: hidden;
+            padding: 3rem 2.5rem;
+            margin: 4rem auto;
+            max-width: 1200px;
         }
-        .rates-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--gold), var(--cyan), var(--gold));
-        }
+
         .rates-header {
             text-align: center;
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto 2.5rem auto;
         }
+
         .rates-header h2 {
             font-family: var(--font-serif);
-            font-size: 2.2rem;
-            font-weight: 700;
+            font-size: 2rem;
             color: #ffffff;
             margin-bottom: 0.6rem;
         }
+
         .rates-header p {
             font-size: 0.95rem;
             color: var(--text-muted);
         }
 
-        .rates-grid {
+        .rates-cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-bottom: 2.5rem;
         }
-        .rate-card {
-            background: var(--surface);
+
+        @media (max-width: 850px) {
+            .rates-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .rate-tier-card {
+            background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 2.2rem;
+            padding: 2rem 1.8rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: var(--transition);
         }
-        .rate-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-4px);
+
+        .rate-tier-card.featured {
+            border-color: var(--border-gold);
+            box-shadow: 0 0 30px var(--gold-glow);
+            position: relative;
         }
-        .rate-card.featured {
-            border-color: var(--gold);
-            background: linear-gradient(180deg, rgba(212, 175, 55, 0.08) 0%, var(--surface) 100%);
-        }
-        .rate-tier {
+
+        .rate-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: #070b0a;
             font-family: var(--font-tech);
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            color: var(--gold-bright);
-            letter-spacing: 0.1em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+            align-self: flex-start;
             text-transform: uppercase;
+        }
+
+        .rate-tier-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: #ffffff;
             margin-bottom: 0.5rem;
         }
-        .rate-price {
-            font-family: var(--font-tech);
-            font-size: 2.4rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-        .rate-price span.unit {
-            font-size: 0.95rem;
-            font-weight: 500;
+
+        .rate-tier-card p.tier-desc {
+            font-size: 0.85rem;
             color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
         }
-        .rate-equiv {
+
+        .rate-amount {
             font-family: var(--font-tech);
-            font-size: 0.8rem;
-            color: var(--cyan);
-            margin-bottom: 1.4rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid var(--border);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold-bright);
+            margin-bottom: 1rem;
         }
-        .rate-includes {
+
+        .rate-amount span.unit {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .tier-features {
             list-style: none;
             margin-bottom: 1.8rem;
+            flex-grow: 1;
         }
-        .rate-includes li {
+
+        .tier-features li {
             position: relative;
             padding-left: 1.3rem;
-            font-size: 0.86rem;
+            font-size: 0.82rem;
             color: var(--text-main);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             line-height: 1.45;
         }
-        .rate-includes li::before {
-            content: "✓";
+
+        .tier-features li::before {
+            content: "•";
             position: absolute;
             left: 0;
             color: var(--gold);
-            font-weight: 700;
+            font-weight: 800;
         }
 
-        /* Executive Contacts Strip */
+        /* Executive Contacts Card */
         .exec-contacts-card {
-            background: linear-gradient(135deg, rgba(25, 38, 32, 0.8) 0%, rgba(14, 22, 18, 0.9) 100%);
-            border: 1px solid var(--border-highlight);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
+            gap: 2rem;
         }
-        @media (max-width: 900px) {
+
+        @media (max-width: 750px) {
             .exec-contacts-card {
                 grid-template-columns: 1fr;
             }
         }
+
         .contact-col {
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
         }
+
         .contact-role {
             font-family: var(--font-tech);
             font-size: 0.75rem;
-            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--gold-bright);
-        }
-        .contact-name {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
+            color: var(--gold);
+            letter-spacing: 0.08em;
             font-weight: 700;
-            color: #ffffff;
-        }
-        .contact-bio {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-        }
-        .contact-links {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-        }
-        .contact-link {
-            text-decoration: none;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
-            font-family: var(--font-tech);
-            font-size: 0.78rem;
-            font-weight: 600;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .contact-link:hover {
-            border-color: var(--gold);
-            color: var(--gold-bright);
         }
 
-        /* Client Shortlist Modal / Drawer */
+        .contact-name {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .contact-bio {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .contact-link {
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--gold-bright);
+            transform: translateX(3px);
+        }
+
+        /* Shortlist Drawer */
         .shortlist-drawer {
             position: fixed;
             top: 0;
-            right: -480px;
-            width: 480px;
-            max-width: 100vw;
+            right: -420px;
+            width: 400px;
             height: 100vh;
-            background: var(--surface-card);
-            border-left: 1px solid var(--border-highlight);
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
-            z-index: 500;
-            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(13, 20, 17, 0.97);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid var(--border-gold);
+            z-index: 1000;
             display: flex;
             flex-direction: column;
+            transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
         }
+
         .shortlist-drawer.open {
             right: 0;
         }
+
         .drawer-header {
-            padding: 1.5rem 1.8rem;
+            padding: 1.25rem 1.5rem;
             border-bottom: 1px solid var(--border);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
+
         .drawer-header h3 {
             font-family: var(--font-serif);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: #ffffff;
         }
+
         .drawer-close {
             background: transparent;
             border: none;
             color: var(--text-muted);
             font-size: 1.4rem;
             cursor: pointer;
-            padding: 0.2rem;
+            transition: var(--transition);
         }
+
+        .drawer-close:hover {
+            color: #ffffff;
+        }
+
         .drawer-body {
-            padding: 1.5rem 1.8rem;
-            flex: 1;
+            padding: 1.5rem;
+            flex-grow: 1;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
-        .shortlist-empty {
-            text-align: center;
-            color: var(--text-dim);
-            padding: 3rem 1rem;
-            font-size: 0.95rem;
-        }
+
         .shortlist-item {
-            display: grid;
-            grid-template-columns: 80px 1fr auto;
-            gap: 1rem;
-            align-items: center;
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 0.6rem;
-        }
-        .shortlist-thumb {
-            width: 80px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .shortlist-item-info {
-            overflow: hidden;
-        }
-        .shortlist-item-title {
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: var(--text-main);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .shortlist-item-cat {
-            font-family: var(--font-tech);
-            font-size: 0.72rem;
-            color: var(--gold);
-        }
-        .shortlist-remove {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            padding: 0.4rem;
-        }
-        .shortlist-remove:hover {
-            color: #ff4757;
-        }
-        .drawer-footer {
-            padding: 1.5rem 1.8rem;
-            border-top: 1px solid var(--border);
+            padding: 0.8rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 0.8rem;
         }
 
-        /* Lightbox Modal */
+        .shortlist-item img {
+            width: 60px;
+            height: 45px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .shortlist-item-info {
+            flex-grow: 1;
+        }
+
+        .shortlist-item-title {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .shortlist-item-cat {
+            font-size: 0.7rem;
+            color: var(--gold);
+            font-family: var(--font-tech);
+        }
+
+        .shortlist-remove {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 0.2rem;
+        }
+
+        .shortlist-remove:hover {
+            color: #ff4757;
+        }
+
+        .drawer-footer {
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .shortlist-empty {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin: auto 0;
+            line-height: 1.6;
+        }
+
+        /* Cinema Lightbox Modal */
         .lightbox-modal {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(4, 7, 6, 0.97);
+            background: rgba(3, 6, 5, 0.96);
             backdrop-filter: blur(20px);
-            z-index: 1000;
+            z-index: 2000;
             display: none;
             flex-direction: column;
-            justify-content: space-between;
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
+
         .lightbox-modal.active {
             display: flex;
+            opacity: 1;
         }
+
         .lb-top-bar {
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         .lb-meta {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
+
         .lb-cat-badge {
             font-family: var(--font-tech);
             font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--gold-bright);
+            color: var(--gold);
             background: rgba(212, 175, 55, 0.12);
-            padding: 0.25rem 0.8rem;
+            border: 1px solid var(--border-gold);
+            padding: 0.3rem 0.8rem;
             border-radius: 999px;
-            border: 1px solid var(--border-highlight);
+            font-weight: 700;
         }
+
         .lb-counter {
             font-family: var(--font-tech);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
         }
+
         .lb-actions {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.75rem;
         }
+
         .lb-btn {
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.45rem 0.95rem;
-            border-radius: 999px;
-            font-family: var(--font-tech);
+            color: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: var(--radius-sm);
             font-size: 0.8rem;
-            font-weight: 600;
+            font-family: var(--font-tech);
             cursor: pointer;
             transition: var(--transition);
         }
+
         .lb-btn:hover {
             border-color: var(--gold);
             color: var(--gold-bright);
         }
+
         .lb-close-btn {
             background: transparent;
             border: none;
-            color: var(--text-main);
-            font-size: 2rem;
-            line-height: 1;
+            color: #ffffff;
+            font-size: 1.5rem;
             cursor: pointer;
-            margin-left: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            transition: var(--transition);
+        }
+
+        .lb-close-btn:hover {
+            color: var(--gold);
         }
 
         .lb-stage {
-            position: relative;
-            flex: 1;
+            flex-grow: 1;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 1rem 5rem;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            position: relative;
             overflow: hidden;
         }
+
         .lb-image-container {
-            max-width: 100%;
+            max-width: 90vw;
             max-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: auto;
         }
+
         .lb-image-container img {
             max-width: 100%;
             max-height: 75vh;
             object-fit: contain;
-            border-radius: var(--radius-sm);
+            border-radius: 4px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
         }
 
         .lb-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(18, 28, 23, 0.8);
+            background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border);
             color: #ffffff;
-            width: 52px;
-            height: 52px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: var(--transition);
-            user-select: none;
+            z-index: 10;
         }
+
         .lb-nav-btn:hover {
             background: var(--gold);
             color: #070b0a;
             border-color: var(--gold);
-            box-shadow: 0 0 20px var(--gold-glow);
         }
-        .lb-prev { left: 1.5rem; }
-        .lb-next { right: 1.5rem; }
 
         .lb-caption-bar {
-            padding: 1.2rem 2.5rem;
-            background: var(--surface);
-            border-top: 1px solid var(--border);
+            padding: 1.25rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             text-align: center;
+            background: rgba(7, 11, 10, 0.85);
         }
+
         .lb-caption-title {
             font-family: var(--font-serif);
             font-size: 1.15rem;
-            font-weight: 700;
             color: #ffffff;
+            font-weight: 700;
             margin-bottom: 0.3rem;
         }
+
         .lb-caption-sub {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
+            font-family: var(--font-tech);
         }
 
         /* Footer */
         footer.site-footer {
             border-top: 1px solid var(--border);
-            background: var(--bg-elevated);
-            padding: 3rem 2rem 4rem 2rem;
+            background: #040706;
+            padding: 3rem 2rem;
             text-align: center;
             position: relative;
             z-index: 10;
         }
+
         .footer-wrap {
             max-width: 1200px;
             margin: 0 auto;
@@ -1267,6 +1446,7 @@ html_template = """<!DOCTYPE html>
             align-items: center;
             gap: 1.5rem;
         }
+
         .footer-logo-row {
             display: flex;
             align-items: center;
@@ -1276,6 +1456,13 @@ html_template = """<!DOCTYPE html>
             font-weight: 700;
             color: #ffffff;
         }
+
+        .footer-social-row {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .footer-disclaimer {
             font-size: 0.82rem;
             color: var(--text-dim);
@@ -1327,36 +1514,40 @@ html_template = """<!DOCTYPE html>
         </div>
 
         <div class="nav-controls">
+            <!-- Social Channels -->
+            <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="SA Locations on Instagram">
+                📸 Instagram
+            </a>
+            <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn" title="SA Locations on YouTube">
+                🎬 YouTube
+            </a>
+
             <!-- Global Search -->
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="globalSearch" placeholder="Search locations, doubling..." onkeyup="filterShowcase(this.value)">
+                <input type="text" id="searchInput" placeholder="Search 150 locations..." oninput="filterShowcase(this.value)">
             </div>
 
-            <!-- Currency Selector -->
+            <!-- Multi-Currency Selector -->
             <div class="currency-selector">
-                <button class="curr-btn" data-curr="USD" onclick="setCurrency('USD')">$ USD</button>
-                <button class="curr-btn" data-curr="EUR" onclick="setCurrency('EUR')">€ EUR</button>
-                <button class="curr-btn" data-curr="GBP" onclick="setCurrency('GBP')">£ GBP</button>
-                <button class="curr-btn active" data-curr="ZAR" onclick="setCurrency('ZAR')">R ZAR</button>
-                <button class="curr-btn" data-curr="INR" onclick="setCurrency('INR')">₹ INR</button>
+                <button class="curr-btn active" data-curr="ZAR" onclick="setCurrency('ZAR')">ZAR</button>
+                <button class="curr-btn" data-curr="USD" onclick="setCurrency('USD')">USD</button>
+                <button class="curr-btn" data-curr="EUR" onclick="setCurrency('EUR')">EUR</button>
+                <button class="curr-btn" data-curr="GBP" onclick="setCurrency('GBP')">GBP</button>
+                <button class="curr-btn" data-curr="INR" onclick="setCurrency('INR')">INR</button>
             </div>
 
-            <!-- Client Shortlist Drawer Trigger -->
+            <!-- Shortlist Drawer Trigger -->
             <button class="shortlist-trigger" onclick="toggleShortlist()">
                 <span>★ Shortlist</span>
-                <span class="shortlist-badge" id="shortlistCount">0</span>
+                <span class="shortlist-count" id="shortlistBadge">0</span>
             </button>
-
-            <!-- Recce & Print Actions -->
-            <button class="btn-nav" onclick="window.print()">⎙ PDF Export</button>
-            <a href="#rates-and-contacts" class="btn-nav primary">Book Recce</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-badge-row">
+    <!-- Hero Showcase Section -->
+    <section class="hero-section">
+        <div class="hero-meta-badges">
             <span class="badge-premium">Verified Production Inventory · 2026/2027 Season</span>
             <span class="badge-sub">Turnkey Local Fixer & Location Management</span>
         </div>
@@ -1373,11 +1564,11 @@ html_template = """<!DOCTYPE html>
         <!-- KPI Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">10</div>
+                <div class="stat-number">15</div>
                 <div class="stat-label">Curated Macro Categories</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">117</div>
+                <div class="stat-number">150</div>
                 <div class="stat-label">Verified Hero Assets</div>
             </div>
             <div class="stat-card">
@@ -1399,16 +1590,21 @@ html_template = """<!DOCTYPE html>
             <div>
                 <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
                 <div class="doubling-desc">
-                    Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, and Olympic-grade civic infrastructure.
+                    Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, and Olympic-grade sports stadiums.
                 </div>
                 <div class="doubling-tags">
                     <span class="doubling-tag">California PCH (Chapman's Peak)</span>
                     <span class="doubling-tag">Amalfi Coast (Victoria Rd)</span>
-                    <span class="doubling-tag">Hollywood Hills (Clifton Villas)</span>
+                    <span class="doubling-tag">Hollywood Hills (Clifton & Lux)</span>
                     <span class="doubling-tag">London Suburbs (Culver & Chatham)</span>
                     <span class="doubling-tag">Nevada Desert (R355 Karoo)</span>
                     <span class="doubling-tag">Pacific Northwest (Blackwood Cabin)</span>
-                    <span class="doubling-tag">Tuscany Vineyards (Asara Estate)</span>
+                    <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
+                    <span class="doubling-tag">French Riviera (V&A Basin)</span>
+                    <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
+                    <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
+                    <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
+                    <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
                 </div>
             </div>
             <div>
@@ -1418,26 +1614,20 @@ html_template = """<!DOCTYPE html>
     </section>
 
     <!-- Sticky Category Filter Navigation -->
-    <div class="category-nav-wrap">
-        <div class="category-pills-container">
-            <button class="cat-pill active" onclick="filterCategory('all', this)">
-                <span>🌐 All 10 Categories</span>
-            </button>
+    <nav class="category-nav-wrap">
+        <div class="category-nav" id="categoryNav">
+            <button class="cat-pill active" onclick="filterCategory('all', this)">All Categories (15)</button>
 """
 
-# Render Category Pills
+# Append category pills
 for cat in categories:
-    html_template += f"""
-            <button class="cat-pill" onclick="filterCategory('{cat['id']}', this)">
-                <span>{cat['icon']} Cat {cat['num']}: {cat['title']}</span>
-            </button>"""
+    html_template += f"""            <button class="cat-pill" onclick="filterCategory('{cat['id']}', this)">{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}</button>\n"""
 
-html_template += """
-        </div>
-    </div>
+html_template += """        </div>
+    </nav>
 
-    <!-- Main Content Area -->
-    <main class="content-area">
+    <!-- Main Location Showcase Content -->
+    <main class="deck-container">
 """
 
 # Render Category Blocks
@@ -1446,15 +1636,16 @@ for cat in categories:
     hero_img_file = cat["hero_image_file"].replace("\\", "\\\\")
     hero_title_clean = cat["hero_image_title"].replace("'", "\\'")
     cat_title_clean = cat["title"].replace("'", "\\'")
-    search_text = f"{cat['title']} {cat['doubles_as']} {cat['area']} {cat['tagline']}".lower().replace('"', '&quot;')
-    
+
+    search_text = f"{cat['title']} {cat['doubles_as']} {cat['area']} {cat['tagline']} {cat['hero_image_title']}".lower()
+
     html_template += f"""
         <!-- Category Block: {cat['num']} - {cat['title']} -->
         <article class="category-block" id="{cat['id']}" data-cat-id="{cat['id']}" data-search-text="{search_text}">
             <!-- Category Header -->
             <div class="category-header">
                 <div class="cat-meta-row">
-                    <span class="cat-num-badge">CATEGORY {cat['num']} OF 10</span>
+                    <span class="cat-num-badge">CATEGORY {cat['num']} OF 15</span>
                     <span class="cat-doubling-banner">Doubles For: {cat['doubles_as']}</span>
                 </div>
                 <h2 class="category-title">{cat['icon']} {cat['title']}</h2>
@@ -1462,7 +1653,7 @@ for cat in categories:
                 <p class="category-synopsis">{cat['creative_synopsis']}</p>
             </div>
 
-            <!-- Hero Scouted Match Showcase -->
+            <!-- Hero Scouted Match Showcase - Strict Landscape with Wording Below -->
             <div class="hero-showcase">
                 <div class="hero-image-wrap" data-cat-id="{cat['id']}" data-file="{hero_img_file}" onclick="openLightbox('{cat['id']}', 0)">
                     <img src="{hero_b64}" alt="{cat['hero_image_title']}" loading="lazy">
@@ -1472,37 +1663,45 @@ for cat in categories:
                     </div>
                 </div>
 
+                <!-- Wording Positioned Below the Landscape Hero Photo -->
                 <div class="hero-details-panel">
                     <div class="hero-details-top">
                         <h3>{cat['hero_image_title']}</h3>
                         <p class="tagline">{cat['tagline']}</p>
+                    </div>
 
-                        <ul class="key-features-list">
+                    <div class="hero-content-grid">
+                        <div>
+                            <div class="section-sub-label">✦ Key Architectural & Filming Features</div>
+                            <ul class="key-features-list">
 """
     for feat in cat["key_features"]:
-        html_template += f"                            <li>{feat}</li>\n"
+        html_template += f"                                <li>{feat}</li>\n"
 
     cal_title = cat['title'].replace(' ', '+')
     cal_area = cat['area'].replace(' ', '+')
-    html_template += f"""                        </ul>
+    html_template += f"""                            </ul>
+                        </div>
 
-                        <!-- Technical Filming Specifications -->
-                        <div class="specs-panel">
-                            <div class="spec-item">
-                                <span class="spec-label">Permits & Authority</span>
-                                <span class="spec-value">{cat['specs']['permitting']}</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Power Logistics</span>
-                                <span class="spec-value">{cat['specs']['power']}</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Unit Base Parking</span>
-                                <span class="spec-value">{cat['specs']['parking']}</span>
-                            </div>
-                            <div class="spec-item">
-                                <span class="spec-label">Acoustics & Curfew</span>
-                                <span class="spec-value">{cat['specs']['sound_curfew']}</span>
+                        <div>
+                            <div class="section-sub-label">⚙ Technical Filming Specifications</div>
+                            <div class="specs-panel">
+                                <div class="spec-item">
+                                    <span class="spec-label">Permits & Authority</span>
+                                    <span class="spec-value">{cat['specs']['permitting']}</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Power Logistics</span>
+                                    <span class="spec-value">{cat['specs']['power']}</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Unit Base Parking</span>
+                                    <span class="spec-value">{cat['specs']['parking']}</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">Acoustics & Curfew</span>
+                                    <span class="spec-value">{cat['specs']['sound_curfew']}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1524,7 +1723,7 @@ for cat in categories:
                         <span class="gallery-badge">{len(cat['gallery'])} Verified Locations</span>
                     </div>
                     <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-tech);">
-                        Click to view full-resolution cinema lightbox
+                        Click any image to view in fullscreen cinema lightbox
                     </div>
                 </div>
 
@@ -1554,76 +1753,73 @@ for cat in categories:
         </article>
 """
 
-# Render Commercial Rate Cards and Executive Contacts
+# Append Rate Cards & Executive Strip
 html_template += """
-        <!-- Commercial Rate Card Section -->
+        <!-- Rates, Turnkey Production & Executive Contacts -->
         <section class="rates-section" id="rates-and-contacts">
             <div class="rates-header">
                 <span class="badge-premium">Transparent Commercial Framework</span>
-                <h2>Standard Location Scouting & Management Rates</h2>
-                <p>Standardized, professional union-compliant rates with direct multi-currency transparency for international production accounting.</p>
+                <h2 style="margin-top: 0.8rem;">Standard Daily Rates & Turnkey Management</h2>
+                <p>
+                    Full location scouting, permitting, logistics management, and local fixer facilitation for international film, television, streaming, and commercial productions.
+                </p>
             </div>
 
-            <div class="rates-grid">
-                <!-- Location Scouting Card -->
-                <div class="rate-card">
-                    <div>
-                        <div class="rate-tier">Tier 01 · Pre-Production</div>
-                        <div class="rate-price" id="scoutRateDisplay">R 5,000 <span class="unit">/ day</span></div>
-                        <div class="rate-equiv" id="scoutEquivDisplay">≈ USD $280 · EUR €255 · GBP £220 · INR ₹24,500</div>
-                        <ul class="rate-includes">
-                            <li>Comprehensive photographic location scouting & GPS metadata logging</li>
-                            <li>Director reference matching and doubling feasibility analysis</li>
-                            <li>Initial municipal permitting verification (City of Cape Town / SANParks)</li>
-                            <li>Digital dossier generation with high-resolution contact sheets</li>
-                            <li>Client liaison, itinerary routing, and scout vehicle logistics</li>
-                        </ul>
-                    </div>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Book+Location+Scouting+Days&details=Location+Scouting+inquiry+for+Cape+Town+production.+Day+rate%3A+ZAR+5%2C000%2Fday.&location=Cape+Town%2C+South+Africa&add=laura@zencrew.co.za&add=jardin@salocations.com" target="_blank" rel="noopener noreferrer" class="btn-nav primary" style="text-align: center; justify-content: center;">
+            <!-- Rate Cards Grid -->
+            <div class="rates-cards-grid">
+                <!-- Location Scouting -->
+                <div class="rate-tier-card">
+                    <span class="rate-badge">Recce & Scouting</span>
+                    <h3>Location Scouting</h3>
+                    <p class="tier-desc">Dedicated technical scout, director visual matching, custom contact sheets & GPS mapping.</p>
+                    <div class="rate-amount" id="scoutRateDisplay">R 5,000 <span class="unit">/ day</span></div>
+                    <ul class="tier-features">
+                        <li>Visual reference matching from 8,000+ photo archive</li>
+                        <li>High-resolution contact sheets & GPS coordinate tagging</li>
+                        <li>Sun tracking analysis & drone recce availability</li>
+                        <li>Direct coordination with property owners & city authorities</li>
+                    </ul>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Book+Location+Scouting+Day&details=Location+Scouting+booking+request+with+SA+Locations+%28Jardin+Roestorff%29+and+Zencrew+%28Laura+Diana+Macleod%29.&location=Cape+Town&add=jardin@salocations.com&add=laura@zencrew.co.za" target="_blank" rel="noopener noreferrer" class="btn-nav primary" style="text-align: center; justify-content: center;">
                         Book Location Scout
                     </a>
                 </div>
 
-                <!-- Location Management Card -->
-                <div class="rate-card featured">
-                    <div>
-                        <div class="rate-tier">Tier 02 · Principal Photography</div>
-                        <div class="rate-price" id="manageRateDisplay">R 5,500 <span class="unit">/ shoot day</span></div>
-                        <div class="rate-equiv" id="manageEquivDisplay">≈ USD $310 · EUR €280 · GBP £240 · INR ₹27,000</div>
-                        <ul class="rate-includes">
-                            <li>Full on-set location management and municipal liaison</li>
-                            <li>Commercial filming permit execution & road closure police coordination</li>
-                            <li>Unit base staging, honeywagon positioning, and generator clearance</li>
-                            <li>Property owner contracts, damage waivers, and security protocols</li>
-                            <li>Sound curfew enforcement, neighbour notifications & reinstatement</li>
-                        </ul>
-                    </div>
-                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Book+Location+Management+Days&details=Location+Management+booking+for+shoot+days.+Rate%3A+ZAR+5%2C500%2Fshoot+day.&location=Cape+Town%2C+South+Africa&add=laura@zencrew.co.za&add=jardin@salocations.com" target="_blank" rel="noopener noreferrer" class="btn-nav primary" style="text-align: center; justify-content: center;">
-                        Book Location Manager
+                <!-- Location Management -->
+                <div class="rate-tier-card featured">
+                    <span class="rate-badge">Shoot Days</span>
+                    <h3>Location Management</h3>
+                    <p class="tier-desc">On-set management, council permitting, traffic department marshals & unit base logistics.</p>
+                    <div class="rate-amount" id="manageRateDisplay">R 5,500 <span class="unit">/ shoot day</span></div>
+                    <ul class="tier-features">
+                        <li>City of Cape Town & SANParks permit submission</li>
+                        <li>Metro Police road closure escorts & traffic plans</li>
+                        <li>Unit base parking coning & technical truck staging</li>
+                        <li>Community notifications & environmental eco-monitors</li>
+                    </ul>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Book+Location+Management+Days&details=Location+Management+shoot+day+request+with+Zencrew+%28Laura+Diana+Macleod%29+and+SA+Locations+%28Jardin+Roestorff%29.&location=Cape+Town&add=laura@zencrew.co.za&add=jardin@salocations.com" target="_blank" rel="noopener noreferrer" class="btn-nav primary" style="text-align: center; justify-content: center;">
+                        Book Shoot Management
                     </a>
                 </div>
 
-                <!-- Production Fixer & Unit Support -->
-                <div class="rate-card">
-                    <div>
-                        <div class="rate-tier">Tier 03 · Full Production Services</div>
-                        <div class="rate-price">Custom <span class="unit">/ scope</span></div>
-                        <div class="rate-equiv">Turnkey Production Services Package</div>
-                        <ul class="rate-includes">
-                            <li>End-to-end local fixer services through Zencrew Production Services</li>
-                            <li>Head-of-department crew sourcing (Cinematography, Art, Grips, Gaffer)</li>
-                            <li>Tier-1 equipment rental coordination (Panavision, ARRI, Media Film Service)</li>
-                            <li>Catering trucks, unit facilities, mobile production offices</li>
-                            <li>Temporary work visas, equipment ATA Carnet, and tax rebate advice</li>
-                        </ul>
-                    </div>
+                <!-- Turnkey Fixer Package -->
+                <div class="rate-tier-card">
+                    <span class="rate-badge">Full Production Support</span>
+                    <h3>Turnkey Production Services</h3>
+                    <p class="tier-desc">End-to-end South African service production, equipment hire, crew booking & line producing.</p>
+                    <div class="rate-amount">Custom <span class="unit">/ package</span></div>
+                    <ul class="tier-features">
+                        <li>Full line producing & production accounting</li>
+                        <li>Camera, lighting, grip & crane gear coordination</li>
+                        <li>Top-tier local crew booking (DOP, Gaffer, Grips, Art Dept)</li>
+                        <li>Transport fleets, honeywagons & gourmet mobile catering</li>
+                    </ul>
                     <a href="mailto:laura@zencrew.co.za?cc=jardin@salocations.com&subject=Turnkey%20Production%20Services%20Inquiry%20-%20Cape%20Town" class="btn-nav" style="text-align: center; justify-content: center;">
                         Inquire Turnkey Package
                     </a>
                 </div>
             </div>
 
-            <!-- Executive Contacts Strip -->
+            <!-- Executive Contacts Strip (Git Replaced with Instagram & YouTube) -->
             <div class="exec-contacts-card">
                 <div class="contact-col">
                     <span class="contact-role">Zencrew Production Services · Lead Fixer & Producer</span>
@@ -1634,7 +1830,7 @@ html_template += """
                     <div class="contact-links">
                         <a href="mailto:laura@zencrew.co.za" class="contact-link">✉ laura@zencrew.co.za</a>
                         <a href="https://wa.me/27825708818" target="_blank" rel="noopener noreferrer" class="contact-link">📱 +27 82 570 8818 (WhatsApp)</a>
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Production+Consultation+-+Zencrew&details=Production+Consultation+with+Laura+Diana+Macleod+%28Zencrew%29.&location=Cape+Town&add=laura@zencrew.co.za" target="_blank" rel="noopener noreferrer" class="contact-link">📅 Book Call</a>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Production+Consultation+-+Zencrew&details=Production+Consultation+with+Laura+Diana+Macleod+%28Zencrew%29.&location=Cape+Town&add=laura@zencrew.co.za" target="_blank" rel="noopener noreferrer" class="contact-link">📅 Book Consultation Call</a>
                     </div>
                 </div>
 
@@ -1646,7 +1842,8 @@ html_template += """
                     </p>
                     <div class="contact-links">
                         <a href="mailto:jardin@salocations.com" class="contact-link">✉ jardin@salocations.com</a>
-                        <a href="https://github.com/jardinr/SALocations" target="_blank" rel="noopener noreferrer" class="contact-link">💻 GitHub Repository</a>
+                        <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="contact-link">📸 Instagram: @salocations</a>
+                        <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="contact-link">🎬 YouTube: @salocations</a>
                         <a href="mailto:jardin@salocations.com?subject=Master%20Database%20Custom%20Scouting%20Request" class="contact-link">📋 Custom Scout Request</a>
                     </div>
                 </div>
@@ -1710,13 +1907,21 @@ html_template += """
                 <span style="color: var(--gold);">✕</span>
                 <span>Zencrew Production Services</span>
             </div>
+            <div class="footer-social-row">
+                <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    📸 Instagram @salocations
+                </a>
+                <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    🎬 YouTube @salocations
+                </a>
+            </div>
             <div class="footer-disclaimer">
-                © 2026/2027 SA Locations & Zencrew. All photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Transposed under strict zero-rotation standards. Direct bookings subject to municipal permit authorization.
+                © 2026/2027 SA Locations & Zencrew. All 150 photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Transposed under strict zero-rotation standards. Direct bookings subject to municipal permit authorization.
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Logic Script -->
+    <!-- Interactive Logic Script (Zero Redundant Base64 Duplication) -->
     <script>
         const categoriesData = """ + json.dumps(categories) + """;
 
@@ -1763,7 +1968,8 @@ html_template += """
             if (catId !== 'all') {
                 const target = document.getElementById(catId);
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - 120;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
                 }
             }
         }
@@ -1806,16 +2012,27 @@ html_template += """
         }
 
         function updateLightboxContent() {
-            const item = activeGallery[activePhotoIndex];
             const cat = categoriesData[activeCategoryIndex];
-            
-            // Pull image src directly from corresponding card in DOM
-            const cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] img`);
+            let item = null;
+            let cardImg = null;
+
+            if (activePhotoIndex === -1 || activePhotoIndex >= activeGallery.length) {
+                // Hero photo clicked
+                cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .hero-image-wrap img`);
+                item = { title: cat.hero_image_title };
+            } else {
+                item = activeGallery[activePhotoIndex];
+                cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] img`);
+                if (!cardImg) {
+                    cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .hero-image-wrap img`);
+                }
+            }
+
             const b64 = cardImg ? cardImg.src : '';
 
             document.getElementById('lbMainImage').src = b64;
             document.getElementById('lbCatBadge').innerText = `${cat.icon} Category ${cat.num}: ${cat.title}`;
-            document.getElementById('lbCounter').innerText = `${activePhotoIndex + 1} / ${activeGallery.length}`;
+            document.getElementById('lbCounter').innerText = `${Math.max(1, activePhotoIndex + 1)} / ${activeGallery.length}`;
             document.getElementById('lbCaptionTitle').innerText = item.title;
             document.getElementById('lbCaptionSub').innerText = `${cat.area} · Verified Scouted Database Asset`;
         }
@@ -1860,28 +2077,67 @@ html_template += """
                 currentShortlist.splice(existingIdx, 1);
                 if (heartBtn) heartBtn.classList.remove('active');
             } else {
-                const parent = heartBtn ? heartBtn.closest('.hero-image-wrap, .gallery-card') : document.querySelector(`[data-file="${CSS.escape(filePath)}"]`);
-                const imgEl = parent ? parent.querySelector('img') : null;
-                const thumbSrc = imgEl ? imgEl.src : '';
-                currentShortlist.push({ filePath, title, categoryTitle, thumbSrc });
+                // Find image src in DOM
+                const parentCard = heartBtn.closest('.gallery-card, .hero-image-wrap');
+                const img = parentCard ? parentCard.querySelector('img') : null;
+                const b64 = img ? img.src : '';
+
+                currentShortlist.push({
+                    filePath: filePath,
+                    title: title,
+                    categoryTitle: categoryTitle,
+                    thumbSrc: b64
+                });
                 if (heartBtn) heartBtn.classList.add('active');
             }
-            updateShortlistUI();
+            renderShortlist();
         }
 
         function saveCurrentLightboxPhoto() {
-            const item = activeGallery[activePhotoIndex];
             const cat = categoriesData[activeCategoryIndex];
-            const card = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"]`);
-            const heartBtn = card ? card.querySelector('.gallery-card-heart') : null;
-            toggleShortlistItem(item.file, item.title, cat.title, heartBtn);
-            alert('Saved "' + item.title + '" to your custom shortlist!');
+            const item = activeGallery[activePhotoIndex];
+            const cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] img`);
+            const b64 = cardImg ? cardImg.src : '';
+
+            const existingIdx = currentShortlist.findIndex(x => x.filePath === item.file);
+            if (existingIdx === -1) {
+                currentShortlist.push({
+                    filePath: item.file,
+                    title: item.title,
+                    categoryTitle: cat.title,
+                    thumbSrc: b64
+                });
+                // Highlight heart on card
+                const heart = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] .gallery-card-heart`);
+                if (heart) heart.classList.add('active');
+            }
+            renderShortlist();
+            alert('Location added to your custom shortlist!');
         }
 
-        function updateShortlistUI() {
-            document.getElementById('shortlistCount').innerText = currentShortlist.length;
-            const body = document.getElementById('shortlistBody');
+        function removeShortlistItem(filePath) {
+            const idx = currentShortlist.findIndex(x => x.filePath === filePath);
+            if (idx > -1) {
+                currentShortlist.splice(idx, 1);
+                // Unhighlight any heart matching file
+                document.querySelectorAll(`[data-file="${filePath.replace(/\\\\/g, '\\\\\\\\')}"] .gallery-card-heart, [data-file="${filePath.replace(/\\\\/g, '\\\\\\\\')}"] .hero-overlay-heart`).forEach(h => {
+                    h.classList.remove('active');
+                });
+                renderShortlist();
+            }
+        }
 
+        function clearShortlist() {
+            currentShortlist = [];
+            document.querySelectorAll('.gallery-card-heart, .hero-overlay-heart').forEach(h => h.classList.remove('active'));
+            renderShortlist();
+        }
+
+        function renderShortlist() {
+            const badge = document.getElementById('shortlistBadge');
+            badge.innerText = currentShortlist.length;
+
+            const body = document.getElementById('shortlistBody');
             if (currentShortlist.length === 0) {
                 body.innerHTML = `
                     <div class="shortlist-empty">
@@ -1891,29 +2147,19 @@ html_template += """
             }
 
             let html = '';
-            currentShortlist.forEach((item, idx) => {
+            currentShortlist.forEach(item => {
+                const safeFile = item.filePath.replace(/'/g, "\\'");
                 html += `
                     <div class="shortlist-item">
-                        <img class="shortlist-thumb" src="${item.thumbSrc}" alt="${item.title}">
+                        <img src="${item.thumbSrc}" alt="${item.title}">
                         <div class="shortlist-item-info">
                             <div class="shortlist-item-title">${item.title}</div>
                             <div class="shortlist-item-cat">${item.categoryTitle}</div>
                         </div>
-                        <button class="shortlist-remove" onclick="removeShortlistItem(${idx})">✕</button>
+                        <button class="shortlist-remove" onclick="removeShortlistItem('${safeFile}')" title="Remove">✕</button>
                     </div>`;
             });
             body.innerHTML = html;
-        }
-
-        function removeShortlistItem(idx) {
-            currentShortlist.splice(idx, 1);
-            updateShortlistUI();
-        }
-
-        function clearShortlist() {
-            currentShortlist = [];
-            updateShortlistUI();
-            document.querySelectorAll('.hero-overlay-heart, .gallery-card-heart').forEach(h => h.classList.remove('active'));
         }
 
         function sendShortlistInquiry() {
@@ -1921,12 +2167,11 @@ html_template += """
                 alert('Please add at least one location to your shortlist before submitting.');
                 return;
             }
-            let listText = "Selected Cape Town Locations for Production Inquiry:\\n\\n";
-            currentShortlist.forEach((item, i) => {
-                listText += `${i + 1}. [${item.categoryTitle}] ${item.title}\\n`;
-            });
-            const subject = encodeURIComponent("Cape Town Location Scouting Shortlist Inquiry");
-            const body = encodeURIComponent(listText + "\\n\\nPlease provide availability, scouting recces, and permitting details.\\n\\nRegards,\\nProduction Client");
+
+            const listText = currentShortlist.map((it, idx) => `${idx + 1}. [${it.categoryTitle}] ${it.title}`).join('%0D%0A');
+            const subject = encodeURIComponent('Production Location Shortlist Inquiry - Cape Town Master Database');
+            const body = `Dear Laura and Jardin,%0D%0A%0D%0AI have reviewed the Cape Town Master Location Scouting Database and shortlisted the following ${currentShortlist.length} location(s) for our upcoming production:%0D%0A%0D%0A${listText}%0D%0A%0D%0APlease provide availability, permit turnaround timelines, and scout recce scheduling for these venues.%0D%0A%0D%0ABest regards,%0D%0A[Producer / Production Company Name]`;
+
             window.location.href = `mailto:laura@zencrew.co.za?cc=jardin@salocations.com&subject=${subject}&body=${body}`;
         }
     </script>
@@ -1935,30 +2180,9 @@ html_template += """
 """
 
 output_html_path = os.path.join(deck_dir, "index.html")
-print(f"Writing complete index.html to {output_html_path}...")
-
+print("Generating self-contained HTML deck...")
 with open(output_html_path, "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print(f"Successfully generated {output_html_path}!")
-print(f"File size: {os.path.getsize(output_html_path) / (1024*1024):.2f} MB")
-
-# Write package.json for static serve
-pkg_path = os.path.join(deck_dir, "package.json")
-pkg_json = {
-    "name": "sal-global-locations-deck",
-    "version": "1.0.0",
-    "description": "Cape Town Master Location Scouting Database · International Film & Commercial Showcase - SA Locations & Zencrew",
-    "scripts": {
-        "start": "npx serve ."
-    }
-}
-with open(pkg_path, "w", encoding="utf-8") as f:
-    json.dump(pkg_json, f, indent=2)
-
-# Write .gitignore
-gitignore_path = os.path.join(deck_dir, ".gitignore")
-with open(gitignore_path, "w", encoding="utf-8") as f:
-    f.write(".vercel\nembedded_data.json\n")
-
-print("All build assets written successfully!")
+size_mb = os.path.getsize(output_html_path) / (1024 * 1024)
+print(f"Successfully generated {output_html_path} ({size_mb:.2f} MB)")
