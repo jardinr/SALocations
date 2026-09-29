@@ -1,372 +1,70 @@
-# SAL: South Africa Elevated
-
-AI Website Builder Prompt
-
-Create a premium, luxury website for a South African Destination Experience & Marketing Company called SAL (SALocations).
-
-The website should feel sophisticated, cinematic and aspirational, similar to brands such as Black Tomato, Pelorus, Ultima Collection, Abercrombie & Kent, and Beluga Hospitality. Use full-screen photography and video, elegant typography, generous white space and immersive storytelling.
-
-The primary objective is to position SAL as South Africa's leading Destination Experience & Marketing Company—not a tour operator, but a strategic destination partner for luxury travellers, brands, production companies, sports organisations and international businesses.
-
-Brand Positioning
-
-Headline:
-Experience South Africa Beyond the Brochure
-
-Subheading:
-Bespoke luxury experiences, destination marketing, production logistics and concierge services across South Africa.
-
-About SAL
-
-SAL is a Cape Town-based Destination Experience & Marketing Company that designs, delivers and markets extraordinary South African experiences.
-
-We combine destination expertise, luxury concierge, film production logistics, photography, videography and AI-powered marketing to create unforgettable journeys for discerning international clients.
-
-With decades of experience in the South African film industry, security operations and luxury hospitality partnerships, SAL provides exclusive access to people, places and experiences that most visitors never discover.
-
-Unlike traditional travel companies, SAL creates experiences designed to be lived, captured and remembered.
-
-Target Clients
-
-Luxury Travellers
-
-Ultra High Net Worth Individuals
-
-Private Families
-
-Adventure Travellers
-
-International Brands
-
-Film & Television Productions
-
-Content Creators
-
-Influencers
-
-Professional Athletes
-
-Sports Organisations
-
-Luxury Travel Advisors
-
-Corporate Incentive Groups
-
-Destination Marketing Organisations
-
-Luxury Hospitality Brands
-
-Core Services
-
-Destination Experience Design
-
-Create tailor-made South African itineraries that combine luxury, adventure, culture and conservation.
-
-Luxury Concierge
-
-Luxury accommodation
-
-Private villas
-
-Executive transport
-
-Helicopter charters
-
-Private aviation
-
-Yachts
-
-Fine dining
-
-Private chefs
-
-VIP security
-
-Production Support
-
-Location scouting
-
-Film permits
-
-Production logistics
-
-Equipment sourcing
-
-Crew support
-
-Drone filming
-
-Photography
-
-Luxury Content Creation
-
-Commercial photography
-
-Cinematic video
-
-Drone content
-
-Social media production
-
-Destination documentaries
-
-Brand storytelling
-
-Adventure Experiences
-
-Luxury safaris
-
-Marine experiences
-
-Wine estates
-
-Private game reserves
-
-Mountain expeditions
-
-Helicopter adventures
-
-Conservation experiences
-
-Luxury sports experiences
-
-Destination Marketing
-
-Tourism campaigns
-
-Brand partnerships
-
-Destination promotion
-
-Website development
-
-Content strategy
-
-Social media management
-
-AI Search Optimisation
-
-Search Engine Optimisation
-
-Search Generative Optimisation
-
-Generative Engine Optimisation
-
-AI Visibility Audits
-
-Digital marketing strategy
-
-Why Choose SAL
-
-Local expertise with international standards
-
-Film industry experience
-
-Luxury hospitality partnerships
-
-Security and logistics expertise
-
-Exclusive local access
-
-Personalised service
-
-Professional photography and video
-
-AI-powered destination marketing
-
-Trusted supplier network
-
-Luxury concierge support
-
-Signature Experiences
-
-Luxury Cape Town Collection
-
-Private Winelands Escape
-
-Helicopter & Yacht Experience
-
-Conservation Expedition
-
-Ultimate Safari Journey
-
-Sports & Adventure Experience
-
-Creator Experience South Africa
-
-Film Industry Behind-the-Scenes Tour
-
-Services for Businesses
-
-International companies looking to enter South Africa can rely on SAL for destination consulting, event support, location intelligence, executive travel, VIP hosting, content production and strategic destination marketing.
-
-Ideal Partners
-
-Luxury Hotels
-
-Private Lodges
-
-Safari Operators
-
-Wine Estates
-
-Private Aviation Companies
-
-Helicopter Operators
-
-Luxury Car Rental Companies
-
-Adventure Operators
-
-Sports Organisations
-
-Tourism Boards
-
-Production Companies
-
-International Travel Agencies
-
-Testimonials Section
-
-Create a clean testimonial carousel with space for future client reviews.
-
-Gallery
-
-Large cinematic image gallery featuring:
-
-Cape Town
-
-Table Mountain
-
-Luxury accommodation
-
-Private yachts
-
-Helicopters
-
-Wine estates
-
-Safaris
-
-Wildlife
-
-Adventure sports
-
-Film productions
-
-Luxury dining
-
-Conservation projects
-
-Call to Action
-
-Headline:
-Let's Create Your South African Experience
-
-Text:
-Whether you're planning a luxury holiday, international production, sporting event or bespoke expedition, SAL will design and deliver an unforgettable South African experience.
-
-Primary Button:
-Plan Your Experience
-
-Secondary Button:
-Partner With SAL
-
-Contact
-
-Founder
-Jardin
-
-Mobile
-+27 73 492 1998
-
-Email
-[info@salocations.com](mailto:info@salocations.com)
-
-Website
-[www.salocations.com](http://www.salocations.com)
-
-Instagram
-@salocations
-
-Instagram
-@capetowncompanion
-
-SEO Keywords
-
-Luxury South Africa
-
-Luxury Cape Town
-
-South Africa Destination Management
-
-Destination Marketing South Africa
-
-Luxury Concierge Cape Town
-
-Cape Town Fixer
-
-Luxury Safari
-
-Private Travel South Africa
-
-Film Production South Africa
-
-Location Scout Cape Town
-
-VIP South Africa
-
-Adventure South Africa
-
-Sports Tourism South Africa
-
-Luxury Experiences South Africa
-
-Bespoke South African Travel
-
-AI Destination Marketing
-
-Visual Style
-
-Minimalist luxury
-
-Dark charcoal and white with gold accents
-
-Large cinematic hero videos
-
-Full-width image sections
-
-Smooth scrolling
-
-Elegant transitions
-
-High-end editorial layout
-
-Premium typography
-
-Strong focus on storytelling and immersive visuals
-
-The website should convey exclusivity, trust, operational excellence and authentic South African experiences while appealing to international luxury travellers, production companies and strategic partners.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://cinematic-africa-ai.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/2193a599-882e-4da9-a615-e040f197b42c).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+# Cape Town Master Location Scouting Database
+### SA Locations & Zencrew · Global Film & Commercial Production Showcase
+
+An expansive, agency-grade digital presentation deck showcasing Cape Town and the Western Cape's premier filming locations across 10 macro categories. Specifically engineered to demonstrate South Africa's extraordinary international doubling versatility, rapid permitting timelines, and world-class production infrastructure to prospective producers, directors, and agencies worldwide.
+
+---
+
+## 1. 10 Curated Macro Categories & Global Doubling Power
+
+| # | Category | Key Hero Locations | International Doubling Versatility |
+| :-: | :--- | :--- | :--- |
+| **01** | **Coastal Passes, Ocean Roads & Arid Corridors** | Chapman's Peak Drive (M6), Victoria Road (M6), R355 Karoo Highway | California PCH, Amalfi Coast (Italy), French Riviera, Route 66, Nevada Desert |
+| **02** | **Modern Luxury Villas & Architectural Residences** | Nettleton Ridge (Clifton), Cap d'Afrique, Bella Ev (Camps Bay), Woodside Penthouse | Hollywood Hills, Malibu Oceanfront, Miami Waterfront Mansions, Swiss Modernist Luxury |
+| **03** | **Heritage Cottages, Character Streets & Facades** | Culver & Chatham Cottages (Salt River), Rosemount Ave (Gardens), Bo-Kaap, De Waterkant | London Victorian Suburbs, San Francisco Painted Ladies, Amsterdam, Colonial Quarters |
+| **04** | **Wilderness, Forest Cabins & Nature Retreats** | Blackwood Cabin (Scarborough), Amara Moon (Hout Bay Forest), Vicki Residence, Stadsaal Caves | Pacific Northwest, Scandinavian Eco-Lodges, Colorado Rockies, Sci-Fi Desert Planets |
+| **05** | **Pristine Beaches, Coastal Coves & Working Harbours** | Noordhoek Long Beach, Clifton 4th, V&A Waterfront Historic Working Basin, Dalebrook Tidal Pool | Mediterranean Coast, Caribbean Beaches, Cornwall Fishing Ports, New England Quays |
+| **06** | **Urban Metropolis, Commercial CBD & Civic Skylines** | Corporation St, Darling St, CTICC Atriums, Foreshore Elevated Freeway Flyovers, Rooftops | Chicago / New York Financial District, Modern Los Angeles, Tokyo Corporate Hub |
+| **07** | **Nightlife, Ambient Lounges, Beach Clubs & Cabaret** | Harringtons Cocktail Lounge, Café Caprice, StarDust Theatrical Dining, Grand Africa Beach, Halo | London Mayfair Lounges, Ibiza / Mykonos Beach Clubs, Berlin Nightclubs, Paris Cabaret |
+| **08** | **Industrial Studios, Cycloramas & Soundstages** | Daylight Rehearsal Studio, Studio 107 (Acoustic & Green Screen), Roodebloem, Milestone, Suite Spot | Hollywood Soundstage Lots, London Abbey Road, Berlin Converted Church Studios |
+| **09** | **Wine Country, Historic Estates & Farmland** | Asara Wine Estate (Stellenbosch), Kersefontein 18th-C Farmstead, Paul Cluver, Zorgvliet | Tuscany / Italian Countryside, French Provence, Napa Valley, English Country Manors |
+| **10** | **Civic Infrastructure, Airfields & Sports Arenas** | Diemerskraal Airfield Runway, Green Point Track, Athlone Stadium, Disa Prison, Municipal Pools | International Olympic Training Hubs, Government Compounds, Private Airfields, Prisons |
+
+---
+
+## 2. Technical Protocol & Integrity Standards (`GEMINI.md`)
+
+- **EXIF Auto-Orientation**: Every single photograph is ingested via `ImageOps.exif_transpose()` to guarantee zero 90°/180° rotation errors.
+- **Identical Real-World Matches**:
+  - `StarDust (12).jpg`: 100% exact match (wide timber dining floor, raised stage, grand piano, live performance).
+  - `Victoria Road (M6) (M6-to CB (0).jpg)`: 100% exact match coastal drive hugging 12 Apostles towards Lion's Head.
+  - `Chapman's Peak Drive (Chapmans Peak (91).jpg)`: 100% exact match pass vantage overlooking Hout Bay & The Sentinel.
+  - `Chapman's Peak South Lookout (5).jpg`: Strictly designated as *"Chapman's Peak Lookout Over Monkey Valley & Long Beach Noordhoek"*.
+  - `Harringtons (3).jpg`: Strictly designated as hero dark mahogany wood-paneled bar counter.
+  - `Amara Moon`: Strictly situated in the lush canopy of **Hout Bay forest** (never 12 Apostles, never ocean view).
+  - `Daylight Rehearsal Studio (1).jpg`: Hero match for daylight infinity cycloramas.
+  - `Studio 1`: Suite Spot Studios commercial cyclorama stage (`studio1_02.jpg`).
+  - `Studio 107`: Premier film soundstage and acoustic live tracking room (`Studio 107 (Acoustic Studio & Green Screen).jpg`).
+  - `Outdoor Cafe Courtyard (IMG_5253.JPG)`: Brick courtyard with multi-pane windows and shaded picnic benches.
+
+---
+
+## 3. Commercial Rate Card
+
+| Production Service | Union Standard Day Rate | International Currency Equivalents |
+| :--- | :--- | :--- |
+| **Location Scouting & Recces** | **ZAR 5,000** / day | `~USD $280` · `~EUR €255` · `~GBP £220` · `~INR ₹24,500` |
+| **Location Management & Permitting** | **ZAR 5,500** / shoot day | `~USD $310` · `~EUR €280` · `~GBP £240` · `~INR ₹27,000` |
+| **Turnkey Fixer & Production Support** | *Custom Scope* | Full crew sourcing, Panavision/ARRI gear hire, unit base logistics |
+
+---
+
+## 4. Key Interactive Web Features
+
+1. **Client Shortlist & Inquiry Drawer**: Producers and directors can click the heart icon on any photo to compile a custom shortlist and generate a pre-formatted scout inquiry email directly to the production team.
+2. **Dynamic Multi-Currency Switcher**: Instant live recalculation between **ZAR**, **USD**, **EUR**, **GBP**, and **INR**.
+3. **Global Search & Filter**: Real-time filtering by category, geographic region, doubling destination (e.g. "California", "PCH", "Tuscany", "London", "Nevada"), or venue name.
+4. **Fullscreen Cinema Lightbox**: Keyboard navigation (arrow keys, Escape), photo title, category badge, and EXIF metadata.
+5. **Print-to-PDF Engine**: Pre-configured `@media print` stylesheets for instant, clean 1-click export of pitch decks.
+
+---
+
+## 5. Executive Production Contacts
+
+- **Laura Diana Macleod** · Zencrew Production Services  
+  *Location Manager, Producer & Local Fixer*  
+  Email: [laura@zencrew.co.za](mailto:laura@zencrew.co.za) | Mobile & WhatsApp: `+27 82 570 8818`
+
+- **Jardin Roestorff** · SA Locations  
+  *Technical Location Scout & Production Partner*  
+  Email: [jardin@salocations.com](mailto:jardin@salocations.com)
