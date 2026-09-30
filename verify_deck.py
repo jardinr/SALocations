@@ -120,6 +120,40 @@ async def main():
                 lb_screen = os.path.join(artifact_dir, "master_deck_lightbox.jpg")
                 await page.screenshot(path=lb_screen)
                 print(f"Saved Lightbox Screenshot to {lb_screen}")
+                await page.keyboard.press("Escape")
+                await page.wait_for_timeout(500)
+
+        # 13. Test Category Direct Page Open (Zero Scrolling)
+        print("\nTesting Direct Category Page Open...")
+        tag_btn = await page.query_selector("button.doubling-tag")
+        if tag_btn:
+            tag_text = await tag_btn.inner_text()
+            safe_text = tag_text.encode('ascii', errors='replace').decode('ascii')
+            print(f"Clicking Doubling Tag: {safe_text}")
+            await tag_btn.click()
+            await page.wait_for_timeout(1000)
+
+            hero_disp = await page.evaluate("() => document.querySelector('.hero-banner-wrapper').style.display")
+            banner_disp = await page.evaluate("() => document.getElementById('categoryActiveBanner').style.display")
+            scroll_pos = await page.evaluate("() => window.pageYOffset")
+            hash_val = await page.evaluate("() => window.location.hash")
+
+            print(f"Hero Display after click: {hero_disp} (Expected: 'none')")
+            print(f"Active Banner Display: {banner_disp} (Expected: 'flex')")
+            print(f"Page Scroll Position: {scroll_pos}px (Expected: 0)")
+            print(f"URL Hash: {hash_val}")
+
+            cat_direct_screen = os.path.join(artifact_dir, "master_deck_direct_category_open.jpg")
+            await page.screenshot(path=cat_direct_screen, clip={"x": 0, "y": 0, "width": 1400, "height": 900})
+            print(f"Saved Direct Category Page View Screenshot to {cat_direct_screen}")
+
+            # Test Back to Global Overview Button
+            back_btn = await page.query_selector(".btn-back-overview")
+            if back_btn:
+                await back_btn.click()
+                await page.wait_for_timeout(1000)
+                hero_disp_restored = await page.evaluate("() => document.querySelector('.hero-banner-wrapper').style.display")
+                print(f"Hero Display restored after 'Back to Overview': {hero_disp_restored} (Expected: 'block')")
 
         if console_errors:
             print("Console Errors detected:")

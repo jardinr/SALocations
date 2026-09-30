@@ -54,6 +54,7 @@ html_template = """<!DOCTYPE html>
             --emerald-bright: #256149;
             --cyan: #38ef7d;
             --font-serif: 'Cinzel', Georgia, serif;
+            --font-heading: 'Cinzel', Georgia, serif;
             --font-sans: 'Inter', -apple-system, sans-serif;
             --font-tech: 'Space Grotesk', monospace, sans-serif;
             --radius-sm: 6px;
@@ -371,10 +372,10 @@ html_template = """<!DOCTYPE html>
             font-weight: 400;
         }
 
-        /* KPI Stats Grid */
+        /* KPI Stats Grid - 4 Balanced Focus Columns */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             max-width: 1200px;
             margin: 0 auto 3rem auto;
@@ -451,18 +452,80 @@ html_template = """<!DOCTYPE html>
         .doubling-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.8rem;
+            gap: 0.55rem;
+            margin-top: 0.9rem;
         }
 
         .doubling-tag {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(25, 56, 43, 0.55);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            color: var(--gold-bright);
             font-family: var(--font-tech);
-            font-size: 0.72rem;
-            padding: 0.25rem 0.65rem;
+            font-size: 0.75rem;
+            padding: 0.4rem 0.85rem;
             border-radius: 999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            outline: none;
+        }
+
+        .doubling-tag:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3) 0%, rgba(25, 56, 43, 0.9) 100%);
+            border-color: var(--gold-bright);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Single Category View Banner */
+        .category-active-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(22, 36, 30, 0.95) 0%, rgba(13, 20, 17, 0.98) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 0.85rem 1.4rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-back-overview {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold-bright);
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .btn-back-overview:hover {
+            background: var(--gold);
+            color: #070b0a;
+            transform: translateX(-3px);
+            box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+        }
+
+        .active-category-title-display {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--text-main);
             font-weight: 600;
         }
 
@@ -1754,7 +1817,7 @@ html_template = """<!DOCTYPE html>
             <!-- Global Search -->
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="searchInput" placeholder="Search {len(images)} locations..." oninput="filterShowcase(this.value)">
+                <input type="text" id="searchInput" placeholder="Search """ + str(len(images)) + """ locations..." oninput="filterShowcase(this.value)">
             </div>
 
             <!-- Multi-Currency Selector -->
@@ -1794,7 +1857,7 @@ html_template += f"""
                 An expansive cinematic portfolio curated for prospective international film, television, and commercial productions. Engineered for peerless global doubling versatility, rapid permitting, and world-class crew and studio infrastructure.
             </p>
 
-            <!-- KPI Stats Grid -->
+            <!-- KPI Stats Grid - 4 Focused Macro Columns -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">16</div>
@@ -1812,10 +1875,6 @@ html_template += f"""
                     <div class="stat-number">14.5h</div>
                     <div class="stat-label">Peak Summer Daylight</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">0°</div>
-                    <div class="stat-label">Zero Rotation Errors (EXIF Verified)</div>
-                </div>
             </div>
 
             <!-- Global Doubling Advantage Banner -->
@@ -1823,23 +1882,25 @@ html_template += f"""
                 <div>
                     <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
                     <div class="doubling-desc">
-                        Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums.
+                        Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums. Click any category below to open immediately:
                     </div>
                     <div class="doubling-tags">
-                        <span class="doubling-tag">California PCH (Chapman's Peak)</span>
-                        <span class="doubling-tag">Amalfi Coast (Victoria Rd)</span>
-                        <span class="doubling-tag">Hollywood Hills (Clifton & Lux)</span>
-                        <span class="doubling-tag">London Suburbs (Culver & Chatham)</span>
-                        <span class="doubling-tag">Nevada Desert (R355 Karoo)</span>
-                        <span class="doubling-tag">Cannes & Malibu Beaches (Camps Bay & Llandudno)</span>
-                        <span class="doubling-tag">Pacific Northwest (Blackwood Cabin)</span>
-                        <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
-                        <span class="doubling-tag">French Riviera (V&A Basin)</span>
-                        <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
-                        <span class="doubling-tag">Championship Golf (Clovelly, Milnerton & Royal Cape)</span>
-                        <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
-                        <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
-                        <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('coastal-passes-ocean-roads')">🛣️ California PCH (Chapman's Peak & M6)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('modern-luxury-villas')">🏛️ Hollywood Hills & Malibu Villas (Clifton & Nettleton)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('heritage-cottages-character-streets')">🏡 London Victorian Suburbs (Culver & Chatham)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('forest-cabins-nature-retreats')">🌲 Pacific Northwest & Treehouses (Blackwood Cabin)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('natural-wilderness-geological')">🏜️ Nevada Desert & Alien Planet (Stadsaal Caves & R355)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('pristine-beaches-coastal-coves')">🏖️ Cannes & St. Tropez Beaches (Camps Bay & Llandudno)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('working-harbours-maritime-basins')">⚓ French Riviera & Maritime Quays (V&A Waterfront)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('urban-metropolis-cbd')">🏙️ Manhattan & London Financial (Cape Town CBD & Harbour Arch)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('soundstages-cycloramas-studios')">🎬 Daylight Cycloramas & Studios (Studio 107 & Rehearsal)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('nightclubs-lounges-beach-clubs')">🍸 Miami Beach Clubs & Speakeasies (Harringtons & Caprice)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('theatrical-dining-live-music')">🎷 Parisian Cabaret & Theatrical Dining (StarDust)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('wine-country-historic-estates')">🍇 Tuscan Vineyards & Historic Farmland (Asara & Tokara)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('airports-aviation-transport-terminals')">✈️ Modern Terminals & Country Airfields (CTICC & Stellair)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('civic-institutions-corrections-jail')">🏢 Maximum Security Prison Facility (Disa Tygerberg)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('stadiums-arenas-athletics')">🏟️ Olympic Arenas & World Cup Stadiums (DHL Stadium)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('golf-courses-country-club-estates')">⛳ Championship Golf & Country Club Estates (Clovelly & Royal Cape)</button>
                     </div>
                 </div>
                 <div>
@@ -1854,18 +1915,25 @@ html_template += """
     <!-- Sticky Category Filter Navigation -->
     <nav class="category-nav-wrap">
         <div class="category-nav" id="categoryNav">
-            <button class="cat-pill active" onclick="filterCategory('all', this)">All Categories (16)</button>
+            <button class="cat-pill active" data-cat-id="all" onclick="filterCategory('all', this)">All Categories (16)</button>
 """
 
 # Append category pills
 for cat in categories:
-    html_template += f"""            <button class="cat-pill" onclick="filterCategory('{cat['id']}', this)">{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}</button>\n"""
+    html_template += f"""            <button class="cat-pill" data-cat-id="{cat['id']}" onclick="filterCategory('{cat['id']}', this)">{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}</button>\n"""
 
 html_template += """        </div>
     </nav>
 
     <!-- Main Location Showcase Content -->
     <main class="deck-container">
+        <!-- Single Category View Breadcrumb Banner -->
+        <div id="categoryActiveBanner" class="category-active-banner" style="display: none;">
+            <button class="btn-back-overview" onclick="filterCategory('all')">
+                ← Back to Global Overview (All 16 Categories)
+            </button>
+            <div class="active-category-title-display" id="activeCategoryTitleDisplay"></div>
+        </div>
 """
 
 # Render Category Blocks
@@ -2300,7 +2368,7 @@ html_template += """
                 </a>
             </div>
             <div class="footer-disclaimer">
-                © 2026/2027 SA Locations & Zencrew. All 167 photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Transposed under strict zero-rotation standards. Direct bookings subject to municipal permit authorization.
+                © 2026/2027 SA Locations & Zencrew. All """ + str(len(images)) + """ photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Direct bookings subject to municipal permit authorization.
             </div>
         </div>
     </footer>
@@ -2335,26 +2403,58 @@ html_template += """
             document.getElementById('manageRateDisplay').innerHTML = `${info.format(info.manage)} <span class="unit">/ shoot day</span>`;
         }
 
-        // Category Filter Navigation
+        // Category Filter Navigation & Direct Page Open (Zero Scrolling)
         function filterCategory(catId, btnElement) {
-            document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-            if (btnElement) btnElement.classList.add('active');
+            const heroWrapper = document.querySelector('.hero-banner-wrapper');
+            const goldenHour = document.getElementById('golden-hour');
+            const activeBanner = document.getElementById('categoryActiveBanner');
+            const activeTitleDisplay = document.getElementById('activeCategoryTitleDisplay');
 
+            // Update category pills active state
+            document.querySelectorAll('.cat-pill').forEach(p => {
+                if (catId === 'all') {
+                    p.classList.toggle('active', p.dataset.catId === 'all');
+                } else {
+                    p.classList.toggle('active', p.dataset.catId === catId);
+                }
+            });
+
+            // Update category blocks visibility
             const blocks = document.querySelectorAll('.category-block');
+            let selectedCategory = null;
+
             blocks.forEach(b => {
                 if (catId === 'all' || b.dataset.catId === catId) {
                     b.style.display = 'block';
+                    if (b.dataset.catId === catId) {
+                        selectedCategory = categoriesData.find(c => c.id === catId);
+                    }
                 } else {
                     b.style.display = 'none';
                 }
             });
 
-            if (catId !== 'all') {
-                const target = document.getElementById(catId);
-                if (target) {
-                    const y = target.getBoundingClientRect().top + window.pageYOffset - 120;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
+            if (catId === 'all') {
+                // Return to Global Overview
+                if (heroWrapper) heroWrapper.style.display = 'block';
+                if (goldenHour) goldenHour.style.display = 'block';
+                if (activeBanner) activeBanner.style.display = 'none';
+                if (window.location.hash) {
+                    history.pushState(null, '', window.location.pathname);
                 }
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Focus Mode: Hide Hero and Golden Hour so the Category opens directly at top of page without scrolling
+                if (heroWrapper) heroWrapper.style.display = 'none';
+                if (goldenHour) goldenHour.style.display = 'none';
+                if (activeBanner) {
+                    activeBanner.style.display = 'flex';
+                    if (selectedCategory && activeTitleDisplay) {
+                        activeTitleDisplay.innerHTML = `<span>Active Category:</span> <strong>${selectedCategory.icon} ${selectedCategory.num} ${selectedCategory.title}</strong>`;
+                    }
+                }
+                history.pushState(null, '', '#' + catId);
+                window.scrollTo({ top: 0, behavior: 'instant' });
             }
         }
 
@@ -2558,6 +2658,24 @@ html_template += """
 
             window.location.href = `mailto:laura@zencrew.co.za?cc=jardin@salocations.com&subject=${subject}&body=${body}`;
         }
+
+        // Direct Deep Linking on page load (#category-id)
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && categoriesData.some(c => c.id === hash)) {
+                filterCategory(hash);
+            }
+        });
+
+        // Browser Back / Forward History Support
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash && categoriesData.some(c => c.id === hash)) {
+                filterCategory(hash);
+            } else {
+                filterCategory('all');
+            }
+        });
     </script>
 </body>
 </html>
