@@ -10,8 +10,9 @@ with open(data_path, "r", encoding="utf-8") as f:
 
 categories = data["categories"]
 images = data["images"]
+hero_bg = data.get("hero_background", "")
 
-print(f"Loaded {len(categories)} categories and {len(images)} encoded images.")
+print(f"Loaded {len(categories)} categories, {len(images)} encoded images, and hero background.")
 
 html_template = """<!DOCTYPE html>
 <html lang="en">
@@ -281,14 +282,34 @@ html_template = """<!DOCTYPE html>
             font-weight: 800;
         }
 
-        /* Hero Banner */
+        /* Hero Banner Section with Table Mountain Background */
+        .hero-banner-wrapper {
+            position: relative;
+            width: 100%;
+            background-color: var(--bg);
+            background-position: center 28%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .hero-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(7, 11, 10, 0.72) 0%, rgba(7, 11, 10, 0.88) 55%, rgba(7, 11, 10, 0.98) 100%),
+                        radial-gradient(ellipse at 50% 30%, rgba(25, 56, 43, 0.25) 0%, rgba(7, 11, 10, 0.6) 80%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
         .hero-section {
             position: relative;
             max-width: 1380px;
             margin: 0 auto;
-            padding: 3.5rem 2rem 2rem 2rem;
+            padding: 4.5rem 2rem 3rem 2rem;
             text-align: center;
-            z-index: 10;
+            z-index: 2;
         }
 
         .hero-meta-badges {
@@ -1143,9 +1164,164 @@ html_template = """<!DOCTYPE html>
             transition: var(--transition);
         }
 
-        .contact-link:hover {
+        .contact-link.highlight {
             color: var(--gold-bright);
-            transform: translateX(3px);
+            font-weight: 600;
+        }
+
+        /* Business Card Box */
+        .biz-card-box {
+            background: rgba(7, 11, 10, 0.85);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.4);
+            margin-top: 0.5rem;
+        }
+
+        .biz-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .biz-card-company {
+            font-family: var(--font-tech);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--gold-bright);
+            letter-spacing: 0.05em;
+        }
+
+        .biz-card-tagline {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.03em;
+        }
+
+        .biz-card-flag {
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .biz-card-divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, rgba(212, 175, 55, 0.15) 100%);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Golden Hour & Summer Daylight Section */
+        .golden-hour-section {
+            position: relative;
+            max-width: 1380px;
+            margin: 4.5rem auto 3rem auto;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .gh-container {
+            background: linear-gradient(135deg, rgba(22, 36, 30, 0.8) 0%, rgba(13, 20, 17, 0.9) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-elevated), 0 0 40px rgba(212, 175, 55, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gh-container::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(246, 211, 101, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .gh-header {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .gh-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+            color: #ffffff;
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .gh-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .gh-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gh-card {
+            background: rgba(7, 11, 10, 0.65);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .gh-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
+            background: rgba(7, 11, 10, 0.85);
+        }
+
+        .gh-card.featured {
+            border-color: var(--border-gold);
+            background: linear-gradient(180deg, rgba(25, 56, 43, 0.4) 0%, rgba(7, 11, 10, 0.75) 100%);
+        }
+
+        .gh-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .gh-stat {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold-bright);
+            line-height: 1;
+        }
+
+        .gh-card-title {
+            font-family: var(--font-tech);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .gh-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.55;
         }
 
         /* Shortlist Drawer */
@@ -1544,77 +1720,84 @@ html_template = """<!DOCTYPE html>
             </button>
         </div>
     </header>
+"""
 
-    <!-- Hero Showcase Section -->
-    <section class="hero-section">
-        <div class="hero-meta-badges">
-            <span class="badge-premium">Verified Production Inventory · 2026/2027 Season</span>
-            <span class="badge-sub">Turnkey Local Fixer & Location Management</span>
-        </div>
+html_template += f"""
+    <!-- Hero Showcase Section with Table Mountain Backdrop -->
+    <div class="hero-banner-wrapper" style="background-image: url('{hero_bg}');">
+        <div class="hero-banner-overlay"></div>
+        <section class="hero-section">
+            <div class="hero-meta-badges">
+                <span class="badge-premium">Verified Production Inventory · 2026/2027 Season</span>
+                <span class="badge-sub">Turnkey Local Fixer & Location Management</span>
+            </div>
 
-        <h1 class="hero-title">
-            CAPE TOWN & SOUTH AFRICA<br>
-            <span class="gold">MASTER LOCATION SCOUTING DATABASE</span>
-        </h1>
+            <h1 class="hero-title">
+                CAPE TOWN & SOUTH AFRICA<br>
+                <span class="gold">MASTER LOCATION SCOUTING DATABASE</span>
+            </h1>
 
-        <p class="hero-subtitle">
-            An expansive cinematic portfolio curated for prospective international film, television, and commercial productions. Engineered for peerless global doubling versatility, rapid permitting, and world-class crew and studio infrastructure.
-        </p>
+            <p class="hero-subtitle">
+                An expansive cinematic portfolio curated for prospective international film, television, and commercial productions. Engineered for peerless global doubling versatility, rapid permitting, and world-class crew and studio infrastructure.
+            </p>
 
-        <!-- KPI Stats Grid -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number">16</div>
-                <div class="stat-label">Curated Macro Categories</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">167</div>
-                <div class="stat-label">Verified Hero Assets</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">40-60%</div>
-                <div class="stat-label">Currency Budget Advantage</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">300+</div>
-                <div class="stat-label">Annual Filming Sunlight Days</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">0°</div>
-                <div class="stat-label">Zero Rotation Errors (EXIF Verified)</div>
-            </div>
-        </div>
-
-        <!-- Global Doubling Advantage Banner -->
-        <div class="doubling-banner">
-            <div>
-                <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
-                <div class="doubling-desc">
-                    Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums.
+            <!-- KPI Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Curated Macro Categories</div>
                 </div>
-                <div class="doubling-tags">
-                    <span class="doubling-tag">California PCH (Chapman's Peak)</span>
-                    <span class="doubling-tag">Amalfi Coast (Victoria Rd)</span>
-                    <span class="doubling-tag">Hollywood Hills (Clifton & Lux)</span>
-                    <span class="doubling-tag">London Suburbs (Culver & Chatham)</span>
-                    <span class="doubling-tag">Nevada Desert (R355 Karoo)</span>
-                    <span class="doubling-tag">Cannes & Malibu Beaches (Camps Bay & Llandudno)</span>
-                    <span class="doubling-tag">Pacific Northwest (Blackwood Cabin)</span>
-                    <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
-                    <span class="doubling-tag">French Riviera (V&A Basin)</span>
-                    <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
-                    <span class="doubling-tag">Championship Golf (Clovelly & Royal Cape)</span>
-                    <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
-                    <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
-                    <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
+                <div class="stat-card">
+                    <div class="stat-number">167</div>
+                    <div class="stat-label">Verified Hero Assets</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">40-60%</div>
+                    <div class="stat-label">Currency Budget Advantage</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">14.5h</div>
+                    <div class="stat-label">Peak Summer Daylight</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0°</div>
+                    <div class="stat-label">Zero Rotation Errors (EXIF Verified)</div>
                 </div>
             </div>
-            <div>
-                <a href="#rates-and-contacts" class="btn-nav primary" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">Review Rate Cards</a>
-            </div>
-        </div>
-    </section>
 
+            <!-- Global Doubling Advantage Banner -->
+            <div class="doubling-banner">
+                <div>
+                    <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
+                    <div class="doubling-desc">
+                        Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums.
+                    </div>
+                    <div class="doubling-tags">
+                        <span class="doubling-tag">California PCH (Chapman's Peak)</span>
+                        <span class="doubling-tag">Amalfi Coast (Victoria Rd)</span>
+                        <span class="doubling-tag">Hollywood Hills (Clifton & Lux)</span>
+                        <span class="doubling-tag">London Suburbs (Culver & Chatham)</span>
+                        <span class="doubling-tag">Nevada Desert (R355 Karoo)</span>
+                        <span class="doubling-tag">Cannes & Malibu Beaches (Camps Bay & Llandudno)</span>
+                        <span class="doubling-tag">Pacific Northwest (Blackwood Cabin)</span>
+                        <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
+                        <span class="doubling-tag">French Riviera (V&A Basin)</span>
+                        <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
+                        <span class="doubling-tag">Championship Golf (Clovelly & Royal Cape)</span>
+                        <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
+                        <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
+                        <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="#rates-and-contacts" class="btn-nav primary" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">Review Rate Cards</a>
+                </div>
+            </div>
+        </section>
+    </div>
+"""
+
+html_template += """
     <!-- Sticky Category Filter Navigation -->
     <nav class="category-nav-wrap">
         <div class="category-nav" id="categoryNav">
@@ -1755,8 +1938,59 @@ for cat in categories:
         </article>
 """
 
-# Append Rate Cards & Executive Strip
+# Append Golden Hour Section, Rate Cards & Executive Strip
 html_template += """
+        <!-- Extended Summer Daylight & The Atlantic Golden Hour -->
+        <section class="golden-hour-section" id="golden-hour">
+            <div class="gh-container">
+                <div class="gh-header">
+                    <span class="badge-premium">Atlantic Seaboard Magic Hour Advantage</span>
+                    <h2>Extended Summer Daylight & The Atlantic Golden Hour</h2>
+                    <p class="gh-subtitle">
+                        14.5 hours of daily filming light, a prolonged 90-minute west-facing Atlantic sunset magic hour, and opposite-hemisphere midsummer shooting when Europe and North America are frozen.
+                    </p>
+                </div>
+
+                <div class="gh-grid">
+                    <div class="gh-card">
+                        <div class="gh-icon">☀️</div>
+                        <div class="gh-stat">14.5 Hours</div>
+                        <div class="gh-card-title">Peak Summer Daylight</div>
+                        <p class="gh-desc">
+                            During peak film season (November to March), Cape Town enjoys sunrise as early as 05:30 and dusk beyond 20:30. Production crews routinely schedule full 12-hour camera days with consistent, predictable sunlight.
+                        </p>
+                    </div>
+
+                    <div class="gh-card featured">
+                        <div class="gh-icon">🌅</div>
+                        <div class="gh-stat">90 Minutes</div>
+                        <div class="gh-card-title">The Atlantic Sunset Magic Hour</div>
+                        <p class="gh-desc">
+                            The iconic coastal corridor—Clifton, Camps Bay, Llandudno, and Chapman's Peak—faces unobstructed due west over the Atlantic Ocean. Golden hour bathes granite boulders, white sands, and ocean spray in rich amber light without early mountain shadows.
+                        </p>
+                    </div>
+
+                    <div class="gh-card">
+                        <div class="gh-icon">🔄</div>
+                        <div class="gh-stat">Double-Call</div>
+                        <div class="gh-card-title">Turnaround Shooting Flexibility</div>
+                        <p class="gh-desc">
+                            Directors can execute intensive daytime narrative dialogue scenes and transition seamlessly to sunset magic hour and blue-hour dusk ocean sequences within a single crew call, maximizing schedule efficiency.
+                        </p>
+                    </div>
+
+                    <div class="gh-card">
+                        <div class="gh-icon">🌍</div>
+                        <div class="gh-stat">300+ Days</div>
+                        <div class="gh-card-title">Reverse-Hemisphere Season</div>
+                        <p class="gh-desc">
+                            When North American and European production hubs enter overcast, cold winter conditions, Cape Town offers midsummer warmth, crystal-clear coastal skies, and 300+ days of annual sunshine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Rates, Turnkey Production & Executive Contacts -->
         <section class="rates-section" id="rates-and-contacts">
             <div class="rates-header">
@@ -1821,8 +2055,9 @@ html_template += """
                 </div>
             </div>
 
-            <!-- Executive Contacts Strip (Git Replaced with Instagram & YouTube) -->
+            <!-- Executive Contacts Strip (Zencrew & SA Locations) -->
             <div class="exec-contacts-card">
+                <!-- Laura Diana Macleod (Zencrew) -->
                 <div class="contact-col">
                     <span class="contact-role">Zencrew Production Services · Lead Fixer & Producer</span>
                     <h3 class="contact-name">Laura Diana Macleod</h3>
@@ -1830,23 +2065,63 @@ html_template += """
                         Seasoned South African location manager, producer, and commercial fixer with 15+ years managing high-profile international feature films, commercials, and photographic campaigns across Cape Town, the Karoo, and Southern Africa.
                     </p>
                     <div class="contact-links">
-                        <a href="mailto:laura@zencrew.co.za" class="contact-link">✉ laura@zencrew.co.za</a>
-                        <a href="https://wa.me/27825708818" target="_blank" rel="noopener noreferrer" class="contact-link">📱 +27 82 570 8818 (WhatsApp)</a>
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Production+Consultation+-+Zencrew&details=Production+Consultation+with+Laura+Diana+Macleod+%28Zencrew%29.&location=Cape+Town&add=laura@zencrew.co.za" target="_blank" rel="noopener noreferrer" class="contact-link">📅 Book Consultation Call</a>
+                        <a href="https://www.zencrew.co.za" target="_blank" rel="noopener noreferrer" class="contact-link highlight">
+                            🌐 Website: www.zencrew.co.za
+                        </a>
+                        <a href="https://wa.me/27825708818" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            📱 WhatsApp / Mobile: +27 82 570 8818
+                        </a>
+                        <a href="mailto:laura@zencrew.co.za" class="contact-link">
+                            ✉ Email: laura@zencrew.co.za
+                        </a>
+                        <a href="https://www.linkedin.com/in/laura-diana-macleod-a217a525" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            💼 LinkedIn: Laura Diana Macleod
+                        </a>
+                        <a href="https://www.imdb.com/name/nm2555501/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            ⭐ IMDb Profile & Film Credits
+                        </a>
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Production+Consultation+-+Zencrew&details=Production+Consultation+with+Laura+Diana+Macleod+%28Zencrew%29.&location=Cape+Town&add=laura@zencrew.co.za" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            📅 Book Consultation Call
+                        </a>
                     </div>
                 </div>
 
+                <!-- Jardin Roestorff (SA Locations Business Card) -->
                 <div class="contact-col">
-                    <span class="contact-role">SA Locations · Technical Location Scout & Partner</span>
-                    <h3 class="contact-name">Jardin Roestorff</h3>
-                    <p class="contact-bio">
-                        Specialized technical location scout with an 8,000+ photo database spanning the entire Western Cape. Dedicated to director visual reference matching, architectural precision, camera crane clearances, and digital production decks.
-                    </p>
-                    <div class="contact-links">
-                        <a href="mailto:jardin@salocations.com" class="contact-link">✉ jardin@salocations.com</a>
-                        <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="contact-link">📸 Instagram: @salocations</a>
-                        <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="contact-link">🎬 YouTube: @salocations</a>
-                        <a href="mailto:jardin@salocations.com?subject=Master%20Database%20Custom%20Scouting%20Request" class="contact-link">📋 Custom Scout Request</a>
+                    <span class="contact-role">SA Locations · Official Business Card</span>
+                    <div class="biz-card-box">
+                        <div class="biz-card-header">
+                            <div>
+                                <div class="biz-card-company">SALocations</div>
+                                <div class="biz-card-tagline">Location Scouting & Film Facilitation</div>
+                            </div>
+                            <div class="biz-card-flag">🇿🇦 Cape Town</div>
+                        </div>
+                        <div class="biz-card-divider"></div>
+                        <h3 class="contact-name">Jardin Roestorff</h3>
+                        <p class="contact-bio" style="margin-bottom: 0.8rem;">
+                            Specialized technical location scout with an 8,000+ photo archive spanning the Western Cape. Dedicated to director visual reference matching, architectural precision, crane clearances, and digital production decks.
+                        </p>
+                        <div class="contact-links">
+                            <a href="tel:+27734921998" class="contact-link highlight">
+                                📱 Mobile: +27 73 492 1998
+                            </a>
+                            <a href="mailto:jardin@salocations.com" class="contact-link">
+                                ✉ Email: jardin@salocations.com
+                            </a>
+                            <a href="https://www.salocations.com" target="_blank" rel="noopener noreferrer" class="contact-link highlight">
+                                🌐 Web: www.salocations.com
+                            </a>
+                            <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                📸 Instagram: @salocations
+                            </a>
+                            <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="contact-link">
+                                🎬 YouTube: @salocations
+                            </a>
+                            <a href="mailto:jardin@salocations.com?subject=Master%20Database%20Custom%20Scouting%20Request" class="contact-link">
+                                📋 Custom Scout Request
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1905,16 +2180,28 @@ html_template += """
     <footer class="site-footer">
         <div class="footer-wrap">
             <div class="footer-logo-row">
-                <span>SA Locations</span>
+                <a href="https://www.salocations.com" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;">SA Locations</a>
                 <span style="color: var(--gold);">✕</span>
-                <span>Zencrew Production Services</span>
+                <a href="https://www.zencrew.co.za" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none;">Zencrew Production Services</a>
             </div>
             <div class="footer-social-row">
+                <a href="https://www.salocations.com" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    🌐 SA Locations (www.salocations.com)
+                </a>
+                <a href="https://www.zencrew.co.za" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    🌐 Zencrew (www.zencrew.co.za)
+                </a>
                 <a href="https://www.instagram.com/salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn">
                     📸 Instagram @salocations
                 </a>
                 <a href="https://www.youtube.com/@salocations" target="_blank" rel="noopener noreferrer" class="social-link-btn">
                     🎬 YouTube @salocations
+                </a>
+                <a href="https://www.linkedin.com/in/laura-diana-macleod-a217a525" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    💼 LinkedIn (Laura)
+                </a>
+                <a href="https://www.imdb.com/name/nm2555501/" target="_blank" rel="noopener noreferrer" class="social-link-btn">
+                    ⭐ IMDb (Laura)
                 </a>
             </div>
             <div class="footer-disclaimer">

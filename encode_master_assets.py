@@ -10,7 +10,10 @@ pics_root = r"C:\Users\Jardin\OneDrive\Pictures"
 output_json = r"C:\Users\Jardin\OneDrive\Documents\Market\SAL\Business-SALocations\Pitches\sal-global-locations-deck\embedded_data.json"
 
 def encode_img(rel_path, max_size=(980, 650), quality=70):
-    full_path = os.path.join(pics_root, rel_path)
+    if os.path.isabs(rel_path):
+        full_path = rel_path
+    else:
+        full_path = os.path.join(pics_root, rel_path)
     if not os.path.exists(full_path):
         print(f"Warning: File not found: {full_path}")
         return ""
@@ -148,7 +151,7 @@ categories = [
             {"file": r"Zen\House 2 Heritage Cottages (Culver & Chatham)\Chatham St (2).jpg", "title": "Chatham Street: Side-by-Side Victorian Worker Cottages with Cast-Iron Picket Gates", "tag": "Cottage Row"},
             {"file": r"Zen\Rosemount Ave-Gardens (4).jpg", "title": "Rosemount Avenue: Grand Two-Storey Victorian Mansion with Cast-Iron Balconies", "tag": "Victorian Villa"},
             {"file": r"CBD\Bo Kaap (1).jpg", "title": "Bo-Kaap Historic Terraces: Cobblestone Road & Vibrant Multicoloured Facades", "tag": "Cobblestones"},
-            {"file": r"CBD\Bo Kaap (3).jpg", "title": "Bo-Kaap: Saturated Pastel Street Corner Framed by Table Mountain", "tag": "Historic Corner"},
+            {"file": r"Takealot\Bo Kaap\Chiappini St (1).JPG", "title": "Bo-Kaap Chiappini Street: Wide Cobblestone Corridor with Vibrant Saturated Cape Malay Heritage Facades", "tag": "Chiappini St"},
             {"file": r"CBD\Bo Kaap (4).jpg", "title": "Bo-Kaap: Heritage Parapet Rooflines, Dutch Terraces & Traditional Windows", "tag": "Cape Dutch"},
             {"file": r"CBD\Bo Kaap-Pan.jpg", "title": "Bo-Kaap Panorama: Wide Historic District View Across Vibrant Historic Streets", "tag": "Panorama"},
             {"file": r"De Waterkant\Fibre Designs (1).jpg", "title": "De Waterkant: European-Style Cobblestone Pedestrian Lane & Boutique Stoops", "tag": "Pedestrian Lane"},
@@ -167,13 +170,13 @@ categories = [
         "hero_badge": "Scouted Database Match",
         "area": "Scarborough, Hout Bay Forest, Kommetjie & Noordhoek Canopies",
         "tagline": "Elevated dark timber stilt cabins with rock plunge pools, architectural glass treehouses in lush forest canopies, and rustic milkwood chalets.",
-        "creative_synopsis": "When a screenplay calls for isolated architectural forest living or nature sanctuaries, this category delivers uncompromised authenticity. Blackwood Cabin in Scarborough sits elevated on steel stilts above a coastal valley, complete with a natural rock plunge pool and winding wooden boardwalks through eucalyptus groves. In the lush canopy of Hout Bay forest, Amara Moon provides an architectural timber-and-glass stilt retreat surrounded by indigenous foliage. Vicki Residence captures artistic residential timber interiors, while Monkey Valley nestles weathered log cabins beneath ancient milkwood trees.",
+        "creative_synopsis": "When a screenplay calls for isolated architectural forest living or nature sanctuaries, this category delivers uncompromised authenticity. Blackwood Cabin in Scarborough sits elevated on steel stilts above a coastal valley, complete with a natural rock plunge pool and winding wooden boardwalks through eucalyptus groves. In the lush canopy of Hout Bay forest, Amara Moon provides an architectural timber-and-glass stilt retreat surrounded by indigenous foliage. Vicki Residence captures artistic mountainside timber architecture set against natural fynbos slopes, while Monkey Valley nestles weathered log cabins beneath ancient milkwood trees.",
         "hero_image_file": r"Zen\Blackwood Cabin\Blackwood Cabin (1).jpg",
         "hero_image_title": "Blackwood Cabin: Elevated Dark Timber Stilt Retreat & Rock Plunge Pool (Scarborough)",
         "key_features": [
             "Blackwood Cabin: Dark-stained timber cabin on stilts, wraparound deck, natural rock pool, and boardwalk",
             "Amara Moon: Architectural timber & glass stilt retreat situated in the lush canopy of Hout Bay forest (strictly forest canopy)",
-            "Vicki Residence: Character mountainside retreat with warm exposed timber beams and rich daylight interiors",
+            "Vicki Residence: Character mountainside retreat with warm natural timber architecture set against indigenous mountainside slopes",
             "Monkey Valley: Weathered log cabins nestled beneath ancient indigenous milkwood canopies in Noordhoek",
             "Boardwalk pathways, outdoor forest showers, and secluded nature sanctuary aesthetics"
         ],
@@ -190,9 +193,7 @@ categories = [
             {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (4).jpg", "title": "Blackwood Cabin: Minimalist Timber Living Pavilion & Mountain Valley Vista", "tag": "Cabin Interior"},
             {"file": r"Zen\Amara Moon (2).jpg", "title": "Amara Moon: Architectural Timber Stilt Retreat Elevated in Lush Hout Bay Forest Canopy", "tag": "Forest Retreat"},
             {"file": r"Zen\Amara Moon (4).jpg", "title": "Amara Moon: Glass Living Pavilion Surrounded by Indigenous Forest Foliage", "tag": "Treehouse"},
-            {"file": r"Zen\Vicki (22).JPG", "title": "Vicki Residence: Warm Exposed Timber Framing, Sunlight Voids & Artistic Character Interior", "tag": "Vicki Interior"},
-            {"file": r"Trilogy\Crime series-Old\What Lies Beneath\Kommetjie\Imhoff's Gift\Vicki (1).JPG", "title": "Vicki Residence: Rustic Character Dining & Natural Timber Architecture", "tag": "Living Space"},
-            {"file": r"Trilogy\Crime series-Old\What Lies Beneath\Kommetjie\Imhoff's Gift\Vicki (2).JPG", "title": "Vicki Residence: Sunlit Timber Kitchen & Studio Framing", "tag": "Timber Detail"},
+            {"file": r"Zen\Vicki (22).JPG", "title": "Vicki Residence: Architectural Timber Mountain Retreat & Natural Exterior Facade", "tag": "Mountain Retreat"},
             {"file": r"Zen\Monkey Valley.png", "title": "Monkey Valley: Rustic Log Chalet Canopy Nestled in Noordhoek Milkwood Trees", "tag": "Monkey Valley"}
         ]
     },
@@ -227,10 +228,10 @@ categories = [
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (10).jpg", "title": "Stadsaal Caves: Monumental Sandstone Rock Arches & Burnt-Orange Pillars (Cederberg)", "tag": "Hero Arch"},
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (36).jpg", "title": "Stadsaal Caves: Wind-Carved Desert Sandstone Amphitheater & Otherworldly Formations", "tag": "Rock Amphitheater"},
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (50).jpg", "title": "Stadsaal Caves: Ancient Weathered Rock Corridors & Dramatic Natural Light Shafts", "tag": "Rock Corridor"},
-            {"file": r"Mountains\Boschendal (32).jpg", "title": "Drakenstein Mountain Range: Sheer Vertical Rock Face & Fynbos Escarpment", "tag": "Mountain Face"},
-            {"file": r"Mountains\Boschendal (33).jpg", "title": "Simonsberg Mountains: Majestic Alpine Valley Framing & Jagged Ridge Skyline", "tag": "Alpine Skyline"},
+            {"file": r"Mountains\Boschendal\Boschendal (10).jpg", "title": "Drakenstein Mountain Range: Monumental Sandstone Precipices & Pristine Valley Escarpment", "tag": "Mountain Face"},
+            {"file": r"Mountains\Hottentots Holland-Stellenbosch\Hottentotts Holland (1).jpg", "title": "Simonsberg & Hottentots Holland: Monumental Alpine Ridge & Deep Valley Basin", "tag": "Alpine Skyline"},
             {"file": r"Mountains\MTO (8).jpg", "title": "MTO Mountain Reserve: High-Altitude Forestry Trail & Sweeping Valley Vista", "tag": "Mountain Trail"},
-            {"file": r"Mountains\20241218_150716.jpg", "title": "Cape Mountain Pass: Dramatic Wild Landscape with Jagged Peak Formations", "tag": "Wilderness Peak"},
+            {"file": r"08-Stadium\Lourensford\Lourensfor Prairie (2).jpg", "title": "Lourensford Estate Plains: Vast Prairie Grasslands Framed by Helderberg Mountain Amphitheater", "tag": "Lourensford Plains"},
             {"file": r"Mountains\20241218_151516.jpg", "title": "Rugged Mountain Corridor: Open Alpine Valley & Endless Natural Horizons", "tag": "Valley Basin"}
         ]
     },
@@ -261,7 +262,7 @@ categories = [
             "permitting": "City of Cape Town Film Office & SANParks Coastal Permits (3–5 working days)",
             "power": "Mobile silenced generator trucks with beach matting · Portable battery quiet packs for water edge",
             "parking": "Hardstand beach car park staging for 15+ technical vehicles · 4x4 beach track access authorized",
-            "sound_curfew": "Golden hour sunrise calls recommended for pristine empty beaches · Natural ocean ambient sound"
+            "sound_curfew": "Golden hour sunset calls recommended for Atlantic Seaboard filming · Natural ocean ambient sound"
         },
         "gallery": [
             {"file": r"Beaches\Camps Bay\Camps Bay Beach\Camps Bay Beach (1).jpg", "title": "Camps Bay Beach: Wide Palm-Fringed White Sands Facing Twelve Apostles & Lion's Head", "tag": "Hero Beach"},
@@ -276,7 +277,7 @@ categories = [
             {"file": r"Beaches\Muizenberg\Muizenberg (11).jpg", "title": "Muizenberg: Vibrant Iconic Multi-Coloured Victorian Bathing Boxes & Longboard Waves", "tag": "Bathing Boxes"},
             {"file": r"Beaches\Kogel Bay\Kogel Bay (10).jpg", "title": "Kogel Bay / Caves: Sheer Sandstone Mountain Precipices Plunging into Wild Surf", "tag": "Wild Mountain Coast"},
             {"file": r"Beaches\Dalebrook Tidal Pool\Dalebrook Tidal Pool (1).jpg", "title": "Dalebrook Tidal Pool: Historic Stone-Walled Ocean Swimming Pool & False Bay Horizon", "tag": "Tidal Pool"},
-            {"file": r"Beaches\St. James Tidal Pool\Main Rd-St. James (15).jpg", "title": "St. James Tidal Pool: Iconic Multi-Coloured Victorian Bathing Boxes & Tidal Bath", "tag": "Historic Sea Pool"}
+            {"file": r"Beaches\St. James Tidal Pool\St. James Beach (1).jpg", "title": "St. James Tidal Pool: Ocean Splashback, Natural Stone Swimming Wall & False Bay Horizon", "tag": "Historic Sea Pool"}
         ]
     },
 
@@ -308,10 +309,10 @@ categories = [
         },
         "gallery": [
             {"file": r"V&A Waterfront\V&A Waterfront (2).jpg", "title": "V&A Waterfront Basin: Historic Clock Tower, Working Tugs & Unobstructed Table Mountain", "tag": "Hero Basin"},
+            {"file": r"V&A Waterfront\V&A Waterfront (1).jpg", "title": "V&A Waterfront Basin: Wide Panoramic View Across Working Harbour Waters & Table Mountain", "tag": "Wide Basin"},
+            {"file": r"V&A Waterfront\V&A Waterfront (4).jpg", "title": "V&A Waterfront: Expansive Water Basin, Working Docks & Mountain Skyline", "tag": "Waterfront Vista"},
             {"file": r"V&A Waterfront\V&A Waterfront (3).jpg", "title": "V&A Waterfront: Swing Bridge, Modern Quayside & Maritime Ship Mooring", "tag": "Working Quayside"},
-            {"file": r"V&A Waterfront\V&A Waterfront (31).jpg", "title": "V&A Waterfront: Historic Victoria & Alfred Working Harbour Basin & Maritime Wharves", "tag": "Harbour Basin"},
             {"file": r"V&A Waterfront\V&A Waterfront (32).jpg", "title": "V&A Waterfront: Operational Tugboats & Industrial Quayside Logistics", "tag": "Tugboats"},
-            {"file": r"V&A Waterfront\V&A Waterfront (10).jpg", "title": "V&A Waterfront: Protected Inner Basin with Commercial Vessels & Mountain Framing", "tag": "Inner Basin"},
             {"file": r"V&A Waterfront\V&A Waterfront (14).jpg", "title": "V&A Waterfront: Maritime Boardwalk, Granite Quays & Table Mountain Vista", "tag": "Boardwalk"}
         ]
     },
@@ -327,8 +328,8 @@ categories = [
         "area": "Cape Town Financial District, Foreshore & Heerengracht",
         "tagline": "Sleek glass-curtain skyscrapers, brutalist concrete plazas, dramatic elevated freeway flyovers, and rooftop skyline vistas.",
         "creative_synopsis": "Cape Town's Central Business District is an established global production staple, frequently doubling for North American downtowns. Streets like Corporation, Darling, and Heerengracht present a mix of gleaming glass commercial towers, neoclassical civic architecture, and public plazas. The unfinished elevated freeway flyovers on the Foreshore offer an unparalleled location for high-speed car chases, stunt rigging, and post-apocalyptic urban scenes. Expansive commercial rooftops offer 360-degree mountain skylines.",
-        "hero_image_file": r"CBD\Corporation St (1).jpg",
-        "hero_image_title": "Corporation Street Commercial Canyon: Glass Skyscrapers, Neoclassical Facades & Mountain Backdrop",
+        "hero_image_file": r"CBD\Yours\Christiaan Barnard-FWDK BLVD (1).jpg",
+        "hero_image_title": "Christiaan Barnard & FW de Klerk Boulevard: Wide Commercial Metropolis Avenue, Skyscrapers & Mountain Skyline",
         "key_features": [
             "Financial District Canyons: Glass curtain-wall high-rises and busy multi-lane downtown corridors",
             "Elevated Foreshore Freeway Flyovers: Dramatic suspended concrete highways for vehicle chases and stunt rigging",
@@ -343,16 +344,16 @@ categories = [
             "sound_curfew": "Weekend filming allows high-SPL vehicle tracking and blank-firing stunt audio under police supervision"
         },
         "gallery": [
-            {"file": r"CBD\Corporation St (1).jpg", "title": "Corporation Street: High-Rise Urban Canyon with Contemporary Commercial Towers", "tag": "Hero CBD"},
+            {"file": r"CBD\Yours\Christiaan Barnard-FWDK BLVD (1).jpg", "title": "Christiaan Barnard Boulevard: Wide High-Rise Commercial Avenue & Mountain Skyline", "tag": "Hero CBD Wide"},
+            {"file": r"CBD\Yours\Lower Heerengraght (1).jpg", "title": "Lower Heerengracht: Wide Commercial Boulevard Flanked by High-Rise Glass Towers", "tag": "Heerengracht Wide"},
             {"file": r"CBD\Corporation St (2).jpg", "title": "Corporation Street: Clean Commercial Streetscape with Modernist Architectural Vistas", "tag": "Street Canyon"},
             {"file": r"CBD\Darling St (1).JPG", "title": "Darling Street: Neoclassical Commercial Facades & Metropolitan City Traffic", "tag": "Darling St"},
             {"file": r"Highway\Cut Off Highway (1).jpg", "title": "Foreshore Elevated Freeway: Dramatic Suspended Concrete Overpass for Stunt Driving", "tag": "Freeway Flyover"},
             {"file": r"Highway\Cut Off Highway (10).jpg", "title": "Foreshore Flyover: Unfinished Elevated Highway Suspended Above Downtown Skyline", "tag": "Stunt Overpass"},
             {"file": r"Highway\Cut Off Highway (14).jpg", "title": "Foreshore Flyover: Aerial Highway Curve with Panoramic City Bowl Backdrop", "tag": "Highway Curve"},
             {"file": r"Rooftops\20231113_170008.jpg", "title": "CBD Skyline Rooftop: 360-Degree Panorama of Skyscrapers & Table Mountain", "tag": "Skyline Rooftop"},
-            {"file": r"Rooftops\20231113_172858.jpg", "title": "Commercial Rooftop: Industrial Ductwork, City Bowl High-Rises & Lion's Head", "tag": "Industrial Roof"},
-            {"file": r"08-Glencor\Foreshore\Harbour Arch (1).jpg", "title": "Harbour Arch Precinct: Ultra-Modern Multi-Lane Urban Gateway & Glass High-Rises", "tag": "Modern Arch"},
-            {"file": r"08-Glencor\Foreshore\Harbour Arch (5).jpg", "title": "Harbour Arch: Futuristic Concrete & Glass Boulevard with Night Lighting Infrastructure", "tag": "Boulevard"}
+            {"file": r"08-Glencor\Foreshore\Harbour Arch (1).jpg", "title": "Harbour Arch Precinct: Wide Urban Skyline, Multi-Lane Gateway & Glass High-Rises", "tag": "Harbour Arch Wide"},
+            {"file": r"08-Glencor\Foreshore\Harbour Arch (2).jpg", "title": "Harbour Arch: Panoramic Glass High-Rise Boulevard & Modernist Architecture", "tag": "Harbour Arch Panorama"}
         ]
     },
 
@@ -522,40 +523,41 @@ categories = [
         "icon": "✈️",
         "doubles_as": "International Commercial Airports · Private Rural Airfields & Smuggling Airstrips · Luxury Cruise Liner Terminals · Civic Transit Hubs",
         "hero_badge": "Scouted Database Match",
-        "area": "Arrieskraal Airport, Cape Town International (CTI), Passenger Terminal & CTICC",
-        "tagline": "Private rural mountain valley airstrips and aircraft hangars, commercial airport departure concourses, architectural cruise terminals, and soaring convention atriums.",
-        "creative_synopsis": "This dedicated aviation and major transit category offers remarkable operational diversity. Arrieskraal features a private rural mountain valley airstrip complete with aircraft hangars and runway corridors—ideal for espionage, action stunts, and private charter sequences. Cape Town International Airport (CTI) provides authentic commercial airline terminals, baggage concourses, and tarmac aprons. The Port of Cape Town Passenger Terminal offers architectural cruise departure halls and glass gangways, while the CTICC delivers multi-level civic transit atriums.",
+        "area": "Arrieskraal Airport, Stellair Airfield, CTI Airport, Passenger Terminal & CTICC",
+        "tagline": "Private rural mountain valley airstrips and aircraft hangars, country airfields, commercial airport concourses, architectural cruise terminals, and soaring convention atriums.",
+        "creative_synopsis": "This dedicated aviation and major transit category offers remarkable operational diversity. Arrieskraal and Stellair (Stellenbosch Flying Club) feature private rural and country mountain valley airstrips complete with operational aircraft hangars, flight lines, and open runway corridors—ideal for espionage, action stunts, and private charter sequences. Cape Town International Airport (CTI) provides authentic commercial airline terminals, baggage concourses, and tarmac aprons. The Port of Cape Town Passenger Terminal offers architectural cruise departure halls and glass gangways, while the CTICC delivers multi-level interior transit atriums and modern exhibition concourses.",
         "hero_image_file": r"Husqvarna\Farms\Arrieskraal (11).jpg",
         "hero_image_title": "Arrieskraal Airport: Private Rural Valley Airstrip, Aircraft Hangars & Mountain Runway",
         "key_features": [
-            "Arrieskraal Airport: Private rural runway, operational aircraft hangars, and unobstructed valley approach",
+            "Arrieskraal Airport & Stellair Airfield: Private country runways, operational aircraft hangars, and unobstructed mountain valley approaches",
             "Cape Town International Airport (CTI): Commercial passenger departure halls, check-in concourses, and tarmac gates",
             "Cape Town Cruise Passenger Terminal: Modernist curved rooflines, multi-level curbside drop-offs, and boarding gangways",
-            "CTICC Transit Hub: Soaring multi-storey glass exhibition concourses, escalators, and subterranean logistics docks",
-            "Full operational coordination with aviation authorities (SACAA) and port control for runway vehicle tracking"
+            "CTICC Interior Transit Hub: Soaring multi-storey glass exhibition concourses, escalators, and subterranean logistics docks",
+            "Full operational coordination with aviation authorities (SACAA) and airfield operators for runway vehicle tracking"
         ],
         "specs": {
             "permitting": "Airports Company SA (ACSA) Commercial Permits · Transnet National Ports Authority · Private Airfield Owner contracts",
-            "power": "3-Phase 125A industrial tie-ins at CTICC & Passenger Terminal · Mobile generator sets for Arrieskraal airfield",
+            "power": "3-Phase 125A industrial tie-ins at CTICC & Passenger Terminal · Mobile generator sets for Arrieskraal & Stellair airfields",
             "parking": "Expansive aircraft apron staging, multi-deck terminal parking garages, and private runway hardstands",
-            "sound_curfew": "24/7 filming protocols at Arrieskraal private airport · Scheduled night filming at terminals"
+            "sound_curfew": "24/7 filming protocols at Arrieskraal & Stellair private airfields · Scheduled night filming at terminals"
         },
         "gallery": [
             {"file": r"Husqvarna\Farms\Arrieskraal (11).jpg", "title": "Arrieskraal Airport: Private Rural Valley Airstrip, Hangars & Mountain Runway", "tag": "Hero Airstrip"},
             {"file": r"Husqvarna\Farms\Arrieskraal (13).jpg", "title": "Arrieskraal Airport: Mountain Valley Runway Corridor & Open Tarmac Approach", "tag": "Valley Runway"},
             {"file": r"Husqvarna\Farms\Arrieskraal (3).jpg", "title": "Arrieskraal: Operational Airfield Hangars & Aircraft Staging Apron", "tag": "Aircraft Hangars"},
-            {"file": r"Backup 2022-02\Allie's Journey\Franschoek\Barns\Kromme River\Arrieskraal (1).jpg", "title": "Arrieskraal: Private Airfield Perimeter & Rural Aviation Infrastructure", "tag": "Airfield Gate"},
+            {"file": r"Husqvarna\Farms\Arrieskraal (14).jpg", "title": "Arrieskraal Airport: Mountain Valley Airstrip Approach & Country Aviation Infrastructure", "tag": "Runway Corridor"},
             {"file": r"Backup 2022-02\Allie's Journey\Franschoek\Barns\Kromme River\Arrieskraal (2).jpg", "title": "Arrieskraal: Airstrip Horizon Facing Majestic Mountain Backdrops", "tag": "Runway Vista"},
+            {"file": r"Backup 2022-02\Love Island\Stellair (1).jpg", "title": "Stellair Airfield: Private Country Runway Tarmac & Stellenbosch Mountain Horizon", "tag": "Stellair Runway"},
+            {"file": r"Backup 2022-02\Love Island\Stellair (2).jpg", "title": "Stellair Airfield: Country Airfield Aircraft Hangars & Grass Flight Line", "tag": "Stellair Hangars"},
             {"file": r"Film AD\Romcom\Bachelor Party Getaway\Airport\CT Airport (2).JPG", "title": "Cape Town International Airport: Commercial Jet Tarmac & Passenger Boarding Gates", "tag": "Commercial Tarmac"},
             {"file": r"Film AD\Romcom\Bachelor Party Getaway\Airport\CT Airport (3).JPG", "title": "CTI Airport: Modernist Terminal Exterior, Departure Concourse & Curbside Drop-Off", "tag": "Airport Terminal"},
             {"file": r"Film AD\Romcom\Bachelor Party Getaway\Airport\CT Airport (4).JPG", "title": "CTI Airport: High-Ceiling International Departures Hall & Security Gates", "tag": "Departures Concourse"},
             {"file": r"Backup 2022-02\Trackers\CT Passenger Terminal\CT Passenger Terminal (1).jpg", "title": "Cape Town Passenger Terminal: Modern Maritime Cruise Terminal & Table Mountain Backdrop", "tag": "Passenger Terminal"},
             {"file": r"Backup 2022-02\Trackers\CT Passenger Terminal\CT Passenger Terminal (10).jpg", "title": "Passenger Terminal: Multi-Level Passenger Drop-Off Concourse & Glass Curtain Walls", "tag": "Terminal Concourse"},
             {"file": r"Backup 2022-02\Trackers\CT Passenger Terminal\CT Passenger Terminal (11).jpg", "title": "Passenger Terminal: Elevated Boarding Gangways & Quayside Ship Berths", "tag": "Boarding Gangway"},
-            {"file": r"CTICC\CTICC 1 (1).jpg", "title": "CTICC: Monumental Glass Exhibition Halls & Civic Transit Architecture", "tag": "CTICC Atrium"},
             {"file": r"CTICC\CTICC 1 (10).jpg", "title": "CTICC: Multi-Storey Escalator Atrium, Glass Skybridges & Modernist Stone Floors", "tag": "Skybridge Atrium"},
-            {"file": r"08-Glencor\CTICC-2\CTICC-2 (1).jpg", "title": "CTICC 2: Contemporary Curved Glass Facade & Exhibition Hall Entrance", "tag": "CTICC 2"},
-            {"file": r"08-Glencor\CTICC-2\CTICC-2 (10).jpg", "title": "CTICC 2: High-Volume Conference Concourse & Polished Granite Walkways", "tag": "Concourse"}
+            {"file": r"08-Glencor\CTICC-2\CTICC-2 (1).jpg", "title": "CTICC 2: Contemporary Curved Glass Facade & Exhibition Hall Entrance", "tag": "CTICC 2 Entrance"},
+            {"file": r"08-Glencor\CTICC-2\CTICC-2 (10).jpg", "title": "CTICC 2: High-Volume Interior Conference Concourse & Polished Granite Walkways", "tag": "Interior Concourse"}
         ]
     },
 
@@ -671,7 +673,8 @@ categories = [
             {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (10).jpg", "title": "Westlake: Pristine Tree-Lined Fairway, Water Hazard Reflection & Sheer Granite Peaks", "tag": "Water Hazard"},
             {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (14).jpg", "title": "Westlake: Augusta-Style Woodland Fairway, Deep Bunkers & Putting Surface", "tag": "Woodland Green"},
             {"file": r"Outsurance-Let it Rain\Royal Cape Golf Club\Royal Cape Golf (1).jpg", "title": "Royal Cape Golf Club (Est. 1885): South Africa's Oldest Parkland Course & Table Mountain Backdrop", "tag": "Heritage Parkland"},
-            {"file": r"Outsurance-Let it Rain\Royal Cape Golf Club\Royal Cape Golf (10).jpg", "title": "Royal Cape: Historic Championship Fairways, Ancient Oak Trees & Precision Greens", "tag": "Historic Course"},
+            {"file": r"Outsurance-Let it Rain\Royal Cape Golf Club\Royal Cape Golf (2).jpg", "title": "Royal Cape Golf Club: Historic Championship Fairway, Ancient Oak Trees & Precision Putting Green", "tag": "Putting Green"},
+            {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (11).jpg", "title": "Westlake Golf Course: Manicured Lake Hazard, Reed Waterways & Silvermine Mountain Face", "tag": "Lake Hazard"},
             {"file": r"Golf-Miami\Simonstown Country Club\Simonstown Golf (10).jpg", "title": "Simonstown Country Club: Coastal Seaside Links Perched High Over False Bay Azure Waters", "tag": "Coastal Links"},
             {"file": r"Golf-Miami\Simonstown Country Club\Simonstown Golf (11).jpg", "title": "Simonstown Links: Ocean Horizon Fairway with Sweeping Marine Panoramas", "tag": "Seaside Panoramas"},
             {"file": r"Backup 2022-02\Stelara\Golf Clubs\Stellenbosch\Stellenbosch Golf (24).jpg", "title": "Stellenbosch Golf Club: Historic Winelands Championship Course Beneath Helderberg Mountains", "tag": "Winelands Golf"},
@@ -699,9 +702,17 @@ for idx, f in enumerate(all_files):
     if (idx + 1) % 15 == 0 or (idx + 1) == len(all_files):
         print(f"Encoded {idx + 1}/{len(all_files)} images...")
 
+hero_bg_path = r"C:\Users\Jardin\OneDrive\Documents\Market\SAL\SAL-Events Management\src\assets\hero-tablemountain.jpg"
+hero_bg_b64 = encode_img(hero_bg_path, max_size=(1600, 900), quality=75)
+if hero_bg_b64:
+    print("Encoded Table Mountain Hero Background successfully!")
+else:
+    print("Warning: Failed to encode Table Mountain Hero Background.")
+
 payload = {
     "categories": categories,
-    "images": encoded_images
+    "images": encoded_images,
+    "hero_background": hero_bg_b64
 }
 
 with open(output_json, "w", encoding="utf-8") as out:

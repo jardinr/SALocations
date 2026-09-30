@@ -35,49 +35,63 @@ async def main():
         # Set headers to static for element screenshots to prevent sticky overlay artifacts
         await page.add_style_tag(content="header.top-nav, .category-nav-wrap { position: static !important; }")
 
-        # 3. Capture Category 01 Screenshot (Landscape Hero with wording below)
-        cat1 = await page.query_selector("#coastal-passes-ocean-roads")
-        if cat1:
-            cat1_screen = os.path.join(artifact_dir, "master_deck_cat01.jpg")
-            await cat1.screenshot(path=cat1_screen)
-            print(f"Saved Cat 01 Screenshot to {cat1_screen}")
+        # 3. Capture Category 03 Screenshot (Bo-Kaap Chiappini St)
+        cat3 = await page.query_selector("#heritage-cottages-character-streets")
+        if cat3:
+            cat3_screen = os.path.join(artifact_dir, "master_deck_cat03.jpg")
+            await cat3.screenshot(path=cat3_screen)
+            print(f"Saved Cat 03 Screenshot to {cat3_screen}")
 
-        # 4. Capture Category 06 (Expanded Beaches: Camps Bay, Llandudno, Muizenberg, Noordhoek)
+        # 4. Capture Category 05 Screenshot (Clean Mountains & Lourensford Prairie)
+        cat5 = await page.query_selector("#natural-wilderness-geological")
+        if cat5:
+            cat5_screen = os.path.join(artifact_dir, "master_deck_cat05.jpg")
+            await cat5.screenshot(path=cat5_screen)
+            print(f"Saved Cat 05 Screenshot to {cat5_screen}")
+
+        # 5. Capture Category 06 (Expanded Beaches: Camps Bay, Llandudno, St. James tidal pool)
         cat6 = await page.query_selector("#pristine-beaches-coastal-coves")
         if cat6:
             cat6_screen = os.path.join(artifact_dir, "master_deck_cat06.jpg")
             await cat6.screenshot(path=cat6_screen)
             print(f"Saved Cat 06 Screenshot to {cat6_screen}")
 
-        # 5. Capture Category 13 (Airports & Transit)
+        # 6. Capture Category 07 (V&A Wide Harbour Water Panoramas)
+        cat7 = await page.query_selector("#working-harbours-maritime-basins")
+        if cat7:
+            cat7_screen = os.path.join(artifact_dir, "master_deck_cat07.jpg")
+            await cat7.screenshot(path=cat7_screen)
+            print(f"Saved Cat 07 Screenshot to {cat7_screen}")
+
+        # 7. Capture Category 08 (CBD Wide Avenue & Harbour Arch Wide)
+        cat8 = await page.query_selector("#urban-metropolis-cbd")
+        if cat8:
+            cat8_screen = os.path.join(artifact_dir, "master_deck_cat08.jpg")
+            await cat8.screenshot(path=cat8_screen)
+            print(f"Saved Cat 08 Screenshot to {cat8_screen}")
+
+        # 8. Capture Category 13 (Airports, Stellair & CTICC Interior)
         cat13 = await page.query_selector("#airports-aviation-transport-terminals")
         if cat13:
             cat13_screen = os.path.join(artifact_dir, "master_deck_cat13.jpg")
             await cat13.screenshot(path=cat13_screen)
             print(f"Saved Cat 13 Screenshot to {cat13_screen}")
 
-        # 6. Capture Category 14 (Prisons & Detention)
-        cat14 = await page.query_selector("#civic-institutions-corrections-jail")
-        if cat14:
-            cat14_screen = os.path.join(artifact_dir, "master_deck_cat14.jpg")
-            await cat14.screenshot(path=cat14_screen)
-            print(f"Saved Cat 14 Screenshot to {cat14_screen}")
-
-        # 7. Capture Category 15 (Stadiums & Athletics)
-        cat15 = await page.query_selector("#stadiums-arenas-athletics")
-        if cat15:
-            cat15_screen = os.path.join(artifact_dir, "master_deck_cat15.jpg")
-            await cat15.screenshot(path=cat15_screen)
-            print(f"Saved Cat 15 Screenshot to {cat15_screen}")
-
-        # 8. Capture Category 16 (Championship Golf Courses & Country Club Estates)
+        # 9. Capture Category 16 (Golf Greens & Lakes)
         cat16 = await page.query_selector("#golf-courses-country-club-estates")
         if cat16:
             cat16_screen = os.path.join(artifact_dir, "master_deck_cat16.jpg")
             await cat16.screenshot(path=cat16_screen)
             print(f"Saved Cat 16 (Golf) Screenshot to {cat16_screen}")
 
-        # 9. Capture Rate Card & Executive Contacts (with IG & YT)
+        # 10. Capture Golden Hour Section
+        gh_el = await page.query_selector("#golden-hour")
+        if gh_el:
+            gh_screen = os.path.join(artifact_dir, "master_deck_golden_hour.jpg")
+            await gh_el.screenshot(path=gh_screen)
+            print(f"Saved Golden Hour Screenshot to {gh_screen}")
+
+        # 11. Capture Rate Card & Executive Contacts (Laura website & Jardin business card)
         rates_el = await page.query_selector("#rates-and-contacts")
         if rates_el:
             rates_screen = os.path.join(artifact_dir, "master_deck_rates.jpg")
