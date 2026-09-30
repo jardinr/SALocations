@@ -287,7 +287,7 @@ html_template = """<!DOCTYPE html>
             position: relative;
             width: 100%;
             background-color: var(--bg);
-            background-position: center 28%;
+            background-position: center 30%;
             background-size: cover;
             background-repeat: no-repeat;
             border-bottom: 1px solid var(--border);
@@ -297,8 +297,8 @@ html_template = """<!DOCTYPE html>
         .hero-banner-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(7, 11, 10, 0.72) 0%, rgba(7, 11, 10, 0.88) 55%, rgba(7, 11, 10, 0.98) 100%),
-                        radial-gradient(ellipse at 50% 30%, rgba(25, 56, 43, 0.25) 0%, rgba(7, 11, 10, 0.6) 80%);
+            background: linear-gradient(180deg, rgba(7, 11, 10, 0.46) 0%, rgba(7, 11, 10, 0.76) 55%, rgba(7, 11, 10, 0.95) 100%),
+                        radial-gradient(ellipse at 50% 30%, rgba(25, 56, 43, 0.15) 0%, rgba(7, 11, 10, 0.5) 80%);
             pointer-events: none;
             z-index: 1;
         }
@@ -603,12 +603,65 @@ html_template = """<!DOCTYPE html>
             max-width: 1100px;
         }
 
-        /* Hero Scouted Match Showcase - Strict Landscape with Wording Below */
+        /* Hero Location Showcase - Strict Landscape with Wording Below */
         .hero-showcase {
             display: flex;
             flex-direction: column;
             border-bottom: 1px solid var(--border);
             background: var(--surface);
+        }
+
+        /* 3-Part Continuous Panorama Vista Styling */
+        .panorama-triptych-wrap {
+            background: linear-gradient(135deg, rgba(22, 36, 30, 0.7) 0%, rgba(13, 20, 17, 0.9) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .panorama-triptych-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .panorama-triptych-title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .panorama-triptych-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            background: #000;
+            padding: 4px;
+            border-radius: var(--radius-sm);
+        }
+
+        @media (max-width: 900px) {
+            .panorama-triptych-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panorama-pane {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 4px;
+            background: var(--surface);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .panorama-pane:hover {
+            transform: translateY(-2px);
         }
 
         .hero-image-wrap {
@@ -1701,7 +1754,7 @@ html_template = """<!DOCTYPE html>
             <!-- Global Search -->
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="searchInput" placeholder="Search 167 locations..." oninput="filterShowcase(this.value)">
+                <input type="text" id="searchInput" placeholder="Search {len(images)} locations..." oninput="filterShowcase(this.value)">
             </div>
 
             <!-- Multi-Currency Selector -->
@@ -1748,7 +1801,7 @@ html_template += f"""
                     <div class="stat-label">Curated Macro Categories</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">167</div>
+                    <div class="stat-number">{len(images)}</div>
                     <div class="stat-label">Verified Hero Assets</div>
                 </div>
                 <div class="stat-card">
@@ -1783,7 +1836,7 @@ html_template += f"""
                         <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
                         <span class="doubling-tag">French Riviera (V&A Basin)</span>
                         <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
-                        <span class="doubling-tag">Championship Golf (Clovelly & Royal Cape)</span>
+                        <span class="doubling-tag">Championship Golf (Clovelly, Milnerton & Royal Cape)</span>
                         <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
                         <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
                         <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
@@ -1838,7 +1891,7 @@ for cat in categories:
                 <p class="category-synopsis">{cat['creative_synopsis']}</p>
             </div>
 
-            <!-- Hero Scouted Match Showcase - Strict Landscape with Wording Below -->
+            <!-- Hero Location Showcase - Strict Landscape with Wording Below -->
             <div class="hero-showcase">
                 <div class="hero-image-wrap" data-cat-id="{cat['id']}" data-file="{hero_img_file}" onclick="openLightbox('{cat['id']}', 0)">
                     <img src="{hero_b64}" alt="{cat['hero_image_title']}" loading="lazy">
@@ -1911,10 +1964,52 @@ for cat in categories:
                         Click any image to view in fullscreen cinema lightbox
                     </div>
                 </div>
+"""
+    if cat["id"] == "golf-courses-country-club-estates":
+        html_template += """
+                <div class="panorama-triptych-wrap">
+                    <div class="panorama-triptych-header">
+                        <span class="badge-premium">✦ Sequential 3-Shot Panoramic Vista</span>
+                        <div class="panorama-triptych-title">Clovelly Country Club: 180° Valley Amphitheater Panorama (Left · Center · Right)</div>
+                    </div>
+                    <div class="panorama-triptych-grid">
+"""
+        for idx in range(3):
+            item = cat["gallery"][idx]
+            img_b64 = images.get(item["file"], "")
+            item_img_file = item["file"].replace("\\", "\\\\")
+            item_title_clean = item["title"].replace("'", "\\'")
+            html_template += f"""
+                        <div class="panorama-pane" data-cat-id="{cat['id']}" data-photo-idx="{idx}" data-file="{item_img_file}" onclick="openLightbox('{cat['id']}', {idx})">
+                            <div class="gallery-thumb-wrap" style="aspect-ratio: 16/9;">
+                                <img src="{img_b64}" alt="{item['title']}" loading="lazy">
+                                <span class="gallery-thumb-tag">{item['tag']}</span>
+                                <div class="gallery-card-heart" onclick="event.stopPropagation(); toggleShortlistItem('{item_img_file}', '{item_title_clean}', '{cat_title_clean}', this)">
+                                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                </div>
+                            </div>
+                            <div class="gallery-card-info">
+                                <div class="gallery-card-title">{item['title']}</div>
+                            </div>
+                        </div>"""
+
+        html_template += """
+                    </div>
+                </div>
 
                 <div class="gallery-grid">
 """
-    for idx, item in enumerate(cat["gallery"]):
+        gallery_items = cat["gallery"][3:]
+        start_idx = 3
+    else:
+        html_template += """
+                <div class="gallery-grid">
+"""
+        gallery_items = cat["gallery"]
+        start_idx = 0
+
+    for idx_offset, item in enumerate(gallery_items):
+        idx = start_idx + idx_offset
         img_b64 = images.get(item["file"], "")
         item_img_file = item["file"].replace("\\", "\\\\")
         item_title_clean = item["title"].replace("'", "\\'")
@@ -2007,10 +2102,10 @@ html_template += """
                 <div class="rate-tier-card">
                     <span class="rate-badge">Recce & Scouting</span>
                     <h3>Location Scouting</h3>
-                    <p class="tier-desc">Dedicated technical scout, director visual matching, custom contact sheets & GPS mapping.</p>
+                    <p class="tier-desc">Dedicated technical scout, bespoke location scouting, custom contact sheets & GPS mapping.</p>
                     <div class="rate-amount" id="scoutRateDisplay">R 5,000 <span class="unit">/ day</span></div>
                     <ul class="tier-features">
-                        <li>Visual reference matching from 8,000+ photo archive</li>
+                        <li>Custom location curation from 8,000+ photo archive</li>
                         <li>High-resolution contact sheets & GPS coordinate tagging</li>
                         <li>Sun tracking analysis & drone recce availability</li>
                         <li>Direct coordination with property owners & city authorities</li>
@@ -2100,7 +2195,7 @@ html_template += """
                         <div class="biz-card-divider"></div>
                         <h3 class="contact-name">Jardin Roestorff</h3>
                         <p class="contact-bio" style="margin-bottom: 0.8rem;">
-                            Specialized technical location scout with an 8,000+ photo archive spanning the Western Cape. Dedicated to director visual reference matching, architectural precision, crane clearances, and digital production decks.
+                            Specialized technical location scout with an 8,000+ photo archive spanning the Western Cape. Dedicated to architectural precision, cinematic framing, crane clearances, and digital production decks.
                         </p>
                         <div class="contact-links">
                             <a href="tel:+27734921998" class="contact-link highlight">

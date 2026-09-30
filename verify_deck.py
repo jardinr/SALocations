@@ -32,8 +32,12 @@ async def main():
         await page.screenshot(path=hero_screen, clip={"x": 0, "y": 0, "width": 1400, "height": 880})
         print(f"Saved Hero Screenshot to {hero_screen}")
 
-        # Set headers to static for element screenshots to prevent sticky overlay artifacts
-        await page.add_style_tag(content="header.top-nav, .category-nav-wrap { position: static !important; }")
+        # 2b. Capture Category 01 Screenshot (New Chapman's Peak Opener)
+        cat1 = await page.query_selector("#coastal-passes-ocean-roads")
+        if cat1:
+            cat1_screen = os.path.join(artifact_dir, "master_deck_cat01.jpg")
+            await cat1.screenshot(path=cat1_screen)
+            print(f"Saved Cat 01 Screenshot to {cat1_screen}")
 
         # 3. Capture Category 03 Screenshot (Bo-Kaap Chiappini St)
         cat3 = await page.query_selector("#heritage-cottages-character-streets")
