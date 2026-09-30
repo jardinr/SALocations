@@ -9,7 +9,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 pics_root = r"C:\Users\Jardin\OneDrive\Pictures"
 output_json = r"C:\Users\Jardin\OneDrive\Documents\Market\SAL\Business-SALocations\Pitches\sal-global-locations-deck\embedded_data.json"
 
-def encode_img(rel_path, max_size=(1050, 700), quality=72):
+def encode_img(rel_path, max_size=(980, 650), quality=70):
     full_path = os.path.join(pics_root, rel_path)
     if not os.path.exists(full_path):
         print(f"Warning: File not found: {full_path}")
@@ -27,7 +27,7 @@ def encode_img(rel_path, max_size=(1050, 700), quality=72):
         print(f"Error encoding {full_path}: {e}")
         return ""
 
-print("Encoding 15 Macro Categories Master Dataset...")
+print("Encoding 16 Macro Categories Master Dataset...")
 
 categories = [
     # 01
@@ -241,19 +241,21 @@ categories = [
         "num": "06",
         "title": "Pristine Beaches & Coastal Coves",
         "icon": "🏖️",
-        "doubles_as": "Mediterranean Coastline · Caribbean Sand Beaches · California Surf Breaks · Vintage Coastal Havens",
+        "doubles_as": "Mediterranean Coastline · Caribbean Sand Beaches · California Surf Breaks · Vintage Coastal Havens · Cannes & Malibu",
         "hero_badge": "Scouted Database Match",
-        "area": "Noordhoek Long Beach, Clifton 4th, Dalebrook & St. James",
-        "tagline": "Endless 8km wide flat white sand horizons, sheltered turquoise granite coves, crashing Atlantic surf breaks, and historic ocean tidal pools.",
-        "creative_synopsis": "Cape Town's coastline provides legendary diversity for beach and ocean filming. Noordhoek Long Beach offers 8 uninterrupted kilometers of hard-packed white sand, backed by pristine coastal dunes and the Chapman's Peak headland—ideal for high-speed tracking, horse chases, and vast horizon scenes. Clifton 4th Beach is sheltered from prevailing winds by polished granite boulders, providing turquoise waters and palm-fringed sands. Historic tidal pools in Dalebrook and St. James bring nostalgic stone-walled sea baths and Victorian bathing boxes.",
-        "hero_image_file": r"Beaches\Noordhoek\Noordhoek Beach (1).jpg",
-        "hero_image_title": "Noordhoek Long Beach: Wide 8km Untamed White Sand Corridor & Rolling Surf",
+        "area": "Camps Bay, Llandudno, Noordhoek Long Beach, Clifton 4th, Muizenberg & St. James",
+        "tagline": "Iconic palm-lined white sand crescents, secluded granite boulder coves, 8km untamed sand corridors, world-famous surf breaks, and historic tidal pools.",
+        "creative_synopsis": "Cape Town's coastline provides legendary diversity for beach and ocean filming. Camps Bay Beach is the crown jewel of the Atlantic Seaboard—a wide white-sand crescent lined with palm trees and backed by the Twelve Apostles mountain peaks, doubling for Cannes, Miami, or Malibu. Nearby Llandudno is an exclusive, undeveloped sanctuary framed by colossal granite boulders and turquoise waters. Noordhoek Long Beach offers 8 uninterrupted kilometers of hard-packed sand and untamed surf. Muizenberg Beach delivers world-famous surf culture and historic brightly colored Victorian bathing boxes, while Clifton 4th provides sheltered blue waters and Dalebrook / St. James bring historic tidal sea pools.",
+        "hero_image_file": r"Beaches\Camps Bay\Camps Bay Beach\Camps Bay Beach (1).jpg",
+        "hero_image_title": "Camps Bay Beach: Wide Palm-Fringed White Sands Facing Twelve Apostles & Lion's Head",
         "key_features": [
-            "Long Beach Noordhoek: 8km wide flat sand corridor with horse-riding access, dunes, and Kakapo shipwreck",
-            "Clifton 4th: Sheltered turquoise water, giant polished granite boulders, and golden sunset horizons",
-            "Dalebrook Tidal Pool: Ocean-washed stone swimming walls with natural surf splashback and clear saltwater",
-            "St. James Beach: Iconic multi-coloured Victorian bathing boxes along the historic false bay railway",
-            "Direct beach vehicle access ramps and experienced water safety / marine rescue support"
+            "Camps Bay Beach: Iconic white sand crescent, palm-lined promenade, and monumental Twelve Apostles backdrop",
+            "Llandudno Beach: Exclusive secluded cove flanked by dramatic granite boulders and turquoise Atlantic swell",
+            "Noordhoek Long Beach: 8km wide flat sand corridor with horse-riding access, coastal dunes, and Kakapo shipwreck",
+            "Clifton 4th Beach: Sheltered turquoise water, giant polished granite boulders, and golden sunset horizons",
+            "Muizenberg Beach & Surfers Corner: World-renowned gentle surf break and iconic Victorian bathing boxes",
+            "Kogel Bay & Clarence Drive: Dramatic vertical mountain cliffs plunging into wild coastal surf",
+            "Historic Tidal Pools: Dalebrook and St. James stone-walled sea pools with crashing surf spray"
         ],
         "specs": {
             "permitting": "City of Cape Town Film Office & SANParks Coastal Permits (3–5 working days)",
@@ -262,14 +264,19 @@ categories = [
             "sound_curfew": "Golden hour sunrise calls recommended for pristine empty beaches · Natural ocean ambient sound"
         },
         "gallery": [
-            {"file": r"Beaches\Noordhoek\Noordhoek Beach (1).jpg", "title": "Noordhoek Long Beach: Wide 8km Untamed White Sand Corridor & Rolling Surf", "tag": "Hero Beach"},
+            {"file": r"Beaches\Camps Bay\Camps Bay Beach\Camps Bay Beach (1).jpg", "title": "Camps Bay Beach: Wide Palm-Fringed White Sands Facing Twelve Apostles & Lion's Head", "tag": "Hero Beach"},
+            {"file": r"Beaches\Camps Bay\Camps Bay Beach\Camps Bay Beach (10).jpg", "title": "Camps Bay Beach: Golden Sunset Swell, Atlantic Surf Line & Beachfront Promenade", "tag": "Sunset Surf"},
+            {"file": r"Beaches\Rocky Beaches\Beaches\Llandudno Beach\Llandudno (1).jpg", "title": "Llandudno Beach: Secluded Granite Boulder Cove & Turquoise Atlantic Waves", "tag": "Granite Cove"},
+            {"file": r"Beaches\Rocky Beaches\Beaches\Llandudno Beach\Llandudno (10).jpg", "title": "Llandudno Beach: Sweeping Coastal Headland, Fine White Sand & Untamed Ocean Swell", "tag": "Atlantic Swell"},
+            {"file": r"Beaches\Noordhoek\Noordhoek Beach (1).jpg", "title": "Noordhoek Long Beach: Wide 8km Untamed White Sand Corridor & Rolling Surf", "tag": "8km Sand Corridor"},
             {"file": r"Beaches\Noordhoek\Noordhoek Beach (2).jpg", "title": "Noordhoek Dunes: Fine Sand Dunes & Distant Chapman's Peak Mountain Headland", "tag": "Coastal Dunes"},
-            {"file": r"Beaches\Noordhoek\Noordhoek Beach (3).jpg", "title": "Noordhoek Beach: Flat Wet-Sand Mirror Horizon Ideal for Vehicle & Stunt Tracking", "tag": "Beach Tracking"},
             {"file": r"Beaches\Clifton\Clifton 4th (1).jpg", "title": "Clifton 4th Beach: Sheltered Turquoise Water, Granite Boulders & Golden Sunset", "tag": "Clifton 4th"},
-            {"file": r"Beaches\Clifton\Clifton-4th\Clifton 4th (10).jpg", "title": "Clifton Beach: Pristine White Sand Cove Framed by Dramatic Coastal Headlands", "tag": "Granite Cove"},
+            {"file": r"Beaches\Clifton\Clifton-4th\Clifton 4th (10).jpg", "title": "Clifton Beach: Pristine White Sand Cove Framed by Dramatic Coastal Headlands", "tag": "Sheltered Cove"},
+            {"file": r"Beaches\Muizenberg\Muizenberg (10).jpg", "title": "Muizenberg Beach: World-Famous Surfers Corner & Expansive False Bay Sandflat", "tag": "Surfers Corner"},
+            {"file": r"Beaches\Muizenberg\Muizenberg (11).jpg", "title": "Muizenberg: Vibrant Iconic Multi-Coloured Victorian Bathing Boxes & Longboard Waves", "tag": "Bathing Boxes"},
+            {"file": r"Beaches\Kogel Bay\Kogel Bay (10).jpg", "title": "Kogel Bay / Caves: Sheer Sandstone Mountain Precipices Plunging into Wild Surf", "tag": "Wild Mountain Coast"},
             {"file": r"Beaches\Dalebrook Tidal Pool\Dalebrook Tidal Pool (1).jpg", "title": "Dalebrook Tidal Pool: Historic Stone-Walled Ocean Swimming Pool & False Bay Horizon", "tag": "Tidal Pool"},
-            {"file": r"Beaches\St. James Tidal Pool\Main Rd-St. James (1).jpg", "title": "St. James: Coastal Tarmac & Train Line Running Directly Along Ocean Wave Break", "tag": "Coastal Railway"},
-            {"file": r"Beaches\St. James Tidal Pool\Main Rd-St. James (15).jpg", "title": "St. James Tidal Pool: Iconic Multi-Coloured Victorian Bathing Boxes & Beach", "tag": "Bathing Boxes"}
+            {"file": r"Beaches\St. James Tidal Pool\Main Rd-St. James (15).jpg", "title": "St. James Tidal Pool: Iconic Multi-Coloured Victorian Bathing Boxes & Tidal Bath", "tag": "Historic Sea Pool"}
         ]
     },
 
@@ -627,6 +634,48 @@ categories = [
             {"file": r"Stadia\Newlands Cricket (2).jpg", "title": "Newlands: International Cricket Pavilion, Floodlights & Outfield Turf", "tag": "Pavilion Stands"},
             {"file": r"Stadia\14th - Bellville Stadium (1).jpg", "title": "Bellville Stadium: Multi-Purpose Municipal Athletics Grounds & Cycling Track", "tag": "Bellville Athletics"},
             {"file": r"Stadia\20191202_125421.jpg", "title": "Bellville Velodrome: Indoor Banked Timber Cycling Track & Sports Arena", "tag": "Velodrome"}
+        ]
+    },
+
+    # 16
+    {
+        "id": "golf-courses-country-club-estates",
+        "num": "16",
+        "title": "Championship Golf Courses & Country Club Estates",
+        "icon": "⛳",
+        "doubles_as": "Monterey Peninsula / Carmel Valley · Augusta Georgia Woodlands · Scottish & Irish Coastal Links · Surrey & Berkshire Parkland Estates · Napa Valley Wine Country Golf",
+        "hero_badge": "Scouted Database Match",
+        "area": "Clovelly Country Club, Westlake, Royal Cape (Est. 1885), Simonstown Links & Stellenbosch",
+        "tagline": "Championship 18-hole valley fairways framed by rugged sandstone amphitheaters, seaside coastal links over False Bay, towering pine woodland courses, and historic heritage parkland greens.",
+        "creative_synopsis": "South Africa's Western Cape offers world-class championship golf courses and private country club estates that double seamlessly for the world's most prestigious golfing destinations. Clovelly Country Club, nestled in the Silvermine Valley, features undulating manicured fairways lined with coastal pines against a dramatic mountain amphitheater (doubling for Carmel Valley or California). Westlake Golf Course offers lush woodland fairways and tranquil lakes beneath the Silvermine peaks. Royal Cape Golf Club, established in 1885 as the oldest club in Africa, provides classic English parkland fairways with Table Mountain views. Simonstown Country Club delivers dramatic seaside links perched high above False Bay, while Stellenbosch Golf Club provides historic Cape Winelands golf estates.",
+        "hero_image_file": r"Golf-Miami\Clovelly Country Club\Clovelly Golf (1).jpg",
+        "hero_image_title": "Clovelly Country Club: Championship Valley Fairway, Sandstone Mountain Amphitheater & Coastal Pines (Silvermine Valley)",
+        "key_features": [
+            "Clovelly Country Club: Championship 18-hole layout nestled in the Silvermine Valley with coastal dunes, water hazards, and pine canopies",
+            "Westlake Golf Course: Towering pine and eucalyptus canopies, pristine bentgrass greens, and Silvermine mountain face",
+            "Royal Cape Golf Club (Est. 1885): Oldest club in Africa, traditional parkland championship course, and unobstructed Table Mountain backdrops",
+            "Simonstown Country Club: Elevated coastal links perched over the deep turquoise waters of False Bay",
+            "Stellenbosch Golf Club: Historic Winelands golf estate surrounded by vineyards and the towering Helderberg mountains"
+        ],
+        "specs": {
+            "permitting": "Private Club Filming License (48–72 hr sign-off) · Scheduled tee-time buyout & dawn/dusk filming blocks",
+            "power": "3-Phase 63A/100A clubhouse utility tie-ins · Mobile quiet battery generator packs for fairway setups",
+            "parking": "Clubhouse tarmac hardstand parking for 25+ technical vehicles, honeywagons, and crew shuttles",
+            "sound_curfew": "Acoustically secluded valley basins with minimal traffic noise · Dawn sunrise tee-off filming permitted"
+        },
+        "gallery": [
+            {"file": r"Golf-Miami\Clovelly Country Club\Clovelly Golf (1).jpg", "title": "Clovelly Country Club: Championship Valley Fairways Framed by Silvermine Mountains & Coastal Pines", "tag": "Hero Fairway"},
+            {"file": r"Golf-Miami\Clovelly Country Club\Clovelly Golf (14).jpg", "title": "Clovelly Country Club: Elevated Tee-Box Vista Across Undulating Valley & Indigenous Fynbos", "tag": "Valley Vista"},
+            {"file": r"Golf-Miami\Clovelly Country Club\Clovelly Golf (15).jpg", "title": "Clovelly: Precision Manicured Putting Green, Sand Bunkers & Mountain Amphitheater", "tag": "Championship Green"},
+            {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (1).jpg", "title": "Westlake Golf Course: Towering Pine Canopies & Slopes of the Silvermine Mountains", "tag": "Pine Woodland"},
+            {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (10).jpg", "title": "Westlake: Pristine Tree-Lined Fairway, Water Hazard Reflection & Sheer Granite Peaks", "tag": "Water Hazard"},
+            {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (14).jpg", "title": "Westlake: Augusta-Style Woodland Fairway, Deep Bunkers & Putting Surface", "tag": "Woodland Green"},
+            {"file": r"Outsurance-Let it Rain\Royal Cape Golf Club\Royal Cape Golf (1).jpg", "title": "Royal Cape Golf Club (Est. 1885): South Africa's Oldest Parkland Course & Table Mountain Backdrop", "tag": "Heritage Parkland"},
+            {"file": r"Outsurance-Let it Rain\Royal Cape Golf Club\Royal Cape Golf (10).jpg", "title": "Royal Cape: Historic Championship Fairways, Ancient Oak Trees & Precision Greens", "tag": "Historic Course"},
+            {"file": r"Golf-Miami\Simonstown Country Club\Simonstown Golf (10).jpg", "title": "Simonstown Country Club: Coastal Seaside Links Perched High Over False Bay Azure Waters", "tag": "Coastal Links"},
+            {"file": r"Golf-Miami\Simonstown Country Club\Simonstown Golf (11).jpg", "title": "Simonstown Links: Ocean Horizon Fairway with Sweeping Marine Panoramas", "tag": "Seaside Panoramas"},
+            {"file": r"Backup 2022-02\Stelara\Golf Clubs\Stellenbosch\Stellenbosch Golf (24).jpg", "title": "Stellenbosch Golf Club: Historic Winelands Championship Course Beneath Helderberg Mountains", "tag": "Winelands Golf"},
+            {"file": r"Golf-Miami\Bellville Golf Club\Bellville Golf (1).jpg", "title": "Bellville Golf Club: Undulating Welgemoed Valley Hills & Boland Mountain Skyline", "tag": "Rolling Fairway"}
         ]
     }
 ]

@@ -19,12 +19,12 @@ html_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cape Town Master Location Scouting Database · International Film & Commercial Showcase</title>
-    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 15 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
+    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 16 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cape Town Master Location Scouting Database · Global Film & Commercial Showcase">
-    <meta property="og:description" content="Curated 15-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada & European destinations. 150 verified hero assets, technical filming specs & multi-currency rates.">
+    <meta property="og:description" content="Curated 16-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European & Championship Golf destinations. 167 verified hero assets, technical filming specs & multi-currency rates.">
     <meta property="og:image" content="https://sal-global-locations-deck.vercel.app/og-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -1525,7 +1525,7 @@ html_template = """<!DOCTYPE html>
             <!-- Global Search -->
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="searchInput" placeholder="Search 150 locations..." oninput="filterShowcase(this.value)">
+                <input type="text" id="searchInput" placeholder="Search 167 locations..." oninput="filterShowcase(this.value)">
             </div>
 
             <!-- Multi-Currency Selector -->
@@ -1564,11 +1564,11 @@ html_template = """<!DOCTYPE html>
         <!-- KPI Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number">15</div>
+                <div class="stat-number">16</div>
                 <div class="stat-label">Curated Macro Categories</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">150</div>
+                <div class="stat-number">167</div>
                 <div class="stat-label">Verified Hero Assets</div>
             </div>
             <div class="stat-card">
@@ -1590,7 +1590,7 @@ html_template = """<!DOCTYPE html>
             <div>
                 <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
                 <div class="doubling-desc">
-                    Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, and Olympic-grade sports stadiums.
+                    Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums.
                 </div>
                 <div class="doubling-tags">
                     <span class="doubling-tag">California PCH (Chapman's Peak)</span>
@@ -1598,10 +1598,12 @@ html_template = """<!DOCTYPE html>
                     <span class="doubling-tag">Hollywood Hills (Clifton & Lux)</span>
                     <span class="doubling-tag">London Suburbs (Culver & Chatham)</span>
                     <span class="doubling-tag">Nevada Desert (R355 Karoo)</span>
+                    <span class="doubling-tag">Cannes & Malibu Beaches (Camps Bay & Llandudno)</span>
                     <span class="doubling-tag">Pacific Northwest (Blackwood Cabin)</span>
                     <span class="doubling-tag">Cederberg Alien Planet (Stadsaal Caves)</span>
                     <span class="doubling-tag">French Riviera (V&A Basin)</span>
                     <span class="doubling-tag">Tuscan Vineyards (Asara & Tokara)</span>
+                    <span class="doubling-tag">Championship Golf (Clovelly & Royal Cape)</span>
                     <span class="doubling-tag">Maximum Security Prison (Disa Tygerberg)</span>
                     <span class="doubling-tag">Olympic Arena (Cape Town DHL Stadium)</span>
                     <span class="doubling-tag">Private Airfield (Arrieskraal Airport)</span>
@@ -1616,7 +1618,7 @@ html_template = """<!DOCTYPE html>
     <!-- Sticky Category Filter Navigation -->
     <nav class="category-nav-wrap">
         <div class="category-nav" id="categoryNav">
-            <button class="cat-pill active" onclick="filterCategory('all', this)">All Categories (15)</button>
+            <button class="cat-pill active" onclick="filterCategory('all', this)">All Categories (16)</button>
 """
 
 # Append category pills
@@ -1645,7 +1647,7 @@ for cat in categories:
             <!-- Category Header -->
             <div class="category-header">
                 <div class="cat-meta-row">
-                    <span class="cat-num-badge">CATEGORY {cat['num']} OF 15</span>
+                    <span class="cat-num-badge">CATEGORY {cat['num']} OF {len(categories)}</span>
                     <span class="cat-doubling-banner">Doubles For: {cat['doubles_as']}</span>
                 </div>
                 <h2 class="category-title">{cat['icon']} {cat['title']}</h2>
@@ -1916,7 +1918,7 @@ html_template += """
                 </a>
             </div>
             <div class="footer-disclaimer">
-                © 2026/2027 SA Locations & Zencrew. All 150 photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Transposed under strict zero-rotation standards. Direct bookings subject to municipal permit authorization.
+                © 2026/2027 SA Locations & Zencrew. All 167 photographs within the Scouted Images Database are proprietary assets photographed on location across the Western Cape, South Africa. Transposed under strict zero-rotation standards. Direct bookings subject to municipal permit authorization.
             </div>
         </div>
     </footer>
