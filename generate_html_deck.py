@@ -20,12 +20,12 @@ html_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cape Town Master Location Scouting Database · International Film & Commercial Showcase</title>
-    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 16 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
+    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 17 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cape Town Master Location Scouting Database · Global Film & Commercial Showcase">
-    <meta property="og:description" content="Curated 16-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European & Championship Golf destinations. 167 verified hero assets, technical filming specs & multi-currency rates.">
+    <meta property="og:description" content="Curated 17-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European, Skyline Rooftop & Championship Golf destinations. 183 verified hero assets, technical filming specs & multi-currency rates.">
     <meta property="og:image" content="https://sal-global-locations-deck.vercel.app/og-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -1860,7 +1860,7 @@ html_template += f"""
             <!-- KPI Stats Grid - 4 Focused Macro Columns -->
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">16</div>
+                    <div class="stat-number">{len(categories)}</div>
                     <div class="stat-label">Curated Macro Categories</div>
                 </div>
                 <div class="stat-card">
@@ -1901,6 +1901,7 @@ html_template += f"""
                         <button type="button" class="doubling-tag" onclick="filterCategory('civic-institutions-corrections-jail')">🏢 Maximum Security Prison Facility (Disa Tygerberg)</button>
                         <button type="button" class="doubling-tag" onclick="filterCategory('stadiums-arenas-athletics')">🏟️ Olympic Arenas & World Cup Stadiums (DHL Stadium)</button>
                         <button type="button" class="doubling-tag" onclick="filterCategory('golf-courses-country-club-estates')">⛳ Championship Golf & Country Club Estates (Clovelly & Royal Cape)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('city-views-rooftops-panoramas')">🌇 Manhattan & Miami Skyline Rooftops (113 Loop St & Signal Hill)</button>
                     </div>
                 </div>
                 <div>
@@ -1911,18 +1912,18 @@ html_template += f"""
     </div>
 """
 
-html_template += """
+html_template += f"""
     <!-- Sticky Category Filter Navigation -->
     <nav class="category-nav-wrap">
         <div class="category-nav" id="categoryNav">
-            <button class="cat-pill active" data-cat-id="all" onclick="filterCategory('all', this)">All Categories (16)</button>
+            <button class="cat-pill active" data-cat-id="all" onclick="filterCategory('all', this)">All Categories ({len(categories)})</button>
 """
 
 # Append category pills
 for cat in categories:
     html_template += f"""            <button class="cat-pill" data-cat-id="{cat['id']}" onclick="filterCategory('{cat['id']}', this)">{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}</button>\n"""
 
-html_template += """        </div>
+html_template += f"""        </div>
     </nav>
 
     <!-- Main Location Showcase Content -->
@@ -1930,7 +1931,7 @@ html_template += """        </div>
         <!-- Single Category View Breadcrumb Banner -->
         <div id="categoryActiveBanner" class="category-active-banner" style="display: none;">
             <button class="btn-back-overview" onclick="filterCategory('all')">
-                ← Back to Global Overview (All 16 Categories)
+                ← Back to Global Overview (All {len(categories)} Categories)
             </button>
             <div class="active-category-title-display" id="activeCategoryTitleDisplay"></div>
         </div>

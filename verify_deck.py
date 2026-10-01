@@ -25,7 +25,7 @@ async def main():
         print(f"Page Title: {title}")
 
         blocks = await page.query_selector_all(".category-block")
-        print(f"Rendered Category Blocks: {len(blocks)} / 16")
+        print(f"Rendered Category Blocks: {len(blocks)} / 17")
 
         # 2. Capture Hero Screenshot
         hero_screen = os.path.join(artifact_dir, "master_deck_hero.jpg")
@@ -87,6 +87,13 @@ async def main():
             cat16_screen = os.path.join(artifact_dir, "master_deck_cat16.jpg")
             await cat16.screenshot(path=cat16_screen)
             print(f"Saved Cat 16 (Golf) Screenshot to {cat16_screen}")
+
+        # 9b. Capture Category 17 (City Views, Rooftop Lounges & Panoramic Lookouts)
+        cat17 = await page.query_selector("#city-views-rooftops-panoramas")
+        if cat17:
+            cat17_screen = os.path.join(artifact_dir, "master_deck_cat17.jpg")
+            await cat17.screenshot(path=cat17_screen)
+            print(f"Saved Cat 17 (City Views & Rooftops) Screenshot to {cat17_screen}")
 
         # 10. Capture Golden Hour Section
         gh_el = await page.query_selector("#golden-hour")

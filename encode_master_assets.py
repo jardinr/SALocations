@@ -49,7 +49,7 @@ categories = [
         "key_features": [
             "9km of vertical cliff highway with 114 curves, cantilevered rock canopy galleries, and half-tunnels",
             "Victoria Road sea-level tracking corridor connecting Clifton, Camps Bay, and Llandudno along the 12 Apostles",
-            "R355 Arid Highway: 250km of uninterrupted desert plains, shimmering heat hazes, and zero light pollution",
+            "R355 Arid Highway & Tankwa Karoo: 250km uninterrupted gravel tracking corridor, Inverdoorn cactus curve, and Sadawa expedition basecamp",
             "Lookout Vantage: Chapman's Peak Lookout Over Monkey Valley & Long Beach Noordhoek",
             "Single-track cliff trails carved into red sandstone precipices for high-speed action tracking"
         ],
@@ -69,9 +69,12 @@ categories = [
             {"file": r"Zen\Chapmans Peak Trail (2).jpg", "title": "Chapman's Peak Trail: Dramatic Sandstone Single-Track Cutting Into Cliff Face", "tag": "Action Trail"},
             {"file": r"Zen\M6-to CB (0).jpg", "title": "Victoria Road (M6): Sea-Level Coastal Drive Hugging Twelve Apostles Towards Lion's Head", "tag": "Victoria Rd"},
             {"file": r"Zen\M6-to CB (1).jpg", "title": "Victoria Road (M6): Golden Hour Tarmac & Atlantic Wave Horizon", "tag": "Coastal Highway"},
-            {"file": r"Arid Road-R355\R355 (11).jpg", "title": "R355 Tankwa Karoo Highway: Uninterrupted Dirt Road & Vast Desert Basin", "tag": "Arid Highway"},
-            {"file": r"Arid Road-R355\R355 (115).jpg", "title": "R355 Desert Horizon: Open Plain Tracking Corridor & Remote Mountain Backdrop", "tag": "Desert Highway"},
-            {"file": r"Arid Road-R355\R355 (130).jpg", "title": "R355 Highway Corridor: Arid Scrubland & Endless Vanishing Point", "tag": "Desert Plain"}
+            {"file": r"Arid Road-R355\Silversea\20240326_184545.jpg", "title": "R355 Tankwa Karoo Highway: Vast Desert Basin & Endless Dirt Tracking Corridor Under Golden Sunset", "tag": "Sunset Corridor"},
+            {"file": r"Arid Road-R355\Silversea\20240326_185451.jpg", "title": "Inverdoorn Big 5 Game Reserve Entrance (Tankwa Karoo): Prickly Pear Cactus Road & Fiery Sunset Sky", "tag": "Inverdoorn Curve"},
+            {"file": r"Arid Road-R355\Silversea\20240326_164927.jpg", "title": "R355 Arid Highway: Uninterrupted Straight Gravel Tracking Corridor Vanishing Over Rolling Karoo Crests", "tag": "Straight Highway"},
+            {"file": r"Arid Road-R355\Silversea\20240326_162423.jpg", "title": "Perdekraal East Wind Farm (R355 Corridor): Renewable Turbine Array Across Vast Karoo Plains", "tag": "Wind Farm"},
+            {"file": r"Arid Road-R355\Silversea\Sadawa (20).jpg", "title": "Sadawa Game Reserve (Tankwa Karoo): Remote Production Expedition Basecamp Under Twilight Magenta Skies", "tag": "Desert Basecamp"},
+            {"file": r"Arid Road-R355\Silversea\Sadawa (25).jpg", "title": "Tankwa Karoo Desert Wilderness: Rugged Scrub Plains & Distant Mountain Horizon at Dusk", "tag": "Karoo Wilderness"}
         ]
     },
 
@@ -152,11 +155,11 @@ categories = [
             {"file": r"Zen\Rosemount Ave-Gardens (4).jpg", "title": "Rosemount Avenue: Grand Two-Storey Victorian Mansion with Cast-Iron Balconies", "tag": "Victorian Villa"},
             {"file": r"CBD\Bo Kaap (1).jpg", "title": "Bo-Kaap Historic Terraces: Cobblestone Road & Vibrant Multicoloured Facades", "tag": "Cobblestones"},
             {"file": r"Takealot\Bo Kaap\Chiappini St (1).JPG", "title": "Bo-Kaap Chiappini Street: Wide Cobblestone Corridor with Vibrant Saturated Cape Malay Heritage Facades", "tag": "Chiappini St"},
-            {"file": r"CBD\Bo Kaap (4).jpg", "title": "Bo-Kaap: Heritage Parapet Rooflines, Dutch Terraces & Traditional Windows", "tag": "Cape Dutch"},
             {"file": r"CBD\Bo Kaap-Pan.jpg", "title": "Bo-Kaap Panorama: Wide Historic District View Across Vibrant Historic Streets", "tag": "Panorama"},
-            {"file": r"De Waterkant\Fibre Designs (1).jpg", "title": "De Waterkant: European-Style Cobblestone Pedestrian Lane & Boutique Stoops", "tag": "Pedestrian Lane"},
-            {"file": r"De Waterkant\Fibre Designs (2).jpg", "title": "De Waterkant: Restored Heritage Townhouses with Wrought Iron Juliet Balconies", "tag": "Townhouse Row"},
-            {"file": r"De Waterkant\Fibre Designs (10).jpg", "title": "De Waterkant: Historic Brick Quarters & Textured Sidewalk Courtyards", "tag": "Boutique Quarter"}
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863220.jpg", "title": "De Waterkant: Historic Pastel Cottage Streetscape & Cobblestone Townhouse Curve", "tag": "Streetscape"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863224.jpg", "title": "De Waterkant: Private Timber Rooftop Deck Overlooking Heritage Cottages & Lodge", "tag": "Village Deck"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863228.jpg", "title": "De Waterkant: Mediterranean Blue Double-Storey Townhouse with Bougainvillea & Veranda", "tag": "Blue Townhouse"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863232.jpg", "title": "De Waterkant: Rooftop Terrace Cafe Pergola & Multi-Colored Village Facades", "tag": "Rooftop Terrace"}
         ]
     },
 
@@ -683,6 +686,53 @@ categories = [
             {"file": r"Backup 2022-02\Stelara\Golf Clubs\Stellenbosch\Stellenbosch Golf (28).jpg", "title": "Stellenbosch Golf Club: Historic Winelands Championship Course Beneath Helderberg Mountains", "tag": "Winelands Golf"},
             {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (1).jpg", "title": "Westlake Golf Course: Towering Pine Canopies & Slopes of the Silvermine Mountains", "tag": "Pine Woodland"},
             {"file": r"Golf-Miami\Westlake Golf Course\Westlake Golf (11).jpg", "title": "Westlake Golf Course: Manicured Lake Hazard, Reed Waterways & Silvermine Mountain Face", "tag": "Lake Hazard"}
+        ]
+    },
+
+    # 17
+    {
+        "id": "city-views-rooftops-panoramas",
+        "num": "17",
+        "title": "City Views, Rooftop Lounges & Panoramic Lookouts",
+        "icon": "🌇",
+        "doubles_as": "Manhattan Skyline Rooftops · Miami Penthouse Terraces · Mediterranean Harbor Lookouts · Los Angeles Griffith Observatory Overlooks · Hong Kong & Tokyo Skyline Lounges",
+        "hero_badge": "Verified Location",
+        "area": "113 Loop St CBD, Signal Hill Lookout, Long Street Rooftops, Cloud 9 & Table Mountain Summit",
+        "tagline": "Panoramic 360° city bowl vistas from iconic mountain crests, luxury penthouse pools, and chic CBD rooftop cocktail decks overlooking Table Mountain and Table Bay.",
+        "creative_synopsis": "Perched between the Atlantic Ocean and Table Mountain, Cape Town's elevated architecture and natural mountain viewpoints provide incomparable panoramic vistas. Signal Hill delivers sweeping 360-degree lookouts over the Atlantic Seaboard, Cape Town Stadium, the working harbor, and the illuminated CBD skyline, doubling for Los Angeles lookouts or Mediterranean coastal cities. Within the central city, private architectural rooftop terraces like 113 Loop Street offer lush urban oasis decks with palm planters and daybeds, private plunge pools, and glass-wrapped penthouse lounges. Complemented by the famous Grand Daddy rooftop airstream trailer park in Long Street, Tokyo rooftop pool, and Cloud 9 Mountain Club overlooking Table Mountain.",
+        "hero_image_file": r"SALocations\Rooftops\113 Loop (1).jpg",
+        "hero_image_title": "113 Loop St Penthouse Rooftop: Hardwood Sun Deck, Palm Planters & Daybeds Overlooking Cape Town CBD Skyline",
+        "key_features": [
+            "113 Loop St Penthouse: Private hardwood sun deck, lush palm planters, daybeds, and panoramic CBD skyline views",
+            "113 Loop St Rooftop Plunge Pool: Elevated infinity-style pool deck with sun loungers framed by Table Mountain",
+            "113 Loop St Penthouse Lounge: Floor-to-ceiling glass enclosure, designer dining suite, and 360° urban views",
+            "113 Loop St Terrace: Cocktail sundeck facing the gentle contours of Signal Hill and Lion's Head",
+            "Signal Hill Atlantic Vantage: Monumental ocean lookouts over Green Point Common, Robben Island, and Cape Town Stadium",
+            "Signal Hill Overlook: Elevated perspective over Table Bay Harbour, container docks, and skyscraper grid",
+            "Signal Hill City Bowl & Table Mountain Face: High-altitude angle on Bo-Kaap, the city amphitheater, and Devil's Peak",
+            "Grand Daddy Rooftop Sky Bar (Long St): Historic vintage Airstream trailer park and timber cocktail deck",
+            "Cloud 9 Mountain Club & Tokyo Rooftop: Glass-balustraded rooftop pool decks with direct Table Mountain views",
+            "Table Mountain Summit Vantage: High-altitude aerial perspective over Lion's Head and the Atlantic coastline"
+        ],
+        "specs": {
+            "permitting": "City of Cape Town Film Office & SANParks permits for Signal Hill (3–5 working days) · Private rooftop commercial location agreements (24–48 hrs)",
+            "power": "Building 3-phase tie-ins available at 113 Loop & Grand Daddy · Mobile battery packs / quiet generators for Signal Hill lookouts",
+            "parking": "CBD basement loading bays & street curb metering · Wide tarmac coach & unit parking loops at Signal Hill summit",
+            "sound_curfew": "CBD rooftop filming permits through 23:00 · Zero sound curfew on Signal Hill mountain lookouts"
+        },
+        "gallery": [
+            {"file": r"SALocations\Rooftops\113 Loop (1).jpg", "title": "113 Loop St: Hardwood Rooftop Sun Deck with Palm Planters & CBD Skyline Views", "tag": "Hero Rooftop"},
+            {"file": r"SALocations\Rooftops\113 Loop (8).jpg", "title": "113 Loop St: Rooftop Plunge Pool & Lounger Deck Overlooking High-Rise Towers", "tag": "Rooftop Pool"},
+            {"file": r"SALocations\Rooftops\113 Loop (3).jpg", "title": "113 Loop St: Glass-Enclosed Penthouse Lounge & Dining Suite with 360° Views", "tag": "Penthouse Lounge"},
+            {"file": r"SALocations\Rooftops\113 Loop (11).jpg", "title": "113 Loop St: Rooftop Cocktail Terrace Facing Signal Hill & Lion's Head Ridge", "tag": "Mountain View Deck"},
+            {"file": r"SALocations\Views\Signal Hill Rd (1).jpg", "title": "Signal Hill Summit: Panoramic Ocean Vista Over Green Point, Cape Town Stadium & Table Bay", "tag": "Atlantic Panorama"},
+            {"file": r"SALocations\Views\Signal Hill Rd (3).jpg", "title": "Signal Hill Overlook: Elevated View Over Table Bay Harbour Quays & Waterfront Basins", "tag": "Harbour Overlook"},
+            {"file": r"SALocations\Views\Signal Hill Rd (60).jpg", "title": "Signal Hill Lookout: Complete City Bowl Panorama Facing North Face of Table Mountain & Devil's Peak", "tag": "City Bowl Panorama"},
+            {"file": r"SALocations\Views\Signal Hill Rd (61).jpg", "title": "Signal Hill East View: Urban CBD Grid, High-Rise Skyline & Table Mountain Backdrop", "tag": "Skyline Vista"},
+            {"file": r"SALocations\Rooftops\Grand Daddy (1).jpg", "title": "Grand Daddy Rooftop (Long St): Vintage Airstream Trailer Park & Sky Bar Deck", "tag": "Airstream Rooftop"},
+            {"file": r"SALocations\Rooftops\Mountain Club (2).jpg", "title": "Cloud 9 Mountain Club: Chic Rooftop Cocktail Banquettes with Table Mountain Views", "tag": "Rooftop Bar"},
+            {"file": r"SALocations\Rooftops\Tokyo (6).jpg", "title": "The Tokyo Rooftop: Elevated Swimming Pool & Sun Deck Facing Table Mountain Crest", "tag": "Sky Pool"},
+            {"file": r"SALocations\Views\Table Mountain (2).jpg", "title": "Table Mountain Summit Look: High-Altitude Aerial Vantage Over Lion's Head & Atlantic Coastline", "tag": "Summit Aerial"}
         ]
     }
 ]
