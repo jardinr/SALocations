@@ -203,13 +203,13 @@ function Nav() {
           </span>
         </a>
 
-        <nav className="hidden items-center gap-10 text-xs tracking-[0.2em] uppercase text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground lg:flex">
           <a href="#about" className="hover:text-foreground transition">About</a>
           <a href="#services" className="hover:text-foreground transition">Services</a>
           <a href="#experiences" className="hover:text-foreground transition">Experiences</a>
           <Link to="/digital-nomad-concierge-cape-town" className="hover:text-foreground transition">Nomad</Link>
+          <Link to="/scouted-images-database" className="hover:text-foreground transition">Database</Link>
           <a href="#antarctic" className="hover:text-foreground transition">Antarctic</a>
-          <a href="#journal" className="hover:text-foreground transition">Journal</a>
           <a href="#contact" className="hover:text-foreground transition">Contact</a>
         </nav>
         <a
