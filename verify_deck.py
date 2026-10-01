@@ -39,6 +39,13 @@ async def main():
             await cat1.screenshot(path=cat1_screen)
             print(f"Saved Cat 01 Screenshot to {cat1_screen}")
 
+        # 2c. Capture Category 02 Screenshot (Ultra-Luxury Villas: Hero Lux Villa & Cap d'Afrique)
+        cat2 = await page.query_selector("#modern-luxury-villas")
+        if cat2:
+            cat2_screen = os.path.join(artifact_dir, "master_deck_cat02.jpg")
+            await cat2.screenshot(path=cat2_screen)
+            print(f"Saved Cat 02 Screenshot to {cat2_screen}")
+
         # 3. Capture Category 03 Screenshot (Bo-Kaap Chiappini St)
         cat3 = await page.query_selector("#heritage-cottages-character-streets")
         if cat3:
