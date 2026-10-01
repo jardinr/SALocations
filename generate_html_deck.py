@@ -20,12 +20,12 @@ html_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cape Town Master Location Scouting Database · International Film & Commercial Showcase</title>
-    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 17 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
+    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 18 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cape Town Master Location Scouting Database · Global Film & Commercial Showcase">
-    <meta property="og:description" content="Curated 17-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European, Skyline Rooftop & Championship Golf destinations. 185 verified hero assets, technical filming specs & multi-currency rates.">
+    <meta property="og:description" content="Curated 18-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European, Skyline Rooftop, Championship Golf & Industrial Quarry destinations. Verified hero assets, technical filming specs & multi-currency rates.">
     <meta property="og:image" content="https://sal-global-locations-deck.vercel.app/og-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

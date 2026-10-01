@@ -30,7 +30,7 @@ def encode_img(rel_path, max_size=(980, 650), quality=70):
         print(f"Error encoding {full_path}: {e}")
         return ""
 
-print("Encoding 16 Macro Categories Master Dataset...")
+print("Encoding 18 Macro Categories Master Dataset...")
 
 categories = [
     # 01
@@ -39,17 +39,19 @@ categories = [
         "num": "01",
         "title": "Coastal Passes, Ocean Roads & Arid Corridors",
         "icon": "🛣️",
-        "doubles_as": "California Pacific Coast Highway (PCH) · Italian Amalfi Coast · French Riviera · Route 66 · Nevada Desert Corridor",
+        "doubles_as": "California Pacific Coast Highway (PCH) · Italian Amalfi Coast · French Riviera · Route 66 · Nevada Desert Corridor · Bonneville Salt Flats",
         "hero_badge": "Verified Location",
-        "area": "Chapman's Peak Drive (M6), Victoria Road & R355 Karoo Highway",
-        "tagline": "World-renowned coastal cliff highways carved into 500m ocean precipices, sweeping sea-level tarmac hugging the 12 Apostles, and uninterrupted horizon-to-horizon arid desert plains.",
-        "creative_synopsis": "South Africa's coastal roadways offer the ultimate global doubling versatility. Chapman's Peak Drive (M6) provides 9km of cantilevered rock galleries and hairpin turns suspended 500m above the Atlantic, doubling seamlessly for the Italian Riviera or California's Big Sur. Below, Victoria Road (M6) stretches along turquoise Atlantic shores with direct lines-of-sight to Lion's Head and Camps Bay. Inland, the R355 in the Tankwa Karoo offers the longest uninterrupted straight dirt/gravel corridor on the continent for high-speed tracking and desert sequences.",
+        "area": "Chapman's Peak Drive (M6), Victoria Road, R355 Karoo Highway, Kersefontein Saltpans & Kalbaskraal",
+        "tagline": "World-renowned coastal cliff highways carved into 500m ocean precipices, sweeping sea-level tarmac hugging the 12 Apostles, uninterrupted horizon-to-horizon arid desert plains, and vast reflective saltpans.",
+        "creative_synopsis": "South Africa's coastal roadways and arid corridors offer unmatched international doubling versatility. Chapman's Peak Drive (M6) provides 9km of cantilevered rock galleries and hairpin turns suspended 500m above the Atlantic, doubling seamlessly for the Italian Riviera or California's Big Sur. Victoria Road (M6) stretches along turquoise Atlantic shores with direct lines-of-sight to Lion's Head and Camps Bay. Inland, the R355 in the Tankwa Karoo offers the longest uninterrupted straight gravel tracking corridor on the continent, while the vast Berg River saltpans at Kersefontein and the open excavation corridors at Kalbaskraal provide sweeping arid flats, salt marshes, and desert terrain.",
         "hero_image_file": r"08-Stadium\Mountain Pass-city\Chapmans Peak Drive\Chapmans Peak Drive (14).jpg",
         "hero_image_title": "Chapman's Peak Drive: Iconic Marine Drive Hugging Sheer Sandstone Cliffs Overlooking Hout Bay & The Sentinel",
         "key_features": [
             "9km of vertical cliff highway with 114 curves, cantilevered rock canopy galleries, and half-tunnels",
             "Victoria Road sea-level tracking corridor connecting Clifton, Camps Bay, and Llandudno along the 12 Apostles",
             "R355 Arid Highway & Tankwa Karoo: 250km uninterrupted gravel tracking corridor, Inverdoorn cactus curve, and Sadawa expedition basecamp",
+            "Kersefontein Saltpans & Estuary Flats: Colossal reflective arid plains and open salt marsh horizons along the Berg River basin",
+            "Kalbaskraal Arid Quarry Corridor: Open excavation sand flats, dunes, and wide gravel tracking paths",
             "Lookout Vantage: Chapman's Peak Lookout Over Monkey Valley & Long Beach Noordhoek",
             "Single-track cliff trails carved into red sandstone precipices for high-speed action tracking"
         ],
@@ -74,7 +76,10 @@ categories = [
             {"file": r"Arid Road-R355\Silversea\20240326_164927.jpg", "title": "R355 Arid Highway: Uninterrupted Straight Gravel Tracking Corridor Vanishing Over Rolling Karoo Crests", "tag": "Straight Highway"},
             {"file": r"Arid Road-R355\Silversea\20240326_162423.jpg", "title": "Perdekraal East Wind Farm (R355 Corridor): Renewable Turbine Array Across Vast Karoo Plains", "tag": "Wind Farm"},
             {"file": r"Arid Road-R355\Silversea\Sadawa (20).jpg", "title": "Sadawa Game Reserve (Tankwa Karoo): Remote Production Expedition Basecamp Under Twilight Magenta Skies", "tag": "Desert Basecamp"},
-            {"file": r"Arid Road-R355\Silversea\Sadawa (25).jpg", "title": "Tankwa Karoo Desert Wilderness: Rugged Scrub Plains & Distant Mountain Horizon at Dusk", "tag": "Karoo Wilderness"}
+            {"file": r"Arid Road-R355\Silversea\Sadawa (25).jpg", "title": "Tankwa Karoo Desert Wilderness: Rugged Scrub Plains & Distant Mountain Horizon at Dusk", "tag": "Karoo Wilderness"},
+            {"file": r"Farms\Kersefontein\WhatsApp Image 2026-08-06 at 13.50.14 (1).jpeg", "title": "Kersefontein Saltpans: Vast Arid Wetland Flats & Estuary Horizons (Berg River Basin)", "tag": "Berg River Saltpans"},
+            {"file": r"Farms\Kersefontein\WhatsApp Image 2026-08-06 at 13.50.16 (1).jpeg", "title": "Kersefontein Arid Flats: Open Saltpan Expanse & Desert Wetland Corridor", "tag": "Arid Salt Marsh"},
+            {"file": r"Quarry\Kalbas\Kalbaskraal Main Quarry (2).jpg", "title": "Kalbaskraal Quarry Basin: Vast Open Excavation Pit & Arid Desert Sand Corridors", "tag": "Kalbaskraal Quarry"}
         ]
     },
 
@@ -133,13 +138,13 @@ categories = [
         "hero_badge": "Verified Location",
         "area": "Salt River, Gardens, Bo-Kaap & De Waterkant, Cape Town",
         "tagline": "Charming Victorian worker cottages with decorative timber fretwork verandas, grand cast-iron broekie-lace facades, cobblestone alleyways, and vibrant historic quarter streetscapes.",
-        "creative_synopsis": "For period drama, indie romance, or UK suburban doubling, Cape Town's architectural heritage is second to none. Culver and Chatham Streets feature single-storey Edwardian worker cottages with gabled roofs, picket fences, and leafy sidewalk canopies that easily double for London suburbs. Rosemount Avenue in Gardens offers grand two-storey Victorian mansions with ornate cast-iron lace balustrades. Bo-Kaap delivers cobblestone streets with brightly colored Cape Dutch facades, while De Waterkant provides intimate European pedestrian lanes.",
+        "creative_synopsis": "For period drama, indie romance, or UK suburban doubling, Cape Town's architectural heritage is second to none. Culver and Chatham Streets feature single-storey Edwardian worker cottages with gabled roofs, picket fences, and leafy sidewalk canopies that easily double for London suburbs. Rosemount Avenue in Gardens offers grand two-storey Victorian mansions with ornate cast-iron lace balustrades. Bo-Kaap delivers steep asphalt corridors with brightly colored Cape Malay flat-roof facades and raised stoeps, while De Waterkant provides intimate European cobblestone pedestrian lanes.",
         "hero_image_file": r"Zen\House 2 Heritage Cottages (Culver & Chatham)\Culver St (1).jpg",
         "hero_image_title": "Culver Street Heritage Cottage: Edwardian Timber Fretwork Veranda & Picket Gate (Salt River)",
         "key_features": [
             "Culver & Chatham Streets: Authentic Victorian worker cottages with broekie lace verandas and iron roofs",
             "Rosemount Avenue (Gardens): Grand double-storey Victorian residence with cast-iron balconies and mountain framing",
-            "Bo-Kaap: Steep historic cobblestone streets flanked by saturated pastel facades and 18th-century minarets",
+            "Bo-Kaap: Saturated pastel facades, elevated heritage stoeps, and historic Cape Malay street corridors set against Lion's Head",
             "De Waterkant: European-style pedestrian cobblestone alleyways, wrought-iron Juliet balconies, and cafe stoops",
             "Quiet residential streets with low traffic volumes ideal for period continuity and dialogue recording"
         ],
@@ -155,9 +160,8 @@ categories = [
             {"file": r"Zen\House 2 Heritage Cottages (Culver & Chatham)\Culver St (3).jpg", "title": "Culver Street: Traditional Corrugated Iron Roof & Decorative Timber Fascia", "tag": "Heritage Trim"},
             {"file": r"Zen\House 2 Heritage Cottages (Culver & Chatham)\Chatham St (2).jpg", "title": "Chatham Street: Side-by-Side Victorian Worker Cottages with Cast-Iron Picket Gates", "tag": "Cottage Row"},
             {"file": r"Zen\Rosemount Ave-Gardens (4).jpg", "title": "Rosemount Avenue: Grand Two-Storey Victorian Mansion with Cast-Iron Balconies", "tag": "Victorian Villa"},
-            {"file": r"CBD\Bo Kaap (1).jpg", "title": "Bo-Kaap Historic Terraces: Cobblestone Road & Vibrant Multicoloured Facades", "tag": "Cobblestones"},
-            {"file": r"Takealot\Bo Kaap\Chiappini St (1).JPG", "title": "Bo-Kaap Chiappini Street: Wide Cobblestone Corridor with Vibrant Saturated Cape Malay Heritage Facades", "tag": "Chiappini St"},
-            {"file": r"CBD\Bo Kaap-Pan.jpg", "title": "Bo-Kaap Panorama: Wide Historic District View Across Vibrant Historic Streets", "tag": "Panorama"},
+            {"file": r"Takealot\Bo Kaap\Chiappini St (1).JPG", "title": "Bo-Kaap Chiappini Street: Saturated Flat-Roof Cape Malay Heritage Facades, Elevated Stoeps & Asphalt Mountain Corridor", "tag": "Cape Malay Terraces"},
+            {"file": r"CBD\Bo Kaap-Pan.jpg", "title": "Bo-Kaap Panorama: Wide Historic District View Across Vibrant Historic Terraces", "tag": "Bo-Kaap Panorama"},
             {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863220.jpg", "title": "De Waterkant: Historic Pastel Cottage Streetscape & Cobblestone Townhouse Curve", "tag": "Streetscape"},
             {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863224.jpg", "title": "De Waterkant: Private Timber Rooftop Deck Overlooking Heritage Cottages & Lodge", "tag": "Village Deck"},
             {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790836863228.jpg", "title": "De Waterkant: Mediterranean Blue Double-Storey Townhouse with Bougainvillea & Veranda", "tag": "Blue Townhouse"},
@@ -173,17 +177,18 @@ categories = [
         "icon": "🌲",
         "doubles_as": "Pacific Northwest Timber Retreats · Scandinavian Eco-Lodges · Colorado Rockies Chalets · Forest Sanctuaries",
         "hero_badge": "Verified Location",
-        "area": "Scarborough, Hout Bay Forest, Kommetjie & Noordhoek Canopies",
-        "tagline": "Elevated dark timber stilt cabins with rock plunge pools, architectural glass treehouses in lush forest canopies, and rustic milkwood chalets.",
-        "creative_synopsis": "When a screenplay calls for isolated architectural forest living or nature sanctuaries, this category delivers uncompromised authenticity. Blackwood Cabin in Scarborough sits elevated on steel stilts above a coastal valley, complete with a natural rock plunge pool and winding wooden boardwalks through eucalyptus groves. In the lush canopy of Hout Bay forest, Amara Moon provides an architectural timber-and-glass stilt retreat surrounded by indigenous foliage. Vicki Residence captures artistic mountainside timber architecture set against natural fynbos slopes, while Monkey Valley nestles weathered log cabins beneath ancient milkwood trees.",
-        "hero_image_file": r"Zen\Blackwood Cabin\Blackwood Cabin (1).jpg",
-        "hero_image_title": "Blackwood Cabin: Elevated Dark Timber Stilt Retreat & Rock Plunge Pool (Scarborough)",
+        "area": "Hout Bay Forest, Scarborough Coastal Canopy, Kommetjie & Noordhoek Canopies",
+        "tagline": "Authentic two-storey gabled timber log chalets with round stone plunge pools, elevated dark-timber stilt pavilions with floating stairs, and architectural glass treehouses nestled in lush forest canopies.",
+        "creative_synopsis": "When a screenplay calls for isolated architectural forest living or rustic nature sanctuaries, this category delivers uncompromised authenticity. Blackwood Log Cabin in Hout Bay provides a genuine two-storey gabled timber chalet complete with exposed cathedral log trusses, wraparound sundecks, and a natural round stone plunge pool overlooking the valley. In Scarborough's coastal canopy, an architectural stilt pavilion features sleek dark-stained timber framing and floating zigzag stairs. In the lush canopy of Hout Bay forest, Amara Moon provides an architectural timber-and-glass stilt retreat surrounded by indigenous foliage. Vicki Residence captures artistic mountainside timber architecture set against natural fynbos slopes, while Monkey Valley nestles weathered log cabins beneath ancient milkwood trees.",
+        "hero_image_file": r"Zen\Blackwood Cabin\Blackwood Cabin (2).jpg",
+        "hero_image_title": "Blackwood Log Cabin: Authentic Two-Storey Gabled Timber Chalet, Wraparound Deck & Round Stone Pool (Hout Bay)",
         "key_features": [
-            "Blackwood Cabin: Dark-stained timber cabin on stilts, wraparound deck, natural rock pool, and boardwalk",
+            "Blackwood Log Cabin (Hout Bay): Authentic two-storey gabled timber chalet, exposed cathedral trusses, and round stone plunge pool",
+            "Scarborough Forest Pavilion: Modern elevated dark-timber stilt architecture, shed roofline, and floating zigzag exterior stairs",
             "Amara Moon: Architectural timber & glass stilt retreat situated in the lush canopy of Hout Bay forest (strictly forest canopy)",
             "Vicki Residence: Character mountainside retreat with warm natural timber architecture set against indigenous mountainside slopes",
             "Monkey Valley: Weathered log cabins nestled beneath ancient indigenous milkwood canopies in Noordhoek",
-            "Boardwalk pathways, outdoor forest showers, and secluded nature sanctuary aesthetics"
+            "Timber boardwalk pathways, outdoor forest decks, and secluded nature sanctuary aesthetics"
         ],
         "specs": {
             "permitting": "Private Estate Filming Agreements (24–48 hr direct sign-off) · No municipal street red-tape",
@@ -192,10 +197,13 @@ categories = [
             "sound_curfew": "Zero ambient city noise · Pristine acoustic environments for 24/7 synchronized dialogue and sound capture"
         },
         "gallery": [
-            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (1).jpg", "title": "Blackwood Cabin: Elevated Timber Stilt Architecture & Natural Rock Plunge Pool", "tag": "Hero Cabin"},
-            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (2).jpg", "title": "Blackwood Cabin: Wraparound Timber Deck, Plunge Pool & Indigenous Fynbos Garden", "tag": "Deck & Pool"},
-            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (3).jpg", "title": "Blackwood Cabin: Architectural Timber Boardwalk Winding Through Eucalyptus Trees", "tag": "Forest Boardwalk"},
-            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (4).jpg", "title": "Blackwood Cabin: Minimalist Timber Living Pavilion & Mountain Valley Vista", "tag": "Cabin Interior"},
+            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (2).jpg", "title": "Blackwood Log Cabin: Authentic Gabled Timber Chalet, Wraparound Deck & Round Stone Plunge Pool (Hout Bay)", "tag": "Blackwood Hero"},
+            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (1).jpg", "title": "Scarborough Forest Stilt Pavilion: Modern Dark-Timber Architecture & Floating Zigzag Stairs", "tag": "Scarborough Pavilion"},
+            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (3).jpg", "title": "Blackwood Log Cabin: Architectural Timber Boardwalk Winding Through Indigenous Trees", "tag": "Forest Boardwalk"},
+            {"file": r"Zen\Blackwood Cabin\Blackwood Cabin (4).jpg", "title": "Blackwood Log Cabin: Open-Plan Timber Lounge & Living Space Facing Mountain Valley", "tag": "Cabin Interior"},
+            {"file": r"Zen\Blackwood log cabin_files\Blackwood_files\621641675_18109950541730513_8367626756164192987_n.jpg", "title": "Blackwood Log Cabin: Double-Volume Exposed Trusses & Architectural Studio Living (SA Home Owner Feature)", "tag": "Studio Living"},
+            {"file": r"Zen\Blackwood log cabin_files\Blackwood_files\641194377_18568672267055468_3117460896824803660_n.jpg", "title": "Blackwood Log Cabin: Sunset Glow Across Elevated Timber Deck & Valley Trees", "tag": "Sunset Deck"},
+            {"file": r"Zen\Blackwood log cabin_files\Blackwood_files\621816998_18070591073417621_7746448909963781473_n.jpg", "title": "Blackwood Log Cabin: Tranquil Mountain Evening Setting & Natural Forest Canopy", "tag": "Mountain Evening"},
             {"file": r"Zen\Amara Moon (2).jpg", "title": "Amara Moon: Architectural Timber Stilt Retreat Elevated in Lush Hout Bay Forest Canopy", "tag": "Forest Retreat"},
             {"file": r"Zen\Amara Moon (4).jpg", "title": "Amara Moon: Glass Living Pavilion Surrounded by Indigenous Forest Foliage", "tag": "Treehouse"},
             {"file": r"Zen\Vicki (22).JPG", "title": "Vicki Residence: Architectural Timber Mountain Retreat & Natural Exterior Facade", "tag": "Mountain Retreat"},
@@ -233,7 +241,7 @@ categories = [
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (10).jpg", "title": "Stadsaal Caves: Monumental Sandstone Rock Arches & Burnt-Orange Pillars (Cederberg)", "tag": "Hero Arch"},
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (36).jpg", "title": "Stadsaal Caves: Wind-Carved Desert Sandstone Amphitheater & Otherworldly Formations", "tag": "Rock Amphitheater"},
             {"file": r"Stadsaal Cave-Cederberg\wetransfer_matjiesrivier-nr-stadsal_2023-05-26_0732\Matjiesrivier NR - Stadsal (50).jpg", "title": "Stadsaal Caves: Ancient Weathered Rock Corridors & Dramatic Natural Light Shafts", "tag": "Rock Corridor"},
-            {"file": r"Mountains\Boschendal\Boschendal (10).jpg", "title": "Drakenstein Mountain Range: Monumental Sandstone Precipices & Pristine Valley Escarpment", "tag": "Mountain Face"},
+            {"file": r"Backup 2022-02\Big Sky\Du Kloof Lodge\Du Kloof  (10).jpg", "title": "Du Toitskloof Mountain Range: Monumental Sheer Sandstone Cliff Faces & Alpine River Basin", "tag": "Du Toitskloof Face"},
             {"file": r"Mountains\Hottentots Holland-Stellenbosch\Hottentotts Holland (1).jpg", "title": "Simonsberg & Hottentots Holland: Monumental Alpine Ridge & Deep Valley Basin", "tag": "Alpine Skyline"},
             {"file": r"Mountains\MTO (8).jpg", "title": "MTO Mountain Reserve: High-Altitude Forestry Trail & Sweeping Valley Vista", "tag": "Mountain Trail"},
             {"file": r"08-Stadium\Lourensford\Lourensfor Prairie (2).jpg", "title": "Lourensford Estate Plains: Vast Prairie Grasslands Framed by Helderberg Mountain Amphitheater", "tag": "Lourensford Plains"},
@@ -249,9 +257,9 @@ categories = [
         "icon": "🏖️",
         "doubles_as": "Mediterranean Coastline · Caribbean Sand Beaches · California Surf Breaks · Vintage Coastal Havens · Cannes & Malibu",
         "hero_badge": "Verified Location",
-        "area": "Camps Bay, Llandudno, Noordhoek Long Beach, Clifton 4th, Muizenberg & St. James",
+        "area": "Camps Bay, Llandudno, Noordhoek Long Beach, Clifton 4th, Clifton 1st–3rd, Muizenberg & St. James",
         "tagline": "Iconic palm-lined white sand crescents, secluded granite boulder coves, 8km untamed sand corridors, world-famous surf breaks, and historic tidal pools.",
-        "creative_synopsis": "Cape Town's coastline provides legendary diversity for beach and ocean filming. Camps Bay Beach is the crown jewel of the Atlantic Seaboard—a wide white-sand crescent lined with palm trees and backed by the Twelve Apostles mountain peaks, doubling for Cannes, Miami, or Malibu. Nearby Llandudno is an exclusive, undeveloped sanctuary framed by colossal granite boulders and turquoise waters. Noordhoek Long Beach offers 8 uninterrupted kilometers of hard-packed sand and untamed surf. Muizenberg Beach delivers world-famous surf culture and historic brightly colored Victorian bathing boxes, while Clifton 4th provides sheltered blue waters and Dalebrook / St. James bring historic tidal sea pools.",
+        "creative_synopsis": "Cape Town's coastline provides legendary diversity for beach and ocean filming. Camps Bay Beach is the crown jewel of the Atlantic Seaboard—a wide white-sand crescent lined with palm trees and backed by the Twelve Apostles mountain peaks, doubling for Cannes, Miami, or Malibu. Nearby Llandudno is an exclusive, undeveloped sanctuary framed by colossal granite boulders and turquoise waters. Noordhoek Long Beach offers 8 uninterrupted kilometers of hard-packed sand and untamed surf. Clifton 4th Beach delivers world-famous sheltered blue waters, powder-white sand, and giant granite boulders, while Clifton 1st–3rd provide intimate secluded coves and luxury cliff bungalows. Muizenberg Beach offers surf culture and historic bathing boxes, and Dalebrook / St. James bring historic tidal sea pools.",
         "hero_image_file": r"Beaches\Camps Bay\Camps Bay Beach\Camps Bay Beach (1).jpg",
         "hero_image_title": "Camps Bay Beach: Wide Palm-Fringed White Sands Facing Twelve Apostles & Lion's Head",
         "key_features": [
@@ -259,6 +267,7 @@ categories = [
             "Llandudno Beach: Exclusive secluded cove flanked by dramatic granite boulders and turquoise Atlantic swell",
             "Noordhoek Long Beach: 8km wide flat sand corridor with horse-riding access, coastal dunes, and Kakapo shipwreck",
             "Clifton 4th Beach: Sheltered turquoise water, giant polished granite boulders, and golden sunset horizons",
+            "Clifton 1st–3rd Beaches: Intimate granite boulder coves, secluded white sands, and luxury beachfront bungalows",
             "Muizenberg Beach & Surfers Corner: World-renowned gentle surf break and iconic Victorian bathing boxes",
             "Kogel Bay & Clarence Drive: Dramatic vertical mountain cliffs plunging into wild coastal surf",
             "Historic Tidal Pools: Dalebrook and St. James stone-walled sea pools with crashing surf spray"
@@ -276,8 +285,14 @@ categories = [
             {"file": r"Beaches\Rocky Beaches\Beaches\Llandudno Beach\Llandudno (10).jpg", "title": "Llandudno Beach: Sweeping Coastal Headland, Fine White Sand & Untamed Ocean Swell", "tag": "Atlantic Swell"},
             {"file": r"Beaches\Noordhoek\Noordhoek Beach (1).jpg", "title": "Noordhoek Long Beach: Wide 8km Untamed White Sand Corridor & Rolling Surf", "tag": "8km Sand Corridor"},
             {"file": r"Beaches\Noordhoek\Noordhoek Beach (2).jpg", "title": "Noordhoek Dunes: Fine Sand Dunes & Distant Chapman's Peak Mountain Headland", "tag": "Coastal Dunes"},
-            {"file": r"Beaches\Clifton\Clifton 4th (1).jpg", "title": "Clifton 4th Beach: Sheltered Turquoise Water, Granite Boulders & Golden Sunset", "tag": "Clifton 4th"},
-            {"file": r"Beaches\Clifton\Clifton-4th\Clifton 4th (10).jpg", "title": "Clifton Beach: Pristine White Sand Cove Framed by Dramatic Coastal Headlands", "tag": "Sheltered Cove"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860729246.jpg", "title": "Clifton 4th Beach: Sweeping White Sands, Turquoise Water & Giant Granite Boulders", "tag": "Clifton 4th Beach"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860729255.jpg", "title": "Clifton 4th Beach: Sheltered Atlantic Ocean Cove & Golden Sunset Horizon", "tag": "Clifton 4th Cove"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860729272.jpg", "title": "Clifton 4th Beach: Sea-Level Sand & Surf Facing Lion's Head & Atlantic Horizon", "tag": "Clifton 4th Shore"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860729280.jpg", "title": "Clifton 4th Beach: Elevated Coastal Perspective Over Sunbathers & Turquoise Shallows", "tag": "Clifton 4th Vista"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860729978.jpg", "title": "Clifton 4th Beach: Sunset Magic Hour Across Granite Rocks & Calm Breakers", "tag": "Clifton 4th Sunset"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860812565.jpg", "title": "Clifton 1st–3rd Beach: Intimate Granite Boulder Coves & Atlantic Breakers", "tag": "Clifton 1st–3rd Beach"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860812573.jpg", "title": "Clifton 1st–3rd Beach: Secluded White Sand Shoreline & Luxury Cliffside Bungalows", "tag": "Clifton 1st–3rd Cove"},
+            {"file": r"C:\Users\Jardin\.gemini\antigravity\brain\7c530ea6-81c1-4bb5-b9b6-1e435280896c\.user_uploaded\media_1790860812584.jpg", "title": "Clifton 1st–3rd Beach: Elevated Oceanfront Panorama Over Granite Rocks & Azure Waters", "tag": "Clifton 1st–3rd Vista"},
             {"file": r"Beaches\Muizenberg\Muizenberg (10).jpg", "title": "Muizenberg Beach: World-Famous Surfers Corner & Expansive False Bay Sandflat", "tag": "Surfers Corner"},
             {"file": r"Beaches\Muizenberg\Muizenberg (11).jpg", "title": "Muizenberg: Vibrant Iconic Multi-Coloured Victorian Bathing Boxes & Longboard Waves", "tag": "Bathing Boxes"},
             {"file": r"Beaches\Kogel Bay\Kogel Bay (10).jpg", "title": "Kogel Bay / Caves: Sheer Sandstone Mountain Precipices Plunging into Wild Surf", "tag": "Wild Mountain Coast"},
@@ -484,16 +499,16 @@ categories = [
         "icon": "🍇",
         "doubles_as": "Tuscan Vineyards · French Bordeaux & Provence Châteaux · Napa Valley Wine Country · Old World European Orchards",
         "hero_badge": "Verified Location",
-        "area": "Stellenbosch, Helshoogte Pass & Elgin Valley",
+        "area": "Stellenbosch, Helshoogte Pass, Banghoek Valley & Elgin Valley",
         "tagline": "Classic Cape Dutch gabled manors, rolling hillside vineyards reflecting mountain lakes, modernist glass winery architecture, and historic farmsteads.",
-        "creative_synopsis": "The Cape Winelands deliver quintessential Old World European doubling within 45 minutes of Cape Town. Asara Wine Estate in Stellenbosch features rolling vineyard hills, tranquil private lakes reflecting the mountains, and historic Cape Dutch white gabled manor houses. Across the Helshoogte Pass, Tokara Wine Estate delivers world-renowned contemporary architecture—cantilevered glass and sandstone pavilions perched above dramatic terraced vineyards and olive groves overlooking the Simonsberg. Paul Cluver in Elgin and Kersefontein farmstead add historic farmsteads and countryside horizons.",
+        "creative_synopsis": "The Cape Winelands deliver quintessential Old World European doubling within 45 minutes of Cape Town. Asara Wine Estate in Stellenbosch features rolling vineyard hills, tranquil private lakes reflecting the mountains, and historic Cape Dutch white gabled manor houses. Across the Helshoogte Pass, Tokara Wine Estate delivers world-renowned contemporary architecture—cantilevered glass and sandstone pavilions perched above dramatic terraced vineyards and olive groves overlooking the Simonsberg. Zorgvliet Wine Estate in Banghoek Valley adds authentic 17th-century Cape Dutch manor gables, historic farm courtyards, and mountain vineyards, while Paul Cluver in Elgin adds cool-climate apple orchards and rustic amphitheaters.",
         "hero_image_file": r"Farms\Wine Farms\Asara\Asara Wines (1).jpg",
         "hero_image_title": "Asara Wine Estate: Rolling Vineyards, Private Lake Reflection & Cape Dutch Manor (Stellenbosch)",
         "key_features": [
             "Asara Wine Estate: Manicured vineyards, mountain-reflecting lakes, and 18th-century Cape Dutch architecture",
             "Tokara Wine Estate (Helshoogte Pass): Award-winning modern glass and stone architecture, terraced vineyards, and olive groves",
+            "Zorgvliet Wine Estate (Banghoek Valley): Historic Cape Dutch gabled manor house, white-walled courtyard, and mountain amphitheater",
             "Paul Cluver Wine Estate: Cool-climate apple orchards, pine tree windbreaks, and rustic amphitheaters",
-            "Kersefontein Historic Farmstead: 18th-century Cape Dutch stables, whitewashed gables, and sprawling pastures",
             "Expansive private estate lands allowing large-scale unit basecamps, drone flights, and crane rigs"
         ],
         "specs": {
@@ -515,8 +530,8 @@ categories = [
             {"file": r"Farms\Wine Farms\Thelema\Thelema\Tokara (7).jpg", "title": "Tokara: Helshoogte Valley Sweeping Vineyard Horizon & Mountain Amphitheatre", "tag": "Helshoogte Pass"},
             {"file": r"Farms\Wine Farms\Thelema\Thelema\Tokara (10).jpg", "title": "Tokara: High-Altitude Vineyard Ridge Facing Simonsberg Peak", "tag": "Vineyard Ridge"},
             {"file": r"Farms\Wine Farms\Thelema\Thelema\Tokara (11).jpg", "title": "Tokara: Golden Hour Shadows Across Vineyard Slopes & Cellar Terraces", "tag": "Golden Hour"},
-            {"file": r"Farms\Kersefontein\WhatsApp Image 2026-08-06 at 13.50.13.jpeg", "title": "Kersefontein Farmstead: 18th-Century Cape Dutch Historic Manor House & Gables", "tag": "Kersefontein Manor"},
-            {"file": r"Farms\Kersefontein\WhatsApp Image 2026-08-06 at 13.50.14.jpeg", "title": "Kersefontein: Historic White Stables, Farm Courtyard & Open Agricultural Plains", "tag": "Historic Stables"}
+            {"file": r"Farms\Zorgvliet\Zorgvliet (1).jpg", "title": "Zorgvliet Wine Estate: Historic Cape Dutch Gabled Manor, Courtyard & Banghoek Valley Slopes", "tag": "Cape Dutch Manor"},
+            {"file": r"Farms\Zorgvliet\Zorgvliet (5).jpg", "title": "Zorgvliet Estate: Manicured Estate Vineyards, Mountain Backdrop & Historic Farmstead Grounds", "tag": "Historic Farmstead"}
         ]
     },
 
@@ -528,13 +543,14 @@ categories = [
         "icon": "✈️",
         "doubles_as": "International Commercial Airports · Private Rural Airfields & Smuggling Airstrips · Luxury Cruise Liner Terminals · Civic Transit Hubs",
         "hero_badge": "Verified Location",
-        "area": "Arrieskraal Airport, Stellair Airfield, CTI Airport, Passenger Terminal & CTICC",
-        "tagline": "Private rural mountain valley airstrips and aircraft hangars, country airfields, commercial airport concourses, architectural cruise terminals, and soaring convention atriums.",
-        "creative_synopsis": "This dedicated aviation and major transit category offers remarkable operational diversity. Arrieskraal and Stellair (Stellenbosch Flying Club) feature private rural and country mountain valley airstrips complete with operational aircraft hangars, flight lines, and open runway corridors—ideal for espionage, action stunts, and private charter sequences. Cape Town International Airport (CTI) provides authentic commercial airline terminals, baggage concourses, and tarmac aprons. The Port of Cape Town Passenger Terminal offers architectural cruise departure halls and glass gangways, while the CTICC delivers multi-level interior transit atriums and modern exhibition concourses.",
-        "hero_image_file": r"Husqvarna\Farms\Arrieskraal (11).jpg",
-        "hero_image_title": "Arrieskraal Airport: Private Rural Valley Airstrip, Aircraft Hangars & Mountain Runway",
+        "area": "Diemerskraal Airfield, Stellair Airfield, CTI Airport, Passenger Terminal & CTICC",
+        "tagline": "Private operational country airfields, fighter jets and helicopters, rural mountain runways, commercial airport concourses, architectural cruise terminals, and soaring convention atriums.",
+        "creative_synopsis": "This dedicated aviation and major transit category offers remarkable operational diversity. Diemerskraal Airfield and Stellair (Stellenbosch Flying Club) feature private operational airfields with active runways, fighter jets, helicopters, observation watchtowers, and aircraft hangars—ideal for espionage, action stunts, and private charter sequences. Cape Town International Airport (CTI) provides authentic commercial airline terminals, baggage concourses, and tarmac aprons. The Port of Cape Town Passenger Terminal offers architectural cruise departure halls and glass gangways, while the CTICC delivers multi-level interior transit atriums and modern exhibition concourses.",
+        "hero_image_file": r"Diemerskraal Airfield\Diemerskraal (6).jpg",
+        "hero_image_title": "Diemerskraal Airfield: Private Runway, Fighter Jet, Helicopter & Watchtower Flight Line",
         "key_features": [
-            "Arrieskraal Airport & Stellair Airfield: Private country runways, operational aircraft hangars, and unobstructed mountain valley approaches",
+            "Diemerskraal Airfield: Private operational runway, parked fighter jet, helicopter, wooden observation watchtower, and hangars",
+            "Stellair Airfield: Private country tarmac, grass taxiways, and Stellenbosch mountain horizon",
             "Cape Town International Airport (CTI): Commercial passenger departure halls, check-in concourses, and tarmac gates",
             "Cape Town Cruise Passenger Terminal: Modernist curved rooflines, multi-level curbside drop-offs, and boarding gangways",
             "CTICC Interior Transit Hub: Soaring multi-storey glass exhibition concourses, escalators, and subterranean logistics docks",
@@ -542,16 +558,16 @@ categories = [
         ],
         "specs": {
             "permitting": "Airports Company SA (ACSA) Commercial Permits · Transnet National Ports Authority · Private Airfield Owner contracts",
-            "power": "3-Phase 125A industrial tie-ins at CTICC & Passenger Terminal · Mobile generator sets for Arrieskraal & Stellair airfields",
+            "power": "3-Phase 125A industrial tie-ins at CTICC & Passenger Terminal · Mobile generator sets for Diemerskraal & Stellair airfields",
             "parking": "Expansive aircraft apron staging, multi-deck terminal parking garages, and private runway hardstands",
-            "sound_curfew": "24/7 filming protocols at Arrieskraal & Stellair private airfields · Scheduled night filming at terminals"
+            "sound_curfew": "24/7 filming protocols at Diemerskraal & Stellair private airfields · Scheduled night filming at terminals"
         },
         "gallery": [
-            {"file": r"Husqvarna\Farms\Arrieskraal (11).jpg", "title": "Arrieskraal Airport: Private Rural Valley Airstrip, Hangars & Mountain Runway", "tag": "Hero Airstrip"},
-            {"file": r"Husqvarna\Farms\Arrieskraal (13).jpg", "title": "Arrieskraal Airport: Mountain Valley Runway Corridor & Open Tarmac Approach", "tag": "Valley Runway"},
-            {"file": r"Husqvarna\Farms\Arrieskraal (3).jpg", "title": "Arrieskraal: Operational Airfield Hangars & Aircraft Staging Apron", "tag": "Aircraft Hangars"},
-            {"file": r"Husqvarna\Farms\Arrieskraal (14).jpg", "title": "Arrieskraal Airport: Mountain Valley Airstrip Approach & Country Aviation Infrastructure", "tag": "Runway Corridor"},
-            {"file": r"Backup 2022-02\Allie's Journey\Franschoek\Barns\Kromme River\Arrieskraal (2).jpg", "title": "Arrieskraal: Airstrip Horizon Facing Majestic Mountain Backdrops", "tag": "Runway Vista"},
+            {"file": r"Diemerskraal Airfield\Diemerskraal (6).jpg", "title": "Diemerskraal Airfield: Private Airfield Flight Line, Fighter Jet, Helicopter & Watchtower", "tag": "Hero Airfield"},
+            {"file": r"Diemerskraal Airfield\Diemerskraal (10).jpg", "title": "Diemerskraal Airfield: Wide Open Dirt Runway Corridor Stretching Towards Mountains", "tag": "Dirt Runway"},
+            {"file": r"Diemerskraal Airfield\Diemerskraal (8).jpg", "title": "Diemerskraal Airfield: Operational Aircraft Hangars & Maintenance Bays", "tag": "Aircraft Hangars"},
+            {"file": r"Diemerskraal Airfield\Diemerskraal (9).jpg", "title": "Diemerskraal Airfield: Runway Windsock, Flight Tower & Mountain Approach", "tag": "Runway Approach"},
+            {"file": r"Diemerskraal Airfield\Diemerskraal (7).jpg", "title": "Diemerskraal Airfield: Country Aviation Fleet Staging & Open Field Approach", "tag": "Aviation Fleet"},
             {"file": r"Backup 2022-02\Love Island\Stellair (1).jpg", "title": "Stellair Airfield: Private Country Runway Tarmac & Stellenbosch Mountain Horizon", "tag": "Stellair Runway"},
             {"file": r"Backup 2022-02\Love Island\Stellair (2).jpg", "title": "Stellair Airfield: Country Airfield Aircraft Hangars & Grass Flight Line", "tag": "Stellair Hangars"},
             {"file": r"Film AD\Romcom\Bachelor Party Getaway\Airport\CT Airport (2).JPG", "title": "Cape Town International Airport: Commercial Jet Tarmac & Passenger Boarding Gates", "tag": "Commercial Tarmac"},
@@ -735,6 +751,50 @@ categories = [
             {"file": r"SALocations\Rooftops\Mountain Club (2).jpg", "title": "Cloud 9 Mountain Club: Chic Rooftop Cocktail Banquettes with Table Mountain Views", "tag": "Rooftop Bar"},
             {"file": r"SALocations\Rooftops\Tokyo (6).jpg", "title": "The Tokyo Rooftop: Elevated Swimming Pool & Sun Deck Facing Table Mountain Crest", "tag": "Sky Pool"},
             {"file": r"SALocations\Views\Table Mountain (2).jpg", "title": "Table Mountain Summit Look: High-Altitude Aerial Vantage Over Lion's Head & Atlantic Coastline", "tag": "Summit Aerial"}
+        ]
+    },
+
+    # 18
+    {
+        "id": "quarries-industrial-excavations",
+        "num": "18",
+        "title": "Quarries & Industrial Excavations",
+        "icon": "⛏️",
+        "doubles_as": "Alien Planet Moonscapes · Mad Max Wastelands · Industrial Mining Pits · Post-Apocalyptic Craters · Open-Pit Copper & Granite Quarries",
+        "hero_badge": "Verified Location",
+        "area": "Paarl R44 Quarry, Kalbaskraal Main Quarry, Mamre Granite Quarry & Afrisand Sand Quarry",
+        "tagline": "Monumental terraced rock quarries, sheer excavated stone faces, deep azure quarry lakes, heavy industrial excavation pits, and Martian gravel landscapes.",
+        "creative_synopsis": "Cape Town and the surrounding Boland and Swartland regions house colossal active and decommissioned rock and sand quarries offering raw, monumental industrial scale. The Paarl R44 Quarry features colossal terraced granite walls, towering rock precipices, and vast excavation floors ideal for high-impact vehicle stunts, dystopian wastelands, or alien planetary landscapes. Kalbaskraal Quarry provides extensive open sand and gravel pits with multi-tier excavation shelves, while Mamre Quarry features massive granite blocks, sheer cuts, and reflective quarry waters. These sites offer complete private access, allowing controlled pyrotechnics, heavy mechanical crane setups, and high-speed vehicle tracking with zero public interference.",
+        "hero_image_file": r"Quarry\Ep Livestock-R44 (1).jpg",
+        "hero_image_title": "Paarl R44 Quarry: Monumental Terraced Stone Excavation Pit, Massive Rock Faces & Industrial Staging Ground",
+        "key_features": [
+            "Paarl R44 Quarry: Colossal multi-tiered granite terraces, towering sheer rock cuts, and expansive industrial pit floors",
+            "Kalbaskraal Main Quarry: Vast open sand and rock excavation basin with tiered ramps and Martian gravel flats",
+            "Kalbaskraal 2nd Quarry: Tiered industrial extraction shelves and desolate arid quarry corridors",
+            "Mamre Quarry: Monumental granite blocks, deep stone excavation bowls, and dramatic industrial backdrop",
+            "Complete spatial isolation permitting controlled pyrotechnics, explosions, high-speed vehicle tracking, and drone chases",
+            "Massive load-bearing hardstand terrain accommodating 40+ unit basecamps, heavy grip cranes, and tracking vehicles"
+        ],
+        "specs": {
+            "permitting": "Private Quarry Operators & Mining Concessions (24–48 hr direct sign-off) · Scheduled exclusive pit closures",
+            "power": "High-capacity 3-phase industrial power tie-ins at primary processing plants · Mobile heavy generator compounds permitted",
+            "parking": "Unlimited heavy unit parking across expansive crushed-stone staging aprons and flat quarry floors",
+            "sound_curfew": "Zero acoustic restrictions · Pre-cleared high-SPL gunfire, vehicle revving, explosions, and night floodlighting 24/7"
+        },
+        "gallery": [
+            {"file": r"Quarry\Ep Livestock-R44 (1).jpg", "title": "Paarl R44 Quarry: Monumental Terraced Stone Excavation Pit & Sheer Granite Walls", "tag": "Hero Quarry"},
+            {"file": r"Quarry\Ep Livestock-R44 (2).jpg", "title": "Paarl R44 Quarry: Wide Industrial Excavation Bowl & Multi-Tier Rock Steps", "tag": "Rock Excavation"},
+            {"file": r"Quarry\Ep Livestock-R44 (3).jpg", "title": "Paarl R44 Quarry: High-Wall Granite Precipice & Desolate Industrial Basin", "tag": "High-Wall Basin"},
+            {"file": r"Quarry\Ep Livestock-R44 (4).jpg", "title": "Paarl R44 Quarry: Vast Gravel Extraction Floor & Tiered Stone Ramparts", "tag": "Gravel Floor"},
+            {"file": r"Quarry\Afrisand Quarry (1).jpg", "title": "Afrisand Sand Quarry: Heavy Haul Mining Trucks & Colossal Dune Extraction Pit", "tag": "Mining Pit"},
+            {"file": r"Quarry\Afrisand Quarry (3).jpg", "title": "Afrisand Quarry: Vast White Sand Excavation Floor & Desert Ridge Horizon", "tag": "Sand Flats"},
+            {"file": r"Quarry\Kalbas\Kalbaskraal Main Quarry (2).jpg", "title": "Kalbaskraal Main Quarry: Colossal Multi-Tiered Excavation Pit & Sandy Dunes", "tag": "Kalbaskraal Pit"},
+            {"file": r"Quarry\Kalbas\Kalbaskraal Main Quarry (23).JPG", "title": "Kalbaskraal Main Quarry: Expansive Desert Basin & Industrial Heavy Equipment Track", "tag": "Quarry Basin"},
+            {"file": r"Quarry\Kalbas\Kalbaskraal 2nd Quarry (17).JPG", "title": "Kalbaskraal 2nd Quarry: Arid Sand Excavation Terraces & Open Sky Corridor", "tag": "Arid Terraces"},
+            {"file": r"Quarry\Kalbas\Kalbaskraal 2nd Quarry (20).JPG", "title": "Kalbaskraal 2nd Quarry: Desolate Excavation Flats & Tiered Quarry Banks", "tag": "Desolate Flats"},
+            {"file": r"Quarry\Mamre Quarry (1).jpg", "title": "Mamre Quarry: Monumental Granite Extraction Blocks & High-Wall Cut", "tag": "Mamre Granite"},
+            {"file": r"Quarry\Mamre Quarry (10).jpg", "title": "Mamre Quarry: Wide Industrial Stone Pit & Deep Excavation Terrace", "tag": "Stone Pit"},
+            {"file": r"Quarry\Mamre Quarry (14).jpg", "title": "Mamre Quarry: Industrial Extraction Backdrop & Rugged Quarry Floor", "tag": "Industrial Basin"}
         ]
     }
 ]

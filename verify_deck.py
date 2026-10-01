@@ -25,14 +25,14 @@ async def main():
         print(f"Page Title: {title}")
 
         blocks = await page.query_selector_all(".category-block")
-        print(f"Rendered Category Blocks: {len(blocks)} / 17")
+        print(f"Rendered Category Blocks: {len(blocks)} / 18")
 
         # 2. Capture Hero Screenshot
         hero_screen = os.path.join(artifact_dir, "master_deck_hero.jpg")
         await page.screenshot(path=hero_screen, clip={"x": 0, "y": 0, "width": 1400, "height": 880})
         print(f"Saved Hero Screenshot to {hero_screen}")
 
-        # 2b. Capture Category 01 Screenshot (New Chapman's Peak Opener)
+        # 2b. Capture Category 01 Screenshot (New Chapman's Peak Opener & Arid Lands / Saltpans)
         cat1 = await page.query_selector("#coastal-passes-ocean-roads")
         if cat1:
             cat1_screen = os.path.join(artifact_dir, "master_deck_cat01.jpg")
@@ -46,21 +46,28 @@ async def main():
             await cat2.screenshot(path=cat2_screen)
             print(f"Saved Cat 02 Screenshot to {cat2_screen}")
 
-        # 3. Capture Category 03 Screenshot (Bo-Kaap Chiappini St)
+        # 3. Capture Category 03 Screenshot (Bo-Kaap Chiappini St & De Waterkant)
         cat3 = await page.query_selector("#heritage-cottages-character-streets")
         if cat3:
             cat3_screen = os.path.join(artifact_dir, "master_deck_cat03.jpg")
             await cat3.screenshot(path=cat3_screen)
             print(f"Saved Cat 03 Screenshot to {cat3_screen}")
 
-        # 4. Capture Category 05 Screenshot (Clean Mountains & Lourensford Prairie)
+        # 3b. Capture Category 04 Screenshot (Authentic Blackwood Log Cabin & Scarborough Pavilion)
+        cat4 = await page.query_selector("#forest-cabins-nature-retreats")
+        if cat4:
+            cat4_screen = os.path.join(artifact_dir, "master_deck_cat04.jpg")
+            await cat4.screenshot(path=cat4_screen)
+            print(f"Saved Cat 04 Screenshot to {cat4_screen}")
+
+        # 4. Capture Category 05 Screenshot (Du Toitskloof Mountain Face)
         cat5 = await page.query_selector("#natural-wilderness-geological")
         if cat5:
             cat5_screen = os.path.join(artifact_dir, "master_deck_cat05.jpg")
             await cat5.screenshot(path=cat5_screen)
             print(f"Saved Cat 05 Screenshot to {cat5_screen}")
 
-        # 5. Capture Category 06 (Expanded Beaches: Camps Bay, Llandudno, St. James tidal pool)
+        # 5. Capture Category 06 (Clifton 4th & Clifton 1st-3rd Beaches)
         cat6 = await page.query_selector("#pristine-beaches-coastal-coves")
         if cat6:
             cat6_screen = os.path.join(artifact_dir, "master_deck_cat06.jpg")
@@ -81,7 +88,14 @@ async def main():
             await cat8.screenshot(path=cat8_screen)
             print(f"Saved Cat 08 Screenshot to {cat8_screen}")
 
-        # 8. Capture Category 13 (Airports, Stellair & CTICC Interior)
+        # 7b. Capture Category 12 (Winelands & Zorgvliet Cape Dutch Manor)
+        cat12 = await page.query_selector("#wine-country-historic-estates")
+        if cat12:
+            cat12_screen = os.path.join(artifact_dir, "master_deck_cat12.jpg")
+            await cat12.screenshot(path=cat12_screen)
+            print(f"Saved Cat 12 Screenshot to {cat12_screen}")
+
+        # 8. Capture Category 13 (Diemerskraal Airfield, Stellair & CTICC Interior)
         cat13 = await page.query_selector("#airports-aviation-transport-terminals")
         if cat13:
             cat13_screen = os.path.join(artifact_dir, "master_deck_cat13.jpg")
@@ -101,6 +115,13 @@ async def main():
             cat17_screen = os.path.join(artifact_dir, "master_deck_cat17.jpg")
             await cat17.screenshot(path=cat17_screen)
             print(f"Saved Cat 17 (City Views & Rooftops) Screenshot to {cat17_screen}")
+
+        # 9c. Capture Category 18 (Quarries & Industrial Excavations)
+        cat18 = await page.query_selector("#quarries-industrial-excavations")
+        if cat18:
+            cat18_screen = os.path.join(artifact_dir, "master_deck_cat18.jpg")
+            await cat18.screenshot(path=cat18_screen)
+            print(f"Saved Cat 18 (Quarries) Screenshot to {cat18_screen}")
 
         # 10. Capture Golden Hour Section
         gh_el = await page.query_selector("#golden-hour")
