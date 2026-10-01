@@ -2,9 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImgUrl from "@/assets/hero-tablemountain-new.jpg";
 import cliftonImgUrl from "@/assets/gal-clifton.jpg";
-import stoneybrookImgUrl from "@/assets/gal-stoneybrook.jpg";
+import llandudnoImgUrl from "@/assets/gal-llandudno.jpg";
 import campsbayImgUrl from "@/assets/sig-campsbay.jpg";
 import reverieImgUrl from "@/assets/gal-reverie.jpg";
+import campsbaySunsetUrl from "@/assets/gal-campsbay-sunset.jpg";
+import campsbayProm1Url from "@/assets/gal-campsbay-prom1.jpg";
+import campsbayProm2Url from "@/assets/gal-campsbay-prom2.jpg";
+import campsbayProm3Url from "@/assets/gal-campsbay-prom3.jpg";
 
 import expSafari from "@/assets/exp-safari.jpg";
 import expHeli from "@/assets/exp-heli.jpg";
@@ -28,12 +32,18 @@ import heroBokaapPano from "@/assets/hero-bokaap-pano.jpg";
 
 import antHero from "@/assets/ant-hero.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const heroAsset = { url: heroImgUrl };
 const cliftonAsset = { url: cliftonImgUrl };
-const stoneybrookAsset = { url: stoneybrookImgUrl };
+const llandudnoAsset = { url: llandudnoImgUrl };
 const campsbayAsset = { url: campsbayImgUrl };
 const reverieAsset = { url: reverieImgUrl };
+const campsbaySunsetAsset = { url: campsbaySunsetUrl };
+const campsbayProm1Asset = { url: campsbayProm1Url };
+const campsbayProm2Asset = { url: campsbayProm2Url };
+const campsbayProm3Asset = { url: campsbayProm3Url };
 const heroImg = heroAsset.url;
 
 
@@ -697,20 +707,56 @@ function Gallery() {
         </div>
 
         <div className="grid grid-cols-12 gap-3 md:gap-5">
-          <figure className="col-span-12 md:col-span-8">
-            <div className="aspect-[16/10] overflow-hidden bg-surface">
-              <img src={reverieAsset.url} alt="Reverie villa above the Atlantic at dusk" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-              <span>Camps Bay</span><span>Reverie</span>
-            </figcaption>
-          </figure>
+          <Dialog>
+            <DialogTrigger asChild>
+              <figure className="col-span-12 md:col-span-8 cursor-pointer group">
+                <div className="aspect-[16/10] overflow-hidden bg-surface relative">
+                  <img src={campsbaySunsetAsset.url} alt="Camps Bay sunset" loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center">
+                    <span className="text-white text-sm font-medium tracking-widest uppercase mb-2">View Gallery</span>
+                    <span className="text-white/80 text-xs">(4 Photos)</span>
+                  </div>
+                </div>
+                <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
+                  <span>Camps Bay</span><span>Promenade</span>
+                </figcaption>
+              </figure>
+            </DialogTrigger>
+            <DialogContent className="max-w-[95vw] md:max-w-5xl bg-black/95 border-zinc-800 p-0 overflow-hidden">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="aspect-[4/3] md:aspect-[16/9] w-full flex items-center justify-center">
+                      <img src={campsbaySunsetAsset.url} alt="Camps Bay sunset" className="max-w-full max-h-[85vh] object-contain" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="aspect-[4/3] md:aspect-[16/9] w-full flex items-center justify-center">
+                      <img src={campsbayProm1Asset.url} alt="Camps Bay promenade" className="max-w-full max-h-[85vh] object-contain" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="aspect-[4/3] md:aspect-[16/9] w-full flex items-center justify-center">
+                      <img src={campsbayProm2Asset.url} alt="Camps Bay promenade" className="max-w-full max-h-[85vh] object-contain" />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="aspect-[4/3] md:aspect-[16/9] w-full flex items-center justify-center">
+                      <img src={campsbayProm3Asset.url} alt="Camps Bay promenade" className="max-w-full max-h-[85vh] object-contain" />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="left-4 bg-black/50 border-white/20 text-white hover:bg-black/70 hover:text-white" />
+                <CarouselNext className="right-4 bg-black/50 border-white/20 text-white hover:bg-black/70 hover:text-white" />
+              </Carousel>
+            </DialogContent>
+          </Dialog>
           <figure className="col-span-12">
             <div className="aspect-[21/9] md:aspect-[32/9] overflow-hidden bg-surface">
               <img src={cliftonAsset.url} alt="Clifton 4th beach panorama with Lion's Head" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-              <span>Clifton 4th</span><span>Atlantic Seaboard</span>
+              <span>Atlantis Dunes</span><span>West Coast</span>
             </figcaption>
           </figure>
           <figure className="col-span-6 md:col-span-4">
@@ -739,10 +785,10 @@ function Gallery() {
           </figure>
           <figure className="col-span-12 md:col-span-4">
             <div className="aspect-square overflow-hidden bg-surface">
-              <img src={stoneybrookAsset.url} alt="Stoneybrook estate at golden hour" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={llandudnoAsset.url} alt="Llandudno coastal vista" loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <figcaption className="mt-3 flex justify-between text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-              <span>Hout Bay</span><span>Stoneybrook</span>
+              <span>Llandudno</span><span>View</span>
             </figcaption>
           </figure>
           <figure className="col-span-12 md:col-span-8">
