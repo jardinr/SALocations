@@ -14,18 +14,19 @@ hero_bg = data.get("hero_background", "")
 
 print(f"Loaded {len(categories)} categories, {len(images)} encoded images, and hero background.")
 
+# Build HTML Deck with 5-Pillar Strategic Proposal and Commercial Costing Estimate
 html_template = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cape Town Master Location Scouting Database · International Film & Commercial Showcase</title>
-    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 18 macro categories. Verified scouting inventory, international doubling power, technical filming specs, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
+    <meta name="description" content="Comprehensive master location database showcasing Cape Town and South Africa's film locations across 18 macro categories. Verified scouting inventory, international doubling power, technical filming specs, commercial costing estimate, and multi-currency rate cards. Presented by SA Locations & Zencrew.">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cape Town Master Location Scouting Database · Global Film & Commercial Showcase">
-    <meta property="og:description" content="Curated 18-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European, Skyline Rooftop, Championship Golf & Industrial Quarry destinations. Verified hero assets, technical filming specs & multi-currency rates.">
+    <meta property="og:description" content="Curated 18-category location scouting inventory doubling South Africa for California, Mediterranean, London, New York, Nevada, European, Skyline Rooftop, Championship Golf & Industrial Quarry destinations. Verified hero assets, commercial costing estimate & multi-currency rates.">
     <meta property="og:image" content="https://sal-global-locations-deck.vercel.app/og-preview.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -102,38 +103,47 @@ html_template = """<!DOCTYPE html>
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(7, 11, 10, 0.88);
+            background: rgba(7, 11, 10, 0.94);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 0.75rem 2rem;
+            padding: 0.5rem 1.4rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1.5rem;
+            gap: 0.8rem;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        header.top-nav::-webkit-scrollbar {
+            display: none;
         }
 
         .nav-brand {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .brand-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
             background: rgba(212, 175, 55, 0.12);
             border: 1px solid var(--border-gold);
             color: var(--gold-bright);
-            padding: 0.35rem 0.85rem;
+            padding: 0.28rem 0.7rem;
             border-radius: 999px;
             font-family: var(--font-tech);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .pulse-dot {
@@ -152,33 +162,73 @@ html_template = """<!DOCTYPE html>
 
         .nav-title {
             font-family: var(--font-serif);
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             font-weight: 700;
             letter-spacing: 0.05em;
             color: #ffffff;
+            white-space: nowrap;
+        }
+
+        /* Main Navigation Links Menu */
+        .nav-links-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-shrink: 0;
+        }
+
+        .nav-link-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.32rem 0.65rem;
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: var(--font-tech);
+            font-size: 0.74rem;
+            font-weight: 600;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-link-pill:hover {
+            border-color: var(--border-gold);
+            color: var(--gold-bright);
+            background: rgba(212, 175, 55, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .nav-link-pill.highlight {
+            background: rgba(212, 175, 55, 0.12);
+            border-color: var(--gold);
+            color: var(--gold-bright);
         }
 
         .nav-controls {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
-            flex-wrap: wrap;
+            gap: 0.65rem;
+            flex-shrink: 0;
         }
 
         .social-link-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.45rem;
-            padding: 0.4rem 0.8rem;
+            gap: 0.4rem;
+            padding: 0.32rem 0.6rem;
             border-radius: var(--radius-sm);
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             color: var(--text-main);
             text-decoration: none;
             font-family: var(--font-tech);
-            font-size: 0.75rem;
+            font-size: 0.73rem;
             font-weight: 600;
             transition: var(--transition);
+            white-space: nowrap;
         }
         .social-link-btn:hover {
             border-color: var(--gold);
@@ -197,17 +247,17 @@ html_template = """<!DOCTYPE html>
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             border-radius: 999px;
-            padding: 0.45rem 1rem 0.45rem 2.2rem;
+            padding: 0.36rem 0.85rem 0.36rem 2rem;
             color: #ffffff;
-            font-size: 0.85rem;
-            width: 200px;
+            font-size: 0.78rem;
+            width: 145px;
             transition: var(--transition);
             outline: none;
             font-family: var(--font-sans);
         }
 
         .search-box input:focus {
-            width: 260px;
+            width: 200px;
             border-color: var(--border-gold);
             background: rgba(255, 255, 255, 0.08);
         }
@@ -256,9 +306,9 @@ html_template = """<!DOCTYPE html>
             background: var(--emerald-bright);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: #ffffff;
-            padding: 0.45rem 1rem;
+            padding: 0.42rem 0.95rem;
             border-radius: 999px;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
@@ -378,7 +428,7 @@ html_template = """<!DOCTYPE html>
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             max-width: 1200px;
-            margin: 0 auto 3rem auto;
+            margin: 0 auto 2.5rem auto;
         }
 
         @media (max-width: 900px) {
@@ -418,10 +468,20 @@ html_template = """<!DOCTYPE html>
             font-family: var(--font-tech);
         }
 
+        /* Hero Action Button Cluster */
+        .hero-action-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
         /* Global Doubling Banner */
         .doubling-banner {
             max-width: 1200px;
-            margin: 0 auto 2.5rem auto;
+            margin: 0 auto 1.5rem auto;
             background: linear-gradient(135deg, rgba(25, 56, 43, 0.45) 0%, rgba(18, 28, 23, 0.8) 100%);
             border: 1px solid var(--border-highlight);
             border-radius: var(--radius-lg);
@@ -480,6 +540,510 @@ html_template = """<!DOCTYPE html>
             color: #ffffff;
             transform: translateY(-2px);
             box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+        }
+
+        /* -------------------------------------------------------------
+           STRATEGIC PRODUCER PROPOSAL: 5-PILLAR ARCHITECTURE
+           ------------------------------------------------------------- */
+        .proposal-section {
+            position: relative;
+            max-width: 1380px;
+            margin: 3.5rem auto 4rem auto;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .proposal-container {
+            background: linear-gradient(135deg, rgba(22, 36, 30, 0.88) 0%, rgba(13, 20, 17, 0.96) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 3rem;
+            box-shadow: var(--shadow-elevated), 0 0 50px rgba(212, 175, 55, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proposal-header {
+            text-align: center;
+            max-width: 960px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .proposal-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 2.7rem);
+            color: #ffffff;
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .proposal-lead-quote {
+            font-size: 1.1rem;
+            color: var(--gold-bright);
+            line-height: 1.7;
+            font-style: italic;
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold);
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin: 1.5rem auto 0 auto;
+            text-align: left;
+            max-width: 920px;
+        }
+
+        /* 4-Pillars Matrix Table */
+        .matrix-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--surface-card);
+            margin-bottom: 3.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background: rgba(25, 56, 43, 0.6);
+            color: var(--gold-bright);
+            font-family: var(--font-tech);
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            padding: 1.1rem 1.4rem;
+            border-bottom: 1px solid var(--border-gold);
+            white-space: nowrap;
+        }
+
+        .matrix-table td {
+            padding: 1.3rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            line-height: 1.65;
+        }
+
+        .matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .matrix-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .pillar-col-title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        .pillar-pos-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            font-family: var(--font-tech);
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .pillar-pos-badge.very-strong {
+            background: rgba(56, 239, 125, 0.15);
+            border: 1px solid #38ef7d;
+            color: #38ef7d;
+        }
+
+        .pillar-pos-badge.strong {
+            background: rgba(212, 175, 55, 0.18);
+            border: 1px solid var(--gold);
+            color: var(--gold-bright);
+        }
+
+        .pillar-pos-badge.caveat {
+            background: rgba(255, 170, 0, 0.15);
+            border: 1px solid #ffaa00;
+            color: #ffc107;
+        }
+
+        /* TVC 4-Card Grid */
+        .tvc-wrapper {
+            margin-bottom: 3.5rem;
+        }
+
+        .tvc-section-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .tvc-section-sub {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 2.2rem auto;
+            line-height: 1.6;
+        }
+
+        .tvc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 1050px) {
+            .tvc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .tvc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tvc-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .tvc-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .tvc-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .tvc-card-title {
+            font-family: var(--font-tech);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gold-bright);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .tvc-card-desc {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Pillar 5: Facilitation & Workflow */
+        .p5-banner {
+            background: linear-gradient(135deg, rgba(25, 56, 43, 0.5) 0%, rgba(18, 28, 23, 0.85) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 2.2rem;
+        }
+
+        .p5-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .p5-title {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .p5-lead {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            max-width: 980px;
+        }
+
+        .workflow-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.9rem;
+            margin-top: 1.8rem;
+        }
+
+        @media (max-width: 950px) {
+            .workflow-steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .wf-step-card {
+            background: rgba(7, 11, 10, 0.65);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .wf-step-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .wf-step-num {
+            font-family: var(--font-tech);
+            font-size: 0.72rem;
+            font-weight: 800;
+            color: var(--gold);
+            letter-spacing: 0.12em;
+        }
+
+        .wf-step-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .wf-step-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* -------------------------------------------------------------
+           COMMERCIAL PRODUCTION COSTING ESTIMATE & DAY RATES
+           ------------------------------------------------------------- */
+        .costing-section {
+            position: relative;
+            max-width: 1380px;
+            margin: 4.5rem auto 3rem auto;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .costing-container {
+            background: var(--surface);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 3rem;
+            box-shadow: var(--shadow-elevated), 0 0 50px rgba(212, 175, 55, 0.08);
+        }
+
+        .costing-header {
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .costing-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.2vw, 2.6rem);
+            color: #ffffff;
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .costing-lead {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .costing-table-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .costing-card-header {
+            padding: 1.3rem 1.8rem;
+            background: linear-gradient(90deg, rgba(25, 56, 43, 0.45) 0%, rgba(18, 28, 23, 0.85) 100%);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .costing-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .costing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        .costing-table th {
+            background: rgba(0, 0, 0, 0.35);
+            color: var(--gold);
+            font-family: var(--font-tech);
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.95rem 1.4rem;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .costing-table td {
+            padding: 0.95rem 1.4rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-main);
+            vertical-align: middle;
+        }
+
+        .costing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .costing-table tr:hover td {
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .role-title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .dept-pill {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            font-family: var(--font-tech);
+            font-size: 0.72rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+        }
+
+        .rate-cell {
+            font-family: var(--font-tech);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--gold-bright);
+            white-space: nowrap;
+        }
+
+        .scope-cell {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* -------------------------------------------------------------
+           dtic INCENTIVE DEEP DIVE SECTION
+           ------------------------------------------------------------- */
+        .incentive-section {
+            position: relative;
+            max-width: 1380px;
+            margin: 4.5rem auto 3rem auto;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .incentive-container {
+            background: linear-gradient(135deg, rgba(13, 20, 17, 0.96) 0%, rgba(22, 36, 30, 0.85) 100%);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 3.5rem 3rem;
+            box-shadow: var(--shadow-elevated), 0 0 50px rgba(212, 175, 55, 0.08);
+        }
+
+        .incentive-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 950px) {
+            .incentive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .incentive-card {
+            background: rgba(7, 11, 10, 0.65);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .incentive-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-3px);
+        }
+
+        .incentive-card.highlight {
+            border-color: var(--border-gold);
+            background: linear-gradient(180deg, rgba(25, 56, 43, 0.45) 0%, rgba(7, 11, 10, 0.8) 100%);
+        }
+
+        .dtic-notice-box {
+            background: rgba(255, 170, 0, 0.08);
+            border: 1px solid rgba(255, 170, 0, 0.35);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 2rem;
+            margin-top: 2.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+        }
+
+        .notice-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .notice-content h4 {
+            font-family: var(--font-tech);
+            font-size: 0.95rem;
+            color: #ffc107;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.4rem;
+        }
+
+        .notice-content p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
         /* Single Category View Banner */
@@ -1753,6 +2317,8 @@ html_template = """<!DOCTYPE html>
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .footer-disclaimer {
@@ -1778,21 +2344,23 @@ html_template = """<!DOCTYPE html>
                 background: #ffffff !important;
                 color: #000000 !important;
             }
-            .category-header, .hero-details-panel, .gallery-section {
+            .category-header, .hero-details-panel, .gallery-section, .proposal-container, .costing-container {
                 background: #ffffff !important;
                 color: #000000 !important;
             }
             h1, h2, h3, h4 {
                 color: #000000 !important;
             }
-            p, li, .spec-value, .category-synopsis {
+            p, li, .spec-value, .category-synopsis, .costing-lead {
                 color: #333333 !important;
             }
         }
     </style>
 </head>
 <body>
+"""
 
+html_template += f"""
     <div class="ambient-glow"></div>
 
     <!-- Header Navigation -->
@@ -1804,6 +2372,15 @@ html_template = """<!DOCTYPE html>
             </div>
             <span class="nav-title">SA Locations & Zencrew</span>
         </div>
+
+        <!-- Section Shortcuts -->
+        <nav class="nav-links-menu">
+            <a href="#strategic-proposal" class="nav-link-pill">📋 Strategic Proposal</a>
+            <a href="#categories-showcase" class="nav-link-pill">🎬 Locations ({len(categories)})</a>
+            <a href="#costing-estimate" class="nav-link-pill highlight">📊 Costing Estimate</a>
+            <a href="#dtic-incentives" class="nav-link-pill">🏛️ dtic Incentives</a>
+            <a href="#rates-and-contacts" class="nav-link-pill">👥 Team & Rates</a>
+        </nav>
 
         <div class="nav-controls">
             <!-- Social Channels -->
@@ -1817,7 +2394,7 @@ html_template = """<!DOCTYPE html>
             <!-- Global Search -->
             <div class="search-box">
                 <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                <input type="text" id="searchInput" placeholder="Search """ + str(len(images)) + """ locations..." oninput="filterShowcase(this.value)">
+                <input type="text" id="searchInput" placeholder="Search {len(images)} locations..." oninput="filterShowcase(this.value)">
             </div>
 
             <!-- Multi-Currency Selector -->
@@ -1836,9 +2413,7 @@ html_template = """<!DOCTYPE html>
             </button>
         </div>
     </header>
-"""
 
-html_template += f"""
     <!-- Hero Showcase Section with Table Mountain Backdrop -->
     <div class="hero-banner-wrapper" style="background-image: url('{hero_bg}');">
         <div class="hero-banner-overlay"></div>
@@ -1877,6 +2452,19 @@ html_template += f"""
                 </div>
             </div>
 
+            <!-- Hero Action Button Cluster -->
+            <div class="hero-action-buttons">
+                <a href="#categories-showcase" class="btn-nav primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
+                    🎬 Explore 18 Macro Categories
+                </a>
+                <a href="#costing-estimate" class="btn-nav" style="padding: 0.75rem 1.6rem; font-size: 0.88rem; border-color: var(--border-gold); color: var(--gold-bright); background: rgba(212, 175, 55, 0.12);">
+                    📊 Commercial Costing Estimate (Live Multi-Currency)
+                </a>
+                <a href="#strategic-proposal" class="btn-nav" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">
+                    📋 5-Pillar Strategic Proposal
+                </a>
+            </div>
+
             <!-- Global Doubling Advantage Banner -->
             <div class="doubling-banner">
                 <div>
@@ -1902,19 +2490,179 @@ html_template += f"""
                         <button type="button" class="doubling-tag" onclick="filterCategory('stadiums-arenas-athletics')">🏟️ Olympic Arenas & World Cup Stadiums (DHL Stadium)</button>
                         <button type="button" class="doubling-tag" onclick="filterCategory('golf-courses-country-club-estates')">⛳ Championship Golf & Country Club Estates (Clovelly & Royal Cape)</button>
                         <button type="button" class="doubling-tag" onclick="filterCategory('city-views-rooftops-panoramas')">🌇 Manhattan & Miami Skyline Rooftops (113 Loop St & Signal Hill)</button>
+                        <button type="button" class="doubling-tag" onclick="filterCategory('quarries-industrial-excavations')">⛏️ Moonscape & Industrial Quarries (Paarl R44 & Kalbaskraal)</button>
                     </div>
                 </div>
                 <div>
-                    <a href="#rates-and-contacts" class="btn-nav primary" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">Review Rate Cards</a>
+                    <a href="#costing-estimate" class="btn-nav primary" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">Review Costing Estimate</a>
                 </div>
             </div>
         </section>
     </div>
-"""
 
-html_template += f"""
+    <!-- STRATEGIC PROPOSAL: WHY CAPE TOWN & THE 5-PILLAR ARCHITECTURE -->
+    <section class="proposal-section" id="strategic-proposal">
+        <div class="proposal-container">
+            <div class="proposal-header">
+                <span class="badge-premium">International Executive Pitch Framework</span>
+                <h2>The Western Cape Production Proposition</h2>
+                <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 820px; margin: 0 auto; line-height: 1.65;">
+                    A credible, evidence-based strategic framework evaluating Cape Town and the Western Cape against global film, television, and commercial production standards.
+                </p>
+                <div class="proposal-lead-quote">
+                    "The Western Cape's pitch is not: 'Come here because we have a big rebate.' It is: 'The Western Cape combines an available national production incentive with a mature production ecosystem, exceptional location versatility, and relatively efficient logistics.'"
+                </div>
+            </div>
+
+            <!-- Comparative Assessment Matrix Table -->
+            <div class="matrix-table-wrap">
+                <table class="matrix-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 22%;">Global Producer Criterion</th>
+                            <th style="width: 23%;">Western Cape Position</th>
+                            <th style="width: 55%;">What We Can Credibly Say (Verified Assessment)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pillar-col-title">1. Production Incentives</td>
+                            <td>
+                                <span class="pillar-pos-badge caveat">Available National Incentive</span>
+                                <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; font-family: var(--font-tech);">Subject to eligibility & approval</div>
+                            </td>
+                            <td>
+                                <strong>South Africa operates a national incentive, not a separate simple "Western Cape rebate."</strong> Foreign productions currently qualify for <strong>25% of QSAPE</strong> (Qualifying South African Production Expenditure), capped at <strong>R25m</strong>, with a potential additional <strong>5%</strong> under specified conditions (e.g., qualifying post-production).<br><br>
+                                <em style="color: var(--gold-bright);">Realistic Cash-Flow Note:</em> In August 2026, the <strong>dtic</strong> announced that it is comprehensively reviewing the Film and Television Incentive Programme. While applications proceed under current guidelines, processing cycles require planning. It should be presented as an attractive available incentive subject to formal approval, rather than guaranteed upfront cash.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pillar-col-title">2. Infrastructure & Crew</td>
+                            <td>
+                                <span class="pillar-pos-badge strong">Strong</span>
+                                <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; font-family: var(--font-tech);">Established commercial & film ecosystem</div>
+                            </td>
+                            <td>
+                                Cape Town hosts deeply established commercial production companies, world-class technical crews, premier equipment rental houses (Photo Hire, Panavision, Media Film Service), soundstages, and post-production facilities.<br><br>
+                                <strong>Cape Town Film Studios (CTFS)</strong> provides purpose-built Hollywood-standard soundstage facilities, while facilities such as <strong>Photo Hire provide 220–405 m² studio options</strong> alongside comprehensive camera, lighting, and grip support.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pillar-col-title">3. Location Versatility</td>
+                            <td>
+                                <span class="pillar-pos-badge very-strong">Very Strong</span>
+                                <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; font-family: var(--font-tech);">Primary regional differentiator globally</div>
+                            </td>
+                            <td>
+                                <strong>This is the clearest Western Cape differentiator.</strong> Within relatively short travelling distances (under 60 minutes from Cape Town CBD), productions can access pristine beaches, ocean, mountain passes, vineyards, urban city streets, industrial excavation quarries, period architecture, modern cantilevered architecture, agricultural farms, and character residential environments.<br><br>
+                                <strong>Film Cape Town</strong> specifically promotes the region's unmatched capability to double international locations (California, Mediterranean, London, New York, Nevada, and European alpine passes) from a single production hotel base.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pillar-col-title">4. Logistics & Stability</td>
+                            <td>
+                                <span class="pillar-pos-badge caveat">Strong, with Caveats</span>
+                                <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 0.4rem; font-family: var(--font-tech);">Dedicated permit office & UTC+2 time zone</div>
+                            </td>
+                            <td>
+                                Cape Town operates an established municipal <strong>Film Permit Office</strong>, online permitting, experienced local production support, advanced transport/ICT infrastructure, and a European-friendly time zone (UTC+2 / CAT with zero jetlag for UK and European agency clients).<br><br>
+                                Public-location filming requires formal municipal permits, but the City has a dedicated coordination system for multi-department approvals (Metro Police road closures, SANParks nature reserves, and civic squares).
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TVC 4-Pillar Grid -->
+            <div class="tvc-wrapper">
+                <h3 class="tvc-section-title">Where the Western Cape Excels for Commercials (TVCs)</h3>
+                <p class="tvc-section-sub">
+                    For commercial and brand producers, the Western Cape translates into an extraordinarily compelling, high-efficiency proposition:
+                </p>
+                <div class="tvc-grid">
+                    <div class="tvc-card">
+                        <div class="tvc-card-icon">💰</div>
+                        <div class="tvc-card-title">1. Financials</div>
+                        <p class="tvc-card-desc">
+                            Highly competitive production day rates combined with a massive <strong>40% to 60% exchange-rate purchasing power advantage</strong> against USD, EUR, and GBP, plus the national incentive where the project meets QSAPE criteria.
+                        </p>
+                    </div>
+
+                    <div class="tvc-card">
+                        <div class="tvc-card-icon">🎥</div>
+                        <div class="tvc-card-title">2. Production Capability</div>
+                        <p class="tvc-card-desc">
+                            Top-tier commercial directors of photography, gaffers, grips, art directors, and specialist camera operators (drones, Russian Arms, Phantom high-speed) deeply experienced in demanding international TVC turnarounds.
+                        </p>
+                    </div>
+
+                    <div class="tvc-card">
+                        <div class="tvc-card-icon">🗺️</div>
+                        <div class="tvc-card-title">3. Creative Flexibility</div>
+                        <p class="tvc-card-desc">
+                            A single Cape Town base can provide dramatically different visual environments. A 3-day commercial schedule can shoot California coastal highways, a Tuscan vineyard estate, and a Manhattan rooftop without moving hotel bases.
+                        </p>
+                    </div>
+
+                    <div class="tvc-card">
+                        <div class="tvc-card-icon">⏱️</div>
+                        <div class="tvc-card-title">4. Operational Practicality</div>
+                        <p class="tvc-card-desc">
+                            Fluent English-speaking crews, European-compatible time zone for seamless live client streaming, dedicated online film permitting, 14.5 hours of summer daylight, and compact travel distances between diverse locations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pillar 5: Location Intelligence & Local Facilitation -->
+            <div class="p5-banner">
+                <div class="p5-header">
+                    <div>
+                        <span class="badge-premium">Pillar 5 · Turnkey Delivery</span>
+                        <h3 class="p5-title" style="margin-top: 0.5rem;">Location Intelligence & Local Facilitation (SA Locations & Zencrew)</h3>
+                    </div>
+                    <a href="mailto:laura@zencrew.co.za?cc=jardin@salocations.com&subject=Production%20Inquiry%20-%20Cape%20Town%205-Pillar%20Pitch" class="btn-nav primary">
+                        Inquire Production Brief
+                    </a>
+                </div>
+                <p class="p5-lead">
+                    International producers do not need to learn the Western Cape from scratch. <strong>SA Locations & Zencrew</strong> provide the specialized local location intelligence, scouting archives, private property access, council permit coordination, and on-the-ground management required to turn a creative brief into a flawless, shootable Cape Town production.
+                </p>
+
+                <!-- 5-Step Workflow -->
+                <div class="workflow-steps-grid">
+                    <div class="wf-step-card">
+                        <div class="wf-step-num">STEP 01</div>
+                        <div class="wf-step-title">Creative Briefing</div>
+                        <div class="wf-step-desc">Detailed script breakdown, architectural doubling alignment, and director visual matching.</div>
+                    </div>
+                    <div class="wf-step-card">
+                        <div class="wf-step-num">STEP 02</div>
+                        <div class="wf-step-title">Database Scouting</div>
+                        <div class="wf-step-desc">Curation from 8,000+ verified scouted assets with sun-path analysis and GPS coordinates.</div>
+                    </div>
+                    <div class="wf-step-card">
+                        <div class="wf-step-num">STEP 03</div>
+                        <div class="wf-step-title">Technical Recces</div>
+                        <div class="wf-step-desc">Physical site inspections, drone previews, unit base parking staging, and power logistics checks.</div>
+                    </div>
+                    <div class="wf-step-card">
+                        <div class="wf-step-num">STEP 04</div>
+                        <div class="wf-step-title">Permitting & Legal</div>
+                        <div class="wf-step-desc">Cape Town Film Permit Office, SANParks clearances, Metro Police escorts, and property contracts.</div>
+                    </div>
+                    <div class="wf-step-card">
+                        <div class="wf-step-num">STEP 05</div>
+                        <div class="wf-step-title">Shoot Management</div>
+                        <div class="wf-step-desc">On-set location management, technical truck marshaling, environmental compliance, and site wrap.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sticky Category Filter Navigation -->
-    <nav class="category-nav-wrap">
+    <nav class="category-nav-wrap" id="categories-showcase">
         <div class="category-nav" id="categoryNav">
             <button class="cat-pill active" data-cat-id="all" onclick="filterCategory('all', this)">All Categories ({len(categories)})</button>
 """
@@ -2102,7 +2850,7 @@ for cat in categories:
         </article>
 """
 
-# Append Golden Hour Section, Rate Cards & Executive Strip
+# Append Extended Daylight & Golden Hour Section
 html_template += """
         <!-- Extended Summer Daylight & The Atlantic Golden Hour -->
         <section class="golden-hour-section" id="golden-hour">
@@ -2149,6 +2897,375 @@ html_template += """
                         <div class="gh-card-title">Reverse-Hemisphere Season</div>
                         <p class="gh-desc">
                             When North American and European production hubs enter overcast, cold winter conditions, Cape Town offers midsummer warmth, crystal-clear coastal skies, and 300+ days of annual sunshine.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMERCIAL PRODUCTION COSTING ESTIMATE & DAY RATES (GENERIC) -->
+        <section class="costing-section" id="costing-estimate">
+            <div class="costing-container">
+                <div class="costing-header">
+                    <span class="badge-premium">Zencrew & SA Locations · Standard Commercial Costing Framework</span>
+                    <h2>Commercial Production Costing Estimate</h2>
+                    <p class="costing-lead">
+                        Transparent commercial day rate schedule and verified location permitting benchmarks for international film, TVC, and stills productions in Cape Town and the Western Cape. All figures update dynamically in real time based on your selected currency.
+                    </p>
+                </div>
+
+                <!-- TABLE 1: CREW & TECHNICAL OPERATIONS DAY RATES -->
+                <div class="costing-table-card">
+                    <div class="costing-card-header">
+                        <div class="costing-card-title">
+                            <span>👥 Key Crew & Technical Operations Day Rates</span>
+                        </div>
+                        <span class="badge-sub">Standard 10-12 Hour Camera Day Benchmark</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="costing-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Role / Operational Function</th>
+                                    <th style="width: 15%;">Department</th>
+                                    <th style="width: 40%;">Scope of Work & Production Responsibility</th>
+                                    <th style="width: 20%;">Commercial Day Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="role-title">Line Producer</td>
+                                    <td><span class="dept-pill">Production</span></td>
+                                    <td class="scope-cell">Master commercial line producing, production accounting, contract negotiation & local team oversight</td>
+                                    <td class="rate-cell" data-base-zar="8000" data-rate-suffix="/ day">R 8,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Production Manager (PM)</td>
+                                    <td><span class="dept-pill">Production</span></td>
+                                    <td class="scope-cell">Day-to-day operational execution, transport coordination, shoot logistics & vendor management</td>
+                                    <td class="rate-cell" data-base-zar="6000" data-rate-suffix="/ day">R 6,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">1st Assistant Director (1st AD)</td>
+                                    <td><span class="dept-pill">Directing / Ops</span></td>
+                                    <td class="scope-cell">On-set call sheet execution, shooting schedule pacing, safety enforcement & department coordination</td>
+                                    <td class="rate-cell" data-base-zar="6000" data-rate-suffix="/ day">R 6,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Location Manager (LM)</td>
+                                    <td><span class="dept-pill">Locations</span></td>
+                                    <td class="scope-cell">Municipal film office liaison, private property contracts, council permits, police escorts & unit staging</td>
+                                    <td class="rate-cell" data-base-zar="5000" data-rate-suffix="/ day">R 5,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Location Assistant / Unit Assistant</td>
+                                    <td><span class="dept-pill">Locations / Unit</span></td>
+                                    <td class="scope-cell">Unit base setup, parking coning, marquee staging, facility sanitation & environmental site cleanup</td>
+                                    <td class="rate-cell" data-base-zar="3000" data-rate-suffix="/ day">R 3,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Focus Puller (1st AC)</td>
+                                    <td><span class="dept-pill">Camera</span></td>
+                                    <td class="scope-cell">Cine lens optical calibration, precision wireless follow-focus tracking, sensor care & camera package prep</td>
+                                    <td class="rate-cell" data-base-zar="3800" data-rate-suffix="/ day">R 3,800 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Camera Assistant (2nd AC / Loader)</td>
+                                    <td><span class="dept-pill">Camera</span></td>
+                                    <td class="scope-cell">Clapper board slating, digital magazine logging, battery management, cable runs & camera support</td>
+                                    <td class="rate-cell" data-base-zar="2400" data-rate-suffix="/ day">R 2,400 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Gaffer (Chief Lighting Technician)</td>
+                                    <td><span class="dept-pill">Lighting</span></td>
+                                    <td class="scope-cell">Lighting design execution, power distribution safety, generator synchronization & lighting crew direction</td>
+                                    <td class="rate-cell" data-base-zar="4100" data-rate-suffix="/ day">R 4,100 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Best Boy Electric</td>
+                                    <td><span class="dept-pill">Lighting</span></td>
+                                    <td class="scope-cell">Lighting truck equipment inventory, cable distro runs, generator fueling & electrical safety oversight</td>
+                                    <td class="rate-cell" data-base-zar="2800" data-rate-suffix="/ day">R 2,800 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Key Grip</td>
+                                    <td><span class="dept-pill">Grips</span></td>
+                                    <td class="scope-cell">Camera rigging, tracking dolly, cranes, jibs, vehicle camera mounts & structural set safety</td>
+                                    <td class="rate-cell" data-base-zar="3900" data-rate-suffix="/ day">R 3,900 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Art Director</td>
+                                    <td><span class="dept-pill">Art Dept</span></td>
+                                    <td class="scope-cell">Production design implementation, spatial set dressing, property sourcing & practical set styling</td>
+                                    <td class="rate-cell" data-base-zar="7000" data-rate-suffix="/ day">R 7,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Wardrobe Mistress / Stylist</td>
+                                    <td><span class="dept-pill">Wardrobe</span></td>
+                                    <td class="scope-cell">Costume continuity, fitting management, steamer stations, quick-change tents & talent wardrobe prep</td>
+                                    <td class="rate-cell" data-base-zar="3500" data-rate-suffix="/ day">R 3,500 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Hair and Make-up Stylist (H&MU)</td>
+                                    <td><span class="dept-pill">Make-up</span></td>
+                                    <td class="scope-cell">Lead talent styling, skin continuity, sweat control under sunlight & on-set camera touch-ups</td>
+                                    <td class="rate-cell" data-base-zar="3000" data-rate-suffix="/ day">R 3,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Chaperone & Vehicle (Seats 5 Pax)</td>
+                                    <td><span class="dept-pill">Transport</span></td>
+                                    <td class="scope-cell">Dedicated 5-passenger crew/talent air-conditioned shuttle vehicle including professional driver</td>
+                                    <td class="rate-cell" data-base-zar="7000" data-rate-suffix="/ day">R 7,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">On-Location Unit Equipment Package</td>
+                                    <td><span class="dept-pill">Logistics</span></td>
+                                    <td class="scope-cell">Heavy-duty pop-up gazebos, folding tables, directors chairs, lighted mirror stations, bins & silent eco-power</td>
+                                    <td class="rate-cell" data-base-zar="6500" data-rate-suffix="/ day">R 6,500 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Motorcycle with Sidecar (Action Prop Vehicle)</td>
+                                    <td><span class="dept-pill">Specialty Props</span></td>
+                                    <td class="scope-cell">Camera-ready vintage running motorcycle with sidecar for tracking scenes (fuel & transport quoted per distance)</td>
+                                    <td class="rate-cell" data-base-zar="8625" data-rate-suffix="/ day">R 8,625 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Featured Extras</td>
+                                    <td><span class="dept-pill">Cast</span></td>
+                                    <td class="scope-cell">Screen-featured background talent with specific interaction or specialized wardrobe styling</td>
+                                    <td class="rate-cell" data-base-zar="1350" data-rate-suffix="/ day">R 1,350 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Background Extras (Crowd / Atmosphere)</td>
+                                    <td><span class="dept-pill">Cast</span></td>
+                                    <td class="scope-cell">General atmospheric background talent for cafes, urban streets, markets, and venue scenes</td>
+                                    <td class="rate-cell" data-base-zar="950" data-rate-suffix="/ day">R 950 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">FIVA Visas (Film Industry Visa Assistance)</td>
+                                    <td><span class="dept-pill">Legal / Visas</span></td>
+                                    <td class="scope-cell">Fast-track professional film industry work visa endorsement per international crew member</td>
+                                    <td class="rate-cell" data-base-zar="800" data-rate-suffix="/ person">R 800 / person</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TABLE 2: VERIFIED LOCATION PERMITTING & ACCESS BENCHMARKS -->
+                <div class="costing-table-card">
+                    <div class="costing-card-header">
+                        <div class="costing-card-title">
+                            <span>🏛️ Verified Location Permitting & Access Benchmarks</span>
+                        </div>
+                        <span class="badge-sub">Benchmark Daily Location Fees & Municipal Permits</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="costing-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 25%;">Location Benchmark / Typology</th>
+                                    <th style="width: 18%;">Authority / Sector</th>
+                                    <th style="width: 37%;">Filming Scope, Access & Architectural Characteristics</th>
+                                    <th style="width: 20%;">Daily Location Fee</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="role-title">V&A Waterfront Shopping Centre & Quays</td>
+                                    <td><span class="dept-pill">Atlantic Seaboard (Private)</span></td>
+                                    <td class="scope-cell">Working maritime quays, luxury boardwalks, retail plazas & yachts with Table Mountain backdrop</td>
+                                    <td class="rate-cell" data-base-zar="45000" data-rate-suffix="/ day">R 45,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">StarDust Theatrical Dining & Live Cabaret</td>
+                                    <td><span class="dept-pill">Woodstock (Private Commercial)</span></td>
+                                    <td class="scope-cell">Full theatrical dining room, raised stage, grand piano, live acoustic lighting & sound rig</td>
+                                    <td class="rate-cell" data-base-zar="6000" data-rate-suffix="/ day">R 60,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Luxury Residential Family Home</td>
+                                    <td><span class="dept-pill">Atlantic / City Bowl (Private)</span></td>
+                                    <td class="scope-cell">Contemporary luxury family home featuring open-plan living and panoramic Table Mountain views</td>
+                                    <td class="rate-cell" data-base-zar="15825" data-rate-suffix="/ day">R 15,825 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Church Square Heritage Cafe / Coffee Shop</td>
+                                    <td><span class="dept-pill">CBD (Private Commercial)</span></td>
+                                    <td class="scope-cell">Historic cobbled courtyard cafe, European street-side seating & heritage colonial facades</td>
+                                    <td class="rate-cell" data-base-zar="25000" data-rate-suffix="/ day">R 25,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Rehearsal Studio Stage (Suite Spot / Roodebloem)</td>
+                                    <td><span class="dept-pill">City Bowl (Private Studio)</span></td>
+                                    <td class="scope-cell">Daylight rehearsal studio, polished concrete floors, infinity cyclorama & production green rooms</td>
+                                    <td class="rate-cell" data-base-zar="30000" data-rate-suffix="/ day">R 30,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Church Square Civic Plaza</td>
+                                    <td><span class="dept-pill">Cape Town Film Permit Office</span></td>
+                                    <td class="scope-cell">Municipal film permit for historic public cobbled square, civic monuments & surrounding colonnades</td>
+                                    <td class="rate-cell" data-base-zar="5000" data-rate-suffix="/ day">R 5,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Cape Farmhouse Cabin & Rustic Retreat</td>
+                                    <td><span class="dept-pill">Scarborough (Private Estate)</span></td>
+                                    <td class="scope-cell">Rustic timber cabin, outdoor amphitheater stage, indigenous tree canopy & mountain fynbos</td>
+                                    <td class="rate-cell" data-base-zar="30000" data-rate-suffix="/ day">R 30,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Lourensford Wine Estate & MTB Mountain Trails</td>
+                                    <td><span class="dept-pill">Somerset West (Private Estate)</span></td>
+                                    <td class="scope-cell">Expansive private vineyard estate, downhill mountain bike tracks, pine forests & historic cellar halls</td>
+                                    <td class="rate-cell" data-base-zar="90000" data-rate-suffix="/ day">R 90,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">M62 Scenic Coastal Corridor (Kommetjie)</td>
+                                    <td><span class="dept-pill">Provincial Road / CoCT</span></td>
+                                    <td class="scope-cell">Ocean coastal driving passes, sweeping curves, Atlantic horizons & sunset vehicle tracking</td>
+                                    <td class="rate-cell" data-base-zar="5000" data-rate-suffix="/ day">R 5,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Bantry Bay Ocean Tidal Pool & Granite Rocks</td>
+                                    <td><span class="dept-pill">Cape Town Film Permit Office</span></td>
+                                    <td class="scope-cell">Municipal permit for seaside tidal saltwater pool, natural Atlantic surf breakers & granite boulders</td>
+                                    <td class="rate-cell" data-base-zar="5000" data-rate-suffix="/ day">R 5,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Mouille Point Oceanfront Promenade</td>
+                                    <td><span class="dept-pill">Cape Town Film Permit Office</span></td>
+                                    <td class="scope-cell">Public paved coastal walking promenade, green lawns, red-and-white lighthouse & ocean vistas</td>
+                                    <td class="rate-cell" data-base-zar="5000" data-rate-suffix="/ day">R 5,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">CTICC Convention Centre (Airport Concourse Double)</td>
+                                    <td><span class="dept-pill">Foreshore CBD (Municipal)</span></td>
+                                    <td class="scope-cell">Monumental glass-and-steel modern architecture doubling for international airport terminals</td>
+                                    <td class="rate-cell" data-base-zar="50000" data-rate-suffix="/ day">R 50,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Misty Cliffs Coastal Reserve & Shoreline</td>
+                                    <td><span class="dept-pill">SANParks Permit Office</span></td>
+                                    <td class="scope-cell">National park marine permit for dramatic white-sand beaches, Atlantic breakers & towering headlands</td>
+                                    <td class="rate-cell" data-base-zar="30000" data-rate-suffix="/ day">R 30,000 / day</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Chapman's Peak Lookout Pass</td>
+                                    <td><span class="dept-pill">SANParks / Entilini Concession</span></td>
+                                    <td class="scope-cell">World-renowned precipice cliff road overlooking Hout Bay, Sentinel headland & monkey valley lookouts</td>
+                                    <td class="rate-cell" data-base-zar="30000" data-rate-suffix="/ day">R 30,000 / day</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- TABLE 3: MANDATORY PRODUCTION INSURANCE & INDEMNITY BASELINE -->
+                <div class="costing-table-card" style="margin-bottom: 1.5rem;">
+                    <div class="costing-card-header">
+                        <div class="costing-card-title">
+                            <span>🛡️ Production Insurance & Statutory Indemnity Baseline</span>
+                        </div>
+                        <span class="badge-sub">Baseline Risk Coverage & Municipal Mandates</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="costing-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 28%;">Insurance Policy / Coverage Line</th>
+                                    <th style="width: 20%;">Underwriting Scope</th>
+                                    <th style="width: 32%;">Regulatory & Commercial Requirement</th>
+                                    <th style="width: 20%;">Baseline Premium</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="role-title">Film Producer's Indemnity Insurance</td>
+                                    <td><span class="dept-pill">Production Interruption</span></td>
+                                    <td class="scope-cell">Comprehensive coverage for cast non-appearance, media damage, and unforeseen filming delays</td>
+                                    <td class="rate-cell" data-base-zar="8000" data-rate-suffix="once-off">R 8,000 once-off</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Third Party Property Damage</td>
+                                    <td><span class="dept-pill">Property Indemnity</span></td>
+                                    <td class="scope-cell">Comprehensive protection for private luxury villas, heritage structures & municipal facilities</td>
+                                    <td class="rate-cell" data-base-zar="4000" data-rate-suffix="once-off">R 4,000 once-off</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Public Liability Insurance (R50M-R100M Cover)</td>
+                                    <td><span class="dept-pill">Public Risk</span></td>
+                                    <td class="scope-cell">Mandatory statutory requirement for all City of Cape Town & SANParks filming permits</td>
+                                    <td class="rate-cell" data-base-zar="6000" data-rate-suffix="once-off">R 6,000 once-off</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Employers Liability</td>
+                                    <td><span class="dept-pill">Workforce Protection</span></td>
+                                    <td class="scope-cell">Statutory employer indemnification for local crew members, unit personnel & on-set workforce</td>
+                                    <td class="rate-cell" data-base-zar="3000" data-rate-suffix="once-off">R 3,000 once-off</td>
+                                </tr>
+                                <tr>
+                                    <td class="role-title">Crew and Cast Personal Accident</td>
+                                    <td><span class="dept-pill">Medical & Accident</span></td>
+                                    <td class="scope-cell">Emergency 24/7 medical evacuation, trauma care & accidental injury cover per crew/cast member</td>
+                                    <td class="rate-cell" data-base-zar="35" data-rate-suffix="/ person / day">R 35 / person / day</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="mailto:laura@zencrew.co.za?cc=jardin@salocations.com&subject=Costing%20Estimate%20%26%20Budget%20Inquiry%20-%20Cape%20Town" class="btn-nav primary" style="padding: 0.85rem 2rem; font-size: 0.95rem;">
+                        ✉ Inquire Custom Commercial Budget & Production Estimate
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- dtic INCENTIVE DEEP DIVE -->
+        <section class="incentive-section" id="dtic-incentives">
+            <div class="incentive-container">
+                <div class="proposal-header">
+                    <span class="badge-premium">Financial Framework & Trade Incentives</span>
+                    <h2>The South African Production Incentive (dtic)</h2>
+                    <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 840px; margin: 0 auto; line-height: 1.65;">
+                        Clear guidance on the Foreign Film and Television Production Incentive administered by the Department of Trade, Industry and Competition (dtic).
+                    </p>
+                </div>
+
+                <div class="incentive-grid">
+                    <div class="incentive-card highlight">
+                        <div class="tvc-card-icon">🏛️</div>
+                        <div class="tvc-card-title">National Scheme (Not Regional)</div>
+                        <p class="tvc-card-desc">
+                            South Africa operates a single unified national film incentive programme. There is no separate "Western Cape rebate." The competitive advantage of the Western Cape lies in pairing this national incentive with world-class production infrastructure and location density.
+                        </p>
+                    </div>
+
+                    <div class="incentive-card">
+                        <div class="tvc-card-icon">📈</div>
+                        <div class="tvc-card-title">25% QSAPE + 5% Potential Uplift</div>
+                        <p class="tvc-card-desc">
+                            Qualifying foreign productions shot in South Africa are eligible for a <strong>25% rebate</strong> on Qualifying South African Production Expenditure (QSAPE), capped at <strong>R25 million</strong>. A potential additional <strong>5%</strong> applies under specified conditions such as qualifying post-production.
+                        </p>
+                    </div>
+
+                    <div class="incentive-card">
+                        <div class="tvc-card-icon">💱</div>
+                        <div class="tvc-card-title">Immediate 40–60% Currency Arbitrage</div>
+                        <p class="tvc-card-desc">
+                            Regardless of incentive timing, international producers realize an immediate, guaranteed <strong>40% to 60% hard-cost advantage</strong> against USD, EUR, and GBP across local crew day rates, studio rental, hotel accommodation, and location access fees.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- dtic Strategic Review Context Notice -->
+                <div class="dtic-notice-box">
+                    <div class="notice-icon">⚠️</div>
+                    <div class="notice-content">
+                        <h4>Regulatory Transparency: August 2026 dtic Incentive Review Notice</h4>
+                        <p>
+                            In August 2026, the Department of Trade, Industry and Competition (dtic) announced that it is comprehensively reviewing the Film and Television Incentive Programme. While applications currently continue to be processed under existing regulations, updated guidelines are pending publication. Producers are advised to structure financial models around Cape Town's immediate baseline cost and exchange-rate advantages, factoring in realistic administrative timelines for incentive disbursement.
                         </p>
                     </div>
                 </div>
@@ -2380,11 +3497,11 @@ html_template += """
 
         // Exchange Rates relative to ZAR
         const rates = {
-            ZAR: { symbol: 'R', scout: 5000, manage: 5500, format: (val) => `R ${val.toLocaleString()}` },
-            USD: { symbol: '$', scout: 280, manage: 310, format: (val) => `$ ${val.toLocaleString()}` },
-            EUR: { symbol: '€', scout: 255, manage: 280, format: (val) => `€ ${val.toLocaleString()}` },
-            GBP: { symbol: '£', scout: 220, manage: 240, format: (val) => `£ ${val.toLocaleString()}` },
-            INR: { symbol: '₹', scout: 24500, manage: 27000, format: (val) => `₹ ${val.toLocaleString()}` }
+            ZAR: { symbol: 'R', rate: 1, scout: 5000, manage: 5500, format: (val) => `R ${val.toLocaleString()}` },
+            USD: { symbol: '$', rate: 0.056, scout: 280, manage: 310, format: (val) => `$ ${Math.round(val * 0.056).toLocaleString()}` },
+            EUR: { symbol: '€', rate: 0.051, scout: 255, manage: 280, format: (val) => `€ ${Math.round(val * 0.051).toLocaleString()}` },
+            GBP: { symbol: '£', rate: 0.044, scout: 220, manage: 240, format: (val) => `£ ${Math.round(val * 0.044).toLocaleString()}` },
+            INR: { symbol: '₹', rate: 4.9, scout: 24500, manage: 27000, format: (val) => `₹ ${Math.round(val * 4.9).toLocaleString()}` }
         };
 
         let currentCurrency = 'ZAR';
@@ -2393,21 +3510,38 @@ html_template += """
         let activePhotoIndex = 0;
         let activeGallery = [];
 
-        // Currency Switching
+        // Dynamic Currency Switching Across All Rate Cards and Costing Tables
         function setCurrency(curr) {
             currentCurrency = curr;
             document.querySelectorAll('.curr-btn').forEach(b => {
                 b.classList.toggle('active', b.dataset.curr === curr);
             });
+
             const info = rates[curr];
-            document.getElementById('scoutRateDisplay').innerHTML = `${info.format(info.scout)} <span class="unit">/ day</span>`;
-            document.getElementById('manageRateDisplay').innerHTML = `${info.format(info.manage)} <span class="unit">/ shoot day</span>`;
+            const scoutEl = document.getElementById('scoutRateDisplay');
+            const manageEl = document.getElementById('manageRateDisplay');
+            if (scoutEl) scoutEl.innerHTML = `${info.format(info.scout)} <span class="unit">/ day</span>`;
+            if (manageEl) manageEl.innerHTML = `${info.format(info.manage)} <span class="unit">/ shoot day</span>`;
+
+            // Update all elements with data-base-zar
+            document.querySelectorAll('[data-base-zar]').forEach(el => {
+                const baseZar = parseFloat(el.getAttribute('data-base-zar'));
+                if (!isNaN(baseZar)) {
+                    const suffix = el.getAttribute('data-rate-suffix') || '';
+                    const converted = curr === 'ZAR' ? baseZar : Math.round(baseZar * info.rate);
+                    el.innerHTML = `${info.symbol} ${converted.toLocaleString()}${suffix ? ' ' + suffix : ''}`;
+                }
+            });
         }
 
         // Category Filter Navigation & Direct Page Open (Zero Scrolling)
         function filterCategory(catId, btnElement) {
             const heroWrapper = document.querySelector('.hero-banner-wrapper');
+            const proposalSec = document.getElementById('strategic-proposal');
             const goldenHour = document.getElementById('golden-hour');
+            const costingSec = document.getElementById('costing-estimate');
+            const incentiveSec = document.getElementById('dtic-incentives');
+            const ratesSec = document.getElementById('rates-and-contacts');
             const activeBanner = document.getElementById('categoryActiveBanner');
             const activeTitleDisplay = document.getElementById('activeCategoryTitleDisplay');
 
@@ -2438,16 +3572,24 @@ html_template += """
             if (catId === 'all') {
                 // Return to Global Overview
                 if (heroWrapper) heroWrapper.style.display = 'block';
+                if (proposalSec) proposalSec.style.display = 'block';
                 if (goldenHour) goldenHour.style.display = 'block';
+                if (costingSec) costingSec.style.display = 'block';
+                if (incentiveSec) incentiveSec.style.display = 'block';
+                if (ratesSec) ratesSec.style.display = 'block';
                 if (activeBanner) activeBanner.style.display = 'none';
                 if (window.location.hash) {
                     history.pushState(null, '', window.location.pathname);
                 }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                // Focus Mode: Hide Hero and Golden Hour so the Category opens directly at top of page without scrolling
+                // Focus Mode: Hide other macro sections so the Category opens directly at top of page without scrolling
                 if (heroWrapper) heroWrapper.style.display = 'none';
+                if (proposalSec) proposalSec.style.display = 'none';
                 if (goldenHour) goldenHour.style.display = 'none';
+                if (costingSec) costingSec.style.display = 'none';
+                if (incentiveSec) incentiveSec.style.display = 'none';
+                if (ratesSec) ratesSec.style.display = 'none';
                 if (activeBanner) {
                     activeBanner.style.display = 'flex';
                     if (selectedCategory && activeTitleDisplay) {
@@ -2562,8 +3704,7 @@ html_template += """
                 currentShortlist.splice(existingIdx, 1);
                 if (heartBtn) heartBtn.classList.remove('active');
             } else {
-                // Find image src in DOM
-                const parentCard = heartBtn.closest('.gallery-card, .hero-image-wrap');
+                const parentCard = heartBtn.closest('.gallery-card, .hero-image-wrap, .panorama-pane');
                 const img = parentCard ? parentCard.querySelector('img') : null;
                 const b64 = img ? img.src : '';
 
@@ -2581,7 +3722,7 @@ html_template += """
         function saveCurrentLightboxPhoto() {
             const cat = categoriesData[activeCategoryIndex];
             const item = activeGallery[activePhotoIndex];
-            const cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] img`);
+            const cardImg = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] img`) || document.querySelector(`.category-block[data-cat-id="${cat.id}"] .panorama-pane[data-photo-idx="${activePhotoIndex}"] img`);
             const b64 = cardImg ? cardImg.src : '';
 
             const existingIdx = currentShortlist.findIndex(x => x.filePath === item.file);
@@ -2592,8 +3733,7 @@ html_template += """
                     categoryTitle: cat.title,
                     thumbSrc: b64
                 });
-                // Highlight heart on card
-                const heart = document.querySelector(`.category-block[data-cat-id="${cat.id}"] .gallery-card[data-photo-idx="${activePhotoIndex}"] .gallery-card-heart`);
+                const heart = document.querySelector(`.category-block[data-cat-id="${cat.id}"] [data-photo-idx="${activePhotoIndex}"] .gallery-card-heart`);
                 if (heart) heart.classList.add('active');
             }
             renderShortlist();
@@ -2604,7 +3744,6 @@ html_template += """
             const idx = currentShortlist.findIndex(x => x.filePath === filePath);
             if (idx > -1) {
                 currentShortlist.splice(idx, 1);
-                // Unhighlight any heart matching file
                 document.querySelectorAll(`[data-file="${filePath.replace(/\\\\/g, '\\\\\\\\')}"] .gallery-card-heart, [data-file="${filePath.replace(/\\\\/g, '\\\\\\\\')}"] .hero-overlay-heart`).forEach(h => {
                     h.classList.remove('active');
                 });
