@@ -9,9 +9,7 @@ export default defineTool({
   inputSchema: {},
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => ({
-    content: [
-      { type: "text" as const, text: JSON.stringify(digitalNomadConcierge, null, 2) },
-    ],
+    content: [{ type: "text" as const, text: JSON.stringify(digitalNomadConcierge, null, 2) }],
     structuredContent: digitalNomadConcierge,
   }),
 });

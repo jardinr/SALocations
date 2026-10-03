@@ -28,9 +28,7 @@ export const Route = createFileRoute("/digital-nomad-concierge-cape-town")({
       { property: "og:url", content: "/digital-nomad-concierge-cape-town" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [
-      { rel: "canonical", href: "/digital-nomad-concierge-cape-town" },
-    ],
+    links: [{ rel: "canonical", href: "/digital-nomad-concierge-cape-town" }],
   }),
   component: DigitalNomadPage,
 });
@@ -161,23 +159,39 @@ function Nav() {
     >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-5 md:px-12">
         <Link to="/" className="flex items-baseline gap-3">
-          <span className="font-display text-2xl tracking-[0.18em] text-foreground">SALocations</span>
-          <span className="hidden text-[10px] tracking-[0.35em] text-gold uppercase sm:inline">South Africa</span>
+          <span className="font-display text-2xl tracking-[0.18em] text-foreground">
+            SALocations
+          </span>
+          <span className="hidden text-[10px] tracking-[0.35em] text-gold uppercase sm:inline">
+            South Africa
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-10 text-xs tracking-[0.2em] uppercase text-muted-foreground md:flex">
-          <a href="#about" className="hover:text-foreground transition">About</a>
-          <a href="#services" className="hover:text-foreground transition">Services</a>
-          <a href="#process" className="hover:text-foreground transition">How It Works</a>
-          <a href="#pricing" className="hover:text-foreground transition">Pricing</a>
-          <a href="#contact" className="hover:text-foreground transition">Contact</a>
+          <a href="#about" className="hover:text-foreground transition">
+            About
+          </a>
+          <a href="#services" className="hover:text-foreground transition">
+            Services
+          </a>
+          <a href="#process" className="hover:text-foreground transition">
+            How It Works
+          </a>
+          <a href="#pricing" className="hover:text-foreground transition">
+            Pricing
+          </a>
+          <a href="#contact" className="hover:text-foreground transition">
+            Contact
+          </a>
         </nav>
         <a
           href="#contact"
           className="group inline-flex items-center gap-2 border border-gold/60 px-4 py-2 text-[10px] tracking-[0.3em] uppercase text-gold hover:bg-gold hover:text-background transition"
         >
           Enquire
-          <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+          <span aria-hidden className="transition group-hover:translate-x-1">
+            →
+          </span>
         </a>
       </div>
     </header>
@@ -209,7 +223,8 @@ function Hero() {
             <em className="not-italic text-gold">Concierge Cape Town.</em>
           </h1>
           <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Settle into Cape Town quickly, safely and stress-free. Your local partner for accommodation, workspaces, transport, safety and authentic local life.
+            Settle into Cape Town quickly, safely and stress-free. Your local partner for
+            accommodation, workspaces, transport, safety and authentic local life.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
@@ -254,16 +269,21 @@ function Intro() {
           </div>
           <div className="md:col-span-7 md:col-start-6 space-y-6 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              As your local Digital Nomad Concierge, I help remote workers, entrepreneurs, creators and freelancers settle into Cape Town quickly, safely and stress-free.
+              As your local Digital Nomad Concierge, I help remote workers, entrepreneurs, creators
+              and freelancers settle into Cape Town quickly, safely and stress-free.
             </p>
             <p>
-              Whether you're staying for a few weeks or several months, I'll take care of the local details so you can focus on your work while enjoying one of the world's most beautiful destinations.
+              Whether you're staying for a few weeks or several months, I'll take care of the local
+              details so you can focus on your work while enjoying one of the world's most beautiful
+              destinations.
             </p>
             <p>
-              With years of experience in the South African film industry, location scouting, logistics and security, I know how to make your arrival and stay seamless.
+              With years of experience in the South African film industry, location scouting,
+              logistics and security, I know how to make your arrival and stay seamless.
             </p>
             <p className="text-foreground">
-              Send me a message before you arrive in Cape Town. I'll help you hit the ground running.
+              Send me a message before you arrive in Cape Town. I'll help you hit the ground
+              running.
             </p>
           </div>
         </div>
@@ -303,7 +323,8 @@ function Services() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            A complete support system for remote professionals who want to arrive focused and stay productive.
+            A complete support system for remote professionals who want to arrive focused and stay
+            productive.
           </p>
         </div>
 
@@ -345,7 +366,8 @@ function ForWhom() {
               Built for remote professionals who move with intention.
             </h2>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Whether you're a solo founder, a creator, a remote team or a consultant, you get the same personal service and local intelligence.
+              Whether you're a solo founder, a creator, a remote team or a consultant, you get the
+              same personal service and local intelligence.
             </p>
           </div>
           <div className="md:col-span-6 md:col-start-7">
@@ -467,7 +489,8 @@ function WhySAL() {
             The local advantage you can't book online.
           </h2>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-            I don't just arrange things — I remove friction. My background in production, security and logistics means problems get solved before you know they exist.
+            I don't just arrange things — I remove friction. My background in production, security
+            and logistics means problems get solved before you know they exist.
           </p>
         </div>
         <ul className="md:col-span-7 md:col-start-6 grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
@@ -547,9 +570,7 @@ function Pricing() {
             <div
               key={plan.name}
               className={`relative flex flex-col p-10 transition ${
-                plan.featured
-                  ? "bg-background ring-1 ring-gold"
-                  : "bg-surface-2"
+                plan.featured ? "bg-background ring-1 ring-gold" : "bg-surface-2"
               }`}
             >
               {plan.featured && (
@@ -604,7 +625,8 @@ function CTA() {
           <em className="not-italic text-gold">your next base.</em>
         </h2>
         <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-          Tell me your dates, your work setup and what you're looking for. I'll send a tailored plan and quote within one working day.
+          Tell me your dates, your work setup and what you're looking for. I'll send a tailored plan
+          and quote within one working day.
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <a
@@ -642,7 +664,8 @@ function Contact() {
             Speak with Jardin before you arrive.
           </h2>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-            Enquiries are handled personally. Expect a considered reply, typically within one working day.
+            Enquiries are handled personally. Expect a considered reply, typically within one
+            working day.
           </p>
 
           <dl className="mt-12 space-y-8 text-sm">
@@ -678,8 +701,15 @@ function Contact() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-foreground hover:text-gold transition"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.134 1.585 5.929L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.134 1.585 5.929L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
                   Message Jardin
                 </a>
@@ -688,11 +718,21 @@ function Contact() {
             <div>
               <dt className="eyebrow mb-2">Instagram</dt>
               <dd className="space-x-4 text-foreground">
-                <a href="https://instagram.com/salocations" target="_blank" rel="noreferrer" className="hover:text-gold transition">
+                <a
+                  href="https://instagram.com/salocations"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-gold transition"
+                >
                   @salocations
                 </a>
                 <span className="text-border">·</span>
-                <a href="https://instagram.com/capetowncompanion" target="_blank" rel="noreferrer" className="hover:text-gold transition">
+                <a
+                  href="https://instagram.com/capetowncompanion"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-gold transition"
+                >
                   @capetowncompanion
                 </a>
               </dd>
