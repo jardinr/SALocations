@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DigitalNomadConciergeCapeTownRouteImport } from './routes/digital-nomad-concierge-cape-town'
+import { Route as EventPlanningRouteImport } from './routes/event-planning'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as ScoutedImagesDatabaseRouteImport } from './routes/scouted-images-database'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
@@ -28,6 +29,11 @@ const DigitalNomadConciergeCapeTownRoute =
     path: '/digital-nomad-concierge-cape-town',
     getParentRoute: () => rootRouteImport,
   } as any)
+const EventPlanningRoute = EventPlanningRouteImport.update({
+  id: '/event-planning',
+  path: '/event-planning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const McpRoute = McpRouteImport.update({
   id: '/mcp',
   path: '/mcp',
@@ -60,6 +66,7 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
+  '/event-planning': typeof EventPlanningRoute
   '/mcp': typeof McpRoute
   '/scouted-images-database': typeof ScoutedImagesDatabaseRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -69,6 +76,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
+  '/event-planning': typeof EventPlanningRoute
   '/mcp': typeof McpRoute
   '/scouted-images-database': typeof ScoutedImagesDatabaseRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/digital-nomad-concierge-cape-town': typeof DigitalNomadConciergeCapeTownRoute
+  '/event-planning': typeof EventPlanningRoute
   '/mcp': typeof McpRoute
   '/scouted-images-database': typeof ScoutedImagesDatabaseRoute
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/digital-nomad-concierge-cape-town'
+    | '/event-planning'
     | '/mcp'
     | '/scouted-images-database'
     | '/.mcp/list-tools'
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/digital-nomad-concierge-cape-town'
+    | '/event-planning'
     | '/mcp'
     | '/scouted-images-database'
     | '/.mcp/list-tools'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/digital-nomad-concierge-cape-town'
+    | '/event-planning'
     | '/mcp'
     | '/scouted-images-database'
     | '/.mcp/list-tools'
@@ -118,6 +130,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DigitalNomadConciergeCapeTownRoute: typeof DigitalNomadConciergeCapeTownRoute
+  EventPlanningRoute: typeof EventPlanningRoute
   McpRoute: typeof McpRoute
   ScoutedImagesDatabaseRoute: typeof ScoutedImagesDatabaseRoute
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
@@ -139,6 +152,13 @@ declare module '@tanstack/react-router' {
       path: '/digital-nomad-concierge-cape-town'
       fullPath: '/digital-nomad-concierge-cape-town'
       preLoaderRoute: typeof DigitalNomadConciergeCapeTownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/event-planning': {
+      id: '/event-planning'
+      path: '/event-planning'
+      fullPath: '/event-planning'
+      preLoaderRoute: typeof EventPlanningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -182,6 +202,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DigitalNomadConciergeCapeTownRoute: DigitalNomadConciergeCapeTownRoute,
+  EventPlanningRoute: EventPlanningRoute,
   McpRoute: McpRoute,
   ScoutedImagesDatabaseRoute: ScoutedImagesDatabaseRoute,
   Char91DotmcpChar93ListToolsRoute: Char91DotmcpChar93ListToolsRoute,

@@ -121,6 +121,7 @@ const services = [
     title: "Event Planning",
     body: "Venue sourcing, ticket sales, marketing, and event photo/videography. Featuring premier locations like Bella Ev.",
     img: expBellaEv,
+    link: "/event-planning",
   },
 ];
 
