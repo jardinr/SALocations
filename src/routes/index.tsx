@@ -128,6 +128,12 @@ const services = [
     img: expBellaEv,
     link: "/event-planning",
   },
+  {
+    n: "09",
+    title: "Bespoke Property Sales",
+    body: "Exclusive investment and retirement property sourcing. Curated high-yield real estate and luxury coastal homes.",
+    img: sigWinelands,
+  },
 ];
 
 const signature = [
@@ -379,7 +385,7 @@ function Services() {
               <span className="eyebrow">Core Services</span>
             </div>
             <h2 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
-              Eight disciplines. One quiet standard of excellence.
+              Nine disciplines. One quiet standard of excellence.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
