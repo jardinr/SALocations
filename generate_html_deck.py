@@ -14,6 +14,85 @@ hero_bg = data.get("hero_background", "")
 
 print(f"Loaded {len(categories)} categories, {len(images)} encoded images, and hero background.")
 
+# 7-Cluster Alphabetical Grouping Architecture (A-C, D-F, G-I, M-O, P-R, S-U, V-Z)
+alpha_groups = [
+    {
+        "id": "a-c",
+        "label": "A – C",
+        "title": "Aviation, Civic, Coastal & Golf",
+        "desc": "Modern airfields, championship links, skyline views, detention blocks & cliffside coastal passes.",
+        "cat_ids": [
+            "airports-aviation-transport-terminals",
+            "golf-courses-country-club-estates",
+            "city-views-rooftops-panoramas",
+            "civic-institutions-corrections-jail",
+            "coastal-passes-ocean-roads"
+        ]
+    },
+    {
+        "id": "d-f",
+        "label": "D – F",
+        "title": "Forest Cabins & Nature Retreats",
+        "desc": "Pacific Northwest timber eco-cabins, lush canopy treehouses & forest retreats.",
+        "cat_ids": [
+            "forest-cabins-nature-retreats"
+        ]
+    },
+    {
+        "id": "g-i",
+        "label": "G – I",
+        "title": "Heritage Cottages & Character Streets",
+        "desc": "London Victorian/Edwardian suburban cottages, period facades & heritage streetscapes.",
+        "cat_ids": [
+            "heritage-cottages-character-streets"
+        ]
+    },
+    {
+        "id": "m-o",
+        "label": "M – O",
+        "title": "Modern Luxury, Wilderness & Nightlife",
+        "desc": "Hollywood Hills cantilevered villas, Nevada arid desert basins, rock formations & cocktail lounges.",
+        "cat_ids": [
+            "modern-luxury-villas",
+            "natural-wilderness-geological",
+            "nightclubs-lounges-beach-clubs"
+        ]
+    },
+    {
+        "id": "p-r",
+        "label": "P – R",
+        "title": "Pristine Beaches & Industrial Quarries",
+        "desc": "Cannes-style white sand coves, granite boulders & deep-cut industrial rock quarries.",
+        "cat_ids": [
+            "pristine-beaches-coastal-coves",
+            "quarries-industrial-excavations"
+        ]
+    },
+    {
+        "id": "s-u",
+        "label": "S – U",
+        "title": "Studios, Stadiums, Dining & Urban CBD",
+        "desc": "Daylight cycloramas, soundstages, Olympic-grade arenas, Parisian cabaret & Manhattan CBD skyscrapers.",
+        "cat_ids": [
+            "soundstages-cycloramas-studios",
+            "stadiums-arenas-athletics",
+            "theatrical-dining-live-music",
+            "urban-metropolis-cbd"
+        ]
+    },
+    {
+        "id": "v-z",
+        "label": "V – Z",
+        "title": "Wine Country & Maritime Harbours",
+        "desc": "Tuscan-style vineyards, Cape Dutch farmlands & French Riviera-grade deep-water working harbours.",
+        "cat_ids": [
+            "wine-country-historic-estates",
+            "working-harbours-maritime-basins"
+        ]
+    }
+]
+
+
 # Build HTML Deck with 5-Pillar Strategic Proposal and Commercial Costing Estimate
 html_template = """<!DOCTYPE html>
 <html lang="en">
@@ -2328,6 +2407,240 @@ html_template = """<!DOCTYPE html>
             line-height: 1.6;
         }
 
+
+        /* Alphabetical Directory Grid & Spacious Categorization */
+        .alpha-directory-section {
+            background: rgba(18, 28, 23, 0.45);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 2.2rem 2.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+        }
+
+        .alpha-dir-main-header {
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1.2rem;
+        }
+
+        .alpha-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.35rem;
+        }
+
+        .alpha-dir-card {
+            background: rgba(12, 20, 16, 0.7);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.3rem 1.45rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .alpha-dir-card:hover {
+            border-color: var(--border-gold);
+            background: rgba(20, 32, 26, 0.85);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .alpha-dir-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.8rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.65rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .alpha-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-tech);
+            font-weight: 700;
+            font-size: 0.82rem;
+            letter-spacing: 0.1em;
+            background: rgba(212, 175, 55, 0.18);
+            color: var(--gold-bright);
+            border: 1px solid var(--gold);
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .alpha-dir-title {
+            font-family: var(--font-serif);
+            font-size: 0.96rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.3;
+        }
+
+        .alpha-dir-desc {
+            font-size: 0.78rem;
+            color: var(--text-dim);
+            line-height: 1.45;
+            margin-bottom: 0.85rem;
+        }
+
+        .btn-group-view {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-family: var(--font-tech);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-group-view:hover {
+            background: var(--gold);
+            color: #070b0a;
+            border-color: var(--gold);
+        }
+
+        .alpha-dir-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        /* Alphabetical Group Selector in Sticky Nav */
+        .alpha-group-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding-bottom: 0.45rem;
+            margin-bottom: 0.45rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .alpha-group-selector::-webkit-scrollbar {
+            display: none;
+        }
+
+        .alpha-selector-label {
+            font-family: var(--font-tech);
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 0.25rem;
+        }
+
+        .alpha-tab-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-family: var(--font-tech);
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding: 0.25rem 0.7rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .alpha-tab-btn:hover {
+            border-color: var(--border-gold);
+            color: var(--gold-bright);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .alpha-tab-btn.active {
+            background: var(--gold);
+            color: #070b0a;
+            border-color: var(--gold);
+            font-weight: 700;
+        }
+
+        .nav-group-divider {
+            display: inline-flex;
+            align-items: center;
+            color: var(--gold);
+            font-family: var(--font-tech);
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0 0.4rem;
+            opacity: 0.85;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        /* Main Content Cluster Sections */
+        .alpha-cluster-wrapper {
+            margin-bottom: 4.5rem;
+        }
+
+        .alpha-cluster-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background: linear-gradient(90deg, rgba(25, 56, 43, 0.75) 0%, rgba(18, 28, 23, 0.4) 100%);
+            border-left: 4px solid var(--gold);
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 2rem;
+            margin-bottom: 2.2rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .alpha-cluster-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .alpha-cluster-badge {
+            font-family: var(--font-tech);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            background: rgba(212, 175, 55, 0.18);
+            color: var(--gold-bright);
+            border: 1px solid var(--gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .alpha-cluster-title {
+            font-family: var(--font-serif);
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 0.03em;
+        }
+
+        .alpha-cluster-meta {
+            font-family: var(--font-tech);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
         /* Print Optimization */
         @media print {
             header.top-nav, .category-nav-wrap, .ambient-glow, .lb-nav-btn, .search-box, .currency-selector, .shortlist-trigger, .btn-nav, .hero-actions-row, .gallery-card-heart, .hero-overlay-heart {
@@ -2465,36 +2778,41 @@ html_template += f"""
                 </a>
             </div>
 
-            <!-- Global Doubling Advantage Banner -->
-            <div class="doubling-banner">
-                <div>
-                    <div class="doubling-title">The Global Doubling Power of the Western Cape</div>
-                    <div class="doubling-desc">
-                        Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California Pacific Coast Highways, Hollywood Hills cantilevered villas, historic London residential streets, Nevada arid desert basins, Scandinavian timber eco-lodges, ancient desert planets, maximum-security correctional blocks, championship golf links, and Olympic-grade sports stadiums. Click any category below to open immediately:
-                    </div>
-                    <div class="doubling-tags">
-                        <button type="button" class="doubling-tag" onclick="filterCategory('coastal-passes-ocean-roads')">🛣️ California PCH (Chapman's Peak & M6)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('modern-luxury-villas')">🏛️ Hollywood Hills & Malibu Villas (Clifton & Nettleton)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('heritage-cottages-character-streets')">🏡 London Victorian Suburbs (Culver & Chatham)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('forest-cabins-nature-retreats')">🌲 Pacific Northwest & Treehouses (Blackwood Cabin)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('natural-wilderness-geological')">🏜️ Nevada Desert & Alien Planet (Stadsaal Caves & R355)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('pristine-beaches-coastal-coves')">🏖️ Cannes & St. Tropez Beaches (Camps Bay & Llandudno)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('working-harbours-maritime-basins')">⚓ French Riviera & Maritime Quays (V&A Waterfront)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('urban-metropolis-cbd')">🏙️ Manhattan & London Financial (Cape Town CBD & Harbour Arch)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('soundstages-cycloramas-studios')">🎬 Daylight Cycloramas & Studios (Studio 107 & Rehearsal)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('nightclubs-lounges-beach-clubs')">🍸 Miami Beach Clubs & Speakeasies (Harringtons & Caprice)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('theatrical-dining-live-music')">🎷 Parisian Cabaret & Theatrical Dining (StarDust)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('wine-country-historic-estates')">🍇 Tuscan Vineyards & Historic Farmland (Asara & Tokara)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('airports-aviation-transport-terminals')">✈️ Modern Terminals & Country Airfields (CTICC & Stellair)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('civic-institutions-corrections-jail')">🏢 Maximum Security Prison Facility (Disa Tygerberg)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('stadiums-arenas-athletics')">🏟️ Olympic Arenas & World Cup Stadiums (DHL Stadium)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('golf-courses-country-club-estates')">⛳ Championship Golf & Country Club Estates (Clovelly & Royal Cape)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('city-views-rooftops-panoramas')">🌇 Manhattan & Miami Skyline Rooftops (113 Loop St & Signal Hill)</button>
-                        <button type="button" class="doubling-tag" onclick="filterCategory('quarries-industrial-excavations')">⛏️ Moonscape & Industrial Quarries (Paarl R44 & Kalbaskraal)</button>
+            <!-- Alphabetical Category Directory & Global Doubling Catalog -->
+            <div class="alpha-directory-section">
+                <div class="alpha-dir-main-header">
+                    <div class="doubling-title">The Global Doubling Catalog & Alphabetical Directory</div>
+                    <div class="doubling-desc" style="max-width: 950px; margin-top: 0.4rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+                        Spaced out into distinct alphabetical regional clusters (<strong>A – C</strong>, <strong>D – F</strong>, <strong>G – I</strong>, <strong>M – O</strong>, <strong>P – R</strong>, <strong>S – U</strong>, <strong>V – Z</strong>). Within a 60-minute radius of Cape Town CBD, productions can access pristine Mediterranean coastlines, California highway passes, Hollywood villas, London streets, Nevada desert basins, Scandinavian timber lodges, Olympic arenas, and deep-cut industrial quarries. Select any cluster or category below to explore:
                     </div>
                 </div>
-                <div>
-                    <a href="#costing-estimate" class="btn-nav primary" style="padding: 0.8rem 1.6rem; font-size: 0.9rem;">Review Costing Estimate</a>
+
+                <div class="alpha-directory-grid">
+"""
+
+for grp in alpha_groups:
+    html_template += f"""                    <div class="alpha-dir-card">
+                        <div class="alpha-dir-header">
+                            <div style="display: flex; align-items: center; gap: 0.65rem;">
+                                <span class="alpha-badge">{grp['label']}</span>
+                                <span class="alpha-dir-title">{grp['title']}</span>
+                            </div>
+                            <button type="button" class="btn-group-view" onclick="filterAlphaGroup('{grp['id']}')">View ({len(grp['cat_ids'])}) &rarr;</button>
+                        </div>
+                        <div class="alpha-dir-desc">{grp['desc']}</div>
+                        <div class="alpha-dir-items">\n"""
+    for cat_id in grp["cat_ids"]:
+        cat = next((c for c in categories if c["id"] == cat_id), None)
+        if not cat: continue
+        html_template += f"""                            <button type="button" class="doubling-tag" onclick="filterCategory('{cat['id']}')">{cat['icon']} {cat['num']} {cat['doubles_as']}</button>\n"""
+    html_template += """                        </div>\n                    </div>\n"""
+
+html_template += """                </div>
+                <div style="margin-top: 1.8rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.2rem;">
+                    <div style="font-family: var(--font-tech); font-size: 0.82rem; color: var(--text-dim);">
+                        All 18 macro categories mapped to verified Cape Town GPS coordinates with active municipal filming permits.
+                    </div>
+                    <a href="#costing-estimate" class="btn-nav primary" style="padding: 0.75rem 1.6rem; font-size: 0.88rem;">Review Commercial Costing Estimate</a>
                 </div>
             </div>
         </section>
@@ -2661,17 +2979,31 @@ html_template += f"""
         </div>
     </section>
 
-    <!-- Sticky Category Filter Navigation -->
-    <nav class="category-nav-wrap" id="categories-showcase">
+    <!-- Sticky Category Filter Navigation with Alphabetical Tiering -->
+    <nav class="category-nav-wrap" id="categories-showcase" style="top: 50px;">
+        <!-- Tier 1: Alphabetical Group Tabs (A-C, D-F, etc.) -->
+        <div class="alpha-group-selector">
+            <span class="alpha-selector-label">Alphabetical Index:</span>
+            <button class="alpha-tab-btn active" data-alpha-group="all" onclick="filterAlphaGroup('all', this)">All (18)</button>
+"""
+for grp in alpha_groups:
+    html_template += f"""            <button class="alpha-tab-btn" data-alpha-group="{grp['id']}" onclick="filterAlphaGroup('{grp['id']}', this)">{grp['label']} ({len(grp['cat_ids'])})</button>\n"""
+
+html_template += f"""        </div>
+
+        <!-- Tier 2: Spaced Out Category Navigation Pills -->
         <div class="category-nav" id="categoryNav">
             <button class="cat-pill active" data-cat-id="all" onclick="filterCategory('all', this)">All Categories ({len(categories)})</button>
 """
+for grp in alpha_groups:
+    html_template += f"""            <span class="nav-group-divider" data-alpha-group="{grp['id']}">| {grp['label']} |</span>\n"""
+    for cat_id in grp["cat_ids"]:
+        cat = next((c for c in categories if c["id"] == cat_id), None)
+        if not cat: continue
+        pill_label = f"{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}"
+        html_template += f"""            <button class="cat-pill" data-cat-id="{cat['id']}" data-alpha-group="{grp['id']}" onclick="filterCategory('{cat['id']}', this)">{pill_label}</button>\n"""
 
-# Append category pills
-for cat in categories:
-    html_template += f"""            <button class="cat-pill" data-cat-id="{cat['id']}" onclick="filterCategory('{cat['id']}', this)">{cat['icon']} {cat['num']} {cat['title'].split(',')[0].split('&')[0].strip()}</button>\n"""
-
-html_template += f"""        </div>
+html_template += """        </div>
     </nav>
 
     <!-- Main Location Showcase Content -->
@@ -2685,120 +3017,168 @@ html_template += f"""        </div>
         </div>
 """
 
-# Render Category Blocks
-for cat in categories:
-    hero_b64 = images.get(cat["hero_image_file"], "")
-    hero_img_file = cat["hero_image_file"].replace("\\", "\\\\")
-    hero_title_clean = cat["hero_image_title"].replace("'", "\\'")
-    cat_title_clean = cat["title"].replace("'", "\\'")
-
-    search_text = f"{cat['title']} {cat['doubles_as']} {cat['area']} {cat['tagline']} {cat['hero_image_title']}".lower()
-
+# Render Category Blocks Grouped by Alphabetical Cluster (A-C, D-F, G-I, M-O, P-R, S-U, V-Z)
+for grp in alpha_groups:
     html_template += f"""
-        <!-- Category Block: {cat['num']} - {cat['title']} -->
-        <article class="category-block" id="{cat['id']}" data-cat-id="{cat['id']}" data-search-text="{search_text}">
-            <!-- Category Header -->
-            <div class="category-header">
-                <div class="cat-meta-row">
-                    <span class="cat-num-badge">CATEGORY {cat['num']} OF {len(categories)}</span>
-                    <span class="cat-doubling-banner">Doubles For: {cat['doubles_as']}</span>
+        <!-- Alphabetical Group Cluster: {grp['label']} - {grp['title']} -->
+        <section class="alpha-cluster-wrapper" id="group-{grp['id']}" data-alpha-group="{grp['id']}">
+            <div class="alpha-cluster-banner">
+                <div class="alpha-cluster-left">
+                    <span class="alpha-cluster-badge">CATALOG GROUP {grp['label']}</span>
+                    <h3 class="alpha-cluster-title">{grp['title']}</h3>
                 </div>
-                <h2 class="category-title">{cat['icon']} {cat['title']}</h2>
-                <div class="category-area">Primary Locations: {cat['area']}</div>
-                <p class="category-synopsis">{cat['creative_synopsis']}</p>
+                <div class="alpha-cluster-meta">{len(grp['cat_ids'])} Categories &middot; {grp['desc']}</div>
             </div>
+"""
+    for cat_id in grp["cat_ids"]:
+        cat = next((c for c in categories if c["id"] == cat_id), None)
+        if not cat: continue
+        hero_b64 = images.get(cat["hero_image_file"], "")
+        hero_img_file = cat["hero_image_file"].replace("\\", "\\\\")
+        hero_title_clean = cat["hero_image_title"].replace("'", "\\'")
+        cat_title_clean = cat["title"].replace("'", "\\'")
 
-            <!-- Hero Location Showcase - Strict Landscape with Wording Below -->
-            <div class="hero-showcase">
-                <div class="hero-image-wrap" data-cat-id="{cat['id']}" data-file="{hero_img_file}" onclick="openLightbox('{cat['id']}', 0)">
-                    <img src="{hero_b64}" alt="{cat['hero_image_title']}" loading="lazy">
-                    <span class="hero-overlay-badge">{cat['hero_badge']}</span>
-                    <div class="hero-overlay-heart" onclick="event.stopPropagation(); toggleShortlistItem('{hero_img_file}', '{hero_title_clean}', '{cat_title_clean}', this)">
-                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        search_text = f"{cat['title']} {cat['doubles_as']} {cat['area']} {cat['tagline']} {cat['hero_image_title']}".lower()
+
+        html_template += f"""
+            <!-- Category Block: {cat['num']} - {cat['title']} -->
+            <article class="category-block" id="{cat['id']}" data-cat-id="{cat['id']}" data-alpha-group="{grp['id']}" data-search-text="{search_text}">
+                <!-- Category Header -->
+                <div class="category-header">
+                    <div class="cat-meta-row">
+                        <span class="cat-num-badge">GROUP {grp['label']} &middot; CATEGORY {cat['num']} OF {len(categories)}</span>
+                        <span class="cat-doubling-banner">Doubles For: {cat['doubles_as']}</span>
                     </div>
+                    <h2 class="category-title">{cat['icon']} {cat['title']}</h2>
+                    <div class="category-area">Primary Locations: {cat['area']}</div>
+                    <p class="category-synopsis">{cat['creative_synopsis']}</p>
                 </div>
 
-                <!-- Wording Positioned Below the Landscape Hero Photo -->
-                <div class="hero-details-panel">
-                    <div class="hero-details-top">
-                        <h3>{cat['hero_image_title']}</h3>
-                        <p class="tagline">{cat['tagline']}</p>
+                <!-- Hero Location Showcase - Strict Landscape with Wording Below -->
+                <div class="hero-showcase">
+                    <div class="hero-image-wrap" data-cat-id="{cat['id']}" data-alpha-group="{grp['id']}" data-file="{hero_img_file}" onclick="openLightbox('{cat['id']}', 0)">
+                        <img src="{hero_b64}" alt="{cat['hero_image_title']}" loading="lazy">
+                        <span class="hero-overlay-badge">{cat['hero_badge']}</span>
+                        <div class="hero-overlay-heart" onclick="event.stopPropagation(); toggleShortlistItem('{hero_img_file}', '{hero_title_clean}', '{cat_title_clean}', this)">
+                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        </div>
                     </div>
 
-                    <div class="hero-content-grid">
-                        <div>
-                            <div class="section-sub-label">✦ Key Architectural & Filming Features</div>
-                            <ul class="key-features-list">
-"""
-    for feat in cat["key_features"]:
-        html_template += f"                                <li>{feat}</li>\n"
-
-    cal_title = cat['title'].replace(' ', '+')
-    cal_area = cat['area'].replace(' ', '+')
-    html_template += f"""                            </ul>
+                    <!-- Wording Positioned Below the Landscape Hero Photo -->
+                    <div class="hero-details-panel">
+                        <div class="hero-details-top">
+                            <h3>{cat['hero_image_title']}</h3>
+                            <p class="tagline">{cat['tagline']}</p>
                         </div>
 
-                        <div>
-                            <div class="section-sub-label">⚙ Technical Filming Specifications</div>
-                            <div class="specs-panel">
-                                <div class="spec-item">
-                                    <span class="spec-label">Permits & Authority</span>
-                                    <span class="spec-value">{cat['specs']['permitting']}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Power Logistics</span>
-                                    <span class="spec-value">{cat['specs']['power']}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Unit Base Parking</span>
-                                    <span class="spec-value">{cat['specs']['parking']}</span>
-                                </div>
-                                <div class="spec-item">
-                                    <span class="spec-label">Acoustics & Curfew</span>
-                                    <span class="spec-value">{cat['specs']['sound_curfew']}</span>
+                        <div class="hero-content-grid">
+                            <div>
+                                <div class="section-sub-label">✦ Key Architectural & Filming Features</div>
+                                <ul class="key-features-list">
+    """
+        for feat in cat["key_features"]:
+            html_template += f"                                <li>{feat}</li>\n"
+
+        cal_title = cat['title'].replace(' ', '+')
+        cal_area = cat['area'].replace(' ', '+')
+        html_template += f"""                            </ul>
+                            </div>
+
+                            <div>
+                                <div class="section-sub-label">⚙ Technical Filming Specifications</div>
+                                <div class="specs-panel">
+                                    <div class="spec-item">
+                                        <span class="spec-label">Permits & Authority</span>
+                                        <span class="spec-value">{cat['specs']['permitting']}</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Power Logistics</span>
+                                        <span class="spec-value">{cat['specs']['power']}</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Unit Base Parking</span>
+                                        <span class="spec-value">{cat['specs']['parking']}</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">Acoustics & Curfew</span>
+                                        <span class="spec-value">{cat['specs']['sound_curfew']}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="hero-actions-row">
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Location+Scouting+Recce%3A+{cal_title}&details=Technical+Location+Recce+request+with+Zencrew+%28Laura+Diana+Macleod%29+and+SA+Locations+%28Jardin+Roestorff%29.%0A%0ACategory%3A+{cal_title}%0ARegion%3A+{cal_area}&location={cal_area}&add=laura@zencrew.co.za&add=jardin@salocations.com" target="_blank" rel="noopener noreferrer" class="btn-nav primary">
-                            📅 Schedule Category Recce
-                        </a>
-                        <button class="btn-nav" onclick="copyCategoryLink('{cat['id']}')">🔗 Share Category</button>
+                        <div class="hero-actions-row">
+                            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Location+Scouting+Recce%3A+{cal_title}&details=Technical+Location+Recce+request+with+Zencrew+%28Laura+Diana+Macleod%29+and+SA+Locations+%28Jardin+Roestorff%29.%0A%0ACategory%3A+{cal_title}%0ARegion%3A+{cal_area}&location={cal_area}&add=laura@zencrew.co.za&add=jardin@salocations.com" target="_blank" rel="noopener noreferrer" class="btn-nav primary">
+                                📅 Schedule Category Recce
+                            </a>
+                            <button class="btn-nav" onclick="copyCategoryLink('{cat['id']}')">🔗 Share Category</button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Scouted Images Database Gallery -->
-            <div class="gallery-section">
-                <div class="gallery-header-row">
-                    <div class="gallery-title">
-                        <span>Scouted Images Database Gallery</span>
-                        <span class="gallery-badge">{len(cat['gallery'])} Verified Locations</span>
+                <!-- Scouted Images Database Gallery -->
+                <div class="gallery-section">
+                    <div class="gallery-header-row">
+                        <div class="gallery-title">
+                            <span>Scouted Images Database Gallery</span>
+                            <span class="gallery-badge">{len(cat['gallery'])} Verified Locations</span>
+                        </div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-tech);">
+                            Click any image to view in fullscreen cinema lightbox
+                        </div>
                     </div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-tech);">
-                        Click any image to view in fullscreen cinema lightbox
+    """
+        if cat["id"] == "golf-courses-country-club-estates":
+            html_template += """
+                    <div class="panorama-triptych-wrap">
+                        <div class="panorama-triptych-header">
+                            <span class="badge-premium">✦ Sequential 3-Shot Panoramic Vista</span>
+                            <div class="panorama-triptych-title">Clovelly Country Club: 180° Valley Amphitheater Panorama (Left · Center · Right)</div>
+                        </div>
+                        <div class="panorama-triptych-grid">
+    """
+            for idx in range(3):
+                item = cat["gallery"][idx]
+                img_b64 = images.get(item["file"], "")
+                item_img_file = item["file"].replace("\\", "\\\\")
+                item_title_clean = item["title"].replace("'", "\\'")
+                html_template += f"""
+                            <div class="panorama-pane" data-cat-id="{cat['id']}" data-alpha-group="{grp['id']}" data-photo-idx="{idx}" data-file="{item_img_file}" onclick="openLightbox('{cat['id']}', {idx})">
+                                <div class="gallery-thumb-wrap" style="aspect-ratio: 16/9;">
+                                    <img src="{img_b64}" alt="{item['title']}" loading="lazy">
+                                    <span class="gallery-thumb-tag">{item['tag']}</span>
+                                    <div class="gallery-card-heart" onclick="event.stopPropagation(); toggleShortlistItem('{item_img_file}', '{item_title_clean}', '{cat_title_clean}', this)">
+                                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="gallery-card-info">
+                                    <div class="gallery-card-title">{item['title']}</div>
+                                </div>
+                            </div>"""
+
+            html_template += """
+                        </div>
                     </div>
-                </div>
-"""
-    if cat["id"] == "golf-courses-country-club-estates":
-        html_template += """
-                <div class="panorama-triptych-wrap">
-                    <div class="panorama-triptych-header">
-                        <span class="badge-premium">✦ Sequential 3-Shot Panoramic Vista</span>
-                        <div class="panorama-triptych-title">Clovelly Country Club: 180° Valley Amphitheater Panorama (Left · Center · Right)</div>
-                    </div>
-                    <div class="panorama-triptych-grid">
-"""
-        for idx in range(3):
-            item = cat["gallery"][idx]
+
+                    <div class="gallery-grid">
+    """
+            gallery_items = cat["gallery"][3:]
+            start_idx = 3
+        else:
+            html_template += """
+                    <div class="gallery-grid">
+    """
+            gallery_items = cat["gallery"]
+            start_idx = 0
+
+        for idx_offset, item in enumerate(gallery_items):
+            idx = start_idx + idx_offset
             img_b64 = images.get(item["file"], "")
             item_img_file = item["file"].replace("\\", "\\\\")
             item_title_clean = item["title"].replace("'", "\\'")
             html_template += f"""
-                        <div class="panorama-pane" data-cat-id="{cat['id']}" data-photo-idx="{idx}" data-file="{item_img_file}" onclick="openLightbox('{cat['id']}', {idx})">
-                            <div class="gallery-thumb-wrap" style="aspect-ratio: 16/9;">
+                        <div class="gallery-card" data-cat-id="{cat['id']}" data-alpha-group="{grp['id']}" data-photo-idx="{idx}" data-file="{item_img_file}" onclick="openLightbox('{cat['id']}', {idx})">
+                            <div class="gallery-thumb-wrap">
                                 <img src="{img_b64}" alt="{item['title']}" loading="lazy">
                                 <span class="gallery-thumb-tag">{item['tag']}</span>
                                 <div class="gallery-card-heart" onclick="event.stopPropagation(); toggleShortlistItem('{item_img_file}', '{item_title_clean}', '{cat_title_clean}', this)">
@@ -2813,42 +3193,10 @@ for cat in categories:
         html_template += """
                     </div>
                 </div>
+            </article>
+    """
 
-                <div class="gallery-grid">
-"""
-        gallery_items = cat["gallery"][3:]
-        start_idx = 3
-    else:
-        html_template += """
-                <div class="gallery-grid">
-"""
-        gallery_items = cat["gallery"]
-        start_idx = 0
-
-    for idx_offset, item in enumerate(gallery_items):
-        idx = start_idx + idx_offset
-        img_b64 = images.get(item["file"], "")
-        item_img_file = item["file"].replace("\\", "\\\\")
-        item_title_clean = item["title"].replace("'", "\\'")
-        html_template += f"""
-                    <div class="gallery-card" data-cat-id="{cat['id']}" data-photo-idx="{idx}" data-file="{item_img_file}" onclick="openLightbox('{cat['id']}', {idx})">
-                        <div class="gallery-thumb-wrap">
-                            <img src="{img_b64}" alt="{item['title']}" loading="lazy">
-                            <span class="gallery-thumb-tag">{item['tag']}</span>
-                            <div class="gallery-card-heart" onclick="event.stopPropagation(); toggleShortlistItem('{item_img_file}', '{item_title_clean}', '{cat_title_clean}', this)">
-                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                            </div>
-                        </div>
-                        <div class="gallery-card-info">
-                            <div class="gallery-card-title">{item['title']}</div>
-                        </div>
-                    </div>"""
-
-    html_template += """
-                </div>
-            </div>
-        </article>
-"""
+    html_template += """        </section>\n"""
 
 # Append Extended Daylight & Golden Hour Section
 html_template += """
@@ -3494,6 +3842,7 @@ html_template += """
     <!-- Interactive Logic Script (Zero Redundant Base64 Duplication) -->
     <script>
         const categoriesData = """ + json.dumps(categories) + """;
+        const alphaGroupsData = """ + json.dumps(alpha_groups) + """;
 
         // Exchange Rates relative to ZAR
         const rates = {
@@ -3534,8 +3883,95 @@ html_template += """
             });
         }
 
+        // Alphabetical Group Filter (A-C, D-F, G-I, M-O, P-R, S-U, V-Z)
+        function filterAlphaGroup(groupId, btnElement) {
+            const heroWrapper = document.querySelector('.hero-banner-wrapper');
+            const proposalSec = document.getElementById('strategic-proposal');
+            const goldenHour = document.getElementById('golden-hour');
+            const costingSec = document.getElementById('costing-estimate');
+            const incentiveSec = document.getElementById('dtic-incentives');
+            const ratesSec = document.getElementById('rates-and-contacts');
+            const activeBanner = document.getElementById('categoryActiveBanner');
+            const activeTitleDisplay = document.getElementById('activeCategoryTitleDisplay');
+
+            // Update Alpha Tab buttons
+            document.querySelectorAll('.alpha-tab-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.alphaGroup === groupId);
+            });
+
+            // Filter Category Nav Pills
+            document.querySelectorAll('.cat-pill').forEach(p => {
+                if (groupId === 'all') {
+                    p.style.display = 'inline-flex';
+                    p.classList.toggle('active', p.dataset.catId === 'all');
+                } else {
+                    const belongs = p.dataset.alphaGroup === groupId;
+                    p.style.display = belongs ? 'inline-flex' : 'none';
+                    p.classList.remove('active');
+                }
+            });
+
+            // Filter Nav Group Dividers
+            document.querySelectorAll('.nav-group-divider').forEach(d => {
+                d.style.display = (groupId === 'all' || d.dataset.alphaGroup === groupId) ? 'inline' : 'none';
+            });
+
+            // Filter Alpha Cluster Wrappers & Category Blocks
+            const clusters = document.querySelectorAll('.alpha-cluster-wrapper');
+            const blocks = document.querySelectorAll('.category-block');
+
+            if (groupId === 'all') {
+                clusters.forEach(c => c.style.display = 'block');
+                blocks.forEach(b => b.style.display = 'block');
+                if (heroWrapper) heroWrapper.style.display = 'block';
+                if (proposalSec) proposalSec.style.display = 'block';
+                if (goldenHour) goldenHour.style.display = 'block';
+                if (costingSec) costingSec.style.display = 'block';
+                if (incentiveSec) incentiveSec.style.display = 'block';
+                if (ratesSec) ratesSec.style.display = 'block';
+                if (activeBanner) activeBanner.style.display = 'none';
+                if (window.location.hash) {
+                    history.pushState(null, '', window.location.pathname);
+                }
+                const catNav = document.getElementById('categories-showcase');
+                if (catNav) catNav.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                clusters.forEach(c => {
+                    c.style.display = (c.dataset.alphaGroup === groupId) ? 'block' : 'none';
+                });
+                blocks.forEach(b => {
+                    b.style.display = (b.dataset.alphaGroup === groupId) ? 'block' : 'none';
+                });
+
+                // Keep proposal/costing/rates visible or scroll to group
+                if (heroWrapper) heroWrapper.style.display = 'block';
+                if (proposalSec) proposalSec.style.display = 'block';
+                if (goldenHour) goldenHour.style.display = 'block';
+                if (costingSec) costingSec.style.display = 'block';
+                if (incentiveSec) incentiveSec.style.display = 'block';
+                if (ratesSec) ratesSec.style.display = 'block';
+
+                const grp = alphaGroupsData.find(g => g.id === groupId);
+                if (activeBanner) {
+                    activeBanner.style.display = 'flex';
+                    if (activeTitleDisplay && grp) {
+                        activeTitleDisplay.innerHTML = `<span>Alphabetical Directory:</span> <strong>Group ${grp.label} &middot; ${grp.title} (${grp.cat_ids.length} Categories)</strong>`;
+                    }
+                }
+                const targetCluster = document.getElementById('group-' + groupId);
+                if (targetCluster) {
+                    targetCluster.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
         // Category Filter Navigation & Direct Page Open (Zero Scrolling)
         function filterCategory(catId, btnElement) {
+            if (catId === 'all') {
+                filterAlphaGroup('all');
+                return;
+            }
+
             const heroWrapper = document.querySelector('.hero-banner-wrapper');
             const proposalSec = document.getElementById('strategic-proposal');
             const goldenHour = document.getElementById('golden-hour');
@@ -3547,58 +3983,46 @@ html_template += """
 
             // Update category pills active state
             document.querySelectorAll('.cat-pill').forEach(p => {
-                if (catId === 'all') {
-                    p.classList.toggle('active', p.dataset.catId === 'all');
-                } else {
-                    p.classList.toggle('active', p.dataset.catId === catId);
-                }
+                p.style.display = 'inline-flex';
+                p.classList.toggle('active', p.dataset.catId === catId);
+            });
+            document.querySelectorAll('.alpha-tab-btn').forEach(b => {
+                b.classList.remove('active');
             });
 
-            // Update category blocks visibility
+            // Ensure all cluster wrappers are displayed so target category is visible
+            document.querySelectorAll('.alpha-cluster-wrapper').forEach(c => {
+                c.style.display = 'block';
+            });
+
             const blocks = document.querySelectorAll('.category-block');
             let selectedCategory = null;
 
             blocks.forEach(b => {
-                if (catId === 'all' || b.dataset.catId === catId) {
+                if (b.dataset.catId === catId) {
                     b.style.display = 'block';
-                    if (b.dataset.catId === catId) {
-                        selectedCategory = categoriesData.find(c => c.id === catId);
-                    }
+                    selectedCategory = categoriesData.find(c => c.id === catId);
                 } else {
                     b.style.display = 'none';
                 }
             });
 
-            if (catId === 'all') {
-                // Return to Global Overview
-                if (heroWrapper) heroWrapper.style.display = 'block';
-                if (proposalSec) proposalSec.style.display = 'block';
-                if (goldenHour) goldenHour.style.display = 'block';
-                if (costingSec) costingSec.style.display = 'block';
-                if (incentiveSec) incentiveSec.style.display = 'block';
-                if (ratesSec) ratesSec.style.display = 'block';
-                if (activeBanner) activeBanner.style.display = 'none';
-                if (window.location.hash) {
-                    history.pushState(null, '', window.location.pathname);
+            // Hide other macro sections for direct focus
+            if (heroWrapper) heroWrapper.style.display = 'none';
+            if (proposalSec) proposalSec.style.display = 'none';
+            if (goldenHour) goldenHour.style.display = 'none';
+            if (costingSec) costingSec.style.display = 'none';
+            if (incentiveSec) incentiveSec.style.display = 'none';
+            if (ratesSec) ratesSec.style.display = 'none';
+
+            if (activeBanner) {
+                activeBanner.style.display = 'flex';
+                if (selectedCategory && activeTitleDisplay) {
+                    activeTitleDisplay.innerHTML = `<span>Active Category:</span> <strong>${selectedCategory.icon} ${selectedCategory.num} ${selectedCategory.title}</strong>`;
                 }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                // Focus Mode: Hide other macro sections so the Category opens directly at top of page without scrolling
-                if (heroWrapper) heroWrapper.style.display = 'none';
-                if (proposalSec) proposalSec.style.display = 'none';
-                if (goldenHour) goldenHour.style.display = 'none';
-                if (costingSec) costingSec.style.display = 'none';
-                if (incentiveSec) incentiveSec.style.display = 'none';
-                if (ratesSec) ratesSec.style.display = 'none';
-                if (activeBanner) {
-                    activeBanner.style.display = 'flex';
-                    if (selectedCategory && activeTitleDisplay) {
-                        activeTitleDisplay.innerHTML = `<span>Active Category:</span> <strong>${selectedCategory.icon} ${selectedCategory.num} ${selectedCategory.title}</strong>`;
-                    }
-                }
-                history.pushState(null, '', '#' + catId);
-                window.scrollTo({ top: 0, behavior: 'instant' });
             }
+            history.pushState(null, '', '#' + catId);
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
 
         // Global Search
