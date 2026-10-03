@@ -28,6 +28,7 @@ import prodSupport from "@/assets/prod-support.jpg";
 import expSaBg from "@/assets/exp-sa-bg.jpg";
 import antJet from "@/assets/ant-jet.jpg";
 import antCamp from "@/assets/ant-camp.jpg";
+import expBellaEv from "@/assets/exp-bellaev.jpg";
 import heroBokaapPano from "@/assets/hero-bokaap-pano.jpg";
 
 import antHero from "@/assets/ant-hero.jpg";
@@ -119,7 +120,7 @@ const services = [
     n: "08",
     title: "Event Planning",
     body: "Venue sourcing, ticket sales, marketing, and event photo/videography. Featuring premier locations like Bella Ev.",
-    img: destMarketing,
+    img: expBellaEv,
   },
 ];
 
