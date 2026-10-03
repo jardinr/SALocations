@@ -115,6 +115,12 @@ const services = [
     img: dnHero,
     link: "/digital-nomad-concierge-cape-town",
   },
+  {
+    n: "08",
+    title: "Event Planning",
+    body: "Venue sourcing, ticket sales, marketing, and event photo/videography. Featuring premier locations like Bella Ev.",
+    img: destMarketing,
+  },
 ];
 
 
@@ -343,7 +349,7 @@ function Services() {
               <span className="eyebrow">Core Services</span>
             </div>
             <h2 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">
-              Six disciplines. One quiet standard of excellence.
+              Eight disciplines. One quiet standard of excellence.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
