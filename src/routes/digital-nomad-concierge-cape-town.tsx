@@ -1,10 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/dn-hero.jpg";
 import accomImg from "@/assets/dn-accom.jpg";
 import coworkingImg from "@/assets/dn-coworking.jpg";
 import lifestyleImg from "@/assets/dn-lifestyle.jpg";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { Home, PlaneLanding, Wifi, Laptop, Car, Wrench, MapPin, Coffee, Camera, Compass, Users, ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/digital-nomad-concierge-cape-town")({
   head: () => ({
@@ -35,67 +36,66 @@ export const Route = createFileRoute("/digital-nomad-concierge-cape-town")({
 
 const services = [
   {
-    icon: "🏡",
+    icon: <Home className="w-6 h-6 text-gold" />,
     title: "Accommodation sourcing",
     body: "Shortlist, inspect and secure apartments, villas or boutique stays in neighbourhoods that suit your work style and lifestyle.",
   },
   {
-    icon: "✈",
+    icon: <PlaneLanding className="w-6 h-6 text-gold" />,
     title: "Airport meet & greet",
     body: "A warm welcome on arrival, private transfer to your accommodation and a quick orientation to get you settled.",
   },
   {
-    icon: "📶",
+    icon: <Wifi className="w-6 h-6 text-gold" />,
     title: "SIM card & Wi-Fi setup",
     body: "Connected before you leave the airport. Backup connectivity, mobile data plans and home Wi-Fi sorted.",
   },
   {
-    icon: "💻",
+    icon: <Laptop className="w-6 h-6 text-gold" />,
     title: "Home office & workspace setup",
     body: "Ergonomic furniture, monitors, lighting, power solutions and desk placement with a view.",
   },
   {
-    icon: "🚗",
+    icon: <Car className="w-6 h-6 text-gold" />,
     title: "Car hire & local transport",
     body: "Reliable vehicle rental, driver services, parking solutions and transport advice for your stay.",
   },
   {
-    icon: "🔧",
+    icon: <Wrench className="w-6 h-6 text-gold" />,
     title: "Property maintenance coordination",
     body: "A single point of contact for repairs, cleaning, gardening, security checks and any household issues.",
   },
   {
-    icon: "📍",
+    icon: <MapPin className="w-6 h-6 text-gold" />,
     title: "Local recommendations & hidden gems",
     body: "Curated suggestions for restaurants, gyms, hikes, beaches, shops and experiences away from the tourist trail.",
   },
   {
-    icon: "☕",
+    icon: <Coffee className="w-6 h-6 text-gold" />,
     title: "Coworking spaces & cafés",
     body: "Introductions to the best coworking venues, laptop-friendly cafés and private meeting rooms.",
   },
   {
-    icon: "📸",
+    icon: <Camera className="w-6 h-6 text-gold" />,
     title: "Photography & content locations",
     body: "Scout cinematic backdrops, permits, drone-friendly locations and crew support for creators.",
   },
   {
-    icon: "🌅",
+    icon: <Compass className="w-6 h-6 text-gold" />,
     title: "Weekend adventures & day trips",
     body: "Private winelands tours, safaris, coastal drives, hiking, marine experiences and adventure planning.",
   },
   {
-    icon: "🤝",
+    icon: <Users className="w-6 h-6 text-gold" />,
     title: "Trusted local contacts & introductions",
     body: "Connect with accountants, lawyers, creatives, wellness practitioners, fixers and business networks.",
   },
   {
-    icon: "🛡️",
+    icon: <ShieldCheck className="w-6 h-6 text-gold" />,
     title: "Safety advice & on-the-ground support",
     body: "Neighbourhood guidance, secure transport, emergency contacts and reliable support throughout your stay.",
   },
 ];
-
 const forWhom = [
   "Digital nomads",
   "Remote employees",
@@ -190,7 +190,7 @@ function Nav() {
         >
           Enquire
           <span aria-hidden className="transition group-hover:translate-x-1">
-            →
+            â†’
           </span>
         </a>
       </div>
@@ -215,7 +215,7 @@ function Hero() {
         <div className="max-w-4xl fade-up">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-16 bg-gold" />
-            <span className="eyebrow">Cape Town · Remote Work Concierge</span>
+            <span className="eyebrow">Cape Town Â· Remote Work Concierge</span>
           </div>
           <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-[6.5rem]">
             Digital Nomad
@@ -232,7 +232,7 @@ function Hero() {
               className="inline-flex items-center gap-3 bg-gold px-7 py-4 text-[11px] tracking-[0.3em] uppercase text-background hover:bg-gold-soft transition"
             >
               Plan Your Arrival
-              <span aria-hidden>→</span>
+              <span aria-hidden>â†’</span>
             </a>
             <a
               href="https://wa.me/27734921998"
@@ -291,7 +291,7 @@ function Intro() {
         <div className="mt-24 grid grid-cols-2 gap-8 border-t border-border pt-12 md:grid-cols-4 md:gap-12">
           {[
             ["2,300+", "Annual sunshine hours"],
-            ["30+", "Laptop-friendly cafés"],
+            ["30+", "Laptop-friendly cafÃ©s"],
             ["12", "Neighbourhoods scouted"],
             ["48hrs", "Typical full setup time"],
           ].map(([n, l]) => (
@@ -489,7 +489,7 @@ function WhySAL() {
             The local advantage you can't book online.
           </h2>
           <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-            I don't just arrange things — I remove friction. My background in production, security
+            I don't just arrange things â€” I remove friction. My background in production, security
             and logistics means problems get solved before you know they exist.
           </p>
         </div>
@@ -548,7 +548,7 @@ function Pricing() {
                 "WhatsApp support",
                 "Maintenance coordination",
                 "Local recommendations",
-                "Coworking & café curation",
+                "Coworking & cafÃ© curation",
                 "Weekend adventure planning",
               ],
               cta: "Enquire",
@@ -596,7 +596,7 @@ function Pricing() {
                     : "border border-border text-foreground hover:border-gold hover:text-gold"
                 }`}
               >
-                {plan.cta} →
+                {plan.cta} â†’
               </a>
             </div>
           ))}
@@ -633,7 +633,7 @@ function CTA() {
             href="#contact"
             className="inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] tracking-[0.3em] uppercase text-background hover:bg-gold-soft transition"
           >
-            Send Your Brief →
+            Send Your Brief â†’
           </a>
           <a
             href="https://wa.me/27734921998"
@@ -726,7 +726,7 @@ function Contact() {
                 >
                   @salocations
                 </a>
-                <span className="text-border">·</span>
+                <span className="text-border">Â·</span>
                 <a
                   href="https://instagram.com/capetowncompanion"
                   target="_blank"
@@ -753,7 +753,7 @@ function Contact() {
             const email = data.get("email");
             const arrival = data.get("arrival");
             const message = data.get("message");
-            const subject = encodeURIComponent(`Digital Nomad Concierge Cape Town — ${name ?? ""}`);
+            const subject = encodeURIComponent(`Digital Nomad Concierge Cape Town â€” ${name ?? ""}`);
             const body = encodeURIComponent(
               `Name: ${name}\nEmail: ${email}\nArrival / dates: ${arrival}\n\n${message}`,
             );
@@ -796,7 +796,7 @@ function Contact() {
             type="submit"
             className="inline-flex items-center gap-3 bg-gold px-8 py-4 text-[11px] tracking-[0.3em] uppercase text-background hover:bg-gold-soft transition"
           >
-            {sent ? "Opening your mail…" : "Send Enquiry →"}
+            {sent ? "Opening your mailâ€¦" : "Send Enquiry â†’"}
           </button>
         </form>
       </div>
@@ -811,13 +811,15 @@ function Footer() {
         <Link to="/" className="flex items-baseline gap-3">
           <span className="font-display text-xl tracking-[0.2em]">SAL</span>
           <span className="text-[10px] tracking-[0.35em] uppercase text-muted-foreground">
-            Salocations · Cape Town
+            Salocations Â· Cape Town
           </span>
         </Link>
         <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-          © {new Date().getFullYear()} SALocations · Destination Experience & Marketing
+          Â© {new Date().getFullYear()} SALocations Â· Destination Experience & Marketing
         </p>
       </div>
     </footer>
   );
 }
+
+
