@@ -103,7 +103,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap",
       },
+      { rel: "canonical", href: "https://salocations.com/" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://salocations.com/#organization",
+              "name": "SALocations",
+              "url": "https://salocations.com/",
+              "logo": "https://salocations.com/favicon.jpg",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+27-73-492-1998",
+                "contactType": "customer service",
+                "email": "jardin@salocations.com"
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/salocations",
+                "https://www.instagram.com/salocations"
+              ]
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://salocations.com/#website",
+              "url": "https://salocations.com/",
+              "name": "SALocations",
+              "publisher": {
+                "@id": "https://salocations.com/#organization"
+              }
+            }
+          ]
+        })
+      }
+    ]
   }),
 
   shellComponent: RootShell,

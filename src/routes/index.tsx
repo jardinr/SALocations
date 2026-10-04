@@ -195,6 +195,7 @@ function Index() {
       <WhyUs />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <CTA />
       <Contact />
       <Footer />
@@ -515,7 +516,7 @@ function Signature() {
                     >
                       <img
                         src={s.img}
-                        alt=""
+                        alt={s.title}
                         loading="lazy"
                         className="h-full w-full object-cover"
                       />
@@ -579,7 +580,7 @@ function Antarctic() {
       <div className="pointer-events-none absolute inset-0">
         <img
           src={antHero}
-          alt=""
+          alt="Antarctic Expedition"
           loading="lazy"
           className="h-full w-full object-cover opacity-40"
         />
@@ -911,7 +912,7 @@ function Testimonials() {
   return (
     <section className="relative overflow-hidden border-t border-border py-28 md:py-40">
       <div className="pointer-events-none absolute inset-0 opacity-40">
-        <img src={expSafari} alt="" className="h-full w-full object-cover" loading="lazy" />
+        <img src={expSafari} alt="Luxury South African safari experience" className="h-full w-full object-cover" loading="lazy" />
         <div className="absolute inset-0 bg-background/85" />
       </div>
       <div className="relative mx-auto max-w-4xl px-6 text-center md:px-12">
@@ -939,6 +940,76 @@ function Testimonials() {
               }`}
             />
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const faqs = [
+    {
+      q: "What is SALocations?",
+      a: "SALocations is a premier luxury travel, film production, and concierge agency based in Cape Town, South Africa. We specialize in curating bespoke destination experiences, providing seamless production logistics, and offering exclusive access to high-yield investment properties and private adventures across Southern Africa and Antarctica."
+    },
+    {
+      q: "How do I book a private safari or luxury journey in South Africa?",
+      a: "You can book a private luxury journey by contacting our founder directly through our website. We handle every detail from VIP security and executive transport to private villas and exclusive marine expeditions, ensuring a seamless and discreet experience tailored to your specific requirements. We partner with the official authorities like South African National Parks to ensure compliance."
+    },
+    {
+      q: "What production support services do you offer for filming in Cape Town?",
+      a: "We provide comprehensive film production support in Cape Town, including location scouting, securing film permits via the City of Cape Town Film Office, managing production logistics, and arranging elite equipment, crew, and drone operations. With over two decades of industry experience, we guarantee operational precision for international campaigns."
+    },
+    {
+      q: "Can SALocations assist with event planning and bespoke property sales?",
+      a: "Yes, SALocations offers comprehensive event planning, from venue sourcing at premier locations like Bella Ev to cinematic event coverage. We also specialize in bespoke property sales, sourcing exclusive investment and retirement properties, including high-yield real estate and luxury coastal homes."
+    }
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
+  return (
+    <section className="relative border-t border-border py-28 md:py-40 bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="mx-auto max-w-4xl px-6 md:px-12">
+        <div className="mb-16 flex items-center justify-center gap-4">
+          <span className="h-px w-10 bg-gold" />
+          <span className="eyebrow uppercase tracking-[0.3em] text-gold">Common Questions</span>
+          <span className="h-px w-10 bg-gold" />
+        </div>
+        <h2 className="font-display text-4xl leading-tight md:text-5xl text-center mb-16">
+          Answers to your questions.
+        </h2>
+        <div className="space-y-12">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border-b border-border pb-8">
+              <h3 className="font-display text-2xl mb-4 text-foreground">{faq.q}</h3>
+              <p className="text-muted-foreground leading-relaxed text-sm max-w-3xl">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        {/* Author / Publisher signals & External Links for GEO */}
+        <div className="mt-20 border-t border-white/5 pt-12 text-xs text-muted-foreground max-w-2xl text-center mx-auto space-y-4">
+          <p>
+            <strong>Author:</strong> Jardin Roestorff (Founder). Our services comply with local regulations.
+          </p>
+          <p>
+            For external resources, please refer to the <a href="https://www.sanparks.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold">South African National Parks</a> and the <a href="https://www.capetown.gov.za/work%20and%20business/film-in-cape-town" target="_blank" rel="noopener noreferrer" className="underline hover:text-gold">Cape Town Film Permit Office</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -1046,6 +1117,14 @@ function Contact() {
                   </svg>
                   Message Jardin
                 </a>
+              </dd>
+            </div>
+            <div>
+              <dt className="eyebrow mb-2">Location</dt>
+              <dd>
+                <span className="text-foreground">
+                  Cape Town, South Africa
+                </span>
               </dd>
             </div>
             <div>
