@@ -105,13 +105,26 @@ function ScoutedImagesDatabase() {
 
           <TabsContent
             value="legacy"
-            className="w-full h-[80vh] min-h-[600px] border border-zinc-800 rounded-lg overflow-hidden bg-white"
+            className="w-full h-[60vh] min-h-[400px] border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/50 flex flex-col items-center justify-center p-8 text-center"
           >
-            <iframe
-              src="https://sites.google.com/view/salocations/home"
-              className="w-full h-full border-none"
-              title="Legacy SALocations Database"
-            />
+            <div className="max-w-md">
+              <h3 className="text-2xl font-light mb-4 uppercase tracking-wider text-white">
+                Legacy Google Sites Database
+              </h3>
+              <p className="text-zinc-400 text-sm mb-8 leading-relaxed">
+                Google Sites prevents their websites from being embedded inside other applications for security reasons. 
+                To access your legacy image database, please open it in a new secure tab.
+              </p>
+              <a 
+                href="https://sites.google.com/view/salocations/home" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 text-xs uppercase tracking-widest font-medium hover:bg-zinc-200 transition-colors rounded"
+              >
+                Open Database
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
           </TabsContent>
 
           <TabsContent value="native">
