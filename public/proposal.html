@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Location Intelligence System | SMAIDM</title>
+    <title>Location Intelligence System | SA Locations × SMAIDM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -402,6 +402,207 @@
         transform: translateY(-2px);
         box-shadow: 0 10px 20px rgba(112, 0, 255, 0.4);
       }
+
+      /* Schedule App & Form Controls */
+      .schedule-app-card {
+        margin-top: 2.5rem;
+        background: rgba(12, 12, 22, 0.85);
+        border: 1px solid rgba(0, 240, 255, 0.3);
+        border-radius: 20px;
+        padding: 3rem;
+        backdrop-filter: var(--glass-blur);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 240, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+      .schedule-app-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-primary);
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.75rem;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: left;
+      }
+      .form-group.full-width {
+        grid-column: 1 / -1;
+      }
+      .form-group label {
+        font-family: var(--font-display);
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+        font-weight: 600;
+      }
+      .form-control {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 10px;
+        padding: 0.9rem 1.2rem;
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.25s ease;
+      }
+      .form-control:focus {
+        border-color: var(--accent-cyan);
+        background: rgba(0, 240, 255, 0.04);
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.25);
+      }
+      .form-control option {
+        background: #0b0c16;
+        color: #f8fafc;
+      }
+      textarea.form-control {
+        resize: vertical;
+        min-height: 90px;
+      }
+      .schedule-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+        align-items: center;
+      }
+      .btn-whatsapp {
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      }
+      .btn-whatsapp:hover {
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      }
+      .btn-outline {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-primary);
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: var(--accent-cyan);
+        color: #ffffff;
+      }
+      .btn-cal {
+        background: rgba(112, 0, 255, 0.2);
+        border: 1px solid rgba(112, 0, 255, 0.5);
+        color: #e0d4ff;
+      }
+      .btn-cal:hover {
+        background: rgba(112, 0, 255, 0.35);
+        border-color: var(--accent-purple);
+      }
+      .booking-feedback {
+        display: none;
+        margin-top: 1.5rem;
+        padding: 1.25rem;
+        border-radius: 12px;
+        background: rgba(0, 240, 255, 0.08);
+        border: 1px solid var(--accent-cyan);
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: left;
+      }
+      .contacts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2.5rem;
+      }
+      .contact-card {
+        background: var(--surface-color);
+        border: var(--glass-border);
+        border-radius: 16px;
+        padding: 2rem;
+        backdrop-filter: var(--glass-blur);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: left;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+      .contact-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(0, 240, 255, 0.35);
+      }
+      .contact-name {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+      .contact-role {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--accent-cyan);
+        font-weight: 600;
+      }
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        margin-top: 0.5rem;
+      }
+      .contact-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 0.95rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.2s;
+      }
+      .contact-links a:hover {
+        color: var(--accent-cyan);
+      }
+      .quick-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        justify-content: center;
+      }
+      .chip-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.2rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        color: var(--text-primary);
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+      }
+      .chip-link:hover {
+        background: rgba(0, 240, 255, 0.1);
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+      }
+      @media (max-width: 900px) {
+        .form-grid, .contacts-grid {
+          grid-template-columns: 1fr;
+        }
+        .schedule-app-card {
+          padding: 1.75rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -409,8 +610,14 @@
     <div class="bg-glow-2"></div>
 
     <nav>
-      <div class="nav-logo">SMAIDM</div>
-      <div class="nav-tag">Confidential Proposal</div>
+      <a href="https://www.salocations.com" style="text-decoration: none; display: flex; align-items: baseline; gap: 8px;">
+        <span class="nav-logo">SA Locations</span>
+        <span style="font-size: 0.8rem; font-weight: 500; letter-spacing: 1.5px; color: var(--text-secondary); text-transform: uppercase;">× SMAIDM</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="#schedule" class="btn" style="padding: 0.5rem 1.25rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Schedule Call</a>
+        <div class="nav-tag">Confidential Proposal</div>
+      </div>
     </nav>
 
     <div class="container">
@@ -420,7 +627,7 @@
         <h3>An AI Proposal for Production & Servicing Companies</h3>
         <p>
           A streamlined transition from manual search to system-assisted selection. Adaptable to
-          your current workflow. Prepared by SMAIDM · 2026.
+          your current workflow. Presented by SA Locations & SMAIDM · 2026.
         </p>
       </section>
 
@@ -665,28 +872,200 @@
         </div>
       </section>
 
-      <!-- Section 6 & 7 -->
-      <section class="reveal">
-        <h2><span class="section-num">06</span> Commercial Structures & Next Steps</h2>
+      <!-- Section 6: Next Steps & Scheduling -->
+      <section class="reveal" id="schedule">
+        <h2><span class="section-num">06</span> Commercial Structures & Consultation Schedule</h2>
         <p>
           We offer three commercial paths: Standard Implementation, Paid Pilot First (Recommended),
-          and Performance-Tied (Zero Setup - we only get paid when the system saves your team
-          hours).
+          and Performance-Tied (Zero Setup — we only get paid when the system saves your team hours).
         </p>
 
+        <!-- Pilot Roadmap Card -->
         <div class="card" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.02)">
+          <h3 style="margin-bottom: 1rem; font-size: 1.5rem; color: var(--accent-cyan)">
+            Low-Risk Proof of Concept (PoC) Roadmap
+          </h3>
           <ul class="features" style="margin-bottom: 2rem">
-            <li><strong>1. Approve the Pilot:</strong> Sign off on a 4-week Proof of Concept.</li>
             <li>
-              <strong>2. Provide Sample Data:</strong> Grant access to a sample dataset (500–2000
-              images) from your servers.
+              <strong>1. Approve the Pilot:</strong> Sign off on a 4-week Proof of Concept using our
+              UAE platform.
             </li>
             <li>
-              <strong>3. Test the Output:</strong> At the end of Week 4, we run your historical
-              briefs through your actual images to prove the system works.
+              <strong>2. Provide Sample Data:</strong> Grant secure access to a 500–2,000 image test
+              dataset from your servers or cloud folders.
+            </li>
+            <li>
+              <strong>3. Test & Benchmark:</strong> At Week 4, test live director briefs through your
+              own archive to measure real speed and accuracy before full commitment.
             </li>
           </ul>
-          <a href="mailto:contact@smaidm.com" class="btn">Approve Phase 1 Pilot</a>
+        </div>
+
+        <!-- Interactive Schedule Consultation App -->
+        <div class="schedule-app-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.9rem; border-radius: 50px; background: rgba(0, 240, 255, 0.1); border: 1px solid var(--accent-cyan); font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent-cyan); margin-bottom: 0.75rem;">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan);"></span>
+                Live Scheduling App
+              </div>
+              <h3 style="font-size: 2rem; margin-bottom: 0.5rem;">Schedule Consultation & Demo</h3>
+              <p style="margin: 0; font-size: 1.05rem; color: var(--text-secondary);">
+                Book directly with SA Locations leadership. Connect instantly via WhatsApp or direct calendar booking.
+              </p>
+            </div>
+            <a href="https://wa.me/27734921998?text=Hello%20Jardin%2C%20I%20am%20reviewing%20the%20Location%20Intelligence%20Proposal%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 0.75rem 1.5rem; font-size: 0.85rem;">
+              ⚡ Quick WhatsApp Chat
+            </a>
+          </div>
+
+          <form id="scheduleForm" onsubmit="event.preventDefault();" style="margin-top: 1.5rem;">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="schedName">Executive Name</label>
+                <input type="text" id="schedName" class="form-control" placeholder="e.g. David Miller" required />
+              </div>
+
+              <div class="form-group">
+                <label for="schedCompany">Company / Agency / Studio</label>
+                <input type="text" id="schedCompany" class="form-control" placeholder="e.g. Moonlighting Films / Zencrew" required />
+              </div>
+
+              <div class="form-group">
+                <label for="schedEmail">Direct Email</label>
+                <input type="email" id="schedEmail" class="form-control" placeholder="e.g. david@production.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="schedPhone">Direct Mobile / WhatsApp</label>
+                <input type="tel" id="schedPhone" class="form-control" placeholder="e.g. +27 82 000 0000" />
+              </div>
+
+              <div class="form-group">
+                <label for="schedTopic">Consultation Objective</label>
+                <select id="schedTopic" class="form-control">
+                  <option value="Phase 1 Pilot Approval (4-Week PoC)">Approve Phase 1 Pilot (4-Week Proof of Concept)</option>
+                  <option value="30-Minute AI Location Intelligence Demo">30-Minute Live Demo: Location Intelligence & UAE</option>
+                  <option value="Custom Storage & NAS Integration Call">Custom Archive & NAS Cloud Integration Architecture</option>
+                  <option value="Production Servicing & Location Scouting">Cape Town Production Servicing & Scouting Recces</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="schedDate">Preferred Meeting Date</label>
+                <input type="date" id="schedDate" class="form-control" />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="schedTime">Preferred Time Slot (SAST / CEST / EST)</label>
+                <select id="schedTime" class="form-control">
+                  <option value="09:00 - 10:00 SAST / CEST (Morning)">09:00 - 10:00 SAST / CEST (Morning Window)</option>
+                  <option value="11:00 - 12:00 SAST / CEST (Midday)" selected>11:00 - 12:00 SAST / CEST (Midday Window)</option>
+                  <option value="14:00 - 15:00 SAST / CEST (Afternoon)">14:00 - 15:00 SAST / CEST (Afternoon Window)</option>
+                  <option value="16:00 - 17:00 SAST / 10:00 - 11:00 EST">16:00 - 17:00 SAST / 10:00 - 11:00 EST (Late Afternoon)</option>
+                  <option value="18:00 - 19:00 SAST / 12:00 - 13:00 EST">18:00 - 19:00 SAST / 12:00 - 13:00 EST (Evening Window)</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="schedNotes">Brief Notes / Current Archive Setup</label>
+                <textarea id="schedNotes" class="form-control" placeholder="Share your current storage setup (e.g. Synology NAS, Dropbox, Frame.io) or upcoming production brief requirements..."></textarea>
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="schedule-actions">
+              <button type="button" class="btn btn-whatsapp" onclick="bookAppointment('whatsapp')">
+                💬 Confirm & Book via WhatsApp
+              </button>
+              <button type="button" class="btn" onclick="bookAppointment('email')">
+                ✉️ Send Calendar Booking via Email
+              </button>
+              <button type="button" class="btn btn-cal" onclick="bookAppointment('gcal')">
+                📅 Add to Google Calendar
+              </button>
+              <button type="button" class="btn btn-outline" onclick="bookAppointment('ics')">
+                📥 Download .ICS Invite
+              </button>
+            </div>
+
+            <div id="bookingFeedback" class="booking-feedback"></div>
+          </form>
+        </div>
+
+        <!-- Verified Executive Contacts (SA Locations & Zencrew) -->
+        <h3 style="margin-top: 4rem; font-size: 1.5rem; text-align: center; color: var(--text-primary);">
+          Official Executive Contacts
+        </h3>
+        <p style="text-align: center; max-width: 600px; margin: 0.5rem auto 1rem auto; font-size: 1rem; color: var(--text-secondary);">
+          Direct communication lines with our principal leadership for confidentiality, workflow audits, and contracting.
+        </p>
+
+        <div class="contacts-grid">
+          <!-- Jardin Roestorff -->
+          <div class="contact-card">
+            <div class="contact-name">Jardin Roestorff</div>
+            <div class="contact-role">Founder & Location Specialist · SA Locations</div>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
+              Direct lead on Location Intelligence architecture, local archive indexing, and client pilot deployment.
+            </p>
+            <div class="contact-links">
+              <a href="tel:+27734921998">
+                <span>📞</span> +27 73 492 1998 (Direct Mobile)
+              </a>
+              <a href="https://wa.me/27734921998" target="_blank" rel="noopener noreferrer">
+                <span>💬</span> +27 73 492 1998 (WhatsApp Direct)
+              </a>
+              <a href="mailto:jardin@salocations.com">
+                <span>✉️</span> jardin@salocations.com
+              </a>
+              <a href="https://www.salocations.com" target="_blank" rel="noopener noreferrer">
+                <span>🌐</span> www.salocations.com
+              </a>
+              <a href="https://instagram.com/salocations" target="_blank" rel="noopener noreferrer">
+                <span>📸</span> @salocations (Instagram)
+              </a>
+            </div>
+          </div>
+
+          <!-- Laura Diana Macleod -->
+          <div class="contact-card">
+            <div class="contact-name">Laura Diana Macleod</div>
+            <div class="contact-role">Location Manager | Producer | Fixer · Zencrew</div>
+            <p style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-secondary);">
+              Production servicing lead, municipal permits, location management, and international film recce facilitation.
+            </p>
+            <div class="contact-links">
+              <a href="tel:+27825708818">
+                <span>📞</span> +27 82 570 8818 (Direct Mobile)
+              </a>
+              <a href="https://wa.me/27825708818" target="_blank" rel="noopener noreferrer">
+                <span>💬</span> +27 82 570 8818 (WhatsApp Direct)
+              </a>
+              <a href="mailto:laura@zencrew.co.za">
+                <span>✉️</span> laura@zencrew.co.za
+              </a>
+              <a href="https://www.zencrew.co.za/" target="_blank" rel="noopener noreferrer">
+                <span>🌐</span> www.zencrew.co.za
+              </a>
+              <a href="https://linkedin.com/in/laura-diana-macleod-a217a525" target="_blank" rel="noopener noreferrer">
+                <span>💼</span> LinkedIn Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick chips -->
+        <div class="quick-chips">
+          <a href="https://wa.me/27734921998" target="_blank" rel="noopener noreferrer" class="chip-link">
+            💬 WhatsApp Jardin (+27 73 492 1998)
+          </a>
+          <a href="mailto:jardin@salocations.com" class="chip-link">
+            ✉️ Email: jardin@salocations.com
+          </a>
+          <a href="https://www.salocations.com" target="_blank" rel="noopener noreferrer" class="chip-link">
+            🌍 SA Locations Main Portal
+          </a>
         </div>
 
         <p
@@ -698,14 +1077,24 @@
             color: var(--text-secondary);
           "
         >
-          SMAIDM · SOCIAL MEDIA · AI · DIGITAL MARKETING // 2026 CONFIDENTIAL
+          SA LOCATIONS & SMAIDM · CAPE TOWN, SOUTH AFRICA // 2026 CONFIDENTIAL
         </p>
       </section>
     </div>
 
-    <!-- Simple Scroll Reveal Script -->
+    <!-- Booking App & Scroll Reveal Scripts -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // Set default date to tomorrow
+        const dateInput = document.getElementById("schedDate");
+        if (dateInput) {
+          const tomorrow = new Date();
+          tomorrow.setDate(tomorrow.getDate() + 1);
+          dateInput.min = new Date().toISOString().split("T")[0];
+          dateInput.value = tomorrow.toISOString().split("T")[0];
+        }
+
+        // Scroll reveal
         const observerOptions = {
           root: null,
           rootMargin: "0px",
@@ -725,6 +1114,116 @@
           observer.observe(section);
         });
       });
+
+      function getBookingData() {
+        const name = document.getElementById("schedName")?.value.trim() || "Production Partner";
+        const company = document.getElementById("schedCompany")?.value.trim() || "Servicing Company";
+        const email = document.getElementById("schedEmail")?.value.trim() || "Not specified";
+        const phone = document.getElementById("schedPhone")?.value.trim() || "Not specified";
+        const topic = document.getElementById("schedTopic")?.value || "Location Intelligence Consultation";
+        const date = document.getElementById("schedDate")?.value || new Date().toISOString().split("T")[0];
+        const time = document.getElementById("schedTime")?.value || "11:00 - 12:00 SAST";
+        const notes = document.getElementById("schedNotes")?.value.trim() || "None provided";
+
+        return { name, company, email, phone, topic, date, time, notes };
+      }
+
+      function showFeedback(msg) {
+        const fb = document.getElementById("bookingFeedback");
+        if (fb) {
+          fb.style.display = "block";
+          fb.innerHTML = msg;
+          fb.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      function bookAppointment(method) {
+        const b = getBookingData();
+
+        if (method === "whatsapp") {
+          const waMessage = "*Location Intelligence Consultation Booking*\n\n" +
+            `*Name:* ${b.name}\n` +
+            `*Company:* ${b.company}\n` +
+            `*Email:* ${b.email}\n` +
+            `*Phone:* ${b.phone}\n` +
+            `*Topic:* ${b.topic}\n` +
+            `*Preferred Date:* ${b.date}\n` +
+            `*Time Slot:* ${b.time}\n` +
+            (b.notes && b.notes !== "None provided" ? `*Notes:* ${b.notes}\n\n` : "\n") +
+            "_Booked via salocations.com/proposal.html_";
+
+          const waUrl = `https://wa.me/27734921998?text=${encodeURIComponent(waMessage)}`;
+          window.open(waUrl, "_blank");
+          showFeedback("<strong>✓ WhatsApp Booking Prepared!</strong> Opening WhatsApp to connect directly with Jardin Roestorff (+27 73 492 1998).");
+        } else if (method === "email") {
+          const subject = `[Proposal Consultation] ${b.topic} - ${b.company} (${b.name})`;
+          const body = `Dear Jardin and SA Locations Team,\n\n` +
+            `I would like to schedule a consultation regarding the Location Intelligence AI system.\n\n` +
+            `Meeting Details:\n` +
+            `- Executive: ${b.name}\n` +
+            `- Company / Studio: ${b.company}\n` +
+            `- Email: ${b.email}\n` +
+            `- Mobile: ${b.phone}\n` +
+            `- Objective: ${b.topic}\n` +
+            `- Preferred Date: ${b.date}\n` +
+            `- Preferred Time Window: ${b.time}\n\n` +
+            `Project / Workflow Notes:\n${b.notes}\n\n` +
+            `Best regards,\n${b.name}\n${b.company}`;
+
+          const mailtoUrl = `mailto:jardin@salocations.com?cc=laura@zencrew.co.za&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.location.href = mailtoUrl;
+          showFeedback("<strong>✓ Email Client Triggered!</strong> Drafted direct booking to Jardin Roestorff (jardin@salocations.com) with cc to Laura Diana Macleod (laura@zencrew.co.za).");
+        } else if (method === "gcal") {
+          const startTimeStr = b.date.replace(/-/g, "") + "T090000Z";
+          const endTimeStr = b.date.replace(/-/g, "") + "T100000Z";
+          const gcalUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+            `&text=${encodeURIComponent("SA Locations: " + b.topic + " (" + b.company + ")")}` +
+            `&dates=${startTimeStr}/${endTimeStr}` +
+            `&details=${encodeURIComponent("Consultation with Jardin Roestorff (SA Locations) & " + b.name + " (" + b.company + ").\nTopic: " + b.topic + "\nNotes: " + b.notes + "\nContact: +27 73 492 1998 / jardin@salocations.com")}` +
+            `&location=${encodeURIComponent("Google Meet / WhatsApp Video (+27 73 492 1998)")}` +
+            `&add=${encodeURIComponent("jardin@salocations.com,laura@zencrew.co.za")}`;
+
+          window.open(gcalUrl, "_blank");
+          showFeedback("<strong>✓ Google Calendar Opened!</strong> Event details generated with Jardin Roestorff (jardin@salocations.com) as participant.");
+        } else if (method === "ics") {
+          const dtStamp = new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
+          const dParts = b.date.split("-");
+          const dtStart = dParts.join("") + "T090000Z";
+          const dtEnd = dParts.join("") + "T100000Z";
+
+          const icsContent = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "PRODID:-//SA Locations//Location Intelligence Scheduler//EN",
+            "CALSCALE:GREGORIAN",
+            "METHOD:REQUEST",
+            "BEGIN:VEVENT",
+            `UID:sal-${Date.now()}@salocations.com`,
+            `DTSTAMP:${dtStamp}`,
+            `DTSTART:${dtStart}`,
+            `DTEND:${dtEnd}`,
+            `SUMMARY:SA Locations: ${b.topic} (${b.company})`,
+            `DESCRIPTION:Consultation with Jardin Roestorff (SA Locations)\\nParticipant: ${b.name} (${b.company})\\nObjective: ${b.topic}\\nNotes: ${b.notes}\\nContact: jardin@salocations.com | +27 73 492 1998`,
+            "LOCATION:Google Meet / WhatsApp (+27 73 492 1998)",
+            "ORGANIZER;CN=Jardin Roestorff:mailto:jardin@salocations.com",
+            "ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED:mailto:jardin@salocations.com",
+            "STATUS:CONFIRMED",
+            "END:VEVENT",
+            "END:VCALENDAR"
+          ].join("\r\n");
+
+          const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = url;
+          link.setAttribute("download", `SALocations_${b.topic.replace(/[^a-zA-Z0-9]/g, "_")}.ics`);
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
+          showFeedback("<strong>✓ .ICS Calendar File Downloaded!</strong> Double-click the file to add this appointment directly into your calendar.");
+        }
+      }
     </script>
   </body>
 </html>
