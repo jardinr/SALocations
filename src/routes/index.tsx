@@ -1150,8 +1150,17 @@ function Contact() {
               </dd>
             </div>
             <div>
-              <dt className="eyebrow mb-2">Studio</dt>
-              <dd className="text-foreground">Cape Town, South Africa</dd>
+              <dt className="eyebrow mb-2">YouTube</dt>
+              <dd>
+                <a
+                  href="https://www.youtube.com/@salocations"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground hover:text-gold transition"
+                >
+                  @salocations
+                </a>
+              </dd>
             </div>
           </dl>
         </div>
